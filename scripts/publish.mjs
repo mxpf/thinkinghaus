@@ -52,6 +52,7 @@ async function ensureSafeWorkingTree() {
 
 export async function publishSite() {
   await ensureSafeWorkingTree();
+  const allPosts = await readPosts({ includeDrafts: true });
   const publishedPosts = await readPosts();
   await generatePostsModule();
   await run("npm", ["run", "build:pages"]);
@@ -61,6 +62,13 @@ export async function publishSite() {
     ...publishedPosts.map((post) => `content/posts/${post.slug}.md`),
   ];
   await run("git", ["add", "--", ...sourceFiles]);
+
+  const draftFiles = allPosts
+    .filter((post) => post.status === "draft")
+    .map((post) => `content/posts/${post.slug}.md`);
+  if (draftFiles.length) {
+    await run("git", ["rm", "--cached", "-f", "--ignore-unmatch", "--", ...draftFiles]);
+  }
 
   if (await hasStagedChanges()) {
     await run("git", ["commit", "-m", "Publish Thinkinghaus writing"]);

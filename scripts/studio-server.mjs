@@ -195,11 +195,9 @@ async function handler(request, response) {
       const source = await readFile(path.join(postsDirectory, `${input.slug}.md`), "utf8");
       const post = parsePost(source, `${input.slug}.md`);
       if (!post.body.trim()) return json(response, { error: "There is nothing to publish yet." }, 400);
-      await savePost({
-        ...post,
-        status: "published",
-        publishedAt: post.publishedAt || new Date().toISOString(),
-      });
+      if (post.status === "published" && !post.publishedAt) {
+        await savePost({ ...post, publishedAt: new Date().toISOString() });
+      }
       await generatePostsModule();
       const result = await publishSite();
       return json(response, { ...result, posts: await readPosts({ includeDrafts: true }), history: await history() });

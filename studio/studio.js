@@ -134,7 +134,10 @@ function formatDate(value) {
 }
 
 function readingTime(value) {
-  const words = value.trim().match(/[\p{L}\p{N}’'-]+/gu)?.length ?? 0;
+  const readableValue = String(value)
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_]/g, "");
+  const words = readableValue.trim().match(/[\p{L}\p{N}’'-]+/gu)?.length ?? 0;
   const minutes = Math.max(1, Math.ceil(words / 180));
   return `${minutes} minute${minutes === 1 ? "" : "s"}`;
 }
@@ -290,6 +293,8 @@ function fillFields() {
   elements.contactEditor.hidden = activeSite !== "portfolio" || item?.type !== "about";
   elements.postState.textContent = activeSite === "portfolio" ? item?.type === "about" ? "Page" : "Project" : item?.status === "published" ? "Published" : "Draft";
   elements.postState.classList.toggle("is-published", activeSite === "thinkinghaus" && item?.status === "published");
+  elements.postState.disabled = activeSite !== "thinkinghaus";
+  elements.postState.title = activeSite === "thinkinghaus" ? "Change between Draft and Published" : "";
   elements.body.placeholder = activeSite === "portfolio" ? item?.type === "about" ? "About and contact text" : "Project introduction" : "Begin anywhere.";
   renderCaptionFields();
   renderPreview();
@@ -303,6 +308,23 @@ function selectItem(slug) {
 
 function createBlankPost() {
   return { title: "", slug: "", date: today(), status: "draft", body: "" };
+}
+
+function togglePostStatus() {
+  const item = current();
+  if (activeSite !== "thinkinghaus" || !item) return;
+  item.status = item.status === "published" ? "draft" : "published";
+  if (item.status === "published" && !item.publishedAt) item.publishedAt = new Date().toISOString();
+  elements.postState.textContent = item.status === "published" ? "Published" : "Draft";
+  elements.postState.classList.toggle("is-published", item.status === "published");
+  renderNavigation();
+  scheduleSave();
+  showNotice(
+    item.status === "published"
+      ? "Marked Published. Use Publish to update the live site."
+      : "Moved to Drafts. Use Publish to remove it from the live site.",
+    4800,
+  );
 }
 
 function setSaveState(label) {
@@ -435,7 +457,11 @@ async function publishCurrent() {
   if (!item?.title.trim() || !item.body.trim()) return;
   await flushSave();
   const destination = site().label;
-  if (!window.confirm(`Publish the latest changes to “${item.title}” on ${destination}?`)) return;
+  const confirmation =
+    activeSite === "thinkinghaus" && item.status === "draft"
+      ? `Publish changes to ${destination}? “${item.title}” will be removed from the live site and kept here as a draft.`
+      : `Publish the latest changes to “${item.title}” on ${destination}?`;
+  if (!window.confirm(confirmation)) return;
 
   elements.publishButton.disabled = true;
   elements.publishButton.textContent = "Publishing…";
@@ -454,8 +480,8 @@ async function publishCurrent() {
     site().current = site().items.find((entry) => entry.slug === item.slug) || site().items[0];
     renderHistory(site().history);
     fillFields();
-    setSaveState("Published");
-    showNotice(`Published. ${destination} is updating now.`, 5000);
+    setSaveState("Published changes");
+    showNotice(`Changes published. ${destination} is updating now.`, 5000);
   } catch (error) {
     setSaveState("Publishing paused");
     showNotice(error.message || "Publishing did not finish.", 6500);
@@ -487,6 +513,7 @@ elements.newButton.addEventListener("click", async () => {
   elements.title.focus();
 });
 elements.publishButton.addEventListener("click", publishCurrent);
+elements.postState.addEventListener("click", togglePostStatus);
 elements.italicButton.addEventListener("click", applyItalic);
 elements.linkButton.addEventListener("click", openLinkDialog);
 elements.linkCancel.addEventListener("click", () => elements.linkDialog.close());

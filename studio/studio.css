@@ -283,7 +283,21 @@ button {
   padding: 0 8px;
   border: 1px solid var(--line);
   border-radius: 99px;
+  background: transparent;
   font-size: 12px;
+}
+
+.post-state:not(:disabled) {
+  cursor: pointer;
+}
+
+.post-state:not(:disabled):hover,
+.post-state:not(:disabled):focus-visible {
+  background: var(--panel);
+}
+
+.post-state:disabled {
+  cursor: default;
 }
 
 .post-state.is-published {

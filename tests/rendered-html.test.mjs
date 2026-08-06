@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
-import { readPosts } from "../scripts/content.mjs";
+import { calculateReadingTime, parsePost, readPosts, serializePost } from "../scripts/content.mjs";
 import { readPortfolioAbout, readPortfolioProjects } from "../scripts/portfolio-content.mjs";
 
 async function render(pathname = "/") {
@@ -74,4 +74,23 @@ test("supports safe inline italics and links", async () => {
     new URL("../public/fonts/UntitledSansWeb-RegularItalic.woff", import.meta.url),
   );
   assert.equal(italicFont.size, 47346);
+});
+
+test("calculates reading time and preserves draft status", () => {
+  assert.equal(calculateReadingTime("word ".repeat(180)), "1 minute");
+  assert.equal(calculateReadingTime("word ".repeat(181)), "2 minutes");
+  assert.equal(
+    calculateReadingTime("Read [this note](https://example.com/a/very/long/address) *slowly*."),
+    "1 minute",
+  );
+
+  const draft = parsePost(serializePost({
+    title: "A private thought",
+    slug: "a-private-thought",
+    date: "2026-08-06",
+    status: "draft",
+    body: "Not ready yet.",
+  }));
+  assert.equal(draft.status, "draft");
+  assert.equal(draft.readingTime, "1 minute");
 });

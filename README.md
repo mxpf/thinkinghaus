@@ -5,13 +5,13 @@ Thinkinghaus is a small home for essays, observations, and fragments by Max Pfen
 - Live site: [thinking.haus](https://thinking.haus)
 - Repository: [github.com/mxpf/thinkinghaus](https://github.com/mxpf/thinkinghaus)
 
-This is the operator’s manual for the site and its private local writing studio.
+This is the operator’s manual for the site and the private local Publishing Studio shared with Max’s portfolio.
 
 ## Everyday use
 
-Open **Thinkinghaus Studio** from the Applications folder on the Mac.
+Open **Publishing Studio** from the Applications folder on the Mac.
 
-The studio opens in a browser, but it runs only on this computer. It is not part of the public website and cannot be reached through `thinking.haus`.
+The studio opens in a browser, but it runs only on this computer. It is not part of either public website. Use the switch at the top to move between **Thinkinghaus** and **Portfolio**.
 
 The left side contains drafts, published essays, and recent publishing history. The center is the writing space. The right side shows the essay in the typography and proportions of the live site.
 
@@ -59,6 +59,14 @@ The button deliberately pauses if unrelated site files have unfinished changes. 
 
 The **View live** link opens the public site. GitHub may need a short moment after publishing before the new version appears everywhere.
 
+## Portfolio projects
+
+Choose **Portfolio** at the top of Publishing Studio, then select any project from the left side. The center column contains the project title, introductory text, and every media caption. The right side previews the project text, images, and caption sequence.
+
+Changes save into the portfolio’s existing project files while you work. Empty captions stay empty, which is useful when an image is self-explanatory. Choose **Publish** only when the project is ready to update `maxpfennig.haus`.
+
+This first version deliberately does not add, replace, crop, or reorder images. Those operations remain in the portfolio project itself so the publishing interface stays focused and safe.
+
 ## Writing sensibility
 
 The writing tends to work best when it remains:
@@ -99,7 +107,7 @@ The studio edits these files and generates the data used by the public site. The
 | What | Location |
 | --- | --- |
 | Essays and drafts | `content/posts` |
-| Local studio | `studio` |
+| Shared local studio | `studio` |
 | Studio’s local service | `scripts/studio-server.mjs` |
 | Public article list | `app/page.tsx` |
 | Public article page | `app/[slug]/page.tsx` |
@@ -133,7 +141,7 @@ The domain’s apex uses GitHub Pages’ four `A` records:
 
 ## If the studio does not open
 
-Open **Thinkinghaus Studio** again. If the local service is already running, the launcher simply returns to it.
+Open **Publishing Studio** again. If the local service is already running, the launcher simply returns to it.
 
 The studio records technical details in `/tmp/thinkinghaus-studio.log`. That file is intended for troubleshooting; normal writing and publishing should not require opening it.
 

@@ -3,6 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
 import { readPosts } from "../scripts/content.mjs";
+import { readPortfolioProjects } from "../scripts/portfolio-content.mjs";
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -36,14 +37,19 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 
-test("keeps the writing library readable and the studio local", async () => {
+test("keeps both publishing libraries readable and the studio local", async () => {
   const posts = await readPosts({ includeDrafts: true });
+  const projects = await readPortfolioProjects();
   assert.equal(posts.length, 6);
+  assert.equal(projects.length, 11);
   assert.ok(posts.every((post) => post.body.length > 0));
   assert.ok(posts.every((post) => /^[a-z0-9-]+$/.test(post.slug)));
+  assert.ok(projects.every((project) => project.body.length > 0));
 
   const studio = await readFile(new URL("../studio/index.html", import.meta.url), "utf8");
-  assert.match(studio, /Thinkinghaus Studio/);
+  assert.match(studio, /Publishing Studio/);
+  assert.match(studio, /data-site="thinkinghaus"/);
+  assert.match(studio, /data-site="portfolio"/);
   assert.match(studio, /Publish/);
 });
 

@@ -1,15 +1,21 @@
 const elements = {
+  siteButtons: [...document.querySelectorAll("[data-site]")],
   navigation: document.querySelector("#post-navigation"),
   history: document.querySelector("#history-list"),
   newButton: document.querySelector("#new-button"),
   publishButton: document.querySelector("#publish-button"),
+  liveLink: document.querySelector(".quiet-button"),
   saveState: document.querySelector("#save-state"),
   postState: document.querySelector("#post-state"),
   title: document.querySelector("#title-input"),
   date: document.querySelector("#date-input"),
+  dateField: document.querySelector(".date-field"),
   body: document.querySelector("#body-input"),
+  sourceDetails: document.querySelector(".source-details"),
   sourceLabel: document.querySelector("#source-label-input"),
   sourceUrl: document.querySelector("#source-url-input"),
+  captionEditor: document.querySelector("#caption-editor"),
+  captionFields: document.querySelector("#caption-fields"),
   italicButton: document.querySelector("#italic-button"),
   linkButton: document.querySelector("#link-button"),
   linkDialog: document.querySelector("#link-dialog"),
@@ -21,11 +27,28 @@ const elements = {
   previewDate: document.querySelector("#preview-date"),
   previewReadingTime: document.querySelector("#preview-reading-time"),
   previewBody: document.querySelector("#preview-body"),
+  previewMedia: document.querySelector("#preview-media"),
   notice: document.querySelector("#notice"),
 };
 
-let posts = [];
-let current = null;
+const sites = {
+  thinkinghaus: {
+    items: [],
+    current: null,
+    history: [],
+    label: "Thinkinghaus",
+    url: "https://thinking.haus",
+  },
+  portfolio: {
+    items: [],
+    current: null,
+    history: [],
+    label: "Portfolio",
+    url: "https://maxpfennig.haus",
+  },
+};
+
+let activeSite = "thinkinghaus";
 let saveTimer = null;
 let savingPromise = null;
 let saveAgain = false;
@@ -33,12 +56,20 @@ let noticeTimer = null;
 let editRevision = 0;
 let linkSelection = { start: 0, end: 0 };
 
+function site() {
+  return sites[activeSite];
+}
+
+function current() {
+  return site().current;
+}
+
 function today() {
   return new Date().toISOString().slice(0, 10);
 }
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -60,20 +91,31 @@ function renderInline(value) {
   const pattern = /\[([^\]]+)\]\(([^)\s]+)\)|\*([^*\n]+)\*|_([^_\n]+)_/g;
   let output = "";
   let cursor = 0;
-
-  for (const match of value.matchAll(pattern)) {
+  for (const match of String(value).matchAll(pattern)) {
     const index = match.index ?? 0;
     output += escapeHtml(value.slice(cursor, index));
     if (match[1] && match[2] && isSafeHref(match[2])) {
       output += `<a href="${escapeHtml(match[2])}" rel="noreferrer">${renderInline(match[1])}</a>`;
     } else if (match[3] || match[4]) {
       output += `<em>${escapeHtml(match[3] || match[4])}</em>`;
-    } else {
-      output += escapeHtml(match[0]);
-    }
+    } else output += escapeHtml(match[0]);
     cursor = index + match[0].length;
   }
-  return output + escapeHtml(value.slice(cursor));
+  return output + escapeHtml(String(value).slice(cursor));
+}
+
+function renderBlocks(value) {
+  return String(value)
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .map((block) => {
+      const line = block.replace(/\n/g, " ");
+      if (/^#\s+/.test(line)) return `<h2>${renderInline(line.replace(/^#\s+/, ""))}</h2>`;
+      if (/^##\s+/.test(line)) return `<h3>${renderInline(line.replace(/^##\s+/, ""))}</h3>`;
+      return `<p>${renderInline(line)}</p>`;
+    })
+    .join("");
 }
 
 function formatDate(value) {
@@ -101,105 +143,140 @@ function showNotice(message, duration = 3200) {
 }
 
 function updateCurrentFromFields() {
-  if (!current) return;
-  current.title = elements.title.value;
-  current.date = elements.date.value || today();
-  current.body = elements.body.value;
-  current.source =
-    elements.sourceLabel.value.trim() && elements.sourceUrl.value.trim()
-      ? { label: elements.sourceLabel.value, href: elements.sourceUrl.value }
-      : undefined;
+  const item = current();
+  if (!item) return;
+  item.title = elements.title.value;
+  item.body = elements.body.value;
+  if (activeSite === "thinkinghaus") {
+    item.date = elements.date.value || today();
+    item.source =
+      elements.sourceLabel.value.trim() && elements.sourceUrl.value.trim()
+        ? { label: elements.sourceLabel.value, href: elements.sourceUrl.value }
+        : undefined;
+  } else {
+    for (const input of elements.captionFields.querySelectorAll("[data-caption-id]")) {
+      const media = item.media.find((entry) => entry.id === input.dataset.captionId);
+      if (media) media.caption = input.value;
+    }
+  }
+}
+
+function portfolioMediaUrl(src) {
+  return src?.startsWith("/") ? `/portfolio-media${src}` : "";
+}
+
+function renderPortfolioPreview() {
+  const item = current();
+  elements.previewDate.textContent = "";
+  elements.previewReadingTime.textContent = "";
+  elements.previewBody.innerHTML = renderBlocks(item.body);
+  elements.previewMedia.hidden = false;
+  elements.previewMedia.innerHTML = item.media
+    .map((media, index) => {
+      const source = portfolioMediaUrl(media.src);
+      const visual = source
+        ? media.kind === "video"
+          ? `<video src="${escapeHtml(source)}" muted playsinline controls preload="metadata"></video>`
+          : `<img src="${escapeHtml(source)}" alt="${escapeHtml(media.alt || media.title || "")}" loading="lazy" />`
+        : `<div class="preview-media-placeholder">${escapeHtml(media.kind || "Media")}</div>`;
+      const caption = media.caption.trim()
+        ? `<figcaption>${renderInline(media.caption)}</figcaption>`
+        : "";
+      return `<figure data-media-index="${index}">${visual}${caption}</figure>`;
+    })
+    .join("");
 }
 
 function renderPreview() {
-  if (!current) return;
+  const item = current();
+  if (!item) return;
   updateCurrentFromFields();
-  elements.previewTitle.textContent = current.title.trim() || "Untitled";
-  elements.previewDate.textContent = formatDate(current.date);
-  elements.previewReadingTime.textContent = readingTime(current.body);
+  elements.previewTitle.textContent = item.title.trim() || "Untitled";
 
-  const paragraphs = current.body
-    .split(/\n\s*\n/)
-    .map((paragraph) => paragraph.replace(/\n/g, " ").trim())
-    .filter(Boolean)
-    .map((paragraph) => `<p>${renderInline(paragraph)}</p>`)
-    .join("");
-  const source = current.source
-    ? `<p class="preview-source"><a href="${escapeHtml(current.source.href)}" target="_blank" rel="noreferrer">${escapeHtml(current.source.label)}</a></p>`
-    : "";
-  elements.previewBody.innerHTML = paragraphs + source;
-  elements.publishButton.disabled = !current.title.trim() || !current.body.trim();
+  if (activeSite === "portfolio") renderPortfolioPreview();
+  else {
+    elements.previewDate.textContent = formatDate(item.date);
+    elements.previewReadingTime.textContent = readingTime(item.body);
+    const source = item.source
+      ? `<p class="preview-source"><a href="${escapeHtml(item.source.href)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a></p>`
+      : "";
+    elements.previewBody.innerHTML = renderBlocks(item.body) + source;
+    elements.previewMedia.hidden = true;
+    elements.previewMedia.innerHTML = "";
+  }
+  elements.publishButton.disabled = !item.title.trim() || !item.body.trim();
 }
 
 function sectionMarkup(title, items) {
   if (!items.length) return "";
-  return `
-    <section class="library-section">
-      <h2 class="library-heading">${title}</h2>
-      <ol class="post-links">
-        ${items
-          .map(
-            (post) => `
-              <li>
-                <button class="post-link ${current?.slug === post.slug ? "is-active" : ""}" type="button" data-slug="${escapeHtml(post.slug)}">
-                  <span>${escapeHtml(post.title || "Untitled")}</span>
-                  <small>${formatDate(post.date)}</small>
-                </button>
-              </li>`,
-          )
-          .join("")}
-      </ol>
-    </section>`;
+  return `<section class="library-section"><h2 class="library-heading">${title}</h2><ol class="post-links">${items
+    .map(
+      (item) => `<li><button class="post-link ${current()?.slug === item.slug ? "is-active" : ""}" type="button" data-slug="${escapeHtml(item.slug)}"><span>${escapeHtml(item.title || "Untitled")}</span><small>${activeSite === "portfolio" ? `Project ${String(item.order).padStart(2, "0")}` : formatDate(item.date)}</small></button></li>`,
+    )
+    .join("")}</ol></section>`;
 }
 
 function renderNavigation() {
-  const drafts = posts.filter((post) => post.status === "draft");
-  const published = posts.filter((post) => post.status === "published");
-  elements.navigation.innerHTML = sectionMarkup("Drafts", drafts) + sectionMarkup("Published", published);
-
+  if (activeSite === "portfolio") {
+    elements.navigation.innerHTML = sectionMarkup("Projects", site().items);
+  } else {
+    const drafts = site().items.filter((item) => item.status === "draft");
+    const published = site().items.filter((item) => item.status === "published");
+    elements.navigation.innerHTML = sectionMarkup("Drafts", drafts) + sectionMarkup("Published", published);
+  }
   for (const button of elements.navigation.querySelectorAll("[data-slug]")) {
     button.addEventListener("click", async () => {
       await flushSave();
-      selectPost(button.dataset.slug);
+      selectItem(button.dataset.slug);
     });
   }
 }
 
 function renderHistory(items) {
   elements.history.innerHTML = items.length
-    ? items
-        .map(
-          (item) => `<li>${escapeHtml(item.message)}<time datetime="${item.date}">${formatDate(item.date)}</time></li>`,
-        )
-        .join("")
+    ? items.map((item) => `<li>${escapeHtml(item.message)}<time datetime="${item.date}">${formatDate(item.date)}</time></li>`).join("")
     : "<li>No publishing history yet.</li>";
 }
 
+function renderCaptionFields() {
+  if (activeSite !== "portfolio" || !current()) {
+    elements.captionFields.innerHTML = "";
+    return;
+  }
+  elements.captionFields.innerHTML = current().media
+    .map(
+      (media, index) => `<label class="caption-field"><span><b>${String(index + 1).padStart(2, "0")}</b> ${escapeHtml(media.title || media.id)} <small>${escapeHtml(media.kind)}</small></span><textarea rows="3" data-caption-id="${escapeHtml(media.id)}" placeholder="No caption">${escapeHtml(media.caption)}</textarea></label>`,
+    )
+    .join("");
+  for (const input of elements.captionFields.querySelectorAll("textarea")) input.addEventListener("input", scheduleSave);
+}
+
 function fillFields() {
-  elements.title.value = current?.title || "";
-  elements.date.value = current?.date || today();
-  elements.body.value = current?.body || "";
-  elements.sourceLabel.value = current?.source?.label || "";
-  elements.sourceUrl.value = current?.source?.href || "";
-  elements.postState.textContent = current?.status === "published" ? "Published" : "Draft";
-  elements.postState.classList.toggle("is-published", current?.status === "published");
+  const item = current();
+  elements.title.value = item?.title || "";
+  elements.date.value = item?.date || today();
+  elements.body.value = item?.body || "";
+  elements.sourceLabel.value = item?.source?.label || "";
+  elements.sourceUrl.value = item?.source?.href || "";
+  elements.newButton.hidden = activeSite === "portfolio";
+  elements.dateField.hidden = activeSite === "portfolio";
+  elements.sourceDetails.hidden = activeSite === "portfolio";
+  elements.captionEditor.hidden = activeSite !== "portfolio";
+  elements.postState.textContent = activeSite === "portfolio" ? "Project" : item?.status === "published" ? "Published" : "Draft";
+  elements.postState.classList.toggle("is-published", activeSite === "thinkinghaus" && item?.status === "published");
+  elements.body.placeholder = activeSite === "portfolio" ? "Project introduction" : "Begin anywhere.";
+  renderCaptionFields();
   renderPreview();
   renderNavigation();
 }
 
-function selectPost(slug) {
-  current = posts.find((post) => post.slug === slug) || posts[0] || createBlankPost();
+function selectItem(slug) {
+  site().current = site().items.find((item) => item.slug === slug) || site().items[0] || createBlankPost();
   fillFields();
 }
 
 function createBlankPost() {
-  return {
-    title: "",
-    slug: "",
-    date: today(),
-    status: "draft",
-    body: "",
-  };
+  return { title: "", slug: "", date: today(), status: "draft", body: "" };
 }
 
 function setSaveState(label) {
@@ -212,7 +289,7 @@ function scheduleSave() {
   renderPreview();
   setSaveState("Unsaved changes");
   clearTimeout(saveTimer);
-  if (!current.title.trim()) return;
+  if (!current()?.title.trim()) return;
   saveTimer = setTimeout(saveCurrent, 700);
 }
 
@@ -221,10 +298,7 @@ function replaceBodySelection(text, selectionStart, selectionEnd) {
   const end = elements.body.selectionEnd;
   elements.body.setRangeText(text, start, end, "end");
   elements.body.focus();
-  elements.body.setSelectionRange(
-    start + selectionStart,
-    start + selectionEnd,
-  );
+  elements.body.setSelectionRange(start + selectionStart, start + selectionEnd);
   scheduleSave();
 }
 
@@ -237,10 +311,8 @@ function applyItalic() {
 }
 
 function openLinkDialog() {
-  const start = elements.body.selectionStart;
-  const end = elements.body.selectionEnd;
-  linkSelection = { start, end };
-  elements.linkText.value = elements.body.value.slice(start, end);
+  linkSelection = { start: elements.body.selectionStart, end: elements.body.selectionEnd };
+  elements.linkText.value = elements.body.value.slice(linkSelection.start, linkSelection.end);
   elements.linkUrl.value = "";
   elements.linkDialog.showModal();
   (elements.linkText.value ? elements.linkUrl : elements.linkText).focus();
@@ -253,7 +325,6 @@ function addLink() {
     showNotice("Use a web address beginning with https://, http://, mailto:, /, or #.");
     return;
   }
-
   elements.linkDialog.close();
   elements.body.focus();
   elements.body.setSelectionRange(linkSelection.start, linkSelection.end);
@@ -261,9 +332,20 @@ function addLink() {
   replaceBodySelection(markdown, markdown.length, markdown.length);
 }
 
+function savePayload(item) {
+  if (activeSite === "thinkinghaus") return JSON.parse(JSON.stringify(item));
+  return {
+    slug: item.slug,
+    title: item.title,
+    body: item.body,
+    captions: Object.fromEntries(item.media.map((media) => [media.id, media.caption || ""])),
+  };
+}
+
 async function saveCurrent() {
   clearTimeout(saveTimer);
-  if (!current?.title.trim()) return;
+  const item = current();
+  if (!item?.title.trim()) return;
   if (savingPromise) {
     saveAgain = true;
     await savingPromise;
@@ -274,33 +356,28 @@ async function saveCurrent() {
     return;
   }
 
-  const postBeingSaved = current;
-  const snapshot = JSON.parse(JSON.stringify(current));
+  const siteBeingSaved = activeSite;
+  const itemBeingSaved = item;
+  const snapshot = savePayload(item);
   const revisionBeingSaved = editRevision;
   setSaveState("Saving…");
 
   savingPromise = (async () => {
-    const response = await fetch("/api/save", {
+    const endpoint = siteBeingSaved === "portfolio" ? "/api/portfolio/save" : "/api/save";
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(snapshot),
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error);
-
-    if (current === postBeingSaved) {
-      if (revisionBeingSaved === editRevision) current = result.post;
-      else current.slug = result.post.slug;
-    }
-
-    const storedPost = current === postBeingSaved ? current : result.post;
-    const index = posts.findIndex(
-      (post) => post.slug === snapshot.slug || post.slug === result.post.slug,
-    );
-    if (index === -1) posts.unshift(storedPost);
-    else posts[index] = storedPost;
-    renderNavigation();
-
+    const saved = result.project || result.post;
+    const targetSite = sites[siteBeingSaved];
+    const index = targetSite.items.findIndex((entry) => entry.slug === snapshot.slug || entry.slug === saved.slug);
+    if (index === -1) targetSite.items.unshift(saved);
+    else targetSite.items[index] = saved;
+    if (activeSite === siteBeingSaved && current() === itemBeingSaved) targetSite.current = saved;
+    if (activeSite === siteBeingSaved) renderNavigation();
     if (revisionBeingSaved === editRevision) setSaveState("Saved locally");
     else saveAgain = true;
   })();
@@ -309,7 +386,7 @@ async function saveCurrent() {
     await savingPromise;
   } catch (error) {
     setSaveState("Could not save");
-    showNotice(error.message || "Could not save this draft.");
+    showNotice(error.message || "Could not save these changes.");
   } finally {
     savingPromise = null;
     if (saveAgain) {
@@ -321,35 +398,35 @@ async function saveCurrent() {
 
 async function flushSave() {
   clearTimeout(saveTimer);
-  if (current?.title.trim()) await saveCurrent();
+  if (current()?.title.trim()) await saveCurrent();
 }
 
 async function publishCurrent() {
-  if (!current?.title.trim() || !current.body.trim()) return;
+  const item = current();
+  if (!item?.title.trim() || !item.body.trim()) return;
   await flushSave();
-  const question = current.status === "published"
-    ? `Publish the latest changes to “${current.title}”?`
-    : `Publish “${current.title}” to Thinkinghaus?`;
-  if (!window.confirm(question)) return;
+  const destination = site().label;
+  if (!window.confirm(`Publish the latest changes to “${item.title}” on ${destination}?`)) return;
 
   elements.publishButton.disabled = true;
   elements.publishButton.textContent = "Publishing…";
-  setSaveState("Publishing to thinking.haus…");
-
+  setSaveState(`Publishing ${destination}…`);
   try {
-    const response = await fetch("/api/publish", {
+    const endpoint = activeSite === "portfolio" ? "/api/portfolio/publish" : "/api/publish";
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug: current.slug }),
+      body: JSON.stringify({ slug: item.slug }),
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error);
-    posts = result.posts;
-    current = posts.find((post) => post.slug === current.slug);
-    renderHistory(result.history);
+    site().items = result.projects || result.posts;
+    site().history = result.history || [];
+    site().current = site().items.find((entry) => entry.slug === item.slug) || site().items[0];
+    renderHistory(site().history);
     fillFields();
     setSaveState("Published");
-    showNotice("Published. The live site is updating now.", 5000);
+    showNotice(`Published. ${destination} is updating now.`, 5000);
   } catch (error) {
     setSaveState("Publishing paused");
     showNotice(error.message || "Publishing did not finish.", 6500);
@@ -359,17 +436,27 @@ async function publishCurrent() {
   }
 }
 
+async function switchSite(nextSite) {
+  if (nextSite === activeSite) return;
+  await flushSave();
+  activeSite = nextSite;
+  for (const button of elements.siteButtons) button.classList.toggle("is-active", button.dataset.site === activeSite);
+  elements.liveLink.href = site().url;
+  renderHistory(site().history);
+  selectItem(site().current?.slug || site().items[0]?.slug);
+  setSaveState("Saved locally");
+}
+
 for (const input of [elements.title, elements.date, elements.body, elements.sourceLabel, elements.sourceUrl]) {
   input.addEventListener("input", scheduleSave);
 }
-
+for (const button of elements.siteButtons) button.addEventListener("click", () => switchSite(button.dataset.site));
 elements.newButton.addEventListener("click", async () => {
   await flushSave();
-  current = createBlankPost();
+  site().current = createBlankPost();
   fillFields();
   elements.title.focus();
 });
-
 elements.publishButton.addEventListener("click", publishCurrent);
 elements.italicButton.addEventListener("click", applyItalic);
 elements.linkButton.addEventListener("click", openLinkDialog);
@@ -384,23 +471,29 @@ elements.body.addEventListener("keydown", (event) => {
     applyItalic();
   }
 });
-
 window.addEventListener("beforeunload", (event) => {
-  if (elements.saveState.textContent === "Unsaved changes") {
-    event.preventDefault();
-  }
+  if (elements.saveState.textContent === "Unsaved changes") event.preventDefault();
 });
 
 async function initialize() {
   try {
-    const response = await fetch("/api/posts");
-    const result = await response.json();
-    posts = result.posts;
-    renderHistory(result.history);
-    selectPost(posts[0]?.slug);
+    const [writingResponse, portfolioResponse] = await Promise.all([
+      fetch("/api/posts"),
+      fetch("/api/portfolio/projects"),
+    ]);
+    const writing = await writingResponse.json();
+    const portfolio = await portfolioResponse.json();
+    if (!writingResponse.ok) throw new Error(writing.error);
+    if (!portfolioResponse.ok) throw new Error(portfolio.error);
+    sites.thinkinghaus.items = writing.posts;
+    sites.thinkinghaus.history = writing.history;
+    sites.portfolio.items = portfolio.projects;
+    sites.portfolio.history = portfolio.history;
+    renderHistory(site().history);
+    selectItem(site().items[0]?.slug);
     setSaveState("Saved locally");
-  } catch {
-    showNotice("The studio could not read the writing folder.", 6000);
+  } catch (error) {
+    showNotice(error.message || "The studio could not read the site content.", 6000);
   }
 }
 

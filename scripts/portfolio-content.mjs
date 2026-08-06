@@ -7,6 +7,8 @@ export const portfolioRoot = process.env.PORTFOLIO_ROOT
   : path.resolve(projectRoot, "../..", "Portfolio");
 export const portfolioProjectsDirectory = path.join(portfolioRoot, "content", "projects");
 export const portfolioPublicDirectory = path.join(portfolioRoot, "public");
+const portfolioAboutFile = path.join(portfolioRoot, "content", "about.md");
+const portfolioSiteFile = path.join(portfolioRoot, "content", "site.yml");
 
 function scalar(value = "") {
   const trimmed = value.trim();
@@ -62,12 +64,31 @@ async function readProject(slug) {
   const source = await readFile(filename, "utf8");
   const { frontmatter, body } = splitProject(source);
   return {
+    type: "project",
     slug,
     title: field(frontmatter, "title"),
     order: Number(field(frontmatter, "order")) || 0,
     published: field(frontmatter, "published") !== "false",
     body: body.trim(),
     media: mediaFrom(frontmatter).filter((item) => item.id),
+  };
+}
+
+export async function readPortfolioAbout() {
+  const [body, siteSource] = await Promise.all([
+    readFile(portfolioAboutFile, "utf8"),
+    readFile(portfolioSiteFile, "utf8"),
+  ]);
+  return {
+    type: "about",
+    slug: "about",
+    title: field(siteSource, "aboutLabel") || "About & contact",
+    order: 0,
+    published: true,
+    body: body.trim(),
+    email: field(siteSource, "email"),
+    location: field(siteSource, "location"),
+    media: [],
   };
 }
 
@@ -135,4 +156,23 @@ export async function savePortfolioProject({ slug, title, body, captions = {} })
   await writeFile(temporary, nextSource, "utf8");
   await rename(temporary, filename);
   return readProject(slug);
+}
+
+export async function savePortfolioAbout({ title, body, email, location }) {
+  const siteSource = await readFile(portfolioSiteFile, "utf8");
+  const nextSiteSource = siteSource
+    .replace(/^aboutLabel:\s*.*$/m, `aboutLabel: ${JSON.stringify(String(title || "About & contact").trim())}`)
+    .replace(/^email:\s*.*$/m, `email: ${JSON.stringify(String(email || "").trim())}`)
+    .replace(/^location:\s*.*$/m, `location: ${JSON.stringify(String(location || "").trim())}`);
+  const temporaryAbout = `${portfolioAboutFile}.studio-save`;
+  const temporarySite = `${portfolioSiteFile}.studio-save`;
+  await Promise.all([
+    writeFile(temporaryAbout, `${String(body || "").trim()}\n`, "utf8"),
+    writeFile(temporarySite, nextSiteSource, "utf8"),
+  ]);
+  await Promise.all([
+    rename(temporaryAbout, portfolioAboutFile),
+    rename(temporarySite, portfolioSiteFile),
+  ]);
+  return readPortfolioAbout();
 }

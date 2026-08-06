@@ -61,7 +61,7 @@ The **View live** link opens the public site. GitHub may need a short moment aft
 
 ## Portfolio projects
 
-Choose **Portfolio** at the top of Publishing Studio, then select any project from the left side. The center column contains the project title, introductory text, and every media caption. The right side previews the project text, images, and caption sequence.
+Choose **Portfolio** at the top of Publishing Studio. **About & contact** appears first, followed by every project. The About editor controls the page copy, email address, location, and navigation label. Project editors contain the title, introductory text, and every media caption. The right side previews the selected page or project.
 
 Changes save into the portfolio’s existing project files while you work. Empty captions stay empty, which is useful when an image is self-explanatory. Choose **Publish** only when the project is ready to update `maxpfennig.haus`.
 

@@ -16,6 +16,9 @@ const elements = {
   sourceUrl: document.querySelector("#source-url-input"),
   captionEditor: document.querySelector("#caption-editor"),
   captionFields: document.querySelector("#caption-fields"),
+  contactEditor: document.querySelector("#contact-editor"),
+  contactEmail: document.querySelector("#contact-email-input"),
+  contactLocation: document.querySelector("#contact-location-input"),
   italicButton: document.querySelector("#italic-button"),
   linkButton: document.querySelector("#link-button"),
   linkDialog: document.querySelector("#link-dialog"),
@@ -115,7 +118,8 @@ function renderBlocks(value) {
       if (/^##\s+/.test(line)) return `<h3>${renderInline(line.replace(/^##\s+/, ""))}</h3>`;
       return `<p>${renderInline(line)}</p>`;
     })
-    .join("");
+    .join("")
+    .replaceAll("&lt;br&gt;", "<br>");
 }
 
 function formatDate(value) {
@@ -154,9 +158,14 @@ function updateCurrentFromFields() {
         ? { label: elements.sourceLabel.value, href: elements.sourceUrl.value }
         : undefined;
   } else {
-    for (const input of elements.captionFields.querySelectorAll("[data-caption-id]")) {
-      const media = item.media.find((entry) => entry.id === input.dataset.captionId);
-      if (media) media.caption = input.value;
+    if (item.type === "about") {
+      item.email = elements.contactEmail.value;
+      item.location = elements.contactLocation.value;
+    } else {
+      for (const input of elements.captionFields.querySelectorAll("[data-caption-id]")) {
+        const media = item.media.find((entry) => entry.id === input.dataset.captionId);
+        if (media) media.caption = input.value;
+      }
     }
   }
 }
@@ -169,7 +178,19 @@ function renderPortfolioPreview() {
   const item = current();
   elements.previewDate.textContent = "";
   elements.previewReadingTime.textContent = "";
-  elements.previewBody.innerHTML = renderBlocks(item.body);
+  const body = item.body
+    .replaceAll("{{email}}", item.email || "")
+    .replaceAll("{{location}}", item.location || "");
+  elements.previewBody.innerHTML = renderBlocks(body);
+  if (item.type === "about") {
+    elements.previewBody.insertAdjacentHTML(
+      "beforeend",
+      `<dl class="preview-contact"><div><dt>Email</dt><dd>${escapeHtml(item.email)}</dd></div><div><dt>Location</dt><dd>${escapeHtml(item.location)}</dd></div></dl>`,
+    );
+    elements.previewMedia.hidden = true;
+    elements.previewMedia.innerHTML = "";
+    return;
+  }
   elements.previewMedia.hidden = false;
   elements.previewMedia.innerHTML = item.media
     .map((media, index) => {
@@ -211,14 +232,16 @@ function sectionMarkup(title, items) {
   if (!items.length) return "";
   return `<section class="library-section"><h2 class="library-heading">${title}</h2><ol class="post-links">${items
     .map(
-      (item) => `<li><button class="post-link ${current()?.slug === item.slug ? "is-active" : ""}" type="button" data-slug="${escapeHtml(item.slug)}"><span>${escapeHtml(item.title || "Untitled")}</span><small>${activeSite === "portfolio" ? `Project ${String(item.order).padStart(2, "0")}` : formatDate(item.date)}</small></button></li>`,
+      (item) => `<li><button class="post-link ${current()?.slug === item.slug ? "is-active" : ""}" type="button" data-slug="${escapeHtml(item.slug)}"><span>${escapeHtml(item.title || "Untitled")}</span><small>${activeSite === "portfolio" ? item.type === "about" ? "Page" : `Project ${String(item.order).padStart(2, "0")}` : formatDate(item.date)}</small></button></li>`,
     )
     .join("")}</ol></section>`;
 }
 
 function renderNavigation() {
   if (activeSite === "portfolio") {
-    elements.navigation.innerHTML = sectionMarkup("Projects", site().items);
+    elements.navigation.innerHTML =
+      sectionMarkup("Site", site().items.filter((item) => item.type === "about")) +
+      sectionMarkup("Projects", site().items.filter((item) => item.type !== "about"));
   } else {
     const drafts = site().items.filter((item) => item.status === "draft");
     const published = site().items.filter((item) => item.status === "published");
@@ -239,7 +262,7 @@ function renderHistory(items) {
 }
 
 function renderCaptionFields() {
-  if (activeSite !== "portfolio" || !current()) {
+  if (activeSite !== "portfolio" || !current() || current().type === "about") {
     elements.captionFields.innerHTML = "";
     return;
   }
@@ -258,13 +281,16 @@ function fillFields() {
   elements.body.value = item?.body || "";
   elements.sourceLabel.value = item?.source?.label || "";
   elements.sourceUrl.value = item?.source?.href || "";
+  elements.contactEmail.value = item?.email || "";
+  elements.contactLocation.value = item?.location || "";
   elements.newButton.hidden = activeSite === "portfolio";
   elements.dateField.hidden = activeSite === "portfolio";
   elements.sourceDetails.hidden = activeSite === "portfolio";
-  elements.captionEditor.hidden = activeSite !== "portfolio";
-  elements.postState.textContent = activeSite === "portfolio" ? "Project" : item?.status === "published" ? "Published" : "Draft";
+  elements.captionEditor.hidden = activeSite !== "portfolio" || item?.type === "about";
+  elements.contactEditor.hidden = activeSite !== "portfolio" || item?.type !== "about";
+  elements.postState.textContent = activeSite === "portfolio" ? item?.type === "about" ? "Page" : "Project" : item?.status === "published" ? "Published" : "Draft";
   elements.postState.classList.toggle("is-published", activeSite === "thinkinghaus" && item?.status === "published");
-  elements.body.placeholder = activeSite === "portfolio" ? "Project introduction" : "Begin anywhere.";
+  elements.body.placeholder = activeSite === "portfolio" ? item?.type === "about" ? "About and contact text" : "Project introduction" : "Begin anywhere.";
   renderCaptionFields();
   renderPreview();
   renderNavigation();
@@ -335,9 +361,12 @@ function addLink() {
 function savePayload(item) {
   if (activeSite === "thinkinghaus") return JSON.parse(JSON.stringify(item));
   return {
+    type: item.type,
     slug: item.slug,
     title: item.title,
     body: item.body,
+    email: item.email,
+    location: item.location,
     captions: Object.fromEntries(item.media.map((media) => [media.id, media.caption || ""])),
   };
 }
@@ -420,7 +449,7 @@ async function publishCurrent() {
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error);
-    site().items = result.projects || result.posts;
+    site().items = result.posts || (result.about ? [result.about, ...result.projects] : result.projects);
     site().history = result.history || [];
     site().current = site().items.find((entry) => entry.slug === item.slug) || site().items[0];
     renderHistory(site().history);
@@ -447,7 +476,7 @@ async function switchSite(nextSite) {
   setSaveState("Saved locally");
 }
 
-for (const input of [elements.title, elements.date, elements.body, elements.sourceLabel, elements.sourceUrl]) {
+for (const input of [elements.title, elements.date, elements.body, elements.sourceLabel, elements.sourceUrl, elements.contactEmail, elements.contactLocation]) {
   input.addEventListener("input", scheduleSave);
 }
 for (const button of elements.siteButtons) button.addEventListener("click", () => switchSite(button.dataset.site));
@@ -487,7 +516,7 @@ async function initialize() {
     if (!portfolioResponse.ok) throw new Error(portfolio.error);
     sites.thinkinghaus.items = writing.posts;
     sites.thinkinghaus.history = writing.history;
-    sites.portfolio.items = portfolio.projects;
+    sites.portfolio.items = [portfolio.about, ...portfolio.projects];
     sites.portfolio.history = portfolio.history;
     renderHistory(site().history);
     selectItem(site().items[0]?.slug);

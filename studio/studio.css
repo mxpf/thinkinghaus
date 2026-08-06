@@ -371,6 +371,38 @@ button {
   border-top: 1px solid var(--line);
 }
 
+.contact-editor {
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-fields label span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.contact-fields input {
+  width: 100%;
+  padding: 7px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  outline: 0;
+  background: transparent;
+}
+
+.contact-fields input:focus {
+  border-color: var(--ink);
+}
+
 .caption-editor-heading {
   display: flex;
   align-items: baseline;
@@ -573,6 +605,29 @@ button {
   line-height: 16px;
 }
 
+.preview-contact {
+  padding-top: 22px;
+  margin: 42px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.preview-contact div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  padding: 5px 0;
+}
+
+.preview-contact dt,
+.preview-contact dd {
+  margin: 0;
+}
+
+.preview-contact dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .preview-article a {
   color: inherit;
   text-decoration-thickness: 1px;
@@ -725,6 +780,10 @@ button {
   .caption-field {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .contact-fields {
+    grid-template-columns: 1fr;
   }
 
   .history {

@@ -15,7 +15,9 @@ import { generatePostsModule } from "./generate-posts.mjs";
 import {
   portfolioPublicDirectory,
   portfolioRoot,
+  readPortfolioAbout,
   readPortfolioProjects,
+  savePortfolioAbout,
   savePortfolioProject,
 } from "./portfolio-content.mjs";
 import { publishPortfolio } from "./publish-portfolio.mjs";
@@ -69,7 +71,7 @@ async function portfolioHistory() {
   try {
     const { stdout } = await exec(
       "git",
-      ["log", "-8", "--date=short", "--format=%h%x09%ad%x09%s", "--", "content/projects"],
+      ["log", "-8", "--date=short", "--format=%h%x09%ad%x09%s", "--", "content/projects", "content/about.md", "content/site.yml"],
       { cwd: portfolioRoot },
     );
     return stdout
@@ -141,6 +143,7 @@ async function handler(request, response) {
 
     if (request.method === "GET" && url.pathname === "/api/portfolio/projects") {
       return json(response, {
+        about: await readPortfolioAbout(),
         projects: await readPortfolioProjects(),
         history: await portfolioHistory(),
       });
@@ -180,7 +183,9 @@ async function handler(request, response) {
 
     if (request.method === "POST" && url.pathname === "/api/portfolio/save") {
       const input = await bodyFrom(request);
-      const project = await savePortfolioProject(input);
+      const project = input.type === "about" || input.slug === "about"
+        ? await savePortfolioAbout(input)
+        : await savePortfolioProject(input);
       return json(response, { project });
     }
 
@@ -204,6 +209,7 @@ async function handler(request, response) {
       const result = await publishPortfolio();
       return json(response, {
         ...result,
+        about: await readPortfolioAbout(),
         projects: await readPortfolioProjects(),
         history: await portfolioHistory(),
       });

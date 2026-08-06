@@ -36,7 +36,12 @@ async function ensureSafeWorkingTree() {
     .split("\n")
     .filter(Boolean)
     .map((line) => line.slice(3))
-    .filter((file) => !/^content\/projects\/project-\d+\/project\.md$/.test(file));
+    .filter(
+      (file) =>
+        file !== "content/about.md" &&
+        file !== "content/site.yml" &&
+        !/^content\/projects\/project-\d+\/project\.md$/.test(file),
+    );
   if (unsafe.length) {
     throw new Error(`Publishing paused because other portfolio files have unfinished changes: ${unsafe.join(", ")}`);
   }
@@ -94,7 +99,7 @@ async function removeFinderMetadata(directory) {
 export async function publishPortfolio() {
   await ensureSafeWorkingTree();
   await run("npm", ["run", "build:pages"]);
-  await run("git", ["add", "--", "content/projects"]);
+  await run("git", ["add", "--", "content/projects", "content/about.md", "content/site.yml"]);
   if (await hasStagedChanges()) await run("git", ["commit", "-m", "Update portfolio project copy"]);
 
   await run("git", ["fetch", "personal-site", "main"]);

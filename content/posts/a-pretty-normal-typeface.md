@@ -1,5 +1,5 @@
 ---
-title: "Shhh! This is typeface!"
+title: "The silent type"
 slug: a-pretty-normal-typeface
 date: 2026-08-06
 status: published

@@ -2,7 +2,7 @@
 
 export const generatedPosts = [
   {
-    "title": "Shhh! This is typeface!",
+    "title": "The silent type",
     "slug": "a-pretty-normal-typeface",
     "date": "August 6, 2026",
     "readingTime": "2 minutes",

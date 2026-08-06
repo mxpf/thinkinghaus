@@ -80,7 +80,7 @@ export const generatedPosts = [
     ]
   },
   {
-    "title": "The Work Between the Work",
+    "title": "The work between the work",
     "slug": "the-work-between-the-work",
     "date": "August 5, 2026",
     "readingTime": "3 minutes",

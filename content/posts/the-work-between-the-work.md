@@ -1,5 +1,5 @@
 ---
-title: "The Work Between the Work"
+title: "The work between the work"
 slug: the-work-between-the-work
 date: 2026-08-05
 status: published

@@ -90,5 +90,5 @@ export async function publishSite() {
     }
   }
 
-  return { url: "https://thinking.haus" };
+  return { url: "http://thinking.haus" };
 }

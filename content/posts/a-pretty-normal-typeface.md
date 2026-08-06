@@ -32,6 +32,4 @@ Of course, Untitled Sans is still designed. Its plainness is the result of many 
 
 There is something appealing about making a thing that works well without constantly advertising how much work went into it.
 
-It does not need to disappear completely.
-
-It just knows when to be quiet.
+It does not need to disappear completely. It just knows when to be quiet.

@@ -19,8 +19,7 @@ export const generatedPosts = [
       "That is probably why Untitled Sans feels right for this site. The writing can wander around and follow unusual ideas. The letters mostly stay put.",
       "Of course, Untitled Sans is still designed. Its plainness is the result of many small choices. It just does not ask me to think about those choices every time I read a paragraph.",
       "There is something appealing about making a thing that works well without constantly advertising how much work went into it.",
-      "It does not need to disappear completely.",
-      "It just knows when to be quiet."
+      "It does not need to disappear completely. It just knows when to be quiet."
     ],
     "source": {
       "label": "Read Kris Sowersby’s notes on the Untitled Collection",

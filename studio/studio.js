@@ -10,6 +10,13 @@ const elements = {
   body: document.querySelector("#body-input"),
   sourceLabel: document.querySelector("#source-label-input"),
   sourceUrl: document.querySelector("#source-url-input"),
+  italicButton: document.querySelector("#italic-button"),
+  linkButton: document.querySelector("#link-button"),
+  linkDialog: document.querySelector("#link-dialog"),
+  linkForm: document.querySelector("#link-form"),
+  linkText: document.querySelector("#link-text-input"),
+  linkUrl: document.querySelector("#link-url-input"),
+  linkCancel: document.querySelector("#link-cancel-button"),
   previewTitle: document.querySelector("#preview-title"),
   previewDate: document.querySelector("#preview-date"),
   previewReadingTime: document.querySelector("#preview-reading-time"),
@@ -24,6 +31,7 @@ let savingPromise = null;
 let saveAgain = false;
 let noticeTimer = null;
 let editRevision = 0;
+let linkSelection = { start: 0, end: 0 };
 
 function today() {
   return new Date().toISOString().slice(0, 10);
@@ -36,6 +44,36 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function isSafeHref(href) {
+  if (href.startsWith("/") || href.startsWith("#")) return true;
+  try {
+    const protocol = new URL(href).protocol;
+    return protocol === "http:" || protocol === "https:" || protocol === "mailto:";
+  } catch {
+    return false;
+  }
+}
+
+function renderInline(value) {
+  const pattern = /\[([^\]]+)\]\(([^)\s]+)\)|\*([^*\n]+)\*|_([^_\n]+)_/g;
+  let output = "";
+  let cursor = 0;
+
+  for (const match of value.matchAll(pattern)) {
+    const index = match.index ?? 0;
+    output += escapeHtml(value.slice(cursor, index));
+    if (match[1] && match[2] && isSafeHref(match[2])) {
+      output += `<a href="${escapeHtml(match[2])}" rel="noreferrer">${renderInline(match[1])}</a>`;
+    } else if (match[3] || match[4]) {
+      output += `<em>${escapeHtml(match[3] || match[4])}</em>`;
+    } else {
+      output += escapeHtml(match[0]);
+    }
+    cursor = index + match[0].length;
+  }
+  return output + escapeHtml(value.slice(cursor));
 }
 
 function formatDate(value) {
@@ -84,7 +122,7 @@ function renderPreview() {
     .split(/\n\s*\n/)
     .map((paragraph) => paragraph.replace(/\n/g, " ").trim())
     .filter(Boolean)
-    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .map((paragraph) => `<p>${renderInline(paragraph)}</p>`)
     .join("");
   const source = current.source
     ? `<p class="preview-source"><a href="${escapeHtml(current.source.href)}" target="_blank" rel="noreferrer">${escapeHtml(current.source.label)}</a></p>`
@@ -176,6 +214,51 @@ function scheduleSave() {
   clearTimeout(saveTimer);
   if (!current.title.trim()) return;
   saveTimer = setTimeout(saveCurrent, 700);
+}
+
+function replaceBodySelection(text, selectionStart, selectionEnd) {
+  const start = elements.body.selectionStart;
+  const end = elements.body.selectionEnd;
+  elements.body.setRangeText(text, start, end, "end");
+  elements.body.focus();
+  elements.body.setSelectionRange(
+    start + selectionStart,
+    start + selectionEnd,
+  );
+  scheduleSave();
+}
+
+function applyItalic() {
+  const start = elements.body.selectionStart;
+  const end = elements.body.selectionEnd;
+  const selected = elements.body.value.slice(start, end);
+  const content = selected || "italic text";
+  replaceBodySelection(`*${content}*`, 1, content.length + 1);
+}
+
+function openLinkDialog() {
+  const start = elements.body.selectionStart;
+  const end = elements.body.selectionEnd;
+  linkSelection = { start, end };
+  elements.linkText.value = elements.body.value.slice(start, end);
+  elements.linkUrl.value = "";
+  elements.linkDialog.showModal();
+  (elements.linkText.value ? elements.linkUrl : elements.linkText).focus();
+}
+
+function addLink() {
+  const label = elements.linkText.value.trim();
+  const href = elements.linkUrl.value.trim();
+  if (!label || !isSafeHref(href)) {
+    showNotice("Use a web address beginning with https://, http://, mailto:, /, or #.");
+    return;
+  }
+
+  elements.linkDialog.close();
+  elements.body.focus();
+  elements.body.setSelectionRange(linkSelection.start, linkSelection.end);
+  const markdown = `[${label}](${href})`;
+  replaceBodySelection(markdown, markdown.length, markdown.length);
 }
 
 async function saveCurrent() {
@@ -288,6 +371,19 @@ elements.newButton.addEventListener("click", async () => {
 });
 
 elements.publishButton.addEventListener("click", publishCurrent);
+elements.italicButton.addEventListener("click", applyItalic);
+elements.linkButton.addEventListener("click", openLinkDialog);
+elements.linkCancel.addEventListener("click", () => elements.linkDialog.close());
+elements.linkForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  addLink();
+});
+elements.body.addEventListener("keydown", (event) => {
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "i") {
+    event.preventDefault();
+    applyItalic();
+  }
+});
 
 window.addEventListener("beforeunload", (event) => {
   if (elements.saveState.textContent === "Unsaved changes") {

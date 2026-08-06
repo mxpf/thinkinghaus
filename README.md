@@ -25,6 +25,16 @@ The title creates the page address automatically. The date and reading time are 
 
 A new piece remains a private draft until **Publish** is chosen. Drafts can be fragments, notes, or unfinished essays. They do not need to justify themselves by becoming public.
 
+### Add italics or an inline link
+
+Select words in the writing area, then choose **Italic** or **Link** from the small formatting bar.
+
+Italic text uses the actual Untitled Sans Regular Italic face. **Command-I** also applies italics when the cursor is in the writing area.
+
+For a link, the selected words become the link text. Add the destination in the dialog and choose **Add link**. The live preview shows both styles before publishing.
+
+The Markdown remains visible in the writing file—`*italic text*` and `[linked text](https://example.com)`—so the essays stay portable and understandable outside the studio.
+
 ### Revise something
 
 Choose any essay from the Published list and edit it directly. Changes save locally while you work, but the live essay remains untouched until **Publish** is chosen.

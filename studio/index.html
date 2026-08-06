@@ -36,6 +36,11 @@
         </div>
         <label class="sr-only" for="title-input">Title</label>
         <textarea id="title-input" class="title-input" rows="2" placeholder="Untitled"></textarea>
+        <div class="formatting-toolbar" aria-label="Text formatting">
+          <button id="italic-button" type="button"><em>Italic</em></button>
+          <button id="link-button" type="button">Link</button>
+          <span>Select text, then choose a style.</span>
+        </div>
         <label class="sr-only" for="body-input">Writing</label>
         <textarea id="body-input" class="body-input" placeholder="Begin anywhere."></textarea>
 
@@ -68,6 +73,23 @@
     </div>
 
     <div class="notice" id="notice" role="status" aria-live="polite"></div>
+    <dialog class="link-dialog" id="link-dialog">
+      <form method="dialog" id="link-form">
+        <h2>Add a link</h2>
+        <label>
+          <span>Text</span>
+          <input id="link-text-input" type="text" required />
+        </label>
+        <label>
+          <span>Web address</span>
+          <input id="link-url-input" type="text" inputmode="url" placeholder="https://" required />
+        </label>
+        <div class="dialog-actions">
+          <button value="cancel" type="button" id="link-cancel-button">Cancel</button>
+          <button value="add" type="submit">Add link</button>
+        </div>
+      </form>
+    </dialog>
     <script type="module" src="/studio.js"></script>
   </body>
 </html>

@@ -63,6 +63,10 @@ async function sendAsset(response, pathname) {
     "/": ["index.html", "text/html; charset=utf-8"],
     "/studio.css": ["studio.css", "text/css; charset=utf-8"],
     "/studio.js": ["studio.js", "text/javascript; charset=utf-8"],
+    "/fonts/UntitledSansWeb-RegularItalic.woff": [
+      "../public/fonts/UntitledSansWeb-RegularItalic.woff",
+      "font/woff",
+    ],
   };
   const asset = assets[pathname];
   if (!asset) return false;

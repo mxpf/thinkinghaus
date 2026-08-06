@@ -43,7 +43,10 @@ export function slugify(value) {
 }
 
 export function calculateReadingTime(body) {
-  const words = body.trim().match(/[\p{L}\p{N}’'-]+/gu)?.length ?? 0;
+  const readableBody = body
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_]/g, "");
+  const words = readableBody.trim().match(/[\p{L}\p{N}’'-]+/gu)?.length ?? 0;
   const minutes = Math.max(1, Math.ceil(words / 180));
   return `${minutes} minute${minutes === 1 ? "" : "s"}`;
 }

@@ -7,6 +7,14 @@
   --green: #2e5d45;
 }
 
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("/fonts/UntitledSansWeb-RegularItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -278,6 +286,34 @@ button {
   background: transparent;
 }
 
+.formatting-toolbar {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 4px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.formatting-toolbar button {
+  min-height: 28px;
+  padding: 0 9px;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.formatting-toolbar button:hover,
+.formatting-toolbar button:focus-visible {
+  background: var(--panel);
+}
+
+.formatting-toolbar span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .title-input {
   min-height: 92px;
   overflow: hidden;
@@ -378,6 +414,82 @@ button {
   text-underline-offset: 3px;
 }
 
+.preview-article em {
+  font-style: italic;
+}
+
+.preview-article a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.link-dialog {
+  width: min(420px, calc(100vw - 32px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 22px 80px rgba(28, 28, 26, 0.2);
+}
+
+.link-dialog::backdrop {
+  background: rgba(28, 28, 26, 0.26);
+}
+
+.link-dialog form {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.link-dialog h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.link-dialog label span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.link-dialog input {
+  width: 100%;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  outline: 0;
+  background: transparent;
+}
+
+.link-dialog input:focus {
+  border-color: var(--ink);
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dialog-actions button {
+  min-height: 34px;
+  padding: 0 13px;
+  border-radius: 3px;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.dialog-actions button[type="submit"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .notice {
   position: fixed;
   z-index: 20;
@@ -449,6 +561,10 @@ button {
 
   .body-input {
     min-height: 60vh;
+  }
+
+  .formatting-toolbar span {
+    display: none;
   }
 }
 

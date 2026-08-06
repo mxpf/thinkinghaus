@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "../Footer";
+import { InlineText } from "../InlineText";
+import { stripInlineMarkdown } from "../inline-markdown";
 import { getPost, posts } from "../posts";
 
 type PageProps = {
@@ -16,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPost(slug);
   return {
     title: post ? `${post.title} — Thinkinghaus` : "Thinkinghaus",
-    description: post?.paragraphs[0],
+    description: post ? stripInlineMarkdown(post.paragraphs[0]) : undefined,
   };
 }
 
@@ -50,7 +52,7 @@ export default async function PostPage({ params }: PageProps) {
           </header>
           <div className="article-body">
             {post.paragraphs.map((paragraph, index) => (
-              <p key={`${index}-${paragraph}`}>{paragraph}</p>
+              <p key={`${index}-${paragraph}`}><InlineText text={paragraph} /></p>
             ))}
             {post.source ? (
               <p className="article-source"><a href={post.source.href}>{post.source.label}</a></p>

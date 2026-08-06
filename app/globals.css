@@ -3,6 +3,14 @@
   --blog-dark: #1c1c1a;
 }
 
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("/fonts/UntitledSansWeb-RegularItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -146,10 +154,14 @@ body {
   margin-top: 48px !important;
 }
 
-.article-source a {
+.article-body a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+.article-body em {
+  font-style: italic;
 }
 
 .article-column > .footer {

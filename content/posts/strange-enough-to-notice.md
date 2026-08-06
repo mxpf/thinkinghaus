@@ -4,6 +4,8 @@ slug: strange-enough-to-notice
 date: 2026-08-05
 status: published
 publishedAt: 2026-08-05T15:00:00.000Z
+sourceLabel: "Visit Minnewaska State Park Preserve"
+sourceHref: "https://parks.ny.gov/visit/state-parks/minnewaska-state-park-preserve"
 ---
 
 On an unusually warm weekday in April, I committed a small crime of opportunity.

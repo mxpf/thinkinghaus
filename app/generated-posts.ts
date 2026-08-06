@@ -81,7 +81,11 @@ export const generatedPosts = [
       "Chance matters in my work for the same reason. I bring in another person, an unfamiliar reference, a random constraint, or AI because I want something to enter that I couldn’t have planned by myself.",
       "On a cover design for the Las Vegas Sands, I was looking for a natural image that could sit beside an architectural detail with a curling form. AI produced a picture of fiddleheads. Strangely, their curves mirrored the architecture and accidentally formed an S, for Sands.",
       "I would not have planned it, but I still had to notice it. Chance can place something in front of me. It can’t make me care or decide what to do with it. But if I'm open to it, can go to a park, walk to a waterfall, and come home, having a day strange enough to notice things."
-    ]
+    ],
+    "source": {
+      "label": "Visit Minnewaska State Park Preserve",
+      "href": "https://parks.ny.gov/visit/state-parks/minnewaska-state-park-preserve"
+    }
   },
   {
     "title": "The work between the work",

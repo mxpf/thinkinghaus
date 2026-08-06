@@ -1,5 +1,5 @@
 ---
-title: "The utility of an empty mind"
+title: "The gift of an empty mind"
 slug: the-usefulness-of-an-empty-mind
 date: 2026-08-06
 status: published

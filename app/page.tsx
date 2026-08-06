@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Footer } from "./Footer";
 import { posts } from "./posts";
 
+const staticExport = process.env.STATIC_EXPORT === "1";
+
 export default function Home() {
   return (
     <main className="site index-page">
@@ -12,7 +14,7 @@ export default function Home() {
           <ol className="post-list">
             {posts.map((post) => (
               <li key={post.slug}>
-                <Link href={`/${post.slug}`}>{post.title}</Link>
+                <Link href={staticExport ? `/${post.slug}.html` : `/${post.slug}`}>{post.title}</Link>
               </li>
             ))}
           </ol>

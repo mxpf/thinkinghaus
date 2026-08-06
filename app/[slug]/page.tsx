@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Footer } from "../Footer";
 import { InlineText } from "../InlineText";
 import { stripInlineMarkdown } from "../inline-markdown";
@@ -30,10 +30,10 @@ export default async function PostPage({ params }: PageProps) {
     return (
       <main className="site article-page">
         <div className="article-frame">
-          <Link className="desktop-brand" href="/">Thinkinghaus</Link>
+          <a className="desktop-brand" href="/">Thinkinghaus</a>
           <article className="article-column">
             <h1>Nothing here yet.</h1>
-            <p><Link href="/">Back to the notes.</Link></p>
+            <p><a href="/">Back to the notes.</a></p>
           </article>
         </div>
       </main>
@@ -43,7 +43,7 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <main className="site article-page">
       <div className="article-frame">
-        <Link className="desktop-brand" href="/">Thinkinghaus</Link>
+        <a className="desktop-brand" href="/">Thinkinghaus</a>
         <article className="article-column">
           <header className="article-header">
             <h1>{post.title}</h1>

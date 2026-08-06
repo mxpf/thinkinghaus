@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { Footer } from "./Footer";
 import { posts } from "./posts";
 
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="site index-page">
       <div className="index-frame">
-        <Link className="desktop-brand" href="/">Thinkinghaus</Link>
+        <a className="desktop-brand" href="/">Thinkinghaus</a>
         <div className="index-column">
           <h1 className="sr-only">Thinkinghaus</h1>
           <ol className="post-list">

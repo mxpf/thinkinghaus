@@ -20,9 +20,10 @@ const elements = {
 let posts = [];
 let current = null;
 let saveTimer = null;
-let saving = false;
+let savingPromise = null;
 let saveAgain = false;
 let noticeTimer = null;
+let editRevision = 0;
 
 function today() {
   return new Date().toISOString().slice(0, 10);
@@ -168,6 +169,7 @@ function setSaveState(label) {
 }
 
 function scheduleSave() {
+  editRevision += 1;
   updateCurrentFromFields();
   renderPreview();
   setSaveState("Unsaved changes");
@@ -179,34 +181,54 @@ function scheduleSave() {
 async function saveCurrent() {
   clearTimeout(saveTimer);
   if (!current?.title.trim()) return;
-  if (saving) {
+  if (savingPromise) {
     saveAgain = true;
+    await savingPromise;
+    if (saveAgain) {
+      saveAgain = false;
+      return saveCurrent();
+    }
     return;
   }
 
-  saving = true;
+  const postBeingSaved = current;
+  const snapshot = JSON.parse(JSON.stringify(current));
+  const revisionBeingSaved = editRevision;
   setSaveState("Saving…");
-  try {
+
+  savingPromise = (async () => {
     const response = await fetch("/api/save", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(current),
+      body: JSON.stringify(snapshot),
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error);
 
-    const previousSlug = current.slug;
-    current = result.post;
-    const index = posts.findIndex((post) => post.slug === previousSlug || post.slug === current.slug);
-    if (index === -1) posts.unshift(current);
-    else posts[index] = current;
-    setSaveState("Saved locally");
-    fillFields();
+    if (current === postBeingSaved) {
+      if (revisionBeingSaved === editRevision) current = result.post;
+      else current.slug = result.post.slug;
+    }
+
+    const storedPost = current === postBeingSaved ? current : result.post;
+    const index = posts.findIndex(
+      (post) => post.slug === snapshot.slug || post.slug === result.post.slug,
+    );
+    if (index === -1) posts.unshift(storedPost);
+    else posts[index] = storedPost;
+    renderNavigation();
+
+    if (revisionBeingSaved === editRevision) setSaveState("Saved locally");
+    else saveAgain = true;
+  })();
+
+  try {
+    await savingPromise;
   } catch (error) {
     setSaveState("Could not save");
     showNotice(error.message || "Could not save this draft.");
   } finally {
-    saving = false;
+    savingPromise = null;
     if (saveAgain) {
       saveAgain = false;
       await saveCurrent();

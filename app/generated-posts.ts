@@ -39,7 +39,11 @@ export const generatedPosts = [
       "This book is not a manual for mastering Zen. It's a manual for taking aim at that part of me that wants to master it. Which makes it a manual for mastering Zen. Which makes it…",
       "This book does not make Zen easy.",
       "It does makes simplicity seem like enough for me to work on."
-    ]
+    ],
+    "source": {
+      "label": "Zen Mind, Beginner's Mind",
+      "href": "https://search.worldcat.org/title/1137753173"
+    }
   },
   {
     "title": "The Odyssey",

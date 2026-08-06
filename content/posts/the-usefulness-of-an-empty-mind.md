@@ -4,6 +4,8 @@ slug: the-usefulness-of-an-empty-mind
 date: 2026-08-06
 status: published
 publishedAt: 2026-08-06T14:00:00.000Z
+sourceLabel: "Zen Mind, Beginner's Mind"
+sourceHref: "https://search.worldcat.org/title/1137753173"
 ---
 
 One of my favorite books—favorite manuals, really—is Zen Mind, Beginner's Mind, a book by the Zen monk Shunryu Suzuki.

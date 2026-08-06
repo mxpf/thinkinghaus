@@ -22,4 +22,4 @@ That is probably why Untitled Sans feels right for both my portfolio site and fo
 
 Untitled Sans is still designed. Its plainness is the result of a mountain of small, thoughtful, beautiful choices. It just doesn’t ask me to admire and praise those choices every time I read a paragraph.
 
-There is something deeply appealing about making a thing that works so incredibly well without constantly advertising how much work went into it, that knows how to be quiet.
+There is something deeply appealing to me about making something that works so incredibly well without constantly advertising how much work went into it, something that knows how to be quiet.

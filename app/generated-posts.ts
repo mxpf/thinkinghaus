@@ -14,7 +14,7 @@ export const generatedPosts = [
       "In design, as in life, that is way harder than it sounds. Designers are generally encouraged to make things memorable. A plain typeface can feel like a missed opportunity. But most of the time, I do not need the typeface to be the most interesting thing on the page. I need it to help me read.",
       "That is probably why Untitled Sans feels right for both my portfolio site and for this site. My work and my writing can wander around and follow unusual ideas. The letters mostly stay put.",
       "Untitled Sans is still designed. Its plainness is the result of a mountain of small, thoughtful, beautiful choices. It just doesn’t ask me to admire and praise those choices every time I read a paragraph.",
-      "There is something deeply appealing about making a thing that works so incredibly well without constantly advertising how much work went into it, that knows how to be quiet."
+      "There is something deeply appealing to me about making something that works so incredibly well without constantly advertising how much work went into it, something that knows how to be quiet."
     ],
     "source": {
       "label": "Read Kris Sowersby’s notes on the Untitled Collection",

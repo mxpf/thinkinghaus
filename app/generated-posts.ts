@@ -41,7 +41,7 @@ export const generatedPosts = [
       "It does makes simplicity seem like enough for me to work on."
     ],
     "source": {
-      "label": "Zen Mind, Beginner's Mind",
+      "label": "Borrow Zen Mind, Beginner's Mind",
       "href": "https://search.worldcat.org/title/1137753173"
     }
   },

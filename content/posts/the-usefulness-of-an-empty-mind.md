@@ -4,7 +4,7 @@ slug: the-usefulness-of-an-empty-mind
 date: 2026-08-06
 status: published
 publishedAt: 2026-08-06T14:00:00.000Z
-sourceLabel: "Zen Mind, Beginner's Mind"
+sourceLabel: "Borrow Zen Mind, Beginner's Mind"
 sourceHref: "https://search.worldcat.org/title/1137753173"
 ---
 

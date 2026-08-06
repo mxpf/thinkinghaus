@@ -14,7 +14,7 @@ export default function Home() {
           <ol className="post-list">
             {posts.map((post) => (
               <li key={post.slug}>
-                <Link href={staticExport ? `/${post.slug}.html` : `/${post.slug}`}>{post.title}</Link>
+                <a href={staticExport ? `/${post.slug}.html` : `/${post.slug}`}>{post.title}</a>
               </li>
             ))}
           </ol>

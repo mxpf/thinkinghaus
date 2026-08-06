@@ -4,11 +4,11 @@ slug: the-usefulness-of-an-empty-mind
 date: 2026-08-06
 status: published
 publishedAt: 2026-08-06T14:00:00.000Z
-sourceLabel: "Borrow Zen Mind, Beginner's Mind"
+sourceLabel: "Read Zen Mind, Beginner's Mind"
 sourceHref: "https://search.worldcat.org/title/1137753173"
 ---
 
-One of my favorite books—favorite manuals, really—is Zen Mind, Beginner's Mind, a book by the Zen monk Shunryu Suzuki.
+One of my favorite books—favorite manuals, really—is *Zen Mind, Beginner's Mind,* a book by the Zen monk Shunryu Suzuki.
 
 He says, “In the beginner’s mind there are many possibilities, in the expert’s, there are few.”
 
@@ -20,9 +20,9 @@ The book is assembled from talks and feels spoken. As you move through it, ideas
 
 He talks about posture, breathing, repetition, effort, and the ordinary difficulty of sitting still. The spiritual life he describes is visceral. It’s in my hands, my spine, my willingness to sit and practice without turning it into an achievement.
 
-But I like practices that produce results! I want to know whether I am progressing! Even when I’m actively trying to become less ambitious, I can become ambitious about becoming less ambitious.
+But I *like* practices that produce results! I want to know whether I am progressing! Even when I’m actively trying to become less ambitious, I can become ambitious about becoming less ambitious.
 
-His advice is to return to the activity itself. Why sit? Because you are sitting. Breathe because you are breathing. Do the thing without constantly stepping outside it to decide what it means, what it means about you. I cannot say I consistently live this way, but I deeply respect and value the freedom in it.
+His advice is to return to the activity itself. Why sit? Because you are *sitting*. Breathe because you are breathing. Do the thing without constantly stepping outside it to decide what it means, what it means about you. I cannot say I consistently live this way, but I deeply respect and value the freedom in it.
 
 Beginner’s mind may be less about innocence than repeatedly setting down what I think I know. Not throwing it away, just…loosening my grip long enough for something else to appear.
 

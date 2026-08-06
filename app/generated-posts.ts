@@ -8,7 +8,7 @@ export const generatedPosts = [
     "readingTime": "2 minutes",
     "paragraphs": [
       "Untitled Sans began as an attempt to make another typeface plainer.",
-      "Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, returned to it several years later, and nearly threw it out. Reading about the Super Normal project eventually helped him understand why a deliberately ordinary typeface might be worth finishing.",
+      "Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, returned to it several years later, and nearly threw it out. Reading about the [Super Normal project](https://jaspermorrison.com/exhibitions/2000-2009/super-normal) eventually helped him understand why a deliberately ordinary typeface might be worth finishing.",
       "I like that the reasoning came later. Design processes are often written up as though every decision followed neatly from the one before it. Mine rarely work that way. I try things. I change my mind. I forget why I started. Occasionally I end up with something useful.",
       "Sowersby describes removing traces of his own recognizable style from the letters. His goal wasn’t to make the typeface distinctive. It was to make something that could be successful without bringing a ton of baggage along with it.",
       "In design, as in life, that is extremely difficult to pull off. Designers are generally encouraged to—and take delight in—making things memorable. A plain typeface can feel like a missed opportunity. But most of the time I don’t need the type to be the most interesting thing on the page. I need it to help me read.",
@@ -27,21 +27,21 @@ export const generatedPosts = [
     "date": "August 6, 2026",
     "readingTime": "3 minutes",
     "paragraphs": [
-      "One of my favorite books—favorite manuals, really—is Zen Mind, Beginner's Mind, a book by the Zen monk Shunryu Suzuki.",
+      "One of my favorite books—favorite manuals, really—is *Zen Mind, Beginner's Mind,* a book by the Zen monk Shunryu Suzuki.",
       "He says, “In the beginner’s mind there are many possibilities, in the expert’s, there are few.”",
       "Well, expertise is darn useful: it recognizes patterns, avoids old mistakes, it knows which details matter. But it can also become a kind of compression. The more I know about something, the less of it I may actually see. I see the category before I see the thing.",
       "Suzuki isn't telling us to strive for stupidity. Beginner’s mind isn't the absence of experience or knowledge. It's a way of standing in both without letting the shoes turn to cement. Easier said than done for sure.",
       "The book is assembled from talks and feels spoken. As you move through it, ideas appear, disappear, return slightly changed…sometimes an explanation leaves me less certain than when it began. Seems appropriate.",
       "He talks about posture, breathing, repetition, effort, and the ordinary difficulty of sitting still. The spiritual life he describes is visceral. It’s in my hands, my spine, my willingness to sit and practice without turning it into an achievement.",
-      "But I like practices that produce results! I want to know whether I am progressing! Even when I’m actively trying to become less ambitious, I can become ambitious about becoming less ambitious.",
-      "His advice is to return to the activity itself. Why sit? Because you are sitting. Breathe because you are breathing. Do the thing without constantly stepping outside it to decide what it means, what it means about you. I cannot say I consistently live this way, but I deeply respect and value the freedom in it.",
+      "But I *like* practices that produce results! I want to know whether I am progressing! Even when I’m actively trying to become less ambitious, I can become ambitious about becoming less ambitious.",
+      "His advice is to return to the activity itself. Why sit? Because you are *sitting*. Breathe because you are breathing. Do the thing without constantly stepping outside it to decide what it means, what it means about you. I cannot say I consistently live this way, but I deeply respect and value the freedom in it.",
       "Beginner’s mind may be less about innocence than repeatedly setting down what I think I know. Not throwing it away, just…loosening my grip long enough for something else to appear.",
       "This book is not a manual for mastering Zen. It's a manual for taking aim at that part of me that wants to master it. Which makes it a manual for mastering Zen. Which makes it…",
       "This book does not make Zen easy.",
       "It does makes simplicity seem like enough for me to work on."
     ],
     "source": {
-      "label": "Borrow Zen Mind, Beginner's Mind",
+      "label": "Read Zen Mind, Beginner's Mind",
       "href": "https://search.worldcat.org/title/1137753173"
     }
   },
@@ -101,7 +101,7 @@ export const generatedPosts = [
       "A good idea can fail because it was introduced at the wrong moment, separated from its reason, or handed to someone without enough context to continue it. An ordinary idea can improve because someone asked the right question early enough.",
       "A lot of this work is translation.",
       "Someone asks for more impact. They may mean contrast, confidence, or a clearer sense of what matters first. They may simply be worried that no one will pay attention.",
-      "The request is rarely the whole request. I try to listen for the concern underneath the words. Naming it can save a surprising amount of time. More importantly, it can keep everyone from carefully an solving the wrong problem in excruciating detail.",
+      "The request is *rarely* the whole request. I try to listen for the concern underneath the words. Naming it can save a surprising amount of time. More importantly, it can keep everyone from carefully an solving the wrong problem in excruciating detail.",
       "Sequence matters too. Rough work shown as finished will be judged badly. Finished work presented as an open question can be pulled apart for no useful reason.",
       "After an important conversation, I try to write down what was decided, why it was decided, and what remains open.",
       "This became more frequent as I started leading projects. At the end of some days, I had made very little myself. I had clarified a decision, connected two people, protected time for an idea, or removed an obstacle.",
@@ -117,15 +117,15 @@ export const generatedPosts = [
     "readingTime": "3 minutes",
     "paragraphs": [
       "Before I make, I look.",
-      "I used to confuse looking with collecting. I would open a browser, save fifty images, and call the result research. My collection grew, my understanding did not.",
-      "Now I try to begin with a question. What am I actually trying to understand? What has become so familiar that no one sees it anymore? What does a person need to know, feel, or do—and in what order? The question does not need to point toward an answer. It only needs to give my looking a shape.",
-      "I start near the subject. If I am working on a corporate report, I look at reports. I need to understand the form before I decide what to do with it.",
+      "I used to confuse looking with collecting. I’d open a browser, save fifty images, and call the result research. My collection grew, my understanding did not.",
+      "Now I try to begin with a question. What am I actually trying to understand? What has become so familiar that no one sees it anymore? What does a person need to know, feel, or do—and in what order? The question doesn’t need to point toward an answer. It only needs to give my looking a shape.",
+      "I start near the subject. If I’m working on a corporate report, I look at reports. I need to understand the form before I decide what to do with it.",
       "Then I move farther away. I might look at newspapers, maps, instruction manuals, or paintings. A newspaper knows how to handle density. A map knows how to hold several scales at once. A painting may know something useful about directing the eye.",
-      "I am not looking for a style to borrow. I am trying to notice what something is doing. When I save a reference, I write down why.  The note is as at least as useful as the image. It gives me enough distance to carry the idea somewhere else without copying its appearance.",
-      "Then I arrange what I have found and start removing things. One reference tells me what I like. Several references placed together begin to reveal to me what I think. The one that does not fit is often worth keeping around. Or it may be pointing to something the rest of the collection has politely avoided.",
-      "Time helps too. I am easily persuaded by novelty and veneer. If I leave the references alone for a day, some become less convincing, a few become more interesting.",
+      "I’m not looking for a style to borrow. I’m trying to notice what something is doing. When I save a reference, I write down why.  The note is as at least as useful as the image. It gives me enough distance to carry the idea somewhere else without copying its appearance.",
+      "Then I arrange what I’ve found and start removing things. One reference tells me what I like. Several references placed together begin to reveal to me what I think. The one that does not fit is often worth keeping around. Or it may be pointing to something the rest of the collection has politely avoided.",
+      "Time helps too. I’m easily persuaded by novelty and veneer. If I leave the references alone for a day, some become less convincing, a few become more interesting.",
       "Eventually I make something, usually before I feel ready. A rough sketch shows whether an observation can survive contact with actual words, scale, and use. If it can’t, no matter how cute it is, it gets tossed off the cliff.",
-      "So my system is not very complicated: begin with a question, look outside the category, name what matters, arrange, remove, make, and look again. The point is not to build an impressive moodboard. It is to notice enough that a decision becomes easier."
+      "So my system isn’t very complicated: begin with a question, look outside the category, name what matters, arrange, remove, make, and look again. The point is not to build an impressive moodboard. It’s to notice enough that a decision becomes easier."
     ]
   }
 ] as const;

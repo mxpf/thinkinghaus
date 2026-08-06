@@ -22,7 +22,7 @@ A lot of this work is translation.
 
 Someone asks for more impact. They may mean contrast, confidence, or a clearer sense of what matters first. They may simply be worried that no one will pay attention.
 
-The request is rarely the whole request. I try to listen for the concern underneath the words. Naming it can save a surprising amount of time. More importantly, it can keep everyone from carefully an solving the wrong problem in excruciating detail.
+The request is *rarely* the whole request. I try to listen for the concern underneath the words. Naming it can save a surprising amount of time. More importantly, it can keep everyone from carefully an solving the wrong problem in excruciating detail.
 
 Sequence matters too. Rough work shown as finished will be judged badly. Finished work presented as an open question can be pulled apart for no useful reason.
 

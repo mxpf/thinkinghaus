@@ -20,7 +20,10 @@ export async function generatePostsModule() {
   return posts;
 }
 
-if (import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+) {
   const posts = await generatePostsModule();
   console.log(`Generated ${posts.length} published post${posts.length === 1 ? "" : "s"}.`);
 }

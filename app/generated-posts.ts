@@ -22,7 +22,7 @@ export const generatedPosts = [
     }
   },
   {
-    "title": "The Usefulness of an Empty Mind",
+    "title": "The utility of an empty mind",
     "slug": "the-usefulness-of-an-empty-mind",
     "date": "August 6, 2026",
     "readingTime": "3 minutes",

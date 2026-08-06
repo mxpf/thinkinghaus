@@ -7,7 +7,9 @@ import {
   parsePost,
   postsDirectory,
   projectRoot,
+  readPages,
   readPosts,
+  savePage,
   savePost,
   slugify,
 } from "./content.mjs";
@@ -51,7 +53,7 @@ async function history() {
   try {
     const { stdout } = await exec(
       "git",
-      ["log", "-8", "--date=short", "--format=%h%x09%ad%x09%s", "--", "content/posts"],
+      ["log", "-8", "--date=short", "--format=%h%x09%ad%x09%s", "--", "content/posts", "content/pages"],
       { cwd: projectRoot },
     );
     return stdout
@@ -136,6 +138,7 @@ async function handler(request, response) {
   try {
     if (request.method === "GET" && url.pathname === "/api/posts") {
       return json(response, {
+        pages: await readPages(),
         posts: await readPosts({ includeDrafts: true }),
         history: await history(),
       });
@@ -153,6 +156,16 @@ async function handler(request, response) {
       const input = await bodyFrom(request);
       const slug = slugify(input.slug || input.title || "");
       if (!slug) return json(response, { error: "Give this piece a title first." }, 400);
+
+      if (input.type === "page") {
+        const saved = await savePage({
+          title: input.title?.trim() || "Untitled",
+          slug,
+          body: input.body || "",
+        });
+        await generatePostsModule();
+        return json(response, { post: saved });
+      }
 
       const destination = path.join(postsDirectory, `${slug}.md`);
       if (!input.slug) {
@@ -192,15 +205,25 @@ async function handler(request, response) {
     if (request.method === "POST" && url.pathname === "/api/publish") {
       const input = await bodyFrom(request);
       if (!input.slug) return json(response, { error: "Save the draft before publishing." }, 400);
-      const source = await readFile(path.join(postsDirectory, `${input.slug}.md`), "utf8");
-      const post = parsePost(source, `${input.slug}.md`);
-      if (!post.body.trim()) return json(response, { error: "There is nothing to publish yet." }, 400);
-      if (post.status === "published" && !post.publishedAt) {
-        await savePost({ ...post, publishedAt: new Date().toISOString() });
+      if (input.type === "page") {
+        const page = (await readPages()).find((entry) => entry.slug === input.slug);
+        if (!page?.body.trim()) return json(response, { error: "There is nothing to publish yet." }, 400);
+      } else {
+        const source = await readFile(path.join(postsDirectory, `${input.slug}.md`), "utf8");
+        const post = parsePost(source, `${input.slug}.md`);
+        if (!post.body.trim()) return json(response, { error: "There is nothing to publish yet." }, 400);
+        if (post.status === "published" && !post.publishedAt) {
+          await savePost({ ...post, publishedAt: new Date().toISOString() });
+        }
       }
       await generatePostsModule();
       const result = await publishSite();
-      return json(response, { ...result, posts: await readPosts({ includeDrafts: true }), history: await history() });
+      return json(response, {
+        ...result,
+        pages: await readPages(),
+        posts: await readPosts({ includeDrafts: true }),
+        history: await history(),
+      });
     }
 
     if (request.method === "POST" && url.pathname === "/api/portfolio/publish") {

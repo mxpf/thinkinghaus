@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
-import { calculateReadingTime, parsePost, readPosts, serializePost } from "../scripts/content.mjs";
+import { calculateReadingTime, parsePost, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { readPortfolioAbout, readPortfolioProjects } from "../scripts/portfolio-content.mjs";
 
 async function render(pathname = "/") {
@@ -34,7 +34,24 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
 
   assert.match(html, /<title>Thinkinghaus<\/title>/i);
   for (const post of posts) assert.ok(html.includes(post.title));
+  assert.match(html, /href="\/about"/);
+  assert.match(html, /href="\/links"/);
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
+});
+
+test("renders editable About and Links pages", async () => {
+  const pages = await readPages();
+  assert.deepEqual(pages.map((page) => page.slug), ["about", "links"]);
+
+  const aboutResponse = await render("/about");
+  assert.equal(aboutResponse.status, 200);
+  const aboutHtml = await aboutResponse.text();
+  assert.match(aboutHtml, /<title>About — Thinkinghaus<\/title>/i);
+  assert.match(aboutHtml, /place for notes on attention/);
+
+  const linksResponse = await render("/links");
+  assert.equal(linksResponse.status, 200);
+  assert.match(await linksResponse.text(), /Things I want to find again/);
 });
 
 test("keeps both publishing libraries readable and the studio local", async () => {

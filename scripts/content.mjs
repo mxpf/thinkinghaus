@@ -3,6 +3,8 @@ import path from "node:path";
 
 export const projectRoot = path.resolve(import.meta.dirname, "..");
 export const postsDirectory = path.join(projectRoot, "content", "posts");
+export const pagesDirectory = path.join(projectRoot, "content", "pages");
+const editablePageSlugs = new Set(["about", "links"]);
 
 const frontmatterPattern = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/;
 
@@ -71,6 +73,7 @@ export function parsePost(source, filename = "") {
     .filter(Boolean);
 
   return {
+    type: "post",
     title: metadata.title || "Untitled",
     slug,
     date: metadata.date || new Date().toISOString().slice(0, 10),
@@ -83,6 +86,23 @@ export function parsePost(source, filename = "") {
       metadata.sourceLabel && metadata.sourceHref
         ? { label: metadata.sourceLabel, href: metadata.sourceHref }
         : undefined,
+  };
+}
+
+export function parsePage(source, filename = "") {
+  const { metadata, body } = parseFrontmatter(source);
+  const slug = metadata.slug || filename.replace(/\.md$/, "");
+  const paragraphs = body
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.replace(/\n/g, " ").trim())
+    .filter(Boolean);
+
+  return {
+    type: "page",
+    title: metadata.title || "Untitled",
+    slug,
+    body,
+    paragraphs,
   };
 }
 
@@ -104,6 +124,18 @@ export function serializePost(post) {
 
   metadata.push("---", "", post.body.trim(), "");
   return metadata.join("\n");
+}
+
+export function serializePage(page) {
+  return [
+    "---",
+    `title: ${quote(page.title)}`,
+    `slug: ${page.slug}`,
+    "---",
+    "",
+    page.body.trim(),
+    "",
+  ].join("\n");
 }
 
 export async function readPosts({ includeDrafts = false } = {}) {
@@ -131,4 +163,25 @@ export async function savePost(post) {
   const file = path.join(postsDirectory, `${slug}.md`);
   await writeFile(file, serializePost({ ...post, slug }), "utf8");
   return { ...post, slug };
+}
+
+export async function readPages() {
+  const files = (await readdir(pagesDirectory))
+    .filter((file) => file.endsWith(".md"))
+    .sort();
+
+  return Promise.all(
+    files.map(async (file) => {
+      const source = await readFile(path.join(pagesDirectory, file), "utf8");
+      return parsePage(source, file);
+    }),
+  );
+}
+
+export async function savePage(page) {
+  const slug = slugify(page.slug || page.title);
+  if (!editablePageSlugs.has(slug)) throw new Error("That page cannot be changed here.");
+  const saved = { ...page, type: "page", slug };
+  await writeFile(path.join(pagesDirectory, `${slug}.md`), serializePage(saved), "utf8");
+  return saved;
 }

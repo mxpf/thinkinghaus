@@ -219,8 +219,9 @@ function renderPreview() {
 
   if (activeSite === "portfolio") renderPortfolioPreview();
   else {
-    elements.previewDate.textContent = formatDate(item.date);
-    elements.previewReadingTime.textContent = readingTime(item.body);
+    const isPage = item.type === "page";
+    elements.previewDate.textContent = isPage ? "" : formatDate(item.date);
+    elements.previewReadingTime.textContent = isPage ? "" : readingTime(item.body);
     const source = item.source
       ? `<p class="preview-source"><a href="${escapeHtml(item.source.href)}" target="_blank" rel="noreferrer">${escapeHtml(item.source.label)}</a></p>`
       : "";
@@ -246,9 +247,10 @@ function renderNavigation() {
       sectionMarkup("Site", site().items.filter((item) => item.type === "about")) +
       sectionMarkup("Projects", site().items.filter((item) => item.type !== "about"));
   } else {
-    const drafts = site().items.filter((item) => item.status === "draft");
-    const published = site().items.filter((item) => item.status === "published");
-    elements.navigation.innerHTML = sectionMarkup("Drafts", drafts) + sectionMarkup("Published", published);
+    const pages = site().items.filter((item) => item.type === "page");
+    const drafts = site().items.filter((item) => item.type !== "page" && item.status === "draft");
+    const published = site().items.filter((item) => item.type !== "page" && item.status === "published");
+    elements.navigation.innerHTML = sectionMarkup("Pages", pages) + sectionMarkup("Drafts", drafts) + sectionMarkup("Published", published);
   }
   for (const button of elements.navigation.querySelectorAll("[data-slug]")) {
     button.addEventListener("click", async () => {
@@ -279,6 +281,7 @@ function renderCaptionFields() {
 
 function fillFields() {
   const item = current();
+  const isThinkinghausPage = activeSite === "thinkinghaus" && item?.type === "page";
   elements.title.value = item?.title || "";
   elements.date.value = item?.date || today();
   elements.body.value = item?.body || "";
@@ -287,14 +290,14 @@ function fillFields() {
   elements.contactEmail.value = item?.email || "";
   elements.contactLocation.value = item?.location || "";
   elements.newButton.hidden = activeSite === "portfolio";
-  elements.dateField.hidden = activeSite === "portfolio";
-  elements.sourceDetails.hidden = activeSite === "portfolio";
+  elements.dateField.hidden = activeSite === "portfolio" || isThinkinghausPage;
+  elements.sourceDetails.hidden = activeSite === "portfolio" || isThinkinghausPage;
   elements.captionEditor.hidden = activeSite !== "portfolio" || item?.type === "about";
   elements.contactEditor.hidden = activeSite !== "portfolio" || item?.type !== "about";
-  elements.postState.textContent = activeSite === "portfolio" ? item?.type === "about" ? "Page" : "Project" : item?.status === "published" ? "Published" : "Draft";
+  elements.postState.textContent = activeSite === "portfolio" ? item?.type === "about" ? "Page" : "Project" : isThinkinghausPage ? "Page" : item?.status === "published" ? "Published" : "Draft";
   elements.postState.classList.toggle("is-published", activeSite === "thinkinghaus" && item?.status === "published");
-  elements.postState.disabled = activeSite !== "thinkinghaus";
-  elements.postState.title = activeSite === "thinkinghaus" ? "Change between Draft and Published" : "";
+  elements.postState.disabled = activeSite !== "thinkinghaus" || isThinkinghausPage;
+  elements.postState.title = activeSite === "thinkinghaus" && !isThinkinghausPage ? "Change between Draft and Published" : "";
   elements.body.placeholder = activeSite === "portfolio" ? item?.type === "about" ? "About and contact text" : "Project introduction" : "Begin anywhere.";
   renderCaptionFields();
   renderPreview();
@@ -307,12 +310,12 @@ function selectItem(slug) {
 }
 
 function createBlankPost() {
-  return { title: "", slug: "", date: today(), status: "draft", body: "" };
+  return { type: "post", title: "", slug: "", date: today(), status: "draft", body: "" };
 }
 
 function togglePostStatus() {
   const item = current();
-  if (activeSite !== "thinkinghaus" || !item) return;
+  if (activeSite !== "thinkinghaus" || !item || item.type === "page") return;
   item.status = item.status === "published" ? "draft" : "published";
   if (item.status === "published" && !item.publishedAt) item.publishedAt = new Date().toISOString();
   elements.postState.textContent = item.status === "published" ? "Published" : "Draft";
@@ -471,11 +474,13 @@ async function publishCurrent() {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug: item.slug }),
+      body: JSON.stringify({ slug: item.slug, type: item.type }),
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error);
-    site().items = result.posts || (result.about ? [result.about, ...result.projects] : result.projects);
+    site().items = activeSite === "thinkinghaus"
+      ? [...result.pages, ...result.posts]
+      : (result.about ? [result.about, ...result.projects] : result.projects);
     site().history = result.history || [];
     site().current = site().items.find((entry) => entry.slug === item.slug) || site().items[0];
     renderHistory(site().history);
@@ -541,7 +546,7 @@ async function initialize() {
     const portfolio = await portfolioResponse.json();
     if (!writingResponse.ok) throw new Error(writing.error);
     if (!portfolioResponse.ok) throw new Error(portfolio.error);
-    sites.thinkinghaus.items = writing.posts;
+    sites.thinkinghaus.items = [...writing.pages, ...writing.posts];
     sites.thinkinghaus.history = writing.history;
     sites.portfolio.items = [portfolio.about, ...portfolio.projects];
     sites.portfolio.history = portfolio.history;

@@ -3,30 +3,34 @@ import type { Metadata } from "next";
 import { Footer } from "../Footer";
 import { InlineText } from "../InlineText";
 import { stripInlineMarkdown } from "../inline-markdown";
-import { getPost, posts } from "../posts";
+import { getPost, getStandalonePage, posts, standalonePages } from "../posts";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return posts.map(({ slug }) => ({ slug }));
+  return [...posts, ...standalonePages].map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
+  const standalonePage = getStandalonePage(slug);
+  const content = post || standalonePage;
   return {
-    title: post ? `${post.title} — Thinkinghaus` : "Thinkinghaus",
-    description: post ? stripInlineMarkdown(post.paragraphs[0]) : undefined,
+    title: content ? `${content.title} — Thinkinghaus` : "Thinkinghaus",
+    description: content ? stripInlineMarkdown(content.paragraphs[0]) : undefined,
   };
 }
 
 export default async function PostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = getPost(slug);
+  const standalonePage = getStandalonePage(slug);
+  const content = post || standalonePage;
 
-  if (!post) {
+  if (!content) {
     return (
       <main className="site article-page">
         <div className="article-frame">
@@ -46,15 +50,15 @@ export default async function PostPage({ params }: PageProps) {
         <a className="desktop-brand" href="/">Thinkinghaus</a>
         <article className="article-column">
           <header className="article-header">
-            <h1>{post.title}</h1>
-            <p>{post.date}</p>
-            <p>{post.readingTime}</p>
+            <h1>{content.title}</h1>
+            {post ? <p>{post.date}</p> : null}
+            {post ? <p>{post.readingTime}</p> : null}
           </header>
           <div className="article-body">
-            {post.paragraphs.map((paragraph, index) => (
+            {content.paragraphs.map((paragraph, index) => (
               <p key={`${index}-${paragraph}`}><InlineText text={paragraph} /></p>
             ))}
-            {post.source ? (
+            {post?.source ? (
               <p className="article-source"><a href={post.source.href}>{post.source.label}</a></p>
             ) : null}
           </div>

@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { promisify } from "node:util";
 import { generatePostsModule } from "./generate-posts.mjs";
-import { projectRoot, readPosts } from "./content.mjs";
+import { projectRoot, readPages, readPosts } from "./content.mjs";
 
 const exec = promisify(execFile);
 
@@ -40,6 +40,8 @@ async function ensureSafeWorkingTree() {
     .filter(
       (file) =>
         file !== "app/generated-posts.ts" &&
+        file !== "app/generated-pages.ts" &&
+        !file.startsWith("content/pages/") &&
         !file.startsWith("content/posts/"),
     );
 
@@ -54,11 +56,14 @@ export async function publishSite() {
   await ensureSafeWorkingTree();
   const allPosts = await readPosts({ includeDrafts: true });
   const publishedPosts = await readPosts();
+  const pages = await readPages();
   await generatePostsModule();
   await run("npm", ["run", "build:pages"]);
 
   const sourceFiles = [
+    "app/generated-pages.ts",
     "app/generated-posts.ts",
+    ...pages.map((page) => `content/pages/${page.slug}.md`),
     ...publishedPosts.map((post) => `content/posts/${post.slug}.md`),
   ];
   await run("git", ["add", "--", ...sourceFiles]);

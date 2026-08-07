@@ -344,21 +344,32 @@ function createBlankPost() {
   return { type: "post", title: "", slug: "", date: today(), status: "draft", body: "" };
 }
 
-function togglePostStatus() {
+async function togglePostStatus() {
   const item = current();
   if (activeSite !== "thinkinghaus" || !item || item.type === "page") return;
-  item.status = item.status === "published" ? "draft" : "published";
+  updateCurrentFromFields();
+  const previousStatus = item.status;
+  const previousPublishedAt = item.publishedAt;
+  const nextStatus = item.status === "published" ? "draft" : "published";
+  const confirmation = nextStatus === "published"
+    ? `Publish “${item.title}” and its latest edits now?`
+    : `Move “${item.title}” to Draft and remove it from the live site?`;
+  if (!window.confirm(confirmation)) return;
+
+  item.status = nextStatus;
   if (item.status === "published" && !item.publishedAt) item.publishedAt = new Date().toISOString();
   elements.postState.textContent = item.status === "published" ? "Published" : "Draft";
   elements.postState.classList.toggle("is-published", item.status === "published");
   renderNavigation();
-  scheduleSave();
-  showNotice(
-    item.status === "published"
-      ? "Marked Published. Use Publish to update the live site."
-      : "Moved to Drafts. Use Publish to remove it from the live site.",
-    4800,
-  );
+  const published = await publishCurrentWithOptions(true);
+  if (published) return;
+
+  item.status = previousStatus;
+  item.publishedAt = previousPublishedAt;
+  elements.postState.textContent = item.status === "published" ? "Published" : "Draft";
+  elements.postState.classList.toggle("is-published", item.status === "published");
+  renderNavigation();
+  await saveCurrent();
 }
 
 function setSaveState(label) {
@@ -486,7 +497,7 @@ async function flushSave() {
   if (current()?.title.trim()) await saveCurrent();
 }
 
-async function publishCurrent() {
+async function publishCurrentWithOptions(skipConfirmation = false) {
   const item = current();
   if (!item?.title.trim() || !item.body.trim()) return;
   await flushSave();
@@ -495,7 +506,7 @@ async function publishCurrent() {
     activeSite === "thinkinghaus" && item.status === "draft"
       ? `Publish changes to ${destination}? “${item.title}” will be removed from the live site and kept here as a draft.`
       : `Publish the latest changes to “${item.title}” on ${destination}?`;
-  if (!window.confirm(confirmation)) return;
+  if (!skipConfirmation && !window.confirm(confirmation)) return;
 
   elements.publishButton.disabled = true;
   elements.publishButton.textContent = "Publishing…";
@@ -518,13 +529,19 @@ async function publishCurrent() {
     fillFields();
     setSaveState("Published changes");
     showNotice(`Changes published. ${destination} is updating now.`, 5000);
+    return true;
   } catch (error) {
     setSaveState("Publishing paused");
     showNotice(error.message || "Publishing did not finish.", 6500);
+    return false;
   } finally {
     elements.publishButton.textContent = "Publish";
     renderPreview();
   }
+}
+
+async function publishCurrent() {
+  await publishCurrentWithOptions(false);
 }
 
 async function switchSite(nextSite) {

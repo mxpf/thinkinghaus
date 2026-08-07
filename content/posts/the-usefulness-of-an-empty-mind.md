@@ -30,6 +30,4 @@ That may be what beginner’s mind means to me now. Not becoming innocent again,
 
 The joke, of course, is that I can immediately turn this into another thing to master. A program for becoming exceptionally good at having no ambitions about becoming exceptionally good.
 
-Suzuki has me pretty well covered there too.
-
 *Zen Mind, Beginner’s Mind* doesn’t make Zen easy. It makes simplicity seem like enough to work on.

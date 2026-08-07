@@ -4,30 +4,32 @@ slug: the-usefulness-of-an-empty-mind
 date: 2026-08-06
 status: published
 publishedAt: 2026-08-06T14:00:00.000Z
-sourceLabel: "Read Zen Mind, Beginner's Mind"
+sourceLabel: "Read Zen Mind, Beginner’s Mind"
 sourceHref: "https://search.worldcat.org/title/1137753173"
 ---
 
-One of my favorite books—favorite manuals, really—is *Zen Mind, Beginner's Mind,* a book by the Zen monk Shunryu Suzuki.
+One of my favorite books—favorite manuals, really—is *Zen Mind, Beginner’s Mind* by the Zen monk Shunryu Suzuki.
 
 He says, “In the beginner’s mind there are many possibilities, in the expert’s, there are few.”
 
-Well, expertise is darn useful: it recognizes patterns, avoids old mistakes, it knows which details matter. But it can also become a kind of compression. The more I know about something, the less of it I may actually see. I see the category before I see the thing.
+Expertise is darn useful. It recognizes patterns, avoids old mistakes, knows which details matter. But it can also become a kind of compression. The more I know about something, the easier it is to see the category before I see the thing itself.
 
-Suzuki isn't telling us to strive for stupidity. Beginner’s mind isn't the absence of experience or knowledge. It's a way of standing in both without letting the shoes turn to cement. Easier said than done for sure.
+Suzuki isn’t asking us to become stupid. Beginner’s mind isn’t the absence of knowledge or experience. It’s a way of standing inside what you know without letting your shoes turn to cement. I find this much harder than it sounds.
 
-The book is assembled from talks and feels spoken. As you move through it, ideas appear, disappear, return slightly changed…sometimes an explanation leaves me less certain than when it began. Seems appropriate.
+The book is assembled from talks and still feels spoken. Ideas appear, disappear, return slightly changed. Sometimes an explanation leaves me less certain than I was when it began, which seems appropriate.
 
-He talks about posture, breathing, repetition, effort, and the ordinary difficulty of sitting still. The spiritual life he describes is visceral. It’s in my hands, my spine, my willingness to sit and practice without turning it into an achievement.
+Suzuki talks about posture, breathing, repetition, effort, and the very ordinary difficulty of sitting still. The spiritual life he describes is physical. It’s in my hands, my spine, my breath, and my willingness to sit there without turning the whole thing into another achievement.
 
-But I *like* practices that produce results! I want to know whether I am progressing! Even when I’m actively trying to become less ambitious, I can become ambitious about becoming less ambitious.
+This is a problem for me because I like practices that produce results. I want to know if I’m progressing. I want a little dashboard somewhere telling me my Zen is up 14 percent from last quarter. Even when I’m actively trying to become less ambitious, I can become ambitious about becoming less ambitious.
 
-His advice is to return to the activity itself. Why sit? Because you are *sitting*. Breathe because you are breathing. Do the thing without constantly stepping outside it to decide what it means, what it means about you. I cannot say I consistently live this way, but I deeply respect and value the freedom in it.
+Suzuki keeps returning to the activity itself. Sit because you’re sitting. Breathe because you’re breathing. Do the thing without constantly climbing outside it to ask what it means, whether it’s working, and what all of this says about you.
 
-Beginner’s mind may be less about innocence than repeatedly setting down what I think I know. Not throwing it away, just…loosening my grip long enough for something else to appear.
+I can’t say I consistently live that way. But I’ve come to value the freedom in it, and meditation gives me a place to practice it. Sometimes I notice how quickly I’ve decided what another person is, what something means, who’s right, who’s ridiculous. Occasionally I can catch myself before the judgment hardens and look again.
 
-This book is not a manual for mastering Zen. It's a manual for taking aim at that part of me that wants to master it. Which makes it a manual for mastering Zen. Which makes it…
+That may be what beginner’s mind means to me now. Not becoming innocent again, and certainly not forgetting what I’ve learned. Just setting it down for a minute. Loosening my grip long enough for something I wasn’t expecting to get in.
 
-This book does not make Zen easy.
+The joke, of course, is that I can immediately turn this into another thing to master. A program for becoming exceptionally good at having no ambitions about becoming exceptionally good.
 
-It does makes simplicity seem like enough for me to work on.
+Suzuki has me pretty well covered there too.
+
+*Zen Mind, Beginner’s Mind* doesn’t make Zen easy. It makes simplicity seem like enough to work on.

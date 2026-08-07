@@ -10,26 +10,30 @@ sourceHref: "https://parks.ny.gov/visit/state-parks/minnewaska-state-park-preser
 
 On an unusually warm weekday in April, I committed a small crime of opportunity.
 
-I was between projects—the quiet side of a feast-or-famine business—and work had not claimed the day yet. Before it could, I ran for it, driving north to Minnewaska State Park Preserve. I knew parts of Severance had been filmed there, that was enough of a plan.
+I was between projects—the quiet side of a feast-or-famine business—and work hadn’t claimed the day yet. Before it could, I ran for it and drove north to Minnewaska State Park Preserve. I knew parts of *Severance* had been filmed there. That was enough of a plan.
 
-I like road trips, being outside, and finding places close to home that I have somehow missed. I was also curious about the show’s outdoor world: bleak, Gothic, slightly unreal. I wanted to see how much of that feeling belonged to the locations themselves.
+I like road trips, being outside, and finding places close to home that I’ve somehow missed. I was also curious about the show’s outdoor world: bleak, Gothic, slightly unreal. I wanted to know how much of that feeling was sitting there in the landscape and how much had been put there by the people making the show.
 
-At the gate, I paid the ranger. I saw a three tourists in the lodge. After that, no one.
+At the gate, I paid the ranger. There were three tourists in the lodge. After that, almost nobody.
 
-Minnewaska has absolutely no shortage of dense forests or dizzying cliffs. There is only one breathtaking waterfall however. I hiked down to it with the fun feeling that I had borrowed the whole preserve for the afternoon.
+Minnewaska has dense woods, cliffs, old carriage roads, mountain lakes, and a waterfall that I hiked down to with the pleasant feeling that I’d somehow borrowed the whole preserve for the afternoon.
 
-I expected it to feel eerie there because of the show. It didn’t. It felt quiet and restorative. The place was beautiful, but it had clearly not been waiting around to be Severance. The color, framing, weather, and story had done much of that work.
+I expected some of it to feel eerie because of *Severance*. It didn’t. It felt quiet and restorative. Beautiful, certainly, but the place had clearly not been waiting around to become *Severance*.
 
-I liked discovering the gap between the real place and the fictional one. At one of the locations, I could see several paths a camera might have taken. There was no inevitable shot sitting there. Someone had walked around, looked at the rocks and water, and decided what the place could become.
+That made me like the show more.
 
-That made the scene more interesting to me, not less. It reminded me that looking is not simply finding the unusual thing. Sometimes it is noticing an unusual possibility inside something that already exists.
+Standing at one of the locations, I could see several different pictures a camera might have made. There wasn’t an inevitable shot hiding in the rocks, waiting for somebody to discover it. Someone had walked around, looked at the water and the trees and the angle of the ground, and decided that this was what the place could become.
 
-I didn’t have a single fixed objective for the day. I wanted to get out of my routine and let things happen. This is usually a good enough reason for me to go somewhere.
+I think I sometimes imagine looking as a kind of treasure hunt: the interesting thing exists out there and the job is to find it. But a lot of looking is closer to making a proposition. What if these two things belong together? What happens if I stand over here instead? What else could this be?
 
-I try to find a small edge (not a cliff) I am slightly reluctant to cross. Take an unclaimed weekday. Drive without much of a plan. Walk alone. Step across the water. One edge tends to lead to another.
+That may be one reason I like leaving a little chance in things. Another person, an unfamiliar reference, a wrong turn, AI—anything that can put something in front of me that I wouldn’t have put there myself.
 
-Chance matters in my work for the same reason. I bring in another person, an unfamiliar reference, a random constraint, or AI because I want something to enter that I couldn’t have planned by myself.
+Once, while working on a cover for Las Vegas Sands, I was looking for a natural form that could sit beside a curling architectural detail. AI gave me fiddleheads. Their little spirals echoed the architecture and, by accident, made something resembling an S.
 
-On a cover design for the Las Vegas Sands, I was looking for a natural image that could sit beside an architectural detail with a curling form. AI produced a picture of fiddleheads. Strangely, their curves mirrored the architecture and accidentally formed an S, for Sands.
+I couldn’t have planned that particular collision. But I still had to see it.
 
-I would not have planned it, but I still had to notice it. Chance can place something in front of me. It can’t make me care or decide what to do with it. But if I'm open to it, can go to a park, walk to a waterfall, and come home, having a day strange enough to notice things.
+The same was true at Minnewaska. I went looking for the fictional place and found a real one instead. I walked around, climbed down to the waterfall, poked at the edges of things, and eventually drove home.
+
+Nothing especially important happened.
+
+It was a very good day.

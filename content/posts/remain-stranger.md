@@ -6,20 +6,32 @@ status: published
 publishedAt: 2026-08-06T13:00:00.000Z
 ---
 
-There’s a early scene in Christopher Nolan’s *The Odyssey* where Odysseus is sitting with his mentor (no, not [*Mentor*](https://en.wikipedia.org/wiki/Mentor_(Odyssey)) Eumaeus and examining a litter of puppies. Eumaeus picks one up and looks it over briefly before casually tossing it over the nearby ledge.
+There’s an early scene in Christopher Nolan’s *The Odyssey* where Odysseus is sitting with Eumaeus, examining a litter of puppies. Eumaeus picks one up, looks it over briefly, and casually tosses it over a nearby ledge.
 
-For a hot minute, the door opens onto a stranger world. A world in which people live *much* closer to the reality of death. The borders between necessity, ritual, and cruelty are not where we expect them to be.
+For a moment, the movie opens onto a stranger world. People live closer to death. The borders between necessity, ritual, cruelty, and ordinary life aren’t where I expect them to be. Nobody stops to explain the rules.
 
-Odysseus stops Eumaeus from throwing the next one and keeps the dog for his own. And just like that, the scene goes from being shocking to being understandable again. We know who to identify with and how to feel. The door closes.
+Then Eumaeus reaches for another puppy. Odysseus stops him and keeps the dog for himself.
 
-I wanted the film to go through that door a little more often. When I encounter something unfamiliar, I tend to look for a known equivalent. A god becomes a psychological condition. A monster becomes trauma. A voyage becomes a metaphor for recovering from war. These translations give me ways into old stories like this one.
+And just like that I know where I am again.
 
-Homer does not always allow that. His gods are vain, generous, jealous, horny, petty, and terrifying. They do not behave like symbols. Out of the millions years humans have been around, we have lived the vast majority of them beneath these forces without expecting the universe to be fair or particularly interested in being understood.
+I know who I’m supposed to identify with. I know who has behaved badly. Odysseus has demonstrated a recognizably modern kind of mercy, and the little door into that other world swings mostly shut.
 
-While I am not really sure I would want to live inside that world, I am also not sure I want it sanitized for me. There may be value in letting an old thing remain old. In allowing its assumptions to sit beside mine without forcing the two to agree.
+I wanted the movie to leave it open a little longer.
 
-The puppy scene carries a little of that feeling. The world does not stop to explain itself. For a moment, I am left without an interpretation.
+I do this kind of translation myself all the time. A god becomes a psychological condition. A monster becomes trauma. A voyage becomes a metaphor for recovering from war. These interpretations can be useful; sometimes they’re exactly what gives me a way into an old story.
 
-I would like to remain there for another beat or so. Not because the past was wiser, or because strangeness is automatically profound. I simply like the possibility of meeting an old story without immediately asking it to become me.
+But they can also make the old story suspiciously good at agreeing with me.
 
-To let its gods remain gods. To let the sea remain the sea.
+Homer’s gods aren’t especially cooperative about this. They’re vain, generous, jealous, horny, petty, helpful, vindictive, terrifying. They don’t always behave like symbols for something more respectable. For most of human history, people lived with forces they couldn’t control and didn’t expect the universe to be fair, legible, or particularly interested in explaining itself.
+
+I’m not sure I’d enjoy living in that world. I’m also not sure I want it renovated before I get there.
+
+There’s something valuable in allowing an old thing to remain old for a while—letting its assumptions sit beside mine without immediately deciding which familiar modern category they belong in. Not because the past was wiser. Plenty of it was awful. And strangeness isn’t automatically profound.
+
+I just want the chance to meet it before I translate it.
+
+That’s what I liked about the puppy scene. For a few uncomfortable seconds, I didn’t quite know how to understand what I was seeing. I’d have liked another beat of that.
+
+Let the gods remain gods for a minute.
+
+Let the sea remain the sea.

@@ -10,16 +10,22 @@ sourceHref: "https://klim.co.nz/blog/untitled-sans-serif-design-information/"
 
 Untitled Sans began as an attempt to make another typeface plainer.
 
-Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, returned to it several years later, and nearly threw it out. Reading about the [Super Normal project](https://jaspermorrison.com/exhibitions/2000-2009/super-normal) eventually helped him understand why a deliberately ordinary typeface might be worth finishing.
+Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after reading about the [Super Normal project](https://jaspermorrison.com/exhibitions/2000-2009/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.
 
-I like that the reasoning came later. Design processes are often written up as though every decision followed neatly from the one before it. Mine rarely work that way. I try things. I change my mind. I forget why I started. Occasionally I end up with something useful.
+I love that the explanation arrived late.
 
-Sowersby describes removing traces of his own recognizable style from the letters. His goal wasn’t to make the typeface distinctive. It was to make something that could be successful without bringing a ton of baggage along with it.
+Design processes are usually written up as though every decision knew where it was going. Mine don’t. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.
 
-In design, as in life, that is extremely difficult to pull off. Designers are generally encouraged to—and take delight in—making things memorable. A plain typeface can feel like a missed opportunity. But most of the time I don’t need the type to be the most interesting thing on the page. I need it to help me read.
+Sowersby describes deliberately removing traces of his own recognizable style from the letters. He was, in a sense, taking his fingerprints off the thing.
 
-That’s probably why Untitled Sans feels right for both my portfolio site and for this site. My work and my writing can wander around and follow unusual ideas. The letters stay put.
+That sounds almost perverse for a designer. We’re encouraged to make things distinctive, ownable, memorable—something that can stand up in a presentation and explain why it deserves to exist.
 
-Untitled Sans is very much a designed artifact. Its plainness is the result of a mountain of small, thoughtful, beautiful choices. It just doesn’t ask me to admire and praise those choices every time I read a paragraph.
+But most of the time, when I’m reading, I don’t need the typeface to introduce itself. I need it to help me read.
 
-There is something deeply appealing to me about creating something that works so incredibly well without constantly advertising how much work went into it. Creating something that knows how to be quiet.
+That’s probably why Untitled Sans feels right for both my portfolio and Thinkinghaus. The work and the writing can wander around and follow unusual ideas. The letters stay put.
+
+Its plainness isn’t an absence of design. It’s what happens when a lot of small decisions are made thoughtfully enough that they can recede. The type makes some room around the words instead of elbowing them for attention.
+
+I find that deeply appealing: work that has clearly been thought about, but doesn’t make you stop every five minutes to admire how much thinking went into it.
+
+Something that knows how to shut up.

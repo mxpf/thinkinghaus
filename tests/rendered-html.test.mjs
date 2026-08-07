@@ -47,18 +47,19 @@ test("renders editable About and Links pages", async () => {
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
   assert.match(aboutHtml, /<title>About — Thinkinghaus<\/title>/i);
-  assert.match(aboutHtml, /place for notes on attention/);
+  assert.match(aboutHtml, /The name makes Thinkinghaus sound more organized/);
 
   const linksResponse = await render("/links");
   assert.equal(linksResponse.status, 200);
-  assert.match(await linksResponse.text(), /Things I want to find again/);
+  assert.match(await linksResponse.text(), /Places I return to/);
 });
 
 test("keeps both publishing libraries readable and the studio local", async () => {
   const posts = await readPosts({ includeDrafts: true });
   const projects = await readPortfolioProjects();
   const about = await readPortfolioAbout();
-  assert.equal(posts.length, 6);
+  assert.equal(posts.length, 10);
+  assert.equal(posts.filter((post) => post.status === "draft").length, 4);
   assert.equal(projects.length, 11);
   assert.ok(posts.every((post) => post.body.length > 0));
   assert.ok(posts.every((post) => /^[a-z0-9-]+$/.test(post.slug)));

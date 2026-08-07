@@ -4,7 +4,8 @@ import { pathToFileURL } from "node:url";
 import { displayDate, projectRoot, readPages, readPosts } from "./content.mjs";
 
 export async function generatePostsModule() {
-  const posts = (await readPosts()).map((post) => ({
+  const includeDrafts = process.env.INCLUDE_DRAFTS === "1";
+  const posts = (await readPosts({ includeDrafts })).map((post) => ({
     title: post.title,
     slug: post.slug,
     date: displayDate(post.date),
@@ -34,5 +35,6 @@ if (
   import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
 ) {
   const posts = await generatePostsModule();
-  console.log(`Generated ${posts.length} published post${posts.length === 1 ? "" : "s"}.`);
+  const kind = process.env.INCLUDE_DRAFTS === "1" ? "staged" : "published";
+  console.log(`Generated ${posts.length} ${kind} post${posts.length === 1 ? "" : "s"}.`);
 }

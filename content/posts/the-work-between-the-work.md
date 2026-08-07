@@ -8,30 +8,30 @@ publishedAt: 2026-08-05T14:00:00.000Z
 
 Some of the most useful work I do leaves almost nothing behind.
 
-It happens in the question that changes the brief, the conversation before the meeting, or the note that explains why a decision was made.
+A portfolio is a strangely hygienic account of a project. Here is a report. Here is an identity, a platform, a system. Everything appears as a finished object, as if it arrived intact on a white background.
 
-I think of this as the work between the work. A portfolio makes design look fairly orderly. Here is a report design. Here is an identity, a platform, or a system. Each one appears to be a self-contained object.
+What disappears are the people, budgets, old decisions, new anxieties, unclear language, and deadlines that don’t care whether the idea is ready. The conversation before the meeting. The question that changes the brief. The note three days later explaining why everyone agreed to the thing they’ve already started forgetting.
 
-The actual project is messier. It includes people, budgets, old decisions, new anxieties, unclear language, and deadlines that do not care whether the idea is ready.
+For a long time, I thought of all of this as the stuff surrounding the work. The real work was what I could see.
 
-For a long time, I treated all of this as the part surrounding the design. The real work was the thing I could see.
+That got harder to believe as I started leading more projects.
 
-A good idea can fail because it was introduced at the wrong moment, separated from its reason, or handed to someone without enough context to continue it. An ordinary idea can improve because someone asked the right question early enough.
+A lot of the invisible part is translation. Someone says they want “more impact.” Maybe they mean contrast. Maybe confidence. Maybe they’re worried the CEO is going to flip past the page without noticing it. The request and the actual worry are often two different animals, and asking one more question can keep a room full of people from spending a week solving the wrong problem in excruciating detail.
 
-A lot of this work is translation.
+Timing matters in similarly annoying ways. Show rough work as though it’s finished and people will judge everything that isn’t there yet. Show finished work as though it’s still an open question and somebody will helpfully pull the legs off it.
 
-Someone asks for more impact. They may mean contrast, confidence, or a clearer sense of what matters first. They may simply be worried that no one will pay attention.
+None of this produces much to point at afterward.
 
-The request is *rarely* the whole request. I try to listen for the concern underneath the words. Naming it can save a surprising amount of time. More importantly, it can keep everyone from carefully an solving the wrong problem in excruciating detail.
+There were days when I’d leave work having made almost nothing myself. I’d clarified a decision, connected two people, moved something out of somebody’s way, given a designer another afternoon before showing the work, or written down enough context that the next person didn’t have to reconstruct the whole archaeological site from Slack messages.
 
-Sequence matters too. Rough work shown as finished will be judged badly. Finished work presented as an open question can be pulled apart for no useful reason.
+At first those days made me vaguely guilty. I like making things. I like the clean evidence of a page changing under my hands. “I helped several conversations go better” has considerably less portfolio appeal.
 
-After an important conversation, I try to write down what was decided, why it was decided, and what remains open.
+But I’ve come to think that making the conditions for good work is part of making the work.
 
-This became more frequent as I started leading projects. At the end of some days, I had made very little myself. I had clarified a decision, connected two people, protected time for an idea, or removed an obstacle.
+That doesn’t mean every meeting is secretly design. Plenty of meetings are just meetings. Coordination can become its own enormous inflatable industry where everybody spends all day discussing the work nobody has time to do.
 
-At first this felt suspiciously unlike work. It is not automatically valuable, but now I see it as an essential part of making the conditions for good work.
+The useful version is quieter. Somebody understands why a decision was made instead of merely being told what it was. A good idea gets another day rather than being killed because it was shown too early. A person can move forward without waiting for three more people to weigh in. The project has a little less friction in it.
 
-My test is fairly simple: did this make the problem clearer, prepare a real decision, protect the idea, or make the next step easier for someone else? If not, it was probably just calories burned.
+Most of the evidence is indirect. Fewer surprises. Calmer handoffs. Decisions that still make sense a week later. Somebody else being able to pick up the thing without needing you standing beside them.
 
-The work between the work is difficult to see. But it is there, in the corner of my eye: fewer surprises, calmer handoffs, and decisions that continue to make sense after the meeting is over.
+I still prefer the days when I make something I can see. But I no longer think those are the only days that count.

@@ -47,11 +47,11 @@ test("renders editable About and Links pages", async () => {
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
   assert.match(aboutHtml, /<title>About — Thinkinghaus<\/title>/i);
-  assert.match(aboutHtml, /The name makes Thinkinghaus sound more organized/);
+  assert.match(aboutHtml, /The basic practice here is beginner’s mind/);
 
   const linksResponse = await render("/links");
   assert.equal(linksResponse.status, 200);
-  assert.match(await linksResponse.text(), /Places I return to/);
+  assert.match(await linksResponse.text(), /I have never been especially good at bookmarks/);
 });
 
 test("keeps both publishing libraries readable and the studio local", async () => {

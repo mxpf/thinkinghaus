@@ -115,10 +115,6 @@ function smartenQuotes(value) {
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
   localStorage.setItem("thinkinghaus-studio-theme", theme);
-  const useDay = theme === "dark";
-  elements.themeToggle.textContent = useDay ? "Day" : "Night";
-  elements.themeToggle.setAttribute("aria-label", `Use ${useDay ? "day" : "night"} mode`);
-  elements.themeToggle.title = `Use ${useDay ? "day" : "night"} mode`;
 }
 
 function toggleTheme() {

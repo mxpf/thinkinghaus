@@ -2,7 +2,7 @@
 title: "A system for looking"
 slug: a-system-for-looking
 date: 2026-08-05
-status: published
+status: draft
 publishedAt: 2026-08-05T13:00:00.000Z
 ---
 

@@ -2,7 +2,7 @@
 title: "An odyssey"
 slug: remain-stranger
 date: 2026-08-06
-status: published
+status: draft
 publishedAt: 2026-08-06T13:00:00.000Z
 ---
 

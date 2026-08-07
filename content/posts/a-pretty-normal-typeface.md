@@ -2,7 +2,7 @@
 title: "The silent type"
 slug: a-pretty-normal-typeface
 date: 2026-08-06
-status: published
+status: draft
 publishedAt: 2026-08-06T15:00:00.000Z
 sourceLabel: "Read Kris Sowersby’s notes on the Untitled Collection"
 sourceHref: "https://klim.co.nz/blog/untitled-sans-serif-design-information/"

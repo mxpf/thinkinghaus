@@ -3,11 +3,7 @@ title: "Links"
 slug: links
 ---
 
-I have never been especially good at bookmarks. Things end up in open tabs, notes, screenshots, messages to myself, and occasionally in the part of my brain apparently reserved for URLs from 2003.
-
-This is an attempt to keep a few of them somewhere more useful.
-
-*Inhabited sites*
+I have never been especially good at bookmarks. This is an attempt to keep a few of them somewhere more useful.
 
 [Hundred Rabbits](https://100r.co/)
 
@@ -35,8 +31,6 @@ Writing about interactive fiction, narrative systems, games, AI, conversation, s
 
 Andrew Plotkin’s home on the web: interactive fiction, programming, books, games, tools, experiments, archives, and decades of things that seemed worth keeping. I first arrived through his games more than twenty years ago and never really left.
 
-*Deep shelves*
-
 [The Public Domain Review](https://publicdomainreview.org/)
 
 A beautifully curated entrance into the enormous public-domain archive: art, literature, science, diagrams, mysticism, forgotten books, peculiar historical obsessions. A longtime favorite. I rarely leave by the same door I came in.
@@ -57,8 +51,6 @@ Voluntary simplicity considered as something larger than decluttering: consumpti
 
 Infrastructure, industrial sites, strange boundaries, extraction, transportation, military landscapes, overlooked structures—the ordinary physical evidence of what a society actually does, rather than what it says it does.
 
-*Ways out*
-
 [Marginalia Search](https://marginalia-search.com/)
 
 An independent search engine built to surface the smaller, older, stranger, more text-heavy web. Finding this felt less like discovering another search engine than finding a side entrance that had accidentally been left unlocked.
@@ -70,7 +62,3 @@ A stream of writing from independent sites around the web. Addictive.
 [Tiny Awards](https://tinyawards.net/)
 
 An annual celebration of small, handmade, independent websites. This can mean an extraordinarily thoughtful political visualization. It can also mean rotating sandwiches.
-
------
-
-This page owes its basic idea to [47nil’s links page](https://47nil.com/links).

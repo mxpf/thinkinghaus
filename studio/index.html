@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publishing Studio</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("thinkinghaus-studio-theme");
+          document.documentElement.dataset.theme = saved === "light" || saved === "dark"
+            ? saved
+            : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        } catch {}
+      })();
+    </script>
     <link rel="stylesheet" href="/studio.css" />
   </head>
   <body>
@@ -17,6 +27,7 @@
         <div class="save-state" id="save-state" aria-live="polite">Ready</div>
         <div class="header-actions">
           <a class="quiet-button" href="http://thinking.haus" target="_blank" rel="noreferrer">View live</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Use night mode">Night</button>
           <button class="publish-button" id="publish-button" type="button">Publish</button>
         </div>
       </header>

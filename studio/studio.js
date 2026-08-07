@@ -4,6 +4,7 @@ const elements = {
   history: document.querySelector("#history-list"),
   newButton: document.querySelector("#new-button"),
   publishButton: document.querySelector("#publish-button"),
+  themeToggle: document.querySelector("#theme-toggle"),
   liveLink: document.querySelector(".quiet-button"),
   saveState: document.querySelector("#save-state"),
   postState: document.querySelector("#post-state"),
@@ -90,6 +91,40 @@ function isSafeHref(href) {
   }
 }
 
+function smartenProse(value) {
+  return String(value)
+    .replace(/(^|[\s([{—])"(?=\S)/gu, "$1“")
+    .replace(/"/g, "”")
+    .replace(/([\p{L}\p{N}])'(?=[\p{L}\p{N}])/gu, "$1’")
+    .replace(/(^|[\s([{—])'(?=\S)/gu, "$1‘")
+    .replace(/'/g, "’");
+}
+
+function smartenQuotes(value) {
+  const destinations = [];
+  const protectedValue = String(value).replace(/\]\(([^)\s]+)\)/g, (match) => {
+    destinations.push(match);
+    return `\uE000${destinations.length - 1}\uE001`;
+  });
+  return smartenProse(protectedValue).replace(
+    /\uE000(\d+)\uE001/g,
+    (_, index) => destinations[Number(index)] ?? "",
+  );
+}
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("thinkinghaus-studio-theme", theme);
+  const useDay = theme === "dark";
+  elements.themeToggle.textContent = useDay ? "Day" : "Night";
+  elements.themeToggle.setAttribute("aria-label", `Use ${useDay ? "day" : "night"} mode`);
+  elements.themeToggle.title = `Use ${useDay ? "day" : "night"} mode`;
+}
+
+function toggleTheme() {
+  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+}
+
 function renderInline(value) {
   const pattern = /\[([^\]]+)\]\(([^)\s]+)\)|\*([^*\n]+)\*|_([^_\n]+)_/g;
   let output = "";
@@ -152,13 +187,13 @@ function showNotice(message, duration = 3200) {
 function updateCurrentFromFields() {
   const item = current();
   if (!item) return;
-  item.title = elements.title.value;
-  item.body = elements.body.value;
+  item.title = smartenQuotes(elements.title.value);
+  item.body = smartenQuotes(elements.body.value);
   if (activeSite === "thinkinghaus") {
     item.date = elements.date.value || today();
     item.source =
       elements.sourceLabel.value.trim() && elements.sourceUrl.value.trim()
-        ? { label: elements.sourceLabel.value, href: elements.sourceUrl.value }
+        ? { label: smartenQuotes(elements.sourceLabel.value), href: elements.sourceUrl.value }
         : undefined;
   } else {
     if (item.type === "about") {
@@ -167,7 +202,7 @@ function updateCurrentFromFields() {
     } else {
       for (const input of elements.captionFields.querySelectorAll("[data-caption-id]")) {
         const media = item.media.find((entry) => entry.id === input.dataset.captionId);
-        if (media) media.caption = input.value;
+        if (media) media.caption = smartenQuotes(input.value);
       }
     }
   }
@@ -370,7 +405,7 @@ function openLinkDialog() {
 }
 
 function addLink() {
-  const label = elements.linkText.value.trim();
+  const label = smartenQuotes(elements.linkText.value.trim());
   const href = elements.linkUrl.value.trim();
   if (!label || !isSafeHref(href)) {
     showNotice("Use a web address beginning with https://, http://, mailto:, /, or #.");
@@ -508,7 +543,15 @@ async function switchSite(nextSite) {
 }
 
 for (const input of [elements.title, elements.date, elements.body, elements.sourceLabel, elements.sourceUrl, elements.contactEmail, elements.contactLocation]) {
-  input.addEventListener("input", scheduleSave);
+  input.addEventListener("input", () => {
+    if ([elements.title, elements.body, elements.sourceLabel].includes(input)) {
+      const start = input.selectionStart;
+      const end = input.selectionEnd;
+      input.value = smartenQuotes(input.value);
+      if (start !== null && end !== null) input.setSelectionRange(start, end);
+    }
+    scheduleSave();
+  });
 }
 for (const button of elements.siteButtons) button.addEventListener("click", () => switchSite(button.dataset.site));
 elements.newButton.addEventListener("click", async () => {
@@ -518,6 +561,7 @@ elements.newButton.addEventListener("click", async () => {
   elements.title.focus();
 });
 elements.publishButton.addEventListener("click", publishCurrent);
+elements.themeToggle.addEventListener("click", toggleTheme);
 elements.postState.addEventListener("click", togglePostStatus);
 elements.italicButton.addEventListener("click", applyItalic);
 elements.linkButton.addEventListener("click", openLinkDialog);
@@ -537,6 +581,7 @@ window.addEventListener("beforeunload", (event) => {
 });
 
 async function initialize() {
+  setTheme(document.documentElement.dataset.theme === "dark" ? "dark" : "light");
   try {
     const [writingResponse, portfolioResponse] = await Promise.all([
       fetch("/api/posts"),

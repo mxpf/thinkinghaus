@@ -20,7 +20,7 @@ One thing phenomenology says is to pay very close attention to experience as it�
 
 What exactly is this cocktail before I file it away under “cocktail?” Well…there’s color, which I recognize as apricot even though…hmm…I’m not entirely sure apricot is a *color*. There’s the cold glass in my hand. Sweetness arriving before bitterness. My expectation of what it will taste like. The café around it. The fact that I’m sitting with these particular people. One of them is watching me drink it, etc. All these memories and preferences and tiny private histories that have somehow become involved in this otherwise innocent beverage.
 
-Naming things is useful, but it also shrink-wraps them. Cocktail. Café. Friend. Stranger. Job. Website. Tree. Myself. Once something has a name, it becomes very easy to stop encountering it. We know what that is. Move along. The world becomes incredibly efficient and navigable this way, and also slightly dead.
+Naming things is useful, but it also shrink-wraps them. Cocktail. Café. Friend. Stranger. Job. Website. [Tree](https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:534145-1/images). Myself. Once something has a name, it becomes very easy to stop encountering it. We know what that is. Move along. The world becomes incredibly efficient and navigable this way, and also slightly dead.
 
 To me there are actually two encounters happening at that table. Sartre is encountering the cocktail differently, but he’s also encountering Aron: somebody who had gone somewhere, found something that rearranged the furniture in his head, and come back excited enough to try to make his friends see what he’d seen.
 

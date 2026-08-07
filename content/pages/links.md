@@ -3,8 +3,6 @@ title: "Links"
 slug: links
 ---
 
-I have never been especially good at bookmarks. This is an attempt to keep a few of them somewhere more useful.
-
 [Hundred Rabbits](https://100r.co/)
 
 Rekka Bellum and Devine Lu Linvega make software, games, books, music, tools, and other things while living aboard a sailboat and thinking seriously about technological resilience. Their line—“That which cannot be repaired is already broken”—has been lodged in my head since I found it.
@@ -62,3 +60,7 @@ A stream of writing from independent sites around the web. Addictive.
 [Tiny Awards](https://tinyawards.net/)
 
 An annual celebration of small, handmade, independent websites. This can mean an extraordinarily thoughtful political visualization. It can also mean rotating sandwiches.
+
+-----
+
+This page owes its basic idea to [47nil’s links page](https://47nil.com/links).

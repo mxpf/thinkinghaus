@@ -1,0 +1,50 @@
+name: Publish Thinkinghaus
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: thinkinghaus-pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build published writing
+        run: npm run build:pages
+
+      - name: Update the GitHub Pages branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages
+          git worktree add --detach /tmp/thinkinghaus-pages origin/gh-pages
+          rsync -a --delete --exclude .git dist/client/ /tmp/thinkinghaus-pages/
+          touch /tmp/thinkinghaus-pages/.nojekyll
+          cd /tmp/thinkinghaus-pages
+          git add -A
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Publish site"
+          git push origin HEAD:gh-pages

@@ -1,7 +1,4 @@
 import { execFile } from "node:child_process";
-import { mkdtemp } from "node:fs/promises";
-import os from "node:os";
-import path from "node:path";
 import { promisify } from "node:util";
 import { generatePostsModule } from "./generate-posts.mjs";
 import { projectRoot, readPages, readPosts } from "./content.mjs";
@@ -55,7 +52,6 @@ async function ensureSafeWorkingTree() {
 export async function publishSite() {
   await ensureSafeWorkingTree();
   const allPosts = await readPosts({ includeDrafts: true });
-  const publishedPosts = await readPosts();
   const pages = await readPages();
   await generatePostsModule();
   await run("npm", ["run", "build:pages"]);
@@ -64,44 +60,14 @@ export async function publishSite() {
     "app/generated-pages.ts",
     "app/generated-posts.ts",
     ...pages.map((page) => `content/pages/${page.slug}.md`),
-    ...publishedPosts.map((post) => `content/posts/${post.slug}.md`),
+    ...allPosts.map((post) => `content/posts/${post.slug}.md`),
   ];
   await run("git", ["add", "--", ...sourceFiles]);
-
-  const draftFiles = allPosts
-    .filter((post) => post.status === "draft")
-    .map((post) => `content/posts/${post.slug}.md`);
-  if (draftFiles.length) {
-    await run("git", ["rm", "--cached", "-f", "--ignore-unmatch", "--", ...draftFiles]);
-  }
 
   if (await hasStagedChanges()) {
     await run("git", ["commit", "-m", "Publish Thinkinghaus writing"]);
   }
   await run("git", ["push", "github", "main"]);
-
-  await run("git", ["fetch", "github", "gh-pages"]);
-  const worktree = await mkdtemp(path.join(os.tmpdir(), "thinkinghaus-publish-"));
-
-  try {
-    await run("git", ["worktree", "add", "--detach", worktree, "github/gh-pages"]);
-    await run(
-      "rsync",
-      ["-a", "--delete", "--exclude", ".git", "dist/client/", `${worktree}/`],
-    );
-    await run("git", ["add", "-A"], { cwd: worktree });
-
-    if (await hasStagedChanges(worktree)) {
-      await run("git", ["commit", "-m", "Publish site"], { cwd: worktree });
-    }
-    await run("git", ["push", "github", "HEAD:gh-pages"], { cwd: worktree });
-  } finally {
-    try {
-      await run("git", ["worktree", "remove", "--force", worktree]);
-    } catch {
-      // A failed cleanup can be repaired later with `git worktree prune`.
-    }
-  }
 
   return { url: "http://thinking.haus" };
 }

@@ -26,7 +26,7 @@ To me there are actually two encounters happening at that table. Sartre is encou
 
 Aron didn’t hand Sartre a book or paper or give him an academic lecture. He looked around the table, found the nearest available object, and said, essentially: *this*.
 
-There’s something I recognize in that. Some of the most important things I’ve learned from people have arrived badly packaged. A friend gets completely obsessed with a book and starts explaining it before he quite knows how. Someone sends a link saying OMGGGG!!!!!!!  You visit somebody’s house and notice the fascinating little system they’ve developed for doing something you’d never previously considered a system at all. Another person has been paying attention somewhere you haven’t, and for a moment you get to borrow their eyes.
+There’s something I recognize in that. Some of the most important things I’ve learned from people have arrived badly packaged. A friend gets completely obsessed with a book and starts explaining it before he quite knows how. Someone sends a link saying OMGGGG!!!!!!!  You visit somebody’s house and notice the [fascinating little system](https://www.anitraroweschulte.com/blog/johanna) they’ve developed for doing something you’d never previously considered a system at all. Another person has been paying attention somewhere you haven’t, and for a moment you get to borrow their eyes.
 
 The idea totally matters, but so does the enthusiasm. There’s a kind of intellectual friendship in which people don’t simply exchange conclusions…they infect one another with attention. You become interested because somebody you trust has become interested, and their interest is specific enough that you can get utterly electrified by proxy.
 

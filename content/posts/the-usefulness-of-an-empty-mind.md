@@ -24,7 +24,7 @@ This is a problem for me because I like practices that produce results. I want t
 
 Suzuki keeps returning to the activity itself. Sit because you’re sitting. Breathe because you’re breathing. Do the thing without constantly climbing outside it to ask what it means, whether it’s working, and what all of this says about you.
 
-I can’t say I consistently live that way. But I’ve come to value the freedom in it, and meditation gives me a place to practice it. Sometimes I notice how quickly I’ve decided what another person is, what something means, who’s right, who’s ridiculous. Occasionally I can catch myself before the judgment hardens and look again.
+I can’t say I consistently live that way. But I’ve come to value the freedom in it, and meditation gives me a place to practice it. Sometimes I notice how quickly I’ve decided who another person is, what something means, who’s right, who’s ridiculous. Occasionally I can catch myself before the judgment hardens and look again.
 
 That may be what beginner’s mind means to me now. Not becoming innocent again, and certainly not forgetting what I’ve learned. Just setting it down for a minute. Loosening my grip long enough for something I wasn’t expecting to get in.
 

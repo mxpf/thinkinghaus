@@ -1,6 +1,6 @@
 ---
 title: "The silent type"
-slug: a-pretty-normal-typeface
+slug: the-silent-type
 date: 2026-07-01
 status: published
 publishedAt: 2026-08-06T15:00:00.000Z

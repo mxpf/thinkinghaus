@@ -1,6 +1,6 @@
 ---
 title: "The gift of an empty mind"
-slug: the-usefulness-of-an-empty-mind
+slug: the-gift-of-an-empty-mind
 date: 2026-06-28
 status: published
 publishedAt: 2026-08-06T14:00:00.000Z

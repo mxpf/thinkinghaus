@@ -1,6 +1,6 @@
 ---
 title: "Caught in a web"
-slug: every-drawer-open
+slug: caught-in-a-web
 date: 2026-07-13
 status: published
 publishedAt: 2026-08-08T20:57:18.320Z

@@ -1,7 +1,7 @@
 ---
 title: "Personal folklore"
 slug: personal-folklore
-date: 2026-08-08
+date: 2026-07-14
 status: published
 publishedAt: 2026-08-08T03:33:21.440Z
 ---

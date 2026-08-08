@@ -2,7 +2,8 @@
 title: "Caught in a web"
 slug: every-drawer-open
 date: 2026-07-13
-status: draft
+status: published
+publishedAt: 2026-08-08T20:57:18.320Z
 ---
 
 I found Andrew Plotkin’s website about twenty years ago because I was obsessed with interactive fiction. I had played *Spider and Web*, a spy story that does things with deception, memory, and the role of the player that I had never seen a game do before. I was so struck by the craft of it that I went hunting for the person who had made it.

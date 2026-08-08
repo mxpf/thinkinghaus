@@ -2,7 +2,7 @@
 title: "Strange enough to notice"
 slug: strange-enough-to-notice
 date: 2026-08-05
-status: published
+status: draft
 publishedAt: 2026-08-05T15:00:00.000Z
 sourceLabel: "Visit Minnewaska State Park Preserve"
 sourceHref: "https://parks.ny.gov/visit/state-parks/minnewaska-state-park-preserve"

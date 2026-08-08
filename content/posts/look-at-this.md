@@ -6,7 +6,7 @@ status: published
 publishedAt: 2026-08-07T20:55:38.943Z
 ---
 
-It’s [1932](https://www.nationalgeographic.com/history/article/australian-emu-war-history) and Jean-Paul Sartre and Simone de Beauvoir meet their pal Raymond Aron at the Bec-de-Gaz bar on the rue Montparnasse. Aron had recently been in Berlin, where he’d encountered the philosophy of a certain Mr. Edmund Husserl who had this crazy new thing he was calling phenomenology. As Sarah Bakewell [tells the story](https://search.worldcat.org/de/title/974495411), Aron pointed at the drink in front of him and basically told Sartre that with phenomenology you could make philosophy *out of this cocktail.*
+It’s [1932](https://www.nationalgeographic.com/history/article/australian-emu-war-history) and Jean-Paul Sartre and Simone de Beauvoir meet their pal Raymond Aron at the Bec-de-Gaz bar on the rue Montparnasse. Aron had recently been in Berlin, where he’d encountered the philosophy of a certain Mr. Edmund Husserl who had this crazy new thing he was calling “phenomenology.” As Sarah Bakewell [tells the story](https://search.worldcat.org/de/title/974495411), Aron pointed at the drink in front of him and basically told Sartre that with phenomenology you could make philosophy *out of this cocktail.*
 
 Sartre was absolutely electrified. He got himself over to Berlin to study this stuff for himself, and voilà! phenomenology becomes a major foundation from which his own philosophy was built.
 

@@ -4,6 +4,7 @@ import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import {
+  deletePost,
   parsePost,
   postsDirectory,
   projectRoot,
@@ -220,6 +221,30 @@ async function handler(request, response) {
       const result = await publishSite();
       return json(response, {
         ...result,
+        pages: await readPages(),
+        posts: await readPosts({ includeDrafts: true }),
+        history: await history(),
+      });
+    }
+
+    if (request.method === "POST" && url.pathname === "/api/delete") {
+      const input = await bodyFrom(request);
+      const deleted = await deletePost(input.slug);
+      await generatePostsModule();
+      let result = {};
+      let publishError = "";
+      if (deleted.post.status === "published") {
+        try {
+          result = await publishSite();
+        } catch (error) {
+          publishError = error.message || "Publishing did not finish.";
+        }
+      }
+      return json(response, {
+        ...result,
+        deleted: deleted.post,
+        published: deleted.post.status === "published" && !publishError,
+        publishError,
         pages: await readPages(),
         posts: await readPosts({ includeDrafts: true }),
         history: await history(),

@@ -46,7 +46,10 @@
 
       <main class="editor" aria-label="Content editor">
         <div class="editor-meta">
-          <button class="post-state" id="post-state" type="button" aria-label="Change post status">Draft</button>
+          <div class="editor-meta-actions">
+            <button class="post-state" id="post-state" type="button" aria-label="Change post status">Draft</button>
+            <button class="delete-button" id="delete-button" type="button" hidden>Delete</button>
+          </div>
           <label class="date-field">
             <span class="sr-only">Date</span>
             <input id="date-input" type="date" />

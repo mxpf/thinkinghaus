@@ -1,9 +1,10 @@
-import { readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 export const projectRoot = path.resolve(import.meta.dirname, "..");
 export const postsDirectory = path.join(projectRoot, "content", "posts");
 export const pagesDirectory = path.join(projectRoot, "content", "pages");
+const deletedPostsDirectory = path.join(projectRoot, ".studio-trash", "posts");
 const editablePageSlugs = new Set(["about", "links"]);
 
 const frontmatterPattern = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/;
@@ -163,6 +164,19 @@ export async function savePost(post) {
   const file = path.join(postsDirectory, `${slug}.md`);
   await writeFile(file, serializePost({ ...post, slug }), "utf8");
   return { ...post, slug };
+}
+
+export async function deletePost(slug) {
+  const safeSlug = slugify(slug || "");
+  if (!safeSlug || safeSlug !== slug) throw new Error("Choose a valid post to delete.");
+  const original = path.join(postsDirectory, `${safeSlug}.md`);
+  const source = await readFile(original, "utf8");
+  const post = parsePost(source, `${safeSlug}.md`);
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  await mkdir(deletedPostsDirectory, { recursive: true });
+  const archived = path.join(deletedPostsDirectory, `${timestamp}-${safeSlug}.md`);
+  await rename(original, archived);
+  return { post, original, archived };
 }
 
 export async function readPages() {

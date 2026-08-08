@@ -75,6 +75,7 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(studio, /data-site="thinkinghaus"/);
   assert.match(studio, /data-site="portfolio"/);
   assert.match(studio, /Publish/);
+  assert.match(studio, /id="delete-button"/);
 });
 
 test("supports safe inline italics and links", async () => {

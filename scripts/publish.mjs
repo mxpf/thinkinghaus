@@ -1,7 +1,7 @@
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { generatePostsModule } from "./generate-posts.mjs";
-import { projectRoot, readPages, readPosts } from "./content.mjs";
+import { projectRoot } from "./content.mjs";
 
 const exec = promisify(execFile);
 
@@ -51,18 +51,16 @@ async function ensureSafeWorkingTree() {
 
 export async function publishSite() {
   await ensureSafeWorkingTree();
-  const allPosts = await readPosts({ includeDrafts: true });
-  const pages = await readPages();
   await generatePostsModule();
   await run("npm", ["run", "build:pages"]);
 
   const sourceFiles = [
     "app/generated-pages.ts",
     "app/generated-posts.ts",
-    ...pages.map((page) => `content/pages/${page.slug}.md`),
-    ...allPosts.map((post) => `content/posts/${post.slug}.md`),
+    "content/pages",
+    "content/posts",
   ];
-  await run("git", ["add", "--", ...sourceFiles]);
+  await run("git", ["add", "-A", "--", ...sourceFiles]);
 
   if (await hasStagedChanges()) {
     await run("git", ["commit", "-m", "Publish Thinkinghaus writing"]);

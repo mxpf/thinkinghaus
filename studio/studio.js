@@ -4,6 +4,7 @@ const elements = {
   history: document.querySelector("#history-list"),
   newButton: document.querySelector("#new-button"),
   publishButton: document.querySelector("#publish-button"),
+  deleteButton: document.querySelector("#delete-button"),
   themeToggle: document.querySelector("#theme-toggle"),
   liveLink: document.querySelector(".quiet-button"),
   saveState: document.querySelector("#save-state"),
@@ -329,6 +330,8 @@ function fillFields() {
   elements.postState.classList.toggle("is-published", activeSite === "thinkinghaus" && item?.status === "published");
   elements.postState.disabled = activeSite !== "thinkinghaus" || isThinkinghausPage;
   elements.postState.title = activeSite === "thinkinghaus" && !isThinkinghausPage ? "Change between Draft and Published" : "";
+  elements.deleteButton.hidden =
+    activeSite !== "thinkinghaus" || item?.type !== "post" || !item?.slug;
   elements.body.placeholder = activeSite === "portfolio" ? item?.type === "about" ? "About and contact text" : "Project introduction" : "Begin anywhere.";
   renderCaptionFields();
   renderPreview();
@@ -370,6 +373,58 @@ async function togglePostStatus() {
   elements.postState.classList.toggle("is-published", item.status === "published");
   renderNavigation();
   await saveCurrent();
+}
+
+async function deleteCurrentPost() {
+  const item = current();
+  if (activeSite !== "thinkinghaus" || item?.type !== "post" || !item.slug) return;
+  await flushSave();
+
+  const isPublished = item.status === "published";
+  const confirmation = isPublished
+    ? `Delete “${item.title}” and remove it from the live site? A recovery copy will be kept on this Mac.`
+    : `Delete the draft “${item.title}”? A recovery copy will be kept on this Mac.`;
+  if (!window.confirm(confirmation)) return;
+
+  elements.deleteButton.disabled = true;
+  elements.publishButton.disabled = true;
+  elements.deleteButton.textContent = "Deleting…";
+  setSaveState(isPublished ? "Deleting and publishing…" : "Deleting draft…");
+
+  try {
+    const response = await fetch("/api/delete", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug: item.slug }),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error);
+    site().items = [...result.pages, ...result.posts];
+    site().history = result.history || [];
+    site().current = site().items[0] || createBlankPost();
+    renderHistory(site().history);
+    fillFields();
+    setSaveState(
+      result.publishError
+        ? "Deleted locally; publishing paused"
+        : result.published ? "Deleted and published" : "Draft deleted locally",
+    );
+    showNotice(
+      result.publishError
+        ? `“${item.title}” was deleted locally, but publishing paused. Publish another item to retry.`
+        : result.published
+        ? `“${item.title}” was deleted. Thinkinghaus is updating now.`
+        : `“${item.title}” was deleted locally.`,
+      result.publishError ? 7000 : 5000,
+    );
+  } catch (error) {
+    setSaveState("Deletion paused");
+    showNotice(error.message || "The post was not deleted.", 6500);
+  } finally {
+    elements.deleteButton.disabled = false;
+    elements.deleteButton.textContent = "Delete";
+    renderPreview();
+  }
 }
 
 function setSaveState(label) {
@@ -574,6 +629,7 @@ elements.newButton.addEventListener("click", async () => {
   elements.title.focus();
 });
 elements.publishButton.addEventListener("click", publishCurrent);
+elements.deleteButton.addEventListener("click", deleteCurrentPost);
 elements.themeToggle.addEventListener("click", toggleTheme);
 elements.postState.addEventListener("click", togglePostStatus);
 elements.italicButton.addEventListener("click", applyItalic);

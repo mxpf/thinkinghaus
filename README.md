@@ -41,6 +41,12 @@ Choose any essay from the Published list and edit it directly. Changes save loca
 
 Published page addresses stay stable even if a title changes, so old links continue to work.
 
+### Delete a post
+
+Choose the post, then choose **Delete** beside its Draft or Published status. The studio asks for confirmation before doing anything.
+
+Deleting a draft removes it from the local library. Deleting a published post also republishes Thinkinghaus so it disappears from the live site. In both cases, the original writing file is moved into the private `.studio-trash` recovery folder on this Mac rather than permanently erased.
+
 ### Add a source
 
 Open **Source or further reading** below the writing area. Add the link text and web address. Both fields are required for the source to appear.

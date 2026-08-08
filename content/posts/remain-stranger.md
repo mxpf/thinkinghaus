@@ -32,6 +32,4 @@ I just want the chance to meet it before I translate it.
 
 That’s what I liked about the puppy scene. For a few uncomfortable seconds, I didn’t quite know how to understand what I was seeing. I’d have liked another beat of that.
 
-Let the gods remain gods for a minute.
-
-Let the sea remain the sea.
+Let the gods remain gods for a minute. Let the sea remain the sea.

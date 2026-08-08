@@ -19,6 +19,7 @@ html,
 body {
   min-height: 100%;
   margin: 0;
+  overscroll-behavior-y: none;
 }
 
 .site {
@@ -76,14 +77,7 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 24px 23px;
-}
-
-.index-frame {
-  min-height: 1024px;
-}
-
-.article-frame {
-  min-height: 1440px;
+  min-height: 100svh;
 }
 
 .desktop-brand {
@@ -98,6 +92,11 @@ body {
   grid-column: 2;
   width: 100%;
   max-width: 685px;
+}
+
+.index-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .post-list {
@@ -122,7 +121,8 @@ body {
 }
 
 .index-column > .footer {
-  margin-top: 108px;
+  margin-top: auto;
+  padding-top: 108px;
 }
 
 .footer-brand {
@@ -136,7 +136,7 @@ body {
 
 .article-column {
   display: flex;
-  min-height: 1392px;
+  min-height: calc(100svh - 48px);
   flex-direction: column;
 }
 
@@ -166,7 +166,8 @@ body {
 }
 
 .article-column > .footer {
-  margin-top: 108px;
+  margin-top: auto;
+  padding-top: 108px;
 }
 
 @media (max-width: 767px) {
@@ -174,14 +175,6 @@ body {
   .article-frame {
     display: block;
     padding: 24px;
-  }
-
-  .index-frame {
-    min-height: 956px;
-  }
-
-  .article-frame {
-    min-height: 1562px;
   }
 
   .desktop-brand {
@@ -195,7 +188,7 @@ body {
   }
 
   .index-column > .footer {
-    margin-top: 60px;
+    padding-top: 60px;
   }
 
   .footer-brand {
@@ -204,14 +197,14 @@ body {
   }
 
   .article-column {
-    min-height: 1514px;
+    min-height: calc(100svh - 48px);
   }
 
   .article-column > .footer {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 108px;
+    padding-top: 108px;
   }
 
   .article-column > .footer .footer-brand {

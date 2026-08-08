@@ -30,7 +30,14 @@ jobs:
         run: npm ci
 
       - name: Build published writing
-        run: npm run build:pages
+        shell: bash
+        run: |
+          npm run build:pages
+          if ! node scripts/verify-static-export.mjs; then
+            echo "Cold build produced stale asset references; rebuilding once."
+            npm run build:pages
+            node scripts/verify-static-export.mjs
+          fi
 
       - name: Update the GitHub Pages branch
         shell: bash

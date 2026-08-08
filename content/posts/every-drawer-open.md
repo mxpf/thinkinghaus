@@ -13,9 +13,9 @@ I’ve been wandering around it ever since. Twenty years is a long time to rumma
 
 His book list alone has sent me toward a ton of great fantasy and science-fiction books. It’s his actual library database: more than three thousand books at this point, with years of comments scattered through it. That’s part of what makes it useful to me. I’m not reading *Andrew Plotkin’s Ten Essential Fantasy Novels.* I’m snooping around the bookshelves of someone whose taste I resonate with.
 
-The games are the reason I arrived, and they remain extraordinary. His interactive-fiction page stretches from early experiments through *The Dreamhold*, *Shade*, *Spider and Web*, and a pile of stranger little things. Then there’s *Hadean Lands*, his enormous alchemical puzzle box and, at least for me, his magnum opus. He has been part of the interactive-fiction community for decades; the site doesn’t present this as a heroic career arc so much as: this is what I’ve been doing.
+The games are the reason I arrived, and they remain extraordinary. His interactive-fiction page stretches from early experiments through *The Dreamhold*, *Shade*, *Spider and Web*, and a pile of stranger little things. Then there’s *Hadean Lands*, his enormous alchemical puzzle box and, at least for me, his magnum opus. He has been part of the interactive-fiction community for decades; the site doesn’t present this as a heroic career arc so much as: *this is what I’ve been doing.*
 
-That lack of heroic framing is important. A normal professional website tries to compress a person. Here are the three things I am good at. Here are the six projects that prove it. Here is the paragraph where I explain my unique point of view in exactly 74 words.
+The standard professional website tries to compress a person. Here are the three things I am good at. Here are the six projects that prove it. Here is the paragraph where I explain my unique point of view.
 
 The site does the opposite. The *About Zarfhome* page says plainly that the site is about what he does and how he does it. He talks about showing drafts, tools, half-baked ideas, abandoned ideas, finished things and failures. His phrase for it is “work in daylight.” He makes a distinction I’ve carried around for years: being a professional at one thing doesn’t mean the rest of what you make has to disappear.
 

@@ -5,13 +5,13 @@ date: 2026-08-08
 status: draft
 ---
 
-I found Andrew Plotkin’s website about twenty years ago because I was obsessed with interactive fiction. I had played *Spider and Web*, a spy story that does things with deception, memory, and the role of the player that I had never seen a game do before. I was so struck by the craft of it that I went looking for the person who had made it.
+I found Andrew Plotkin’s website about twenty years ago because I was obsessed with interactive fiction. I had played *Spider and Web*, a spy story that does things with deception, memory, and the role of the player that I had never seen a game do before. I was so struck by the craft of it that I went hunting for the person who had made it.
 
-[The site](https://eblong.com/zarf/) is enormous. Games, essays, software, photographs, talks, science, abandoned ideas, technical standards, old jokes, a personal history, and a library database containing thousands of books are all sitting there. The redundant site map is less a navigation aid than a warning about what you’re getting yourself into.
+[The site](https://eblong.com/zarf/) runs deep. Games, essays, software, photographs, talks, science, abandoned ideas, technical standards, old jokes, a personal history, and a library database containing thousands of books are all sitting there. The redundant site map is less a navigation aid than a warning about what you’re getting yourself into.
 
-I’ve been wandering around it ever since. That matters to me more than I realized when I started thinking about why I wanted to write about the site. Twenty years is a long time to lurk in somebody else’s basement. I’ve watched projects appear, followed his games, read essays about things I barely understood, and periodically fallen into parts of the site I’d somehow missed the previous ten times through.
+I’ve been wandering around it ever since. That matters to me more than I realized when I started thinking about why I wanted to write about the site. Twenty years is a long time to lurk in somebody else’s basement. I’ve watched projects appear, followed his game development, read essays about things I barely understood, and periodically fallen into parts of the site I’d somehow missed the previous eleven times through.
 
-His book list alone has sent me toward more fantasy and science-fiction books than I could possibly reconstruct now. It’s his actual library database: more than three thousand books at this point, with years of comments scattered through it. That’s part of what makes it useful to me. I’m not receiving *Andrew Plotkin’s Ten Essential Fantasy Novels.* I’m snooping around the bookshelves of someone whose taste I’ve learned to trust.
+His book list alone has sent me toward a ton of great fantasy and science-fiction books. It’s his actual library database: more than three thousand books at this point, with years of comments scattered through it. That’s part of what makes it useful to me. I’m not receiving *Andrew Plotkin’s Ten Essential Fantasy Novels.* I’m snooping around the bookshelves of someone whose taste I’ve learned to trust.
 
 The games are the reason I arrived, and they remain extraordinary. His interactive-fiction page stretches from early experiments through *The Dreamhold*, *Shade*, *Spider and Web*, and a pile of stranger little things. Then there’s *Hadean Lands*, his enormous alchemical puzzle box and, at least for me, his magnum opus. He has been part of the interactive-fiction community for decades; the site doesn’t present this as a heroic career arc so much as: this is what I’ve been doing.
 
@@ -29,4 +29,4 @@ I love that detail. The guy who built a website partly to resist hiding unfinish
 
 That may be one of the reasons I feel such affection for the place. The site doesn’t give me access to Andrew Plotkin in some pure, unfiltered sense. I don’t know him. He’s choosing what goes on the site just like anybody else chooses what to show.
 
-But after twenty years, there’s enough material there that I can deeply feel the contours of somebody’s attention. That’s a rare gift.
+But after twenty years, there’s enough material there that I can deeply feel the contours of somebody’s attention. That’s a rare gift

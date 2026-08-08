@@ -7,7 +7,7 @@ status: draft
 
 I found Andrew Plotkin’s website about twenty years ago because I was obsessed with interactive fiction. I had played *Spider and Web*, a spy story that does things with deception, memory, and the role of the player that I had never seen a game do before. I was so struck by the craft of it that I went hunting for the person who had made it.
 
-[The site](https://eblong.com/zarf/) runs deep. Games, essays, software, photographs, talks, science, abandoned ideas, technical standards, old jokes, a personal history, and a library database containing thousands of books are all sitting there. The redundant site map is less a navigation aid than a warning about what you’re getting yourself into.
+[The site](https://eblong.com/zarf/) runs deep. Games, art projects, essays, software, photographs, talks, science, technical standards, jokes, a personal history, and a library database containing thousands of books are all sitting there. The so-called “redundant site map” is less a navigation aid than a warning about what you’re getting yourself into.
 
 I’ve been wandering around it ever since. That matters to me more than I realized when I started thinking about why I wanted to write about the site. Twenty years is a long time to lurk in somebody else’s basement. I’ve watched projects appear, followed his game development, read essays about things I barely understood, and periodically fallen into parts of the site I’d somehow missed the previous eleven times through.
 

@@ -1,5 +1,5 @@
 ---
-title: "Every Drawer Open"
+title: "Caught in a web"
 slug: every-drawer-open
 date: 2026-08-08
 status: draft

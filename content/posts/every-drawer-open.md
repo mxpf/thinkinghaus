@@ -1,7 +1,7 @@
 ---
 title: "Caught in a web"
 slug: every-drawer-open
-date: 2026-08-08
+date: 2026-07-13
 status: draft
 ---
 

@@ -87,6 +87,8 @@ test("supports safe inline italics and links", async () => {
     { type: "text", value: "." },
   ]);
   assert.equal(stripInlineMarkdown("A *strange* [path](https://example.com)."), "A strange path.");
+  assert.equal(stripInlineMarkdown("A *[strange path](https://example.com)*."), "A strange path.");
+  assert.equal(stripInlineMarkdown("A [*strange path*](https://example.com)."), "A strange path.");
   assert.deepEqual(parseInlineMarkdown("[No](javascript:alert(1))"), [
     { type: "text", value: "[No](javascript:alert(1)" },
     { type: "text", value: ")" },

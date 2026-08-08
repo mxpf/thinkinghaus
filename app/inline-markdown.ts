@@ -39,6 +39,6 @@ export function parseInlineMarkdown(value: string): InlineToken[] {
 
 export function stripInlineMarkdown(value: string) {
   return parseInlineMarkdown(value)
-    .map((token) => token.value)
+    .map((token) => token.type === "text" ? token.value : stripInlineMarkdown(token.value))
     .join("");
 }

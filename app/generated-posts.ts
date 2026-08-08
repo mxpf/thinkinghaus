@@ -2,22 +2,44 @@
 
 export const generatedPosts = [
   {
+    "title": "Look at this",
+    "slug": "look-at-this",
+    "date": "July 7, 2026",
+    "readingTime": "5 minutes",
+    "paragraphs": [
+      "It’s [1932](https://www.nationalgeographic.com/history/article/australian-emu-war-history) and Jean-Paul Sartre and Simone de Beauvoir meet their pal Raymond Aron at the Bec-de-Gaz bar on the rue Montparnasse. Aron had recently been in Berlin, where he’d encountered the philosophy of a certain Mr. Edmund Husserl who had this crazy new thing he was calling phenomenology. As Sarah Bakewell [tells the story](https://search.worldcat.org/de/title/974495411), Aron pointed at the drink in front of him and basically told Sartre that with phenomenology you could make philosophy *out of this cocktail.*",
+      "Sartre was absolutely electrified. He got himself over to Berlin to study this stuff for himself, and voilà! phenomenology becomes a major foundation from which his own philosophy was built.",
+      "I love this story because it humiliates philosophy juuuust enough. Aron doesn’t begin with Being, or Truth, or the Soul. He points at booze on the table.",
+      "It’s easy to hear this as a promise to make philosophy more accessible, as though phenomenology were saying: oh don’t worry, *we* can use relatable examples. But that’s not really what’s interesting about it. The cocktail isn’t an example pasted onto the philosophy afterward. The encounter with the drink is where the philosophy begins, which is a much stranger proposition.",
+      "I have a habit of assuming that serious thought lives at some higher altitude. If we want to think about something deeply enough, we must ascend out of the café and start looking for those inscrutable forces bearing capital letters: Meaning, Consciousness, Freedom, Art, God, Reality. Meanwhile the glass is still sitting there sweating onto the table.",
+      "One thing phenomenology says is to pay very close attention to experience as it’s actually lived. Not merely hey that’s an object over there, but the experience of perceiving it, remembering it, wanting it, recoiling from it, recognizing it. Husserl gets considerably more complicated than staring down cocktails, obviously. But the concept that smacked Sartre so hard from this experience was that experience itself could be philosophically inexhaustible.",
+      "What exactly is this cocktail before I file it away under “cocktail?” Well…there’s color, which I recognize as apricot even though…hmm…I’m not entirely sure apricot is a *color*. There’s the cold glass in my hand. Sweetness arriving before bitterness. My expectation of what it will taste like. The café around it. The fact that I’m sitting with these particular people. One of them is watching me drink it, etc. All these memories and preferences and tiny private histories that have somehow become involved in this otherwise innocent beverage.",
+      "Naming things is useful, but it also shrink-wraps them. Cocktail. Café. Friend. Stranger. Job. Website. [Tree](https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:534145-1/images). Myself. Once something has a name, it becomes very easy to stop encountering it. We know what that is. Move along. The world becomes incredibly efficient and navigable this way, and also slightly dead.",
+      "To me there are actually two encounters happening at that table. Sartre is encountering the cocktail differently, but he’s also encountering Aron: somebody who had gone somewhere, found something that rearranged the furniture in his head, and come back excited enough to try to make his friends see what he’d seen.",
+      "Aron didn’t hand Sartre a book or paper or give him an academic lecture. He looked around the table, found the nearest available object, and said, essentially: *this*.",
+      "There’s something I recognize in that. Some of the most important things I’ve learned from people have arrived badly packaged. A friend gets completely obsessed with a book and starts explaining it before he quite knows how. Someone sends a link saying OMGGGG!!!!!!!  You visit somebody’s house and notice the [fascinating little system](https://www.anitraroweschulte.com/blog/johanna) they’ve developed for doing something you’d never previously considered a system at all. Another person has been paying attention somewhere you haven’t, and for a moment you get to borrow their eyes.",
+      "The idea totally matters, but so does the enthusiasm. There’s a kind of intellectual friendship in which people don’t simply exchange conclusions…they infect one another with attention. You become interested because somebody you trust has become interested, and their interest is specific enough that you can get utterly electrified by proxy.",
+      "I think this is a piece of why Bakewell’s account of existentialism starts here. Existentialism wasn’t produced by a bunch of isolated genius brains emitting a stream of books. It developed among friendships, love affairs, arguments, rivalries, cafés, letters, teachers, students, and people enthusiastically mangling one another’s ideas.",
+      "[Origin stories](https://www.dc.com/blog/2025/04/07/digging-up-the-resurrection-man) are suspiciously tidy, of course. Intellectual movements aren’t born on a table one afternoon any more than rivers begin beneath signs saying [RIVER](https://www.whanganui.govt.nz/Community-and-Places/About-Whanganui/Our-District/Te-Awa-Tupua-Whanganui-River-Settlement) STARTS HERE. Sartre already had his own philosophical ambitions. Husserl had spent decades developing phenomenology. Other thinkers were shooting those ideas all over Europe. I think the legend survives because it compresses something messier into a scene you can hold.",
+      "The exchange over the drink seems almost embarrassingly small compared with what followed: Sartre, Beauvoir, existentialism, Being and Nothingness, decades of argument about freedom, consciousness, responsibility, and what the hell we’re all doing here. But that’s exactly what I like about it. The big thing doesn’t arrive as a big thing. It arrives as your friend leaning across a café table and saying: look at this."
+    ]
+  },
+  {
     "title": "The silent type",
     "slug": "a-pretty-normal-typeface",
-    "date": "August 6, 2026",
+    "date": "July 1, 2026",
     "readingTime": "2 minutes",
     "paragraphs": [
       "Untitled Sans began as an attempt to make another typeface plainer.",
-      "Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after reading about the [Super Normal project](https://jaspermorrison.com/exhibitions/2000-2009/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.",
-      "I love that the explanation arrived late.",
-      "Design processes are usually written up as though every decision knew where it was going. Mine don’t. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.",
-      "Sowersby describes deliberately removing traces of his own recognizable style from the letters. He was, in a sense, taking his fingerprints off the thing.",
+      "Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after [reading about](https://khole.net/issues/youth-mode/) the [Super Normal project](https://jaspermorrison.com/exhibitions/2000-2009/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.",
+      "I love that the explanation arrived late in the game, I can identify. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.",
+      "Sowersby describes deliberately removing traces of his own recognizable style from the letters, scrubbing his fingerprints off the [crime scene.](https://www.btp.police.uk/police-forces/british-transport-police/areas/about-us/about-us/our-history/crime-history/great-train-robbery/?utm_source=chatgpt.com)",
       "That sounds almost perverse for a designer. We’re encouraged to make things distinctive, ownable, memorable—something that can stand up in a presentation and explain why it deserves to exist.",
-      "But most of the time, when I’m reading, I don’t need the typeface to introduce itself. I need it to help me read.",
-      "That’s probably why Untitled Sans feels right for both my portfolio and Thinkinghaus. The work and the writing can wander around and follow unusual ideas. The letters stay put.",
-      "Its plainness isn’t an absence of design. It’s what happens when a lot of small decisions are made thoughtfully enough that they can recede. The type makes some room around the words instead of elbowing them for attention.",
+      "But most of the time, when I’m reading, I don’t need the typeface to introduce itself. I need it to help me *read*.",
+      "That’s probably why Untitled Sans feels right for both my [portfolio](http://maxpfennig.haus/) and for Thinkinghaus. The work and the writing can wander around and follow unusual ideas. The letters stay put.",
+      "Its plainness isn’t an absence of design. It’s what happens when a mountain of small decisions are made thoughtfully enough that they can recede. The type makes some room around the words instead of elbowing them for attention.",
       "I find that deeply appealing: work that has clearly been thought about, but doesn’t make you stop every five minutes to admire how much thinking went into it.",
-      "Something that knows how to shut up."
+      "Work that knows how to be quiet."
     ],
     "source": {
       "label": "Read Kris Sowersby’s notes on the Untitled Collection",
@@ -27,7 +49,7 @@ export const generatedPosts = [
   {
     "title": "The gift of an empty mind",
     "slug": "the-usefulness-of-an-empty-mind",
-    "date": "August 6, 2026",
+    "date": "June 28, 2026",
     "readingTime": "3 minutes",
     "paragraphs": [
       "One of my favorite books—favorite manuals, really—is *Zen Mind, Beginner’s Mind* by the Zen monk Shunryu Suzuki.",
@@ -38,106 +60,14 @@ export const generatedPosts = [
       "Suzuki talks about posture, breathing, repetition, effort, and the very ordinary difficulty of sitting still. The spiritual life he describes is physical. It’s in my hands, my spine, my breath, and my willingness to sit there without turning the whole thing into another achievement.",
       "This is a problem for me because I like practices that produce results. I want to know if I’m progressing. I want a little dashboard somewhere telling me my Zen is up 14 percent from last quarter. Even when I’m actively trying to become less ambitious, I can become ambitious about becoming less ambitious.",
       "Suzuki keeps returning to the activity itself. Sit because you’re sitting. Breathe because you’re breathing. Do the thing without constantly climbing outside it to ask what it means, whether it’s working, and what all of this says about you.",
-      "I can’t say I consistently live that way. But I’ve come to value the freedom in it, and meditation gives me a place to practice it. Sometimes I notice how quickly I’ve decided what another person is, what something means, who’s right, who’s ridiculous. Occasionally I can catch myself before the judgment hardens and look again.",
+      "I can’t say I consistently live that way. But I’ve come to value the freedom in it, and meditation gives me a place to practice it. Sometimes I notice how quickly I’ve decided who another person is, what something means, who’s right, who’s ridiculous. Occasionally I can catch myself before the judgment hardens and look again.",
       "That may be what beginner’s mind means to me now. Not becoming innocent again, and certainly not forgetting what I’ve learned. Just setting it down for a minute. Loosening my grip long enough for something I wasn’t expecting to get in.",
       "The joke, of course, is that I can immediately turn this into another thing to master. A program for becoming exceptionally good at having no ambitions about becoming exceptionally good.",
-      "Suzuki has me pretty well covered there too.",
       "*Zen Mind, Beginner’s Mind* doesn’t make Zen easy. It makes simplicity seem like enough to work on."
     ],
     "source": {
       "label": "Read Zen Mind, Beginner’s Mind",
       "href": "https://search.worldcat.org/title/1137753173"
     }
-  },
-  {
-    "title": "An odyssey",
-    "slug": "remain-stranger",
-    "date": "August 6, 2026",
-    "readingTime": "3 minutes",
-    "paragraphs": [
-      "There’s an early scene in Christopher Nolan’s *The Odyssey* where Odysseus is sitting with Eumaeus, examining a litter of puppies. Eumaeus picks one up, looks it over briefly, and casually tosses it over a nearby ledge.",
-      "For a moment, the movie opens onto a stranger world. People live closer to death. The borders between necessity, ritual, cruelty, and ordinary life aren’t where I expect them to be. Nobody stops to explain the rules.",
-      "Then Eumaeus reaches for another puppy. Odysseus stops him and keeps the dog for himself.",
-      "And just like that I know where I am again.",
-      "I know who I’m supposed to identify with. I know who has behaved badly. Odysseus has demonstrated a recognizably modern kind of mercy, and the little door into that other world swings mostly shut.",
-      "I wanted the movie to leave it open a little longer.",
-      "I do this kind of translation myself all the time. A god becomes a psychological condition. A monster becomes trauma. A voyage becomes a metaphor for recovering from war. These interpretations can be useful; sometimes they’re exactly what gives me a way into an old story.",
-      "But they can also make the old story suspiciously good at agreeing with me.",
-      "Homer’s gods aren’t especially cooperative about this. They’re vain, generous, jealous, horny, petty, helpful, vindictive, terrifying. They don’t always behave like symbols for something more respectable. For most of human history, people lived with forces they couldn’t control and didn’t expect the universe to be fair, legible, or particularly interested in explaining itself.",
-      "I’m not sure I’d enjoy living in that world. I’m also not sure I want it renovated before I get there.",
-      "There’s something valuable in allowing an old thing to remain old for a while—letting its assumptions sit beside mine without immediately deciding which familiar modern category they belong in. Not because the past was wiser. Plenty of it was awful. And strangeness isn’t automatically profound.",
-      "I just want the chance to meet it before I translate it.",
-      "That’s what I liked about the puppy scene. For a few uncomfortable seconds, I didn’t quite know how to understand what I was seeing. I’d have liked another beat of that.",
-      "Let the gods remain gods for a minute.",
-      "Let the sea remain the sea."
-    ]
-  },
-  {
-    "title": "Strange enough to notice",
-    "slug": "strange-enough-to-notice",
-    "date": "August 5, 2026",
-    "readingTime": "3 minutes",
-    "paragraphs": [
-      "On an unusually warm weekday in April, I committed a small crime of opportunity.",
-      "I was between projects—the quiet side of a feast-or-famine business—and work hadn’t claimed the day yet. Before it could, I ran for it and drove north to Minnewaska State Park Preserve. I knew parts of *Severance* had been filmed there. That was enough of a plan.",
-      "I like road trips, being outside, and finding places close to home that I’ve somehow missed. I was also curious about the show’s outdoor world: bleak, Gothic, slightly unreal. I wanted to know how much of that feeling was sitting there in the landscape and how much had been put there by the people making the show.",
-      "At the gate, I paid the ranger. There were three tourists in the lodge. After that, almost nobody.",
-      "Minnewaska has dense woods, cliffs, old carriage roads, mountain lakes, and a waterfall that I hiked down to with the pleasant feeling that I’d somehow borrowed the whole preserve for the afternoon.",
-      "I expected some of it to feel eerie because of *Severance*. It didn’t. It felt quiet and restorative. Beautiful, certainly, but the place had clearly not been waiting around to become *Severance*.",
-      "That made me like the show more.",
-      "Standing at one of the locations, I could see several different pictures a camera might have made. There wasn’t an inevitable shot hiding in the rocks, waiting for somebody to discover it. Someone had walked around, looked at the water and the trees and the angle of the ground, and decided that this was what the place could become.",
-      "I think I sometimes imagine looking as a kind of treasure hunt: the interesting thing exists out there and the job is to find it. But a lot of looking is closer to making a proposition. What if these two things belong together? What happens if I stand over here instead? What else could this be?",
-      "That may be one reason I like leaving a little chance in things. Another person, an unfamiliar reference, a wrong turn, AI—anything that can put something in front of me that I wouldn’t have put there myself.",
-      "Once, while working on a cover for Las Vegas Sands, I was looking for a natural form that could sit beside a curling architectural detail. AI gave me fiddleheads. Their little spirals echoed the architecture and, by accident, made something resembling an S.",
-      "I couldn’t have planned that particular collision. But I still had to see it.",
-      "The same was true at Minnewaska. I went looking for the fictional place and found a real one instead. I walked around, climbed down to the waterfall, poked at the edges of things, and eventually drove home.",
-      "Nothing especially important happened.",
-      "It was a very good day."
-    ],
-    "source": {
-      "label": "Visit Minnewaska State Park Preserve",
-      "href": "https://parks.ny.gov/visit/state-parks/minnewaska-state-park-preserve"
-    }
-  },
-  {
-    "title": "The work between the work",
-    "slug": "the-work-between-the-work",
-    "date": "August 5, 2026",
-    "readingTime": "3 minutes",
-    "paragraphs": [
-      "Some of the most useful work I do leaves almost nothing behind.",
-      "A portfolio is a strangely hygienic account of a project. Here is a report. Here is an identity, a platform, a system. Everything appears as a finished object, as if it arrived intact on a white background.",
-      "What disappears are the people, budgets, old decisions, new anxieties, unclear language, and deadlines that don’t care whether the idea is ready. The conversation before the meeting. The question that changes the brief. The note three days later explaining why everyone agreed to the thing they’ve already started forgetting.",
-      "For a long time, I thought of all of this as the stuff surrounding the work. The real work was what I could see.",
-      "That got harder to believe as I started leading more projects.",
-      "A lot of the invisible part is translation. Someone says they want “more impact.” Maybe they mean contrast. Maybe confidence. Maybe they’re worried the CEO is going to flip past the page without noticing it. The request and the actual worry are often two different animals, and asking one more question can keep a room full of people from spending a week solving the wrong problem in excruciating detail.",
-      "Timing matters in similarly annoying ways. Show rough work as though it’s finished and people will judge everything that isn’t there yet. Show finished work as though it’s still an open question and somebody will helpfully pull the legs off it.",
-      "None of this produces much to point at afterward.",
-      "There were days when I’d leave work having made almost nothing myself. I’d clarified a decision, connected two people, moved something out of somebody’s way, given a designer another afternoon before showing the work, or written down enough context that the next person didn’t have to reconstruct the whole archaeological site from Slack messages.",
-      "At first those days made me vaguely guilty. I like making things. I like the clean evidence of a page changing under my hands. “I helped several conversations go better” has considerably less portfolio appeal.",
-      "But I’ve come to think that making the conditions for good work is part of making the work.",
-      "That doesn’t mean every meeting is secretly design. Plenty of meetings are just meetings. Coordination can become its own enormous inflatable industry where everybody spends all day discussing the work nobody has time to do.",
-      "The useful version is quieter. Somebody understands why a decision was made instead of merely being told what it was. A good idea gets another day rather than being killed because it was shown too early. A person can move forward without waiting for three more people to weigh in. The project has a little less friction in it.",
-      "Most of the evidence is indirect. Fewer surprises. Calmer handoffs. Decisions that still make sense a week later. Somebody else being able to pick up the thing without needing you standing beside them.",
-      "I still prefer the days when I make something I can see. But I no longer think those are the only days that count."
-    ]
-  },
-  {
-    "title": "A system for looking",
-    "slug": "a-system-for-looking",
-    "date": "August 5, 2026",
-    "readingTime": "3 minutes",
-    "paragraphs": [
-      "Before I make, I look.",
-      "I used to confuse looking with collecting. I’d open a browser, save fifty images, and call the result research. My collection grew, my understanding did not.",
-      "Now I try to begin with a question. What am I actually trying to understand? What has become so familiar that no one sees it anymore? What does a person need to know, feel, or do—and in what order? The question doesn’t need to point toward an answer. It only needs to give my looking a shape.",
-      "I start near the subject. If I’m working on a corporate report, I look at reports. I need to understand the form before I decide what to do with it.",
-      "Then I move farther away. I might look at newspapers, maps, instruction manuals, or paintings. A newspaper knows how to handle density. A map knows how to hold several scales at once. A painting may know something useful about directing the eye.",
-      "I’m not looking for a style to borrow. I’m trying to notice what something is doing. When I save a reference, I write down why.  The note is as at least as useful as the image. It gives me enough distance to carry the idea somewhere else without copying its appearance.",
-      "Then I arrange what I’ve found and start removing things. One reference tells me what I like. Several references placed together begin to reveal to me what I think. The one that does not fit is often worth keeping around. Or it may be pointing to something the rest of the collection has politely avoided.",
-      "Time helps too. I’m easily persuaded by novelty and veneer. If I leave the references alone for a day, some become less convincing, a few become more interesting.",
-      "Eventually I make something, usually before I feel ready. A rough sketch shows whether an observation can survive contact with actual words, scale, and use. If it can’t, no matter how cute it is, it gets tossed off the cliff.",
-      "So my system isn’t very complicated: begin with a question, look outside the category, name what matters, arrange, remove, make, and look again. The point is not to build an impressive moodboard. It’s to notice enough that a decision becomes easier."
-    ]
   }
 ] as const;

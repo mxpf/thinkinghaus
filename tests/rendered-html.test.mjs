@@ -39,15 +39,27 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 
-test("renders editable About and Links pages", async () => {
+test("renders standalone About, AI, and Links pages", async () => {
   const pages = await readPages();
-  assert.deepEqual(pages.map((page) => page.slug), ["about", "links"]);
+  assert.deepEqual(pages.map((page) => page.slug), ["about", "ai", "links"]);
 
   const aboutResponse = await render("/about");
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
   assert.match(aboutHtml, /<title>About — Thinkinghaus<\/title>/i);
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
+  assert.match(aboutHtml, /href="\/ai"/);
+
+  const aiResponse = await render("/ai");
+  assert.equal(aiResponse.status, 200);
+  const aiHtml = await aiResponse.text();
+  assert.match(aiHtml, /<title>AI — Thinkinghaus<\/title>/i);
+  assert.match(aiHtml, /<em>made with AI<\/em>/);
+  assert.match(
+    aiHtml,
+    /href="https:\/\/www\.bydamo\.la\/p\/ai-manifesto" rel="noreferrer"/,
+  );
+  assert.doesNotMatch(aiHtml, /<nav[^>]*>[\s\S]*?>AI<\/a>/);
 
   const linksResponse = await render("/links");
   assert.equal(linksResponse.status, 200);

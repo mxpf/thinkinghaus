@@ -6,9 +6,23 @@ export const generatedPages = [
     "slug": "about",
     "paragraphs": [
       "Thinkinghaus grew out of a habit I didn’t expect to become important.",
-      "Through collaborating with AI, I found myself putting half-formed ideas into words, arguing with them, revising them, and gradually getting closer to what I actually meant. My writing stopped feeling like something that came after thinking. It became a way of articulating myself—and of noticing what had been rattling around in my head in the first place.",
+      "Through [collaborating with AI](/ai), I found myself putting half-formed ideas into words, arguing with them, revising them, and gradually getting closer to what I actually meant. My writing stopped feeling like something that came after thinking. It became a way of articulating myself—and of noticing what had been rattling around in my head in the first place.",
       "The writing here tries to move in both directions. I like to experiment with tools, systems, methods, frames, and ways of seeing that help me make work that feels more genuinely mine. But I’m just as interested in people who’ve committed themselves to expressing something in their own particular way. I want to understand their processes, systems, approaches, and perspectives; to meet the work on its own terms; and to see what kind of connection becomes possible when somebody has put enough of themselves into a thing for another person to find them there.",
       "The site is deliberately simple for the same reason. I don’t want publishing to become another project. The less machinery between an idea and the page, the more likely I am to follow it. Enough design to make the words pleasant to encounter, then mostly get out of their way."
+    ]
+  },
+  {
+    "title": "AI",
+    "slug": "ai",
+    "paragraphs": [
+      "I use AI throughout Thinkinghaus.",
+      "I use it to think out loud, interrogate half-formed ideas, research unfamiliar territory, make unlikely connections, argue with myself, edit, revise, and keep following a thought after I might otherwise have dropped it.",
+      "It sometimes contributes words. It often contributes questions. I discard a lot. I rewrite a lot. The work that remains is here because I recognize myself in it and am willing to put my name on it.",
+      "Working this way has made me less interested in whether something was *made with AI* than in what kind of attention went into making it. A tool can participate deeply in the process without replacing the person responsible for the choices.",
+      "For me, AI has become a way of making thinking visible. The conversation forces ideas out of their comfortable vagueness and into language, where I can finally see what I believe, what I don’t, and what deserves another pass.",
+      "I was here.",
+      "—",
+      "This page was inspired by [\"Morenikeji’s /ai manifesto\"](https://www.bydamo.la/p/ai-manifesto), which proposes a simple convention: if AI plays a role in your work, say how."
     ]
   },
   {

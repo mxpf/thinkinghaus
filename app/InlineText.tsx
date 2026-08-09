@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { parseInlineMarkdown } from "./inline-markdown";
 
 export function InlineText({ text }: { text: string }) {
@@ -6,6 +7,13 @@ export function InlineText({ text }: { text: string }) {
       return <em key={index}><InlineText text={token.value} /></em>;
     }
     if (token.type === "link") {
+      if (token.href.startsWith("/")) {
+        return (
+          <Link key={index} href={token.href}>
+            <InlineText text={token.value} />
+          </Link>
+        );
+      }
       return (
         <a key={index} href={token.href} rel="noreferrer">
           <InlineText text={token.value} />

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { parseInlineMarkdown } from "./inline-markdown";
 
+const staticExport = process.env.STATIC_EXPORT === "1";
+
 export function InlineText({ text }: { text: string }) {
   return parseInlineMarkdown(text).map((token, index) => {
     if (token.type === "italic") {
@@ -8,6 +10,13 @@ export function InlineText({ text }: { text: string }) {
     }
     if (token.type === "link") {
       if (token.href.startsWith("/")) {
+        if (staticExport) {
+          return (
+            <a key={index} href={token.href}>
+              <InlineText text={token.value} />
+            </a>
+          );
+        }
         return (
           <Link key={index} href={token.href}>
             <InlineText text={token.value} />

@@ -10,7 +10,7 @@ sourceHref: "https://klim.co.nz/blog/untitled-sans-serif-design-information/"
 
 Untitled Sans began as an attempt to make another typeface plainer.
 
-Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after [reading about](https://khole.net/issues/youth-mode/) the [Super Normal project](https://jaspermorrison.com/exhibitions/2000-2009/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.
+Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after reading about the [Super Normal](https://jaspermorrison.com/publications/essays/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.
 
 I love that the explanation arrived late in the game, I can identify. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.
 
@@ -26,4 +26,4 @@ Its plainness isn’t an absence of design. It’s what happens when a mountain 
 
 I find that deeply appealing: work that has clearly been thought about, but doesn’t make you stop every five minutes to admire how much thinking went into it.
 
-Work that knows how to be quiet.
+Work that knows how to be [quiet](https://openlibrary.org/works/OL15626048W/No_such_thing_as_silence).

@@ -9,6 +9,7 @@ export function Footer({ showBrand = false }: { showBrand?: boolean }) {
       <nav className="footer-links" aria-label="Site">
         <a href={staticExport ? "/about.html" : "/about"}>About</a>
         <a href={staticExport ? "/links.html" : "/links"}>Links</a>
+        <a href="https://trackinghaus-alpha.vercel.app">Stats</a>
       </nav>
     </footer>
   );

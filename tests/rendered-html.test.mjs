@@ -36,6 +36,11 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   for (const post of posts) assert.ok(html.includes(post.title));
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="\/links"/);
+  assert.match(html, /href="https:\/\/trackinghaus-alpha\.vercel\.app">Stats<\/a>/);
+  assert.match(
+    html,
+    /<script[^>]+src="https:\/\/trackinghaus-alpha\.vercel\.app\/tracker\.js"[^>]+data-site="thinkinghaus"[^>]+data-endpoint="https:\/\/trackinghaus-alpha\.vercel\.app\/api\/collect"/,
+  );
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 

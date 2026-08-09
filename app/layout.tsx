@@ -25,7 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <script
+          defer
+          src="https://trackinghaus-alpha.vercel.app/tracker.js"
+          data-site="thinkinghaus"
+          data-endpoint="https://trackinghaus-alpha.vercel.app/api/collect"
+        />
+      </body>
     </html>
   );
 }

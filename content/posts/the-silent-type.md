@@ -12,7 +12,7 @@ Untitled Sans began as an attempt to make another typeface plainer.
 
 Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after reading about the [Super Normal](https://jaspermorrison.com/publications/essays/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.
 
-I love that the explanation arrived late in the game, I can identify. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.
+I love that the explanation arrived late in the game. I can identify. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.
 
 Sowersby describes deliberately removing traces of his own recognizable style from the letters, scrubbing his fingerprints off the [crime scene.](https://www.btp.police.uk/police-forces/british-transport-police/areas/about-us/about-us/our-history/crime-history/great-train-robbery/?utm_source=chatgpt.com)
 

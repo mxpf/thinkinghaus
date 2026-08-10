@@ -33,11 +33,7 @@ jobs:
         shell: bash
         run: |
           npm run build:pages
-          if ! node scripts/verify-static-export.mjs; then
-            echo "Cold build produced stale asset references; rebuilding once."
-            npm run build:pages
-            node scripts/verify-static-export.mjs
-          fi
+          node scripts/verify-static-export.mjs
 
       - name: Update the GitHub Pages branch
         shell: bash
@@ -48,6 +44,7 @@ jobs:
           git worktree add --detach /tmp/thinkinghaus-pages origin/gh-pages
           rsync -a --delete --exclude .git dist/client/ /tmp/thinkinghaus-pages/
           touch /tmp/thinkinghaus-pages/.nojekyll
+          node scripts/verify-static-export.mjs /tmp/thinkinghaus-pages
           cd /tmp/thinkinghaus-pages
           git add -A
           if git diff --cached --quiet; then

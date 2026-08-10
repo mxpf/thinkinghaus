@@ -104,7 +104,7 @@ body {
   display: inline-block;
   font: inherit;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(5px);
 }
 
 .letter-cascade.is-in b {

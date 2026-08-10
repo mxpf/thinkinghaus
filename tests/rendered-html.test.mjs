@@ -33,6 +33,7 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   const posts = await readPosts();
 
   assert.match(html, /<title>Thinkinghaus<\/title>/i);
+  assert.match(html, /class="letter-cascade is-in" aria-label="Thinkinghaus"/);
   for (const post of posts) assert.ok(html.includes(post.title));
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="\/links"/);

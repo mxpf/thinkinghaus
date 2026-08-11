@@ -45,7 +45,10 @@ jobs:
           # Preserve old hashed CSS files: GitHub Pages may briefly serve an
           # older cached HTML document after deployment, and it must still be
           # able to load its stylesheet during that transition.
-          rsync -a --delete --exclude .git --exclude _next/static/css/ dist/client/ /tmp/thinkinghaus-pages/
+          # Compare file contents so a fresh checkout cannot retain stale HTML
+          # when its size and timestamp happen to match the new export.
+          rsync -a --checksum --delete --exclude .git --exclude _next/static/css/ \
+            dist/client/ /tmp/thinkinghaus-pages/
           rsync -a dist/client/_next/static/css/ /tmp/thinkinghaus-pages/_next/static/css/
           touch /tmp/thinkinghaus-pages/.nojekyll
           node scripts/verify-static-export.mjs /tmp/thinkinghaus-pages

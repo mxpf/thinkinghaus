@@ -245,14 +245,13 @@ body {
   }
 
   .article-column > .footer {
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
     padding-top: 108px;
   }
 
   .article-column > .footer .footer-brand {
-    margin-bottom: 0;
+    margin-bottom: 24px;
   }
 }
 

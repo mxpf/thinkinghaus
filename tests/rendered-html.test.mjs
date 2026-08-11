@@ -4,6 +4,7 @@ import test from "node:test";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
 import { calculateReadingTime, parsePost, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { readPortfolioAbout, readPortfolioProjects } from "../scripts/portfolio-content.mjs";
+import { generateRssFeed } from "../scripts/rss.mjs";
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -38,11 +39,54 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="\/links"/);
   assert.match(html, /href="https:\/\/trackinghaus-alpha\.vercel\.app">Stats<\/a>/);
+  assert.match(html, /href="\/rss\.xml" type="application\/rss\+xml">RSS<\/a>/);
+  assert.ok(html.indexOf(">Stats</a>") < html.indexOf(">RSS</a>"));
+  assert.match(
+    html,
+    /<link rel="alternate" type="application\/rss\+xml" href="https:\/\/thinking\.haus\/rss\.xml"/,
+  );
   assert.match(
     html,
     /<script[^>]+src="https:\/\/trackinghaus-alpha\.vercel\.app\/tracker\.js"[^>]+data-site="thinkinghaus"[^>]+data-endpoint="https:\/\/trackinghaus-alpha\.vercel\.app\/api\/collect"/,
   );
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
+});
+
+test("generates an RSS feed from published posts", async () => {
+  const posts = await readPosts();
+  const feed = generateRssFeed(posts);
+  const generatedFeed = await readFile(new URL("../public/rss.xml", import.meta.url), "utf8");
+
+  assert.equal(generatedFeed, feed);
+  assert.match(feed, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+  assert.match(feed, /<rss version="2\.0"/);
+  assert.match(
+    feed,
+    /<atom:link href="https:\/\/thinking\.haus\/rss\.xml" rel="self" type="application\/rss\+xml" \/>/,
+  );
+  assert.equal(feed.match(/<item>/g)?.length, posts.length);
+  for (const post of posts) {
+    assert.ok(feed.includes(`<link>https://thinking.haus/${post.slug}</link>`));
+  }
+  assert.match(feed, /<content:encoded><!\[CDATA\[<p>/);
+  assert.match(feed, /<em>/);
+
+  const drafts = (await readPosts({ includeDrafts: true }))
+    .filter((post) => post.status === "draft");
+  for (const draft of drafts) {
+    assert.doesNotMatch(feed, new RegExp(`<link>https://thinking\\.haus/${draft.slug}</link>`));
+  }
+
+  const escaped = generateRssFeed([{
+    title: "A & B",
+    slug: "a-and-b",
+    date: "2026-08-10",
+    publishedAt: "2026-08-10T12:00:00.000Z",
+    paragraphs: ["A *small* [link](https://example.com/?a=1&b=2)."],
+  }]);
+  assert.match(escaped, /<title>A &amp; B<\/title>/);
+  assert.match(escaped, /<em>small<\/em>/);
+  assert.match(escaped, /href="https:\/\/example\.com\/\?a=1&amp;b=2"/);
 });
 
 test("renders standalone About, AI, and Links pages", async () => {

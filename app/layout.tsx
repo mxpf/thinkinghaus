@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Thinkinghaus",
   description: "Notes on attention, work, and the occasional strange thing.",
   metadataBase: new URL("https://thinking.haus"),
+  alternates: {
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
+  },
   openGraph: {
     title: "Thinkinghaus",
     description: "Notes on attention, work, and the occasional strange thing.",

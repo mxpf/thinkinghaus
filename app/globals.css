@@ -1,6 +1,15 @@
 :root {
-  --blog-light: #f7f6f2;
-  --blog-dark: #1c1c1a;
+  --blog-background: #f7f6f2;
+  --blog-foreground: #1c1c1a;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blog-background: #1c1c1a;
+    --blog-foreground: #f7f6f2;
+    color-scheme: dark;
+  }
 }
 
 @font-face {
@@ -19,13 +28,14 @@ html,
 body {
   min-height: 100%;
   margin: 0;
+  background: var(--blog-background);
   overscroll-behavior-y: none;
 }
 
 .site {
   min-height: 100svh;
-  background: var(--blog-light);
-  color: var(--blog-dark);
+  background: var(--blog-background);
+  color: var(--blog-foreground);
   font-family: "Untitled Sans", "UntitledSans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
   font-synthesis: none;

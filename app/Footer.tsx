@@ -10,6 +10,7 @@ export function Footer({ showBrand = false }: { showBrand?: boolean }) {
         <a href={staticExport ? "/about.html" : "/about"}>About</a>
         <a href={staticExport ? "/links.html" : "/links"}>Links</a>
         <a href="https://trackinghaus-alpha.vercel.app">Stats</a>
+        <a href="/rss.xml" type="application/rss+xml">RSS</a>
       </nav>
     </footer>
   );

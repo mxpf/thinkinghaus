@@ -153,7 +153,12 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-Regular\.woff2/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-RegularItalic\.woff[^}]*font-style: italic/s);
-  assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans"[^}]*font-style: italic/s);
+  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-Light\.woff2[^}]*font-weight: 300/s);
+  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-LightItalic\.woff2[^}]*font-style: italic[^}]*font-weight: 300/s);
+  assert.match(siteStyles, /\.article-body\s*\{[^}]*font-weight: 300/s);
+  assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans"[^}]*font-style: italic[^}]*font-weight: 300/s);
+  assert.doesNotMatch(siteStyles, /\.article-header[^}]*font-weight: 300/s);
+  assert.doesNotMatch(siteStyles, /\.footer[^}]*font-weight: 300/s);
   assert.doesNotMatch(`${siteStyles}${studioStyles}`, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.article-header h1\s*\{[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
@@ -166,6 +171,8 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.doesNotMatch(studioStyles, /data-theme|theme-toggle/);
   assert.doesNotMatch(studioScript, /setTheme|toggleTheme|themeToggle/);
   assert.match(studioStyles, /\.preview-article p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
+  assert.match(studioStyles, /#preview-body p\s*\{[^}]*font-weight: 300/s);
+  assert.doesNotMatch(studioStyles, /\.preview-article header[^}]*font-weight: 300/s);
   assert.match(studioScript, /optical-margin-fallback/);
   assert.match(articlePage, /optical-margin-fallback/);
 });
@@ -194,6 +201,14 @@ test("supports safe inline italics and links", async () => {
     new URL("../public/fonts/UntitledSansWeb-Regular.woff2", import.meta.url),
   );
   assert.equal(regularFont.size, 23275);
+  const lightFont = await stat(
+    new URL("../public/fonts/TestUntitledSansWeb-Light.woff2", import.meta.url),
+  );
+  assert.equal(lightFont.size, 5349);
+  const lightItalicFont = await stat(
+    new URL("../public/fonts/TestUntitledSansWeb-LightItalic.woff2", import.meta.url),
+  );
+  assert.equal(lightItalicFont.size, 5554);
 });
 
 test("calculates reading time and preserves draft status", () => {

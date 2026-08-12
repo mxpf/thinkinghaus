@@ -33,6 +33,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("/fonts/TestUntitledSansWeb-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("/fonts/TestUntitledSansWeb-LightItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -617,6 +633,10 @@ button {
   text-wrap: pretty;
 }
 
+#preview-body p {
+  font-weight: 300;
+}
+
 .preview-article p.optical-margin-fallback {
   text-indent: -0.42em;
 }
@@ -635,9 +655,10 @@ button {
   text-underline-offset: 3px;
 }
 
-.preview-article em {
+#preview-body em {
   font-family: "Untitled Sans", "Helvetica Neue", Arial, sans-serif;
   font-style: italic;
+  font-weight: 300;
 }
 
 .preview-media {

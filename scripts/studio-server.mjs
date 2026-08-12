@@ -129,6 +129,14 @@ async function sendAsset(response, pathname) {
       "../public/fonts/UntitledSansWeb-RegularItalic.woff",
       "font/woff",
     ],
+    "/fonts/TestUntitledSansWeb-Light.woff2": [
+      "../public/fonts/TestUntitledSansWeb-Light.woff2",
+      "font/woff2",
+    ],
+    "/fonts/TestUntitledSansWeb-LightItalic.woff2": [
+      "../public/fonts/TestUntitledSansWeb-LightItalic.woff2",
+      "font/woff2",
+    ],
   };
   const asset = assets[pathname];
   if (!asset) return false;

@@ -446,7 +446,7 @@ button {
 .body-input {
   min-height: 62vh;
   margin-top: 22px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 27px;
 }
 
@@ -619,7 +619,7 @@ button {
 .preview-article {
   max-inline-size: var(--reading-measure);
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 16px;
   font-optical-sizing: auto;
   line-height: 24px;
 }

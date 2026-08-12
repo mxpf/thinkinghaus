@@ -147,10 +147,13 @@ test("keeps both publishing libraries readable and the studio local", async () =
   ]);
   assert.match(siteStyles, /--step-article-title: clamp\(1\.125rem, 1rem \+ 0\.35vw, 1\.375rem\)/);
   assert.match(siteStyles, /--reading-measure: 56ch/);
+  assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
   assert.match(siteStyles, /\.article-header h1\s*\{[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
   assert.match(studioStyles, /--step-editor-title: clamp\(30px, 1\.5rem \+ 1\.5vw, 46px\)/);
+  assert.match(studioStyles, /\.body-input\s*\{[^}]*font-size: 16px/s);
+  assert.match(studioStyles, /\.preview-article\s*\{[^}]*font-size: 16px/s);
   assert.match(studioStyles, /\.preview-article p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(studioScript, /optical-margin-fallback/);
   assert.match(articlePage, /optical-margin-fallback/);

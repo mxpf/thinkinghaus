@@ -45,6 +45,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("/fonts/TestUntitledSansWeb-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -215,6 +223,7 @@ body {
 
 .footer-brand {
   display: none;
+  font-weight: 700;
 }
 
 .footer-links {

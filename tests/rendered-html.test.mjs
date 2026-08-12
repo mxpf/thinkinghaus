@@ -148,6 +148,8 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(siteStyles, /--step-article-title: clamp\(1\.125rem, 1rem \+ 0\.35vw, 1\.375rem\)/);
   assert.match(siteStyles, /--reading-measure: 56ch/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
+  assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #1c1c1a;[^}]*--blog-foreground: #eeede9;[^}]*color-scheme: dark;/s);
+  assert.doesNotMatch(siteStyles, /prefers-color-scheme/);
   assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
   assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans Italic"[^}]*font-style: normal/s);
   assert.match(siteStyles, /\.article-header h1\s*\{[^}]*text-wrap: balance/s);
@@ -157,6 +159,9 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(studioStyles, /\.body-input\s*\{[^}]*font-size: 16px/s);
   assert.match(studioStyles, /\.preview-article\s*\{[^}]*font-size: 16px/s);
   assert.doesNotMatch(studioStyles, /font-size:\s*18px/);
+  assert.match(studioStyles, /:root\s*\{[^}]*--paper: #1c1c1a;[^}]*--ink: #eeede9;[^}]*color-scheme: dark;/s);
+  assert.doesNotMatch(studioStyles, /data-theme|theme-toggle/);
+  assert.doesNotMatch(studioScript, /setTheme|toggleTheme|themeToggle/);
   assert.match(studioStyles, /\.preview-article p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(studioScript, /optical-margin-fallback/);
   assert.match(articlePage, /optical-margin-fallback/);

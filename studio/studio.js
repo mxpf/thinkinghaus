@@ -5,7 +5,6 @@ const elements = {
   newButton: document.querySelector("#new-button"),
   publishButton: document.querySelector("#publish-button"),
   deleteButton: document.querySelector("#delete-button"),
-  themeToggle: document.querySelector("#theme-toggle"),
   liveLink: document.querySelector(".quiet-button"),
   saveState: document.querySelector("#save-state"),
   postState: document.querySelector("#post-state"),
@@ -111,15 +110,6 @@ function smartenQuotes(value) {
     /\uE000(\d+)\uE001/g,
     (_, index) => destinations[Number(index)] ?? "",
   );
-}
-
-function setTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  localStorage.setItem("thinkinghaus-studio-theme", theme);
-}
-
-function toggleTheme() {
-  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
 }
 
 function renderInline(value) {
@@ -631,7 +621,6 @@ elements.newButton.addEventListener("click", async () => {
 });
 elements.publishButton.addEventListener("click", publishCurrent);
 elements.deleteButton.addEventListener("click", deleteCurrentPost);
-elements.themeToggle.addEventListener("click", toggleTheme);
 elements.postState.addEventListener("click", togglePostStatus);
 elements.italicButton.addEventListener("click", applyItalic);
 elements.linkButton.addEventListener("click", openLinkDialog);
@@ -651,7 +640,6 @@ window.addEventListener("beforeunload", (event) => {
 });
 
 async function initialize() {
-  setTheme(document.documentElement.dataset.theme === "dark" ? "dark" : "light");
   try {
     const [writingResponse, portfolioResponse] = await Promise.all([
       fetch("/api/posts"),

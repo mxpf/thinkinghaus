@@ -1,17 +1,9 @@
 :root {
-  --blog-background: #f7f6f2;
-  --blog-foreground: #1c1c1a;
+  --blog-background: #1c1c1a;
+  --blog-foreground: #eeede9;
   --step-article-title: clamp(1.125rem, 1rem + 0.35vw, 1.375rem);
   --reading-measure: 56ch;
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --blog-background: #1c1c1a;
-    --blog-foreground: #f7f6f2;
-    color-scheme: dark;
-  }
+  color-scheme: dark;
 }
 
 @font-face {

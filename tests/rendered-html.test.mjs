@@ -148,6 +148,8 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(siteStyles, /--step-article-title: clamp\(1\.125rem, 1rem \+ 0\.35vw, 1\.375rem\)/);
   assert.match(siteStyles, /--reading-measure: 56ch/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
+  assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
+  assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans Italic"[^}]*font-style: normal/s);
   assert.match(siteStyles, /\.article-header h1\s*\{[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);

@@ -109,8 +109,8 @@ body {
 
 .letter-cascade {
   display: inline-flex;
-  gap: 0.02em;
-  letter-spacing: 0.02em;
+  gap: 0;
+  letter-spacing: 0;
 }
 
 .letter-cascade b {

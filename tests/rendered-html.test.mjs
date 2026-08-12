@@ -145,7 +145,7 @@ test("keeps both publishing libraries readable and the studio local", async () =
     readFile(new URL("../studio/studio.js", import.meta.url), "utf8"),
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
   ]);
-  assert.match(siteStyles, /--step-article-title: clamp\(1\.125rem, 1rem \+ 0\.35vw, 1\.375rem\)/);
+  assert.doesNotMatch(siteStyles, /--step-article-title/);
   assert.match(siteStyles, /--reading-measure: 56ch/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
   assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #1c1c1a;[^}]*--blog-foreground: #eeede9;[^}]*color-scheme: dark;/s);
@@ -155,12 +155,13 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-RegularItalic\.woff[^}]*font-style: italic/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-Light\.woff2[^}]*font-weight: 300/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-LightItalic\.woff2[^}]*font-style: italic[^}]*font-weight: 300/s);
-  assert.match(siteStyles, /\.article-body\s*\{[^}]*font-weight: 300/s);
+  assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 300[^}]*line-height: 24px/s);
   assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans"[^}]*font-style: italic[^}]*font-weight: 300/s);
-  assert.doesNotMatch(siteStyles, /\.article-header[^}]*font-weight: 300/s);
-  assert.doesNotMatch(siteStyles, /\.footer[^}]*font-weight: 300/s);
+  assert.match(siteStyles, /\.desktop-brand\s*\{[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.post-list a\s*\{[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.footer\s*\{[^}]*font-weight: 400/s);
   assert.doesNotMatch(`${siteStyles}${studioStyles}`, /Untitled Sans Italic/);
-  assert.match(siteStyles, /\.article-header h1\s*\{[^}]*text-wrap: balance/s);
+  assert.match(siteStyles, /\.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
   assert.match(studioStyles, /--step-editor-title: clamp\(30px, 1\.5rem \+ 1\.5vw, 46px\)/);
@@ -171,7 +172,8 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.doesNotMatch(studioStyles, /data-theme|theme-toggle/);
   assert.doesNotMatch(studioScript, /setTheme|toggleTheme|themeToggle/);
   assert.match(studioStyles, /\.preview-article p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
-  assert.match(studioStyles, /#preview-body p\s*\{[^}]*font-weight: 300/s);
+  assert.match(studioStyles, /\.preview-article\s*\{[^}]*font-size: 16px[^}]*font-weight: 300[^}]*line-height: 24px/s);
+  assert.match(studioStyles, /\.preview-article h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px/s);
   assert.doesNotMatch(studioStyles, /\.preview-article header[^}]*font-weight: 300/s);
   assert.match(studioScript, /optical-margin-fallback/);
   assert.match(articlePage, /optical-margin-fallback/);

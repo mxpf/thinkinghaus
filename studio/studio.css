@@ -605,6 +605,7 @@ button {
   margin: 0 auto;
   font-size: 16px;
   font-optical-sizing: auto;
+  font-weight: 300;
   line-height: 24px;
 }
 
@@ -616,8 +617,9 @@ button {
 
 .preview-article h1 {
   max-inline-size: 30ch;
-  font-size: var(--step-article-title);
-  line-height: 1.15;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
   text-wrap: balance;
 }
 
@@ -625,16 +627,13 @@ button {
 .preview-article h3 {
   margin: 0 0 24px;
   font: inherit;
+  font-weight: 400;
   text-wrap: balance;
 }
 
 .preview-article p {
   hanging-punctuation: first;
   text-wrap: pretty;
-}
-
-#preview-body p {
-  font-weight: 300;
 }
 
 .preview-article p.optical-margin-fallback {

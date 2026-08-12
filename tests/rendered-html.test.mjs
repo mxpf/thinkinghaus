@@ -151,7 +151,10 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #1c1c1a;[^}]*--blog-foreground: #eeede9;[^}]*color-scheme: dark;/s);
   assert.doesNotMatch(siteStyles, /prefers-color-scheme/);
   assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
-  assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans Italic"[^}]*font-style: normal/s);
+  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-Regular\.woff2/s);
+  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-RegularItalic\.woff[^}]*font-style: italic/s);
+  assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans"[^}]*font-style: italic/s);
+  assert.doesNotMatch(`${siteStyles}${studioStyles}`, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.article-header h1\s*\{[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
@@ -187,6 +190,10 @@ test("supports safe inline italics and links", async () => {
     new URL("../public/fonts/UntitledSansWeb-RegularItalic.woff", import.meta.url),
   );
   assert.equal(italicFont.size, 47346);
+  const regularFont = await stat(
+    new URL("../public/fonts/UntitledSansWeb-Regular.woff2", import.meta.url),
+  );
+  assert.equal(regularFont.size, 23275);
 });
 
 test("calculates reading time and preserves draft status", () => {

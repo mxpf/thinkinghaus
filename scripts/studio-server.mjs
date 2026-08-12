@@ -121,6 +121,10 @@ async function sendAsset(response, pathname) {
     "/": ["index.html", "text/html; charset=utf-8"],
     "/studio.css": ["studio.css", "text/css; charset=utf-8"],
     "/studio.js": ["studio.js", "text/javascript; charset=utf-8"],
+    "/fonts/UntitledSansWeb-Regular.woff2": [
+      "../public/fonts/UntitledSansWeb-Regular.woff2",
+      "font/woff2",
+    ],
     "/fonts/UntitledSansWeb-RegularItalic.woff": [
       "../public/fonts/UntitledSansWeb-RegularItalic.woff",
       "font/woff",

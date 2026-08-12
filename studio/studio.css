@@ -18,9 +18,17 @@
 }
 
 @font-face {
-  font-family: "Untitled Sans Italic";
-  src: url("/fonts/UntitledSansWeb-RegularItalic.woff") format("woff");
+  font-family: "Untitled Sans";
+  src: url("/fonts/UntitledSansWeb-Regular.woff2") format("woff2");
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("/fonts/UntitledSansWeb-RegularItalic.woff") format("woff");
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
 }
@@ -628,8 +636,8 @@ button {
 }
 
 .preview-article em {
-  font-family: "Untitled Sans Italic", "Helvetica Neue", Arial, sans-serif;
-  font-style: normal;
+  font-family: "Untitled Sans", "Helvetica Neue", Arial, sans-serif;
+  font-style: italic;
 }
 
 .preview-media {

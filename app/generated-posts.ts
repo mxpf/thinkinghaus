@@ -2,12 +2,82 @@
 
 export const generatedPosts = [
   {
+    "title": "Corrigible",
+    "slug": "corrigible",
+    "date": "August 10, 2026",
+    "readingTime": "7 minutes",
+    "paragraphs": [
+      "I’ve carried the word *incorrigible* around for years.",
+      "I first remember hearing it in the Babe Ruth biopic with John Goodman. Ruth is a kid at St. Mary’s Industrial School, and somewhere in that story he gets branded with this terrible word. I don’t remember the scene precisely anymore, which is probably appropriate: the movie has mostly disappeared from my memory while the label survived. The historical version is bad enough. Ruth’s parents [petitioned the courts to declare their seven-year-old son “incorrigible”](https://sabr.org/bioproj/person/babe-ruth/) before sending him to St. Mary’s.",
+      "There are much worse things you can call a child, but there is something unusually final about *incorrigible*. Difficult describes what is happening. Disobedient describes behavior. Incorrigible reaches forward in time. It says the correction has already failed.",
+      "I know why the word stuck. I have a reactive streak. I can move too quickly from feeling challenged to feeling attacked, especially with people close to me. I don’t particularly enjoy admitting it. It’s easier to recognize that kind of machinery in somebody else than to discover some of the same parts under your own hood.",
+      "The reaction usually contains some information: someone may actually be challenging me, misunderstanding me, dismissing something I care about. The problem is that one true note can become the whole song. Challenge becomes attack. Disagreement becomes threat. The alarm isn’t imaginary; it’s just set a little too sensitive. A smoke detector that goes off every time you make toast is technically doing its job, but it still makes breakfast exhausting.",
+      "I’ve spent years trying to create a little more room between those things. Not to become someone who never gets angry, or to replace intuition with a committee meeting inside my skull. I want more notes on the piano: curiosity, humor, firmness, patience, confusion, even anger when anger is actually called for. When I manage it, it doesn’t feel much like self-control. It feels like I’m more in tune with the world.",
+      "Other people’s experience of the old pattern can still be fair. They encountered the behavior, not my intentions about improving it. But there’s a difference between saying *this is a persistent pattern* and *this is what you are*. One describes accumulated evidence. The other quietly turns the evidence into a prediction about the future.",
+      "We need predictions. We couldn’t operate without categories. I need to be able to say *tree* without approaching every oak as though botany had just been invented that morning. Experience teaches pattern recognition. Intuition gets better. Sometimes I meet someone and think I know the type and, unfortunately, I do.",
+      "The problem isn’t categorization. It’s forgetting that the category is compression.",
+      "I used to have fairly fixed ideas about conservatives and military culture. Then I lived in Washington, D.C., very close to the Pentagon, surrounded by thoughtful, kind, family-oriented people whom I respected and connected with. My politics didn’t suddenly disappear. Something more useful happened: the category stopped being able to contain the people. Up close, the abstraction had to compete with actual things.",
+      "There’s a much more extreme version of this in [*Accidental Courtesy*](https://www.pbs.org/independentlens/documentaries/accidental-courtesy/), about Black musician Daryl Davis befriending Klansmen and eventually winding up with some of their robes.",
+      "[A short essay on Bear Blog about philosophical melancholy](https://xtoblog.bearblog.dev/the-inevitable-loneliness-we-must-suffer/) led me to [a passage from David Hume](https://davidhume.org/texts/t/1/4/7) that feels like the same idea wearing eighteenth-century clothes.",
+      "Hume has reasoned himself into a hole. His thoughts about human nature have become so consuming that reason itself can’t get him back out. His solution is magnificently undignified: “I dine, I play a game of back-gammon,” talk with friends, have a good time. A few hours later he returns to his grand speculations and finds them cold, strained, and faintly ridiculous.",
+      "I don’t read this as a vacation from thinking. Dinner and backgammon are doing epistemological work. Hume changes the conditions of the experiment. He lets sensation, play and other people back into the room. The philosophical problem hasn’t been disproved; its proportions have changed because reality has been allowed to vote again.",
+      "I’ve felt a version of this in monasteries. I’ve spent long stretches living in one, and a monastery can teach real things about interdependence, attention and community. But it is also a laboratory. The conditions have been arranged to make certain things easier to see. Coming home doesn’t invalidate what happened there. It removes the controls. Maintaining a Zen attitude around people who did not enroll in your spiritual experiment turns out to be a different curriculum.",
+      "Some truths become visible under controlled conditions. Others only appear when the controls come off, and the same seems to be true of ourselves.",
+      "The Buddhist dialogue [*The Questions of King Milinda*](https://suttacentral.net/mil3.2.1/en/tw_rhysdavids) contains an exchange I keep coming back to. King Milinda asks Nāgasena whether a person who continues through time is the same person or another.",
+      "“Neither the same nor another.”",
+      "That lands closer to my experience than either alternative. I am not a fresh character spawning each morning with the save file deleted. I inherit habits, consequences, relationships, a nervous system, and all the little channels I’ve spent decades cutting into the earth. Karma has momentum, but momentum isn’t destiny.",
+      "I can move a rock today. Sometimes that changes the current noticeably. Sometimes I move the same damn rock for six months. Sometimes I lose my footing and discover that the old channel is doing perfectly well without my cooperation.",
+      "If I’ve flooded somebody’s house, I don’t get to stand upstream pointing proudly at the rocks I’ve been moving. Their landscape contains what happened. They don’t owe me immediate trust in the new channel.",
+      "There’s another Buddhist image, [the story of the two arrows](https://suttacentral.net/sn36.6/en/sujato), that I find useful even though I’m borrowing it fairly loosely. The first arrow is the pain that actually happens. The second is the suffering we add to it.",
+      "Sometimes the first arrow is mine to own: I reacted badly. I made things worse. There are consequences. Taking responsibility means not wriggling out of that.",
+      "The second arrow is deciding that the mistake proves nothing has changed. That this is what I am. That all the rocks I moved upstream were imaginary because the river flooded again.",
+      "I don’t want a philosophy that tells me my first impressions are worthless, that categories are evil, that judgment is unenlightened, or that everybody becomes wonderful once we understand them properly. Sometimes the closer look confirms exactly what I feared.",
+      "I want my understanding to remain corrigible. Close enough to people, including myself, that new information can still get in. Responsible for where the river has been without pretending it has stopped moving.",
+      "I still hate the word *incorrigible*."
+    ]
+  },
+  {
+    "title": "Caught in a web",
+    "slug": "caught-in-a-web",
+    "date": "July 13, 2026",
+    "readingTime": "4 minutes",
+    "paragraphs": [
+      "I found [Andrew Plotkin](https://en.wikipedia.org/wiki/Andrew_Plotkin)’s website about twenty years ago because I was obsessed with interactive fiction. I had played [Spider and Web](https://www.eblong.com/zarf/if.html#tangle), a spy story that does things with deception, memory, and the role of the player that I had never seen a game do before. I was so struck by the craft of it that I went hunting for the person who had made it.",
+      "[The site](https://eblong.com/zarf/) runs *deep*. Games, art projects, essays, software, photographs, talks, science, technical standards, jokes, a personal history, and a library database containing thousands of books are all sitting there. The so-called “redundant site map” is less a navigation aid than a warning about what you’re getting yourself into.",
+      "I’ve been wandering around it ever since. Twenty years is a long time to rummage around in somebody else’s [basement](https://eblong.com/zarf/cave/index.html). I’ve watched projects appear, followed his game development, read essays about things I barely understood, and periodically fallen into parts of the site I’d somehow missed the previous eleven times through.",
+      "His [book list](https://eblong.com/zarf/bookscan/booklist.html) alone has sent me toward a ton of great fantasy and science-fiction books. It’s his actual library database: more than three thousand books at this point, with years of comments scattered through it. That’s part of what makes it useful to me. I’m not reading *Andrew Plotkin’s Ten Essential Fantasy Novels.* I’m snooping around the [bookshelves](https://www.eblong.com/zarf/zweb/booksphere/about.html) of someone whose taste I resonate with.",
+      "[The games](https://www.eblong.com/zarf/if.html) are the reason I arrived, and they remain extraordinary. His interactive-fiction page stretches from early experiments through *The Dreamhold*, *Shade*, *Spider and Web*, and a pile of stranger little things. Then there’s *Hadean Lands*, his enormous alchemical puzzle box and, at least for me, his magnum opus. He has been a pillar of the interactive-fiction community for decades; the site doesn’t present this as a heroic career arc so much as: *this is what I’ve been doing.*",
+      "The standard professional website tries to compress a person. Here are the three things I am good at. Here are the six projects that prove it. Here is the paragraph where I explain my unique point of view.",
+      "The site does the opposite. The *About Zarfhome* page says plainly that the site is about what he does and how he does it. He talks about showing drafts, tools, half-baked ideas, abandoned ideas, finished things and failures. His phrase for it is “[work in daylight](https://www.eblong.com/zarf/).” He makes a distinction I’ve carried around for years: being a professional at one thing doesn’t mean the rest of what you make has to [disappear](https://www.robinsloan.com/notes/home-cooked-app/).",
+      "The site is mostly [plain HTML](https://luckysoap.com/statements/handmadeweb.html), and the About page famously tells the reader to “choose your own damn default background color.” He means it as a statement about making the site work anywhere rather than controlling every pixel. That refusal to micromanage how the browser behaves has been sitting in the back of my head while I’ve been designing Thinkinghaus.",
+      "A person keeps putting things somewhere for long enough and eventually patterns emerge that no About paragraph could have manufactured. The kinds of problems he returns to. The books he buys. The jokes he repeats. The technical standards and systems he helps maintain. The game that took years longer than expected. The thing he was excited about in 1997 and the thing he’s still thinking about in 2025.",
+      "And because enough of the material survives, the portrait isn’t clean. Even the About page contains a little crack in its own philosophy. In 2000 Plotkin announces his desire to show unfinished projects and failures. In the 2010 update he admits he hasn’t done as well at that as he wanted to. As his standards rose, fewer unfinished things made it onto the site. He calls the problem vanity. The guy who built a website partly to resist hiding unfinished work eventually became self-conscious enough to start hiding more unfinished work.",
+      "The site doesn’t give me access to him in some pure, unfiltered sense. I don’t know him. He’s choosing what goes on the site just like anybody else chooses what to show.",
+      "But after twenty years, there’s enough material there that I can deeply feel the contours of somebody’s attention. That’s a rare gift"
+    ]
+  },
+  {
+    "title": "Personal folklore",
+    "slug": "personal-folklore",
+    "date": "July 14, 2026",
+    "readingTime": "3 minutes",
+    "paragraphs": [
+      "Repeated self-observation does something strange over time. At first I’m recording events: this happened, I felt this, I made this mistake. The journal is evidence.",
+      "But some things return—the same fear in different clothes, the same bad bargain becoming tempting again, a particular kind of excitement I’ve learned to trust, the moment when I start making a simple thing complicated because complication feels safer than finishing it. Eventually the particulars begin to fall away.",
+      "Dru Riley’s “[100 rules](https://druriley.com/100-2/)” feel like the residue of this process. He says each rule points back to a personal story. Somewhere behind Dru’s *don’t self-reject* or *make it work, THEN make it pretty* is an incident I’ll never know. The incident has disappeared, but its shape remains. That feels a lot like folklore: experience getting [worn smooth through repetition](https://commons.wikimedia.org/wiki/File:Saint_Peter_Enthroned_in_Saint_Peters_Basilica.jpg) until what survives is the part somebody decided was worth carrying forward.",
+      "A family has three [disastrous camping trips](https://www.nps.gov/yell/blogs/truman-c-everts-yellowstone-s-first-unlucky-adventurer.htm) and ten years later everyone says, “We’re not camping people.” Nobody remembers the rainstorm, the broken tent, or who was miserable first. The incidents blur together and the verdict survives. I think I’m doing this with myself all the time. One episode comes to stand for ten others. I forget where a conviction came from but keep carrying it around. Past me leaves behind warnings, superstitions, shortcuts, little scraps of alleged wisdom for whoever I become next.",
+      "Some of them are useful and some are probably complete nonsense, which is what makes the whole thing interesting. Folklore isn’t truth. “I always do this” is folklore. “I’m not the kind of person who…” is folklore too. A story can begin as a pretty accurate description and quietly harden into identity. Three bad camping trips become a family trait.",
+      "This makes a journal seem less like a record of a stable self and more like a place where a mythology is being manufactured in real time. I’m remembering, simplifying, exaggerating, finding patterns that are probably real and occasionally drawing a constellation between completely unrelated stars. Years later, I inherit the whole mess from the people I used to be: useful warnings alongside old misunderstandings, good instincts alongside conclusions that may have expired without telling me.",
+      "Riley’s list doesn’t feel like a finished philosophy so much as personal folklore that has been [compressed down to a portable size](https://www.oupjapan.co.jp/en/products/detail/2632?language=en). The interesting question isn’t whether I can eventually produce my own hundred rules. It’s which stories I keep telling myself, where they came from, and whether they’re still true."
+    ]
+  },
+  {
     "title": "Look at this",
     "slug": "look-at-this",
     "date": "July 7, 2026",
     "readingTime": "5 minutes",
     "paragraphs": [
-      "It’s [1932](https://www.nationalgeographic.com/history/article/australian-emu-war-history) and Jean-Paul Sartre and Simone de Beauvoir meet their pal Raymond Aron at the Bec-de-Gaz bar on the rue Montparnasse. Aron had recently been in Berlin, where he’d encountered the philosophy of a certain Mr. Edmund Husserl who had this crazy new thing he was calling phenomenology. As Sarah Bakewell [tells the story](https://search.worldcat.org/de/title/974495411), Aron pointed at the drink in front of him and basically told Sartre that with phenomenology you could make philosophy *out of this cocktail.*",
+      "It’s [1932](https://www.nationalgeographic.com/history/article/australian-emu-war-history) and Jean-Paul Sartre and Simone de Beauvoir meet their pal Raymond Aron at the Bec-de-Gaz bar on the rue Montparnasse. Aron had recently been in Berlin, where he’d encountered the philosophy of a certain Mr. Edmund Husserl who had this crazy new thing he was calling “phenomenology.” As Sarah Bakewell [tells the story](https://search.worldcat.org/de/title/974495411), Aron pointed at the drink in front of him and basically told Sartre that with phenomenology you could make philosophy *out of this cocktail.*",
       "Sartre was absolutely electrified. He got himself over to Berlin to study this stuff for himself, and voilà! phenomenology becomes a major foundation from which his own philosophy was built.",
       "I love this story because it humiliates philosophy juuuust enough. Aron doesn’t begin with Being, or Truth, or the Soul. He points at booze on the table.",
       "It’s easy to hear this as a promise to make philosophy more accessible, as though phenomenology were saying: oh don’t worry, *we* can use relatable examples. But that’s not really what’s interesting about it. The cocktail isn’t an example pasted onto the philosophy afterward. The encounter with the drink is where the philosophy begins, which is a much stranger proposition.",
@@ -26,20 +96,20 @@ export const generatedPosts = [
   },
   {
     "title": "The silent type",
-    "slug": "a-pretty-normal-typeface",
+    "slug": "the-silent-type",
     "date": "July 1, 2026",
     "readingTime": "2 minutes",
     "paragraphs": [
       "Untitled Sans began as an attempt to make another typeface plainer.",
-      "Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after [reading about](https://khole.net/issues/youth-mode/) the [Super Normal project](https://jaspermorrison.com/exhibitions/2000-2009/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.",
-      "I love that the explanation arrived late in the game, I can identify. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.",
+      "Kris Sowersby removed some of its more noticeable details, got a little lost and put the project away, came back to it several years later, and nearly threw it out. It was only after reading about the [Super Normal](https://jaspermorrison.com/publications/essays/super-normal) that he found a way to understand the thing he’d already been making: maybe being deliberately ordinary was enough of a reason for a typeface to exist.",
+      "I love that the explanation arrived late in the game. I can identify. I try things. I change my mind. I forget why I started. I wander into something better. Occasionally I understand what I was doing after I’ve already done it.",
       "Sowersby describes deliberately removing traces of his own recognizable style from the letters, scrubbing his fingerprints off the [crime scene.](https://www.btp.police.uk/police-forces/british-transport-police/areas/about-us/about-us/our-history/crime-history/great-train-robbery/?utm_source=chatgpt.com)",
       "That sounds almost perverse for a designer. We’re encouraged to make things distinctive, ownable, memorable—something that can stand up in a presentation and explain why it deserves to exist.",
       "But most of the time, when I’m reading, I don’t need the typeface to introduce itself. I need it to help me *read*.",
       "That’s probably why Untitled Sans feels right for both my [portfolio](http://maxpfennig.haus/) and for Thinkinghaus. The work and the writing can wander around and follow unusual ideas. The letters stay put.",
       "Its plainness isn’t an absence of design. It’s what happens when a mountain of small decisions are made thoughtfully enough that they can recede. The type makes some room around the words instead of elbowing them for attention.",
       "I find that deeply appealing: work that has clearly been thought about, but doesn’t make you stop every five minutes to admire how much thinking went into it.",
-      "Work that knows how to be quiet."
+      "Work that knows how to be [quiet](https://openlibrary.org/works/OL15626048W/No_such_thing_as_silence)."
     ],
     "source": {
       "label": "Read Kris Sowersby’s notes on the Untitled Collection",
@@ -48,7 +118,7 @@ export const generatedPosts = [
   },
   {
     "title": "The gift of an empty mind",
-    "slug": "the-usefulness-of-an-empty-mind",
+    "slug": "the-gift-of-an-empty-mind",
     "date": "June 28, 2026",
     "readingTime": "3 minutes",
     "paragraphs": [

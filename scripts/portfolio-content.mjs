@@ -4,7 +4,7 @@ import { projectRoot } from "./content.mjs";
 
 export const portfolioRoot = process.env.PORTFOLIO_ROOT
   ? path.resolve(process.env.PORTFOLIO_ROOT)
-  : path.resolve(projectRoot, "../..", "Portfolio");
+  : path.resolve(projectRoot, "..", "maxpfennig-portfolio");
 export const portfolioProjectsDirectory = path.join(portfolioRoot, "content", "projects");
 export const portfolioPublicDirectory = path.join(portfolioRoot, "public");
 const portfolioAboutFile = path.join(portfolioRoot, "content", "about.md");

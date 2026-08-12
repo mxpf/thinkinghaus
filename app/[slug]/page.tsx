@@ -57,7 +57,12 @@ export default async function PostPage({ params }: PageProps) {
           </header>
           <div className="article-body">
             {content.paragraphs.map((paragraph, index) => (
-              <p key={`${index}-${paragraph}`}><InlineText text={paragraph} /></p>
+              <p
+                className={/^[“‘"']/.test(stripInlineMarkdown(paragraph).trimStart()) ? "optical-margin-fallback" : undefined}
+                key={`${index}-${paragraph}`}
+              >
+                <InlineText text={paragraph} />
+              </p>
             ))}
             {post?.source ? (
               <p className="article-source"><a href={post.source.href}>{post.source.label}</a></p>

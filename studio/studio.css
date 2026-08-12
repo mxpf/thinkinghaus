@@ -11,6 +11,9 @@
   --placeholder: #aaa79f;
   --media-placeholder: #e2dfd7;
   --overlay: rgba(28, 28, 26, 0.26);
+  --step-article-title: clamp(1.125rem, 1rem + 0.35vw, 1.375rem);
+  --step-editor-title: clamp(30px, 1.5rem + 1.5vw, 46px);
+  --reading-measure: 64ch;
   color-scheme: light;
 }
 
@@ -429,7 +432,7 @@ button {
 .title-input {
   min-height: 92px;
   overflow: hidden;
-  font-size: clamp(30px, 3vw, 46px);
+  font-size: var(--step-editor-title);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.08;
@@ -614,9 +617,10 @@ button {
 }
 
 .preview-article {
-  max-width: 620px;
+  max-inline-size: var(--reading-measure);
   margin: 0 auto;
   font-size: 18px;
+  font-optical-sizing: auto;
   line-height: 24px;
 }
 
@@ -626,10 +630,27 @@ button {
   font: inherit;
 }
 
+.preview-article h1 {
+  max-inline-size: 30ch;
+  font-size: var(--step-article-title);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
 .preview-article h2,
 .preview-article h3 {
   margin: 0 0 24px;
   font: inherit;
+  text-wrap: balance;
+}
+
+.preview-article p {
+  hanging-punctuation: first;
+  text-wrap: pretty;
+}
+
+.preview-article p.optical-margin-fallback {
+  text-indent: -0.42em;
 }
 
 .preview-article h2:first-child {

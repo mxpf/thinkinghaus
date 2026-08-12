@@ -148,7 +148,8 @@ function renderBlocks(value) {
       const line = block.replace(/\n/g, " ");
       if (/^#\s+/.test(line)) return `<h2>${renderInline(line.replace(/^#\s+/, ""))}</h2>`;
       if (/^##\s+/.test(line)) return `<h3>${renderInline(line.replace(/^##\s+/, ""))}</h3>`;
-      return `<p>${renderInline(line)}</p>`;
+      const opticalMarginClass = /^[“‘"']/.test(line) ? ' class="optical-margin-fallback"' : "";
+      return `<p${opticalMarginClass}>${renderInline(line)}</p>`;
     })
     .join("")
     .replaceAll("&lt;br&gt;", "<br>");

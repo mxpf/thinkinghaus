@@ -154,6 +154,7 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(studioStyles, /--step-editor-title: clamp\(30px, 1\.5rem \+ 1\.5vw, 46px\)/);
   assert.match(studioStyles, /\.body-input\s*\{[^}]*font-size: 16px/s);
   assert.match(studioStyles, /\.preview-article\s*\{[^}]*font-size: 16px/s);
+  assert.doesNotMatch(studioStyles, /font-size:\s*18px/);
   assert.match(studioStyles, /\.preview-article p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(studioScript, /optical-margin-fallback/);
   assert.match(articlePage, /optical-margin-fallback/);

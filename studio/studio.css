@@ -49,6 +49,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Untitled Sans";
+  src: url("/fonts/TestUntitledSansWeb-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -618,7 +626,7 @@ button {
 .preview-article h1 {
   max-inline-size: 30ch;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 24px;
   text-wrap: balance;
 }
@@ -627,7 +635,7 @@ button {
 .preview-article h3 {
   margin: 0 0 24px;
   font: inherit;
-  font-weight: 400;
+  font-weight: 500;
   text-wrap: balance;
 }
 

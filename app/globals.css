@@ -2,7 +2,7 @@
   --blog-background: #f7f6f2;
   --blog-foreground: #1c1c1a;
   --step-article-title: clamp(1.125rem, 1rem + 0.35vw, 1.375rem);
-  --reading-measure: 64ch;
+  --reading-measure: 56ch;
   color-scheme: light;
 }
 

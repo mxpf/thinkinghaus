@@ -146,7 +146,7 @@ test("keeps both publishing libraries readable and the studio local", async () =
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
   ]);
   assert.match(siteStyles, /--step-article-title: clamp\(1\.125rem, 1rem \+ 0\.35vw, 1\.375rem\)/);
-  assert.match(siteStyles, /--reading-measure: 64ch/);
+  assert.match(siteStyles, /--reading-measure: 56ch/);
   assert.match(siteStyles, /\.article-header h1\s*\{[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);

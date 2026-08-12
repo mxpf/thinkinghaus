@@ -160,7 +160,8 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 300[^}]*line-height: 24px/s);
   assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans"[^}]*font-style: italic[^}]*font-weight: 300/s);
   assert.match(siteStyles, /\.site \.desktop-brand\s*\{[^}]*font-weight: 500/s);
-  assert.match(siteStyles, /\.index-frame\s*\{[^}]*font-size: 15px[^}]*font-weight: 400[^}]*line-height: 24px/s);
+  assert.match(siteStyles, /\.index-frame\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px/s);
+  assert.doesNotMatch(siteStyles, /font-size:\s*15px/);
   assert.match(siteStyles, /\.site \.index-frame \.desktop-brand\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.post-list a\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);

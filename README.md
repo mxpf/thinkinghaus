@@ -30,6 +30,7 @@ npm install
 npm run dev
 npm run lint
 npm test
+npm run audit:production
 ```
 
 The static production path is:
@@ -44,6 +45,12 @@ node scripts/verify-static-export.mjs
 Normal writing and publishing happens in Studio. The public repository remains the canonical record of published content, while Studio’s private database remains the canonical record of drafts.
 
 The custom domain depends on `public/CNAME`. GitHub Pages also requires `.nojekyll`, which the publishing workflow adds to the generated branch.
+
+## Security and dependency updates
+
+The publishing workflow blocks deployment when a high-severity production dependency vulnerability is reported. A separate weekly workflow checks the complete development toolchain without blocking publication, and Dependabot proposes dependency and GitHub Actions updates for review.
+
+Vinext currently depends on an `image-size` release with denial-of-service advisories in its ICNS, JXL, and HEIF parsers. In Thinkinghaus that package is development-only and reads committed metadata images during a trusted static build; it is not exposed to visitors or Studio uploads. Vinext is pinned until a compatible patched release can be reviewed and tested. See [SECURITY.md](SECURITY.md) for the boundary that must be preserved if image uploads are added later.
 
 ## Design principle
 

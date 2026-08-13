@@ -18,7 +18,9 @@
     "test": "npm run build:pages && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "pretypecheck": "node scripts/generate-posts.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "audit:production": "npm audit --omit=dev --audit-level=high",
+    "audit:full": "npm audit --audit-level=high"
   },
   "dependencies": {
     "react": "19.2.8",
@@ -41,7 +43,7 @@
     "react-server-dom-webpack": "^19.2.8",
     "typescript": "5.9.3",
     "typescript-eslint": "8.59.3",
-    "vinext": "^1.0.0-beta.5",
+    "vinext": "1.0.0-beta.5",
     "vite": "^8.2.1",
     "wrangler": "^4.123.0"
   },

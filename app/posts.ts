@@ -1,4 +1,5 @@
 import { generatedPages } from "./generated-pages";
+import { generatedNowEntries } from "./generated-now";
 import { generatedPosts } from "./generated-posts";
 
 export type Post = {
@@ -11,6 +12,16 @@ export type Post = {
 };
 
 export const posts: readonly Post[] = generatedPosts;
+
+export type NowEntry = {
+  title: "Now";
+  slug: string;
+  date: string;
+  paragraphs: readonly string[];
+};
+
+export const nowEntries: readonly NowEntry[] = generatedNowEntries;
+export const currentNow = nowEntries[0];
 
 export type StandalonePage = {
   title: string;

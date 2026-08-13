@@ -38,8 +38,10 @@ async function ensureSafeWorkingTree() {
       (file) =>
         file !== "app/generated-posts.ts" &&
         file !== "app/generated-pages.ts" &&
+        file !== "app/generated-now.ts" &&
         !file.startsWith("content/pages/") &&
-        !file.startsWith("content/posts/"),
+        !file.startsWith("content/posts/") &&
+        !file.startsWith("content/now/"),
     );
 
   if (unsafe.length) {
@@ -56,8 +58,10 @@ export async function publishSite() {
 
   const sourceFiles = [
     "app/generated-pages.ts",
+    "app/generated-now.ts",
     "app/generated-posts.ts",
     "content/pages",
+    "content/now",
     "content/posts",
   ];
   await run("git", ["add", "-A", "--", ...sourceFiles]);

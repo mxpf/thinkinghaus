@@ -4,6 +4,7 @@ import path from "node:path";
 export const projectRoot = path.resolve(import.meta.dirname, "..");
 export const postsDirectory = path.join(projectRoot, "content", "posts");
 export const pagesDirectory = path.join(projectRoot, "content", "pages");
+export const nowDirectory = path.join(projectRoot, "content", "now");
 const deletedPostsDirectory = path.join(projectRoot, ".studio-trash", "posts");
 const editablePageSlugs = new Set(["about", "links"]);
 
@@ -90,6 +91,10 @@ export function parsePost(source, filename = "") {
   };
 }
 
+export function parseNowEntry(source, filename = "") {
+  return { ...parsePost(source, filename), type: "now", title: "Now" };
+}
+
 export function parsePage(source, filename = "") {
   const { metadata, body } = parseFrontmatter(source);
   const slug = metadata.slug || filename.replace(/\.md$/, "");
@@ -153,6 +158,30 @@ export async function readPosts({ includeDrafts = false } = {}) {
 
   return posts
     .filter((post) => includeDrafts || post.status === "published")
+    .sort((a, b) =>
+      (b.publishedAt || b.date).localeCompare(a.publishedAt || a.date),
+    );
+}
+
+export async function readNowEntries({ includeDrafts = false } = {}) {
+  let files = [];
+  try {
+    files = (await readdir(nowDirectory))
+      .filter((file) => file.endsWith(".md"))
+      .sort();
+  } catch (error) {
+    if (error?.code !== "ENOENT") throw error;
+  }
+
+  const entries = await Promise.all(
+    files.map(async (file) => {
+      const source = await readFile(path.join(nowDirectory, file), "utf8");
+      return parseNowEntry(source, file);
+    }),
+  );
+
+  return entries
+    .filter((entry) => includeDrafts || entry.status === "published")
     .sort((a, b) =>
       (b.publishedAt || b.date).localeCompare(a.publishedAt || a.date),
     );

@@ -3,7 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
-import { calculateReadingTime, parsePost, readPages, readPosts, serializePost } from "../scripts/content.mjs";
+import { calculateReadingTime, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { readPortfolioAbout, readPortfolioProjects } from "../scripts/portfolio-content.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
@@ -39,9 +39,12 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   for (const post of posts) assert.ok(html.includes(post.title));
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="\/links"/);
+  assert.match(html, /href="\/now"/);
   assert.match(html, /href="https:\/\/trackinghaus-alpha\.vercel\.app">Stats<\/a>/);
   assert.match(html, /href="\/rss\.xml" type="application\/rss\+xml">RSS<\/a>/);
   assert.ok(html.indexOf(">Stats</a>") < html.indexOf(">RSS</a>"));
+  assert.ok(html.indexOf(">Links</a>") < html.indexOf(">Now</a>"));
+  assert.ok(html.indexOf(">Now</a>") < html.indexOf(">Stats</a>"));
   assert.match(
     html,
     /<link rel="alternate" type="application\/rss\+xml" href="https:\/\/thinking\.haus\/rss\.xml"/,
@@ -106,7 +109,8 @@ test("keeps edit controls private until author mode is activated", async () => {
 
 test("generates an RSS feed from published posts", async () => {
   const posts = await readPosts();
-  const feed = generateRssFeed(posts);
+  const nowEntries = await readNowEntries();
+  const feed = generateRssFeed(posts, nowEntries);
   const generatedFeed = await readFile(new URL("../public/rss.xml", import.meta.url), "utf8");
 
   assert.equal(generatedFeed, feed);
@@ -116,7 +120,7 @@ test("generates an RSS feed from published posts", async () => {
     feed,
     /<atom:link href="https:\/\/thinking\.haus\/rss\.xml" rel="self" type="application\/rss\+xml" \/>/,
   );
-  assert.equal(feed.match(/<item>/g)?.length, posts.length);
+  assert.equal(feed.match(/<item>/g)?.length, posts.length + nowEntries.length);
   for (const post of posts) {
     assert.ok(feed.includes(`<link>https://thinking.haus/${post.slug}</link>`));
   }
@@ -139,6 +143,18 @@ test("generates an RSS feed from published posts", async () => {
   assert.match(escaped, /<title>A &amp; B<\/title>/);
   assert.match(escaped, /<em>small<\/em>/);
   assert.match(escaped, /href="https:\/\/example\.com\/\?a=1&amp;b=2"/);
+
+  const withNow = generateRssFeed([], [{
+    type: "now",
+    title: "Now",
+    slug: "now-20260813150000",
+    date: "2026-08-13",
+    publishedAt: "2026-08-13T15:00:00.000Z",
+    paragraphs: ["A small current note."],
+  }]);
+  assert.match(withNow, /<title>Now — August 13, 2026<\/title>/);
+  assert.match(withNow, /<link>https:\/\/thinking\.haus\/now<\/link>/);
+  assert.match(withNow, /<guid isPermaLink="false">thinkinghaus:now:now-20260813150000<\/guid>/);
 });
 
 test("publishes crawlable canonical routes", async () => {
@@ -155,6 +171,7 @@ test("publishes crawlable canonical routes", async () => {
   assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
   assert.match(sitemap, /<loc>https:\/\/thinking\.haus\/about<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/thinking\.haus\/ai<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/thinking\.haus\/now<\/loc>/);
   for (const { slug } of [...pages, ...posts]) {
     assert.ok(sitemap.includes(`<loc>https://thinking.haus/${slug}</loc>`));
   }
@@ -190,6 +207,23 @@ test("renders standalone About, AI, and Links pages", async () => {
       pages.find((page) => page.slug === "links").paragraphs[0],
     ),
   );
+});
+
+test("renders only the newest published Now entry on its stable route", async () => {
+  const response = await render("/now");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  const entries = await readNowEntries();
+  assert.match(html, /<title>Now — Thinkinghaus<\/title>/i);
+  assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus\/now"/);
+  if (entries[0]) {
+    assert.ok(html.includes(entries[0].paragraphs[0]));
+    for (const archived of entries.slice(1)) {
+      assert.ok(!html.includes(archived.paragraphs[0]));
+    }
+  } else {
+    assert.match(html, /Nothing here yet\./);
+  }
 });
 
 test("keeps both publishing libraries readable and the studio local", async () => {

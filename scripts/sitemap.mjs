@@ -7,6 +7,7 @@ const siteUrl = "https://thinking.haus";
 export function generateSitemap(posts, pages) {
   const paths = [
     "/",
+    "/now",
     ...pages.map(({ slug }) => `/${slug}`),
     ...posts.map(({ slug }) => `/${slug}`),
   ];

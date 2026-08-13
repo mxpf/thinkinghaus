@@ -1,6 +1,6 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
-import { projectRoot } from "./content.mjs";
+import { displayDate, projectRoot } from "./content.mjs";
 
 const siteUrl = "https://thinking.haus";
 const feedUrl = `${siteUrl}/rss.xml`;
@@ -73,22 +73,31 @@ function renderPostHtml(post) {
   return paragraphs.join("\n");
 }
 
-export function generateRssFeed(posts) {
-  const items = posts.map((post) => {
-    const url = `${siteUrl}/${post.slug}`;
+export function generateRssFeed(posts, nowEntries = []) {
+  const entries = [...posts, ...nowEntries]
+    .sort((a, b) =>
+      (b.publishedAt || b.date).localeCompare(a.publishedAt || a.date),
+    );
+  const items = entries.map((post) => {
+    const isNow = post.type === "now";
+    const url = isNow ? `${siteUrl}/now` : `${siteUrl}/${post.slug}`;
+    const title = isNow ? `Now — ${displayDate(post.date)}` : post.title;
+    const guid = isNow
+      ? `<guid isPermaLink="false">thinkinghaus:now:${escapeXml(post.slug)}</guid>`
+      : `<guid isPermaLink="true">${url}</guid>`;
     const description = stripInlineMarkdown(post.paragraphs[0] || "");
     return `    <item>
-      <title>${escapeXml(post.title)}</title>
+      <title>${escapeXml(title)}</title>
       <link>${url}</link>
-      <guid isPermaLink="true">${url}</guid>
+      ${guid}
       <pubDate>${publicationDate(post)}</pubDate>
       <description>${escapeXml(description)}</description>
       <content:encoded><![CDATA[${cdata(renderPostHtml(post))}]]></content:encoded>
     </item>`;
   }).join("\n");
 
-  const lastBuildDate = posts.length
-    ? publicationDate(posts[0])
+  const lastBuildDate = entries.length
+    ? publicationDate(entries[0])
     : new Date("1970-01-01T00:00:00.000Z").toUTCString();
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -106,10 +115,10 @@ ${items}
 `;
 }
 
-export async function writeRssFeed(posts) {
+export async function writeRssFeed(posts, nowEntries = []) {
   await writeFile(
     path.join(projectRoot, "public", "rss.xml"),
-    generateRssFeed(posts),
+    generateRssFeed(posts, nowEntries),
     "utf8",
   );
 }

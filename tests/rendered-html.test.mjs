@@ -218,6 +218,8 @@ test("renders only the newest published Now entry on its stable route", async ()
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus\/now"/);
   if (entries[0]) {
     assert.ok(html.includes(entries[0].paragraphs[0]));
+    assert.match(html, /href="https:\/\/sive\.rs\/nowff"[^>]*>Derek Sivers(?:&apos;|&#x27;|') \/now idea<\/a>/);
+    assert.match(html, /a simple page for what (?:you(?:&apos;|&#x27;|')re|you’re) actually paying attention to right now\./);
     for (const archived of entries.slice(1)) {
       assert.ok(!html.includes(archived.paragraphs[0]));
     }

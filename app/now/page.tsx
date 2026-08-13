@@ -37,14 +37,21 @@ export default function NowPage() {
             ) : null}
           </header>
           <div className="article-body">
-            {currentNow ? currentNow.paragraphs.map((paragraph, index) => (
-              <p
-                className={/^[“‘"']/.test(stripInlineMarkdown(paragraph).trimStart()) ? "optical-margin-fallback" : undefined}
-                key={`${index}-${paragraph}`}
-              >
-                <InlineText text={paragraph} />
-              </p>
-            )) : <p>Nothing here yet.</p>}
+            {currentNow ? (
+              <>
+                {currentNow.paragraphs.map((paragraph, index) => (
+                  <p
+                    className={/^[“‘"']/.test(stripInlineMarkdown(paragraph).trimStart()) ? "optical-margin-fallback" : undefined}
+                    key={`${index}-${paragraph}`}
+                  >
+                    <InlineText text={paragraph} />
+                  </p>
+                ))}
+                <p>
+                  This page is inspired by <a href="https://sive.rs/nowff">Derek Sivers&apos; /now idea</a>: a simple page for what you&apos;re actually paying attention to right now.
+                </p>
+              </>
+            ) : <p>Nothing here yet.</p>}
           </div>
           <Footer showBrand />
         </article>

@@ -22,6 +22,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: content ? `${content.title} — Thinkinghaus` : "Thinkinghaus",
     description: content ? stripInlineMarkdown(content.paragraphs[0]) : undefined,
+    alternates: content ? {
+      canonical: `/${slug}`,
+      types: { "application/rss+xml": "/rss.xml" },
+    } : undefined,
   };
 }
 

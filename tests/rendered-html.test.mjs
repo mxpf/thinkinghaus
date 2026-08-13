@@ -45,6 +45,7 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
     html,
     /<link rel="alternate" type="application\/rss\+xml" href="https:\/\/thinking\.haus\/rss\.xml"/,
   );
+  assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus"/);
   assert.match(
     html,
     /<script[^>]+src="https:\/\/trackinghaus-alpha\.vercel\.app\/tracker\.js"[^>]+data-site="thinkinghaus"[^>]+data-endpoint="https:\/\/trackinghaus-alpha\.vercel\.app\/api\/collect"/,
@@ -89,6 +90,25 @@ test("generates an RSS feed from published posts", async () => {
   assert.match(escaped, /href="https:\/\/example\.com\/\?a=1&amp;b=2"/);
 });
 
+test("publishes crawlable canonical routes", async () => {
+  const [robots, sitemap, posts, pages] = await Promise.all([
+    readFile(new URL("../public/robots.txt", import.meta.url), "utf8"),
+    readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8"),
+    readPosts(),
+    readPages(),
+  ]);
+
+  assert.match(robots, /^User-agent: \*$/m);
+  assert.match(robots, /^Allow: \/$/m);
+  assert.match(robots, /^Sitemap: https:\/\/thinking\.haus\/sitemap\.xml$/m);
+  assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+  assert.match(sitemap, /<loc>https:\/\/thinking\.haus\/about<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/thinking\.haus\/ai<\/loc>/);
+  for (const { slug } of [...pages, ...posts]) {
+    assert.ok(sitemap.includes(`<loc>https://thinking.haus/${slug}</loc>`));
+  }
+});
+
 test("renders standalone About, AI, and Links pages", async () => {
   const pages = await readPages();
   assert.deepEqual(pages.map((page) => page.slug), ["about", "ai", "links"]);
@@ -97,6 +117,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
   assert.match(aboutHtml, /<title>About — Thinkinghaus<\/title>/i);
+  assert.match(aboutHtml, /<link rel="canonical" href="https:\/\/thinking\.haus\/about"/);
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
   assert.match(aboutHtml, /href="\/ai"/);
 

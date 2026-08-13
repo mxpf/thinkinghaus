@@ -272,6 +272,29 @@ body {
   text-indent: -0.42em;
 }
 
+.article-body .article-list {
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+}
+
+.article-body .article-list li {
+  position: relative;
+  margin: 0 0 24px;
+  hanging-punctuation: first;
+  text-wrap: pretty;
+}
+
+.article-body .article-list li:last-child {
+  margin-bottom: 0;
+}
+
+.article-body .article-list li::before {
+  position: absolute;
+  inset-inline-end: calc(100% + 0.45em);
+  content: "•";
+}
+
 .article-source {
   margin-top: 48px !important;
 }

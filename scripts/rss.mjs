@@ -62,9 +62,20 @@ function cdata(value) {
 }
 
 function renderPostHtml(post) {
-  const paragraphs = post.paragraphs.map(
-    (paragraph) => `<p>${renderInlineHtml(paragraph)}</p>`,
-  );
+  const paragraphs = [];
+  for (let index = 0; index < post.paragraphs.length;) {
+    if (/^\s*-\s+/.test(post.paragraphs[index])) {
+      const items = [];
+      while (index < post.paragraphs.length && /^\s*-\s+/.test(post.paragraphs[index])) {
+        items.push(`<li>${renderInlineHtml(post.paragraphs[index].replace(/^\s*-\s+/, ""))}</li>`);
+        index += 1;
+      }
+      paragraphs.push(`<ul>${items.join("")}</ul>`);
+      continue;
+    }
+    paragraphs.push(`<p>${renderInlineHtml(post.paragraphs[index])}</p>`);
+    index += 1;
+  }
   if (post.source) {
     paragraphs.push(
       `<p><a href="${escapeXml(post.source.href)}">${escapeXml(post.source.label)}</a></p>`,

@@ -64,6 +64,17 @@ function cdata(value) {
 function renderPostHtml(post) {
   const paragraphs = [];
   for (let index = 0; index < post.paragraphs.length;) {
+    if (/^##\s+/.test(post.paragraphs[index])) {
+      paragraphs.push(`<h2>${renderInlineHtml(post.paragraphs[index].replace(/^##\s+/, ""))}</h2>`);
+      index += 1;
+      continue;
+    }
+    if (/^>\s?/.test(post.paragraphs[index])) {
+      const quote = post.paragraphs[index].replace(/^>\s?/gm, "");
+      paragraphs.push(`<blockquote><p>${renderInlineHtml(quote)}</p></blockquote>`);
+      index += 1;
+      continue;
+    }
     if (/^\s*-\s+/.test(post.paragraphs[index])) {
       const items = [];
       while (index < post.paragraphs.length && /^\s*-\s+/.test(post.paragraphs[index])) {

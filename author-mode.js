@@ -4,7 +4,9 @@
   const clearActivationHash = () => {
     try {
       window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-    } catch {}
+    } catch {
+      // History may be unavailable in restrictive browser contexts.
+    }
   };
 
   let enabled = false;
@@ -13,17 +15,23 @@
     enabled = true;
     try {
       window.localStorage.setItem(storageKey, "on");
-    } catch {}
+    } catch {
+      // Author mode remains active for this page when storage is unavailable.
+    }
     clearActivationHash();
   } else if (window.location.hash === "#edit-off") {
     try {
       window.localStorage.removeItem(storageKey);
-    } catch {}
+    } catch {
+      // Nothing needs clearing when storage is unavailable.
+    }
     clearActivationHash();
   } else {
     try {
       enabled = window.localStorage.getItem(storageKey) === "on";
-    } catch {}
+    } catch {
+      // Author mode stays off when storage is unavailable.
+    }
   }
 
   if (!enabled) return;

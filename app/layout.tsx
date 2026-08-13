@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Thinkinghaus",
   description: "Notes on attention, work, and the occasional strange thing.",
   metadataBase: new URL("https://thinking.haus"),
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+  },
   alternates: {
     types: {
       "application/rss+xml": "/rss.xml",

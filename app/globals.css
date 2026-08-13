@@ -253,6 +253,10 @@ body {
   text-wrap: balance;
 }
 
+.site .article-header p {
+  font-size: 12px;
+}
+
 .article-body {
   width: 100%;
 }

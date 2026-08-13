@@ -266,7 +266,12 @@ test("keeps published writing readable and the visual system intentional", async
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 500[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
+  assert.match(siteStyles, /\.site \.article-body h2\s*\{[^}]*margin: 48px 0 24px[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-weight: 400[^}]*letter-spacing: 0\.06em[^}]*line-height: 24px[^}]*text-transform: uppercase/s);
+  assert.match(siteStyles, /\.article-body blockquote\s*\{[^}]*position: relative[^}]*padding: 0 0 0 24px[^}]*margin: 36px 0/s);
+  assert.match(siteStyles, /\.article-body blockquote::before\s*\{[^}]*inset-block: 0[^}]*inset-inline-start: 0[^}]*width: 1px[^}]*background: var\(--blog-muted\)/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
+  assert.match(articleBody, /<h2 key=/);
+  assert.match(articleBody, /<blockquote key=/);
   assert.match(articleBody, /optical-margin-fallback/);
   assert.match(articlePage, /className="author-edit-action" hidden/);
   assert.match(authorMode, /thinkinghaus-author-mode/);
@@ -315,6 +320,17 @@ test("supports safe inline italics and links", async () => {
     new URL("../public/fonts/TestUntitledSansWeb-Bold.woff2", import.meta.url),
   );
   assert.equal(boldFont.size, 9392);
+});
+
+test("publishes semantic block quotes in articles and RSS", async () => {
+  const feed = generateRssFeed([{
+    title: "Quote QA",
+    slug: "quote-style-qa",
+    date: "2026-08-13",
+    publishedAt: "2026-08-13T12:00:00.000Z",
+    paragraphs: ["Before.", "> A useful interruption.", "After."],
+  }]);
+  assert.match(feed, /<blockquote><p>A useful interruption\.<\/p><\/blockquote>/);
 });
 
 test("calculates reading time and preserves draft status", () => {

@@ -26,7 +26,9 @@ async function visit(directory) {
       }
     }
 
-    for (const match of html.matchAll(/href="(\/_next\/static\/css\/index\.[^"?#]+\.css)(?:[?#][^"]*)?"/g)) {
+    for (const match of html.matchAll(
+      /href="(\/_next\/static\/css\/[\w-]+\.[\w-]+\.css)(?:[?#][^"]*)?"/g,
+    )) {
       globalStylesheets.add(match[1]);
     }
   }
@@ -37,7 +39,11 @@ if (missing.size) {
   throw new Error(`Static export references missing assets:\n${[...missing].join("\n")}`);
 }
 
-if (globalStylesheets.size !== 1) {
+if (globalStylesheets.size === 0) {
+  throw new Error("Static export does not reference a global stylesheet.");
+}
+
+if (globalStylesheets.size > 1) {
   throw new Error(
     `Static export contains multiple global stylesheet generations:\n${[...globalStylesheets].join("\n")}`,
   );

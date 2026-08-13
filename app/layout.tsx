@@ -32,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <script defer src="/author-mode.js" />
         <script
           defer
           src="https://trackinghaus-alpha.vercel.app/tracker.js"

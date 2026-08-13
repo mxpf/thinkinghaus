@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
+import vm from "node:vm";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
 import { calculateReadingTime, parsePost, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { readPortfolioAbout, readPortfolioProjects } from "../scripts/portfolio-content.mjs";
@@ -50,6 +51,7 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
     html,
     /<script[^>]+src="https:\/\/trackinghaus-alpha\.vercel\.app\/tracker\.js"[^>]+data-site="thinkinghaus"[^>]+data-endpoint="https:\/\/trackinghaus-alpha\.vercel\.app\/api\/collect"/,
   );
+  assert.match(html, /<script[^>]+src="\/author-mode\.js"/);
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 
@@ -60,6 +62,46 @@ test("static homepage links point directly to exported article files", async () 
   for (const post of posts) {
     assert.match(index, new RegExp(`href="/${post.slug}\\.html"`));
   }
+});
+
+test("keeps edit controls private until author mode is activated", async () => {
+  const source = await readFile(new URL("../public/author-mode.js", import.meta.url), "utf8");
+
+  function runAuthorMode(hash, stored = null) {
+    const values = new Map(stored ? [["thinkinghaus-author-mode", stored]] : []);
+    const link = { href: "" };
+    const action = { hidden: true, querySelector: () => link };
+    const article = {
+      dataset: { contentSlug: "where-the-work-is", contentTitle: "Where the work is" },
+      querySelector: () => action,
+    };
+    const window = {
+      location: { hash, pathname: "/where-the-work-is.html", search: "" },
+      history: { replaceState() {} },
+      localStorage: {
+        getItem: (key) => values.get(key) ?? null,
+        setItem: (key, value) => values.set(key, value),
+        removeItem: (key) => values.delete(key),
+      },
+    };
+    vm.runInNewContext(source, {
+      URL,
+      window,
+      document: { querySelector: () => article },
+    });
+    return { action, link, values };
+  }
+
+  assert.equal(runAuthorMode("").action.hidden, true);
+
+  const activated = runAuthorMode("#edit");
+  assert.equal(activated.action.hidden, false);
+  assert.equal(activated.values.get("thinkinghaus-author-mode"), "on");
+  assert.match(activated.link.href, /[?&]slug=where-the-work-is/);
+  assert.match(activated.link.href, /[?&]title=Where(?:\+|%20)the(?:\+|%20)work(?:\+|%20)is/);
+
+  assert.equal(runAuthorMode("", "on").action.hidden, false);
+  assert.equal(runAuthorMode("#edit-off", "on").action.hidden, true);
 });
 
 test("generates an RSS feed from published posts", async () => {
@@ -169,11 +211,12 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(studio, /Publish/);
   assert.match(studio, /id="delete-button"/);
 
-  const [siteStyles, studioStyles, studioScript, articlePage] = await Promise.all([
+  const [siteStyles, studioStyles, studioScript, articlePage, authorMode] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../studio/studio.css", import.meta.url), "utf8"),
     readFile(new URL("../studio/studio.js", import.meta.url), "utf8"),
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../public/author-mode.js", import.meta.url), "utf8"),
   ]);
   assert.doesNotMatch(siteStyles, /--step-article-title/);
   assert.match(siteStyles, /--reading-measure: 56ch/);
@@ -213,6 +256,11 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.doesNotMatch(studioStyles, /\.preview-article header[^}]*font-weight: 300/s);
   assert.match(studioScript, /optical-margin-fallback/);
   assert.match(articlePage, /optical-margin-fallback/);
+  assert.match(articlePage, /className="author-edit-action" hidden/);
+  assert.match(authorMode, /thinkinghaus-author-mode/);
+  assert.match(authorMode, /location\.hash === "#edit"/);
+  assert.match(authorMode, /location\.hash === "#edit-off"/);
+  assert.match(authorMode, /thinkinghaus-studio\.maxpfennighaus\.workers\.dev/);
 });
 
 test("supports safe inline italics and links", async () => {

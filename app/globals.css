@@ -253,6 +253,12 @@ body {
   text-wrap: balance;
 }
 
+.author-edit-action a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .article-body {
   width: 100%;
 }

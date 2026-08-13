@@ -53,11 +53,14 @@ export default async function PostPage({ params }: PageProps) {
     <main className="site article-page">
       <div className="article-frame">
         <a className="desktop-brand" href="/"><LetterCascade text="Thinkinghaus" /></a>
-        <article className="article-column">
+        <article className="article-column" data-content-slug={slug} data-content-title={content.title}>
           <header className="article-header">
             <h1>{content.title}</h1>
             {post ? <p>{post.date}</p> : null}
             {post ? <p>{post.readingTime}</p> : null}
+            <p className="author-edit-action" hidden>
+              <a href="https://thinkinghaus-studio.maxpfennighaus.workers.dev/">Edit</a>
+            </p>
           </header>
           <div className="article-body">
             {content.paragraphs.map((paragraph, index) => (

@@ -4,6 +4,8 @@ import { Footer } from "./Footer";
 import { LetterCascade } from "./LetterCascade";
 import { posts } from "./posts";
 
+const staticExport = process.env.STATIC_EXPORT === "1";
+
 export const metadata: Metadata = {
   alternates: {
     canonical: "/",
@@ -21,7 +23,7 @@ export default function Home() {
           <ol className="post-list">
             {posts.map((post) => (
               <li key={post.slug}>
-                <a href={`/${post.slug}`}>{post.title}</a>
+                <a href={`/${post.slug}${staticExport ? ".html" : ""}`}>{post.title}</a>
               </li>
             ))}
           </ol>

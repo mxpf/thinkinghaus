@@ -53,6 +53,15 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 
+test("static homepage links point directly to exported article files", async () => {
+  const index = await readFile(new URL("../dist/client/index.html", import.meta.url), "utf8");
+  const posts = await readPosts();
+
+  for (const post of posts) {
+    assert.match(index, new RegExp(`href="/${post.slug}\\.html"`));
+  }
+});
+
 test("generates an RSS feed from published posts", async () => {
   const posts = await readPosts();
   const feed = generateRssFeed(posts);

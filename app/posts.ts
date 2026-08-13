@@ -13,14 +13,14 @@ export type Post = {
 
 export const posts: readonly Post[] = generatedPosts;
 
-export type NowEntry = {
+type NowEntry = {
   title: "Now";
   slug: string;
   date: string;
   paragraphs: readonly string[];
 };
 
-export const nowEntries: readonly NowEntry[] = generatedNowEntries;
+const nowEntries: readonly NowEntry[] = generatedNowEntries;
 export const currentNow = nowEntries[0];
 
 export type StandalonePage = {

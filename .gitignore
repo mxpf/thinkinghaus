@@ -17,6 +17,7 @@
 /.next/
 /.vinext/
 /out/
+*.tsbuildinfo
 
 # misc
 .DS_Store
@@ -39,3 +40,10 @@ yarn-error.log*
 /outputs/
 /work/
 /.studio-trash/
+
+# generated from Markdown before development and builds
+/app/generated-now.ts
+/app/generated-pages.ts
+/app/generated-posts.ts
+/public/rss.xml
+/public/sitemap.xml

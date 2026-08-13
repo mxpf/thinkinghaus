@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
+import { ArticleBody } from "../ArticleBody";
 import { Footer } from "../Footer";
-import { InlineText } from "../InlineText";
 import { LetterCascade } from "../LetterCascade";
 import { stripInlineMarkdown } from "../inline-markdown";
 import { getPost, getStandalonePage, posts, standalonePages } from "../posts";
@@ -63,14 +63,7 @@ export default async function PostPage({ params }: PageProps) {
             </p>
           </header>
           <div className="article-body">
-            {content.paragraphs.map((paragraph, index) => (
-              <p
-                className={/^[“‘"']/.test(stripInlineMarkdown(paragraph).trimStart()) ? "optical-margin-fallback" : undefined}
-                key={`${index}-${paragraph}`}
-              >
-                <InlineText text={paragraph} />
-              </p>
-            ))}
+            <ArticleBody paragraphs={content.paragraphs} />
             {post?.source ? (
               <p className="article-source"><a href={post.source.href}>{post.source.label}</a></p>
             ) : null}

@@ -4,7 +4,7 @@ import { projectRoot } from "./content.mjs";
 
 const siteUrl = "https://thinking.haus";
 
-export function generateSitemap(posts, pages) {
+function generateSitemap(posts, pages) {
   const paths = [
     "/",
     "/now",

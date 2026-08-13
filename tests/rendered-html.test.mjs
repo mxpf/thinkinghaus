@@ -4,7 +4,6 @@ import test from "node:test";
 import vm from "node:vm";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
 import { calculateReadingTime, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
-import { readPortfolioAbout, readPortfolioProjects } from "../scripts/portfolio-content.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
 async function render(pathname = "/") {
@@ -231,29 +230,15 @@ test("renders only the newest published Now entry on its stable route", async ()
   }
 });
 
-test("keeps both publishing libraries readable and the studio local", async () => {
+test("keeps published writing readable and the visual system intentional", async () => {
   const posts = await readPosts({ includeDrafts: true });
-  const projects = await readPortfolioProjects();
-  const about = await readPortfolioAbout();
   assert.ok(posts.length > 0);
-  assert.equal(projects.length, 11);
   assert.ok(posts.every((post) => post.body.length > 0));
   assert.ok(posts.every((post) => /^[a-z0-9-]+$/.test(post.slug)));
-  assert.ok(projects.every((project) => project.body.length > 0));
-  assert.equal(about.slug, "about");
-  assert.match(about.email, /@/);
 
-  const studio = await readFile(new URL("../studio/index.html", import.meta.url), "utf8");
-  assert.match(studio, /Publishing Studio/);
-  assert.match(studio, /data-site="thinkinghaus"/);
-  assert.match(studio, /data-site="portfolio"/);
-  assert.match(studio, /Publish/);
-  assert.match(studio, /id="delete-button"/);
-
-  const [siteStyles, studioStyles, studioScript, articlePage, authorMode] = await Promise.all([
+  const [siteStyles, articleBody, articlePage, authorMode] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
-    readFile(new URL("../studio/studio.css", import.meta.url), "utf8"),
-    readFile(new URL("../studio/studio.js", import.meta.url), "utf8"),
+    readFile(new URL("../app/ArticleBody.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../public/author-mode.js", import.meta.url), "utf8"),
   ]);
@@ -278,23 +263,11 @@ test("keeps both publishing libraries readable and the studio local", async () =
   assert.match(siteStyles, /\.site \.post-list a\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 700/s);
-  assert.doesNotMatch(`${siteStyles}${studioStyles}`, /Untitled Sans Italic/);
+  assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 500[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
-  assert.match(studioStyles, /--step-editor-title: clamp\(30px, 1\.5rem \+ 1\.5vw, 46px\)/);
-  assert.match(studioStyles, /\.body-input\s*\{[^}]*font-size: 16px/s);
-  assert.match(studioStyles, /\.preview-article\s*\{[^}]*font-size: 16px/s);
-  assert.doesNotMatch(studioStyles, /font-size:\s*18px/);
-  assert.match(studioStyles, /:root\s*\{[^}]*--paper: #1c1c1a;[^}]*--ink: #eeede9;[^}]*color-scheme: dark;/s);
-  assert.doesNotMatch(studioStyles, /data-theme|theme-toggle/);
-  assert.doesNotMatch(studioScript, /setTheme|toggleTheme|themeToggle/);
-  assert.match(studioStyles, /\.preview-article p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
-  assert.match(studioStyles, /\.preview-article\s*\{[^}]*font-size: 16px[^}]*font-weight: 300[^}]*line-height: 24px/s);
-  assert.match(studioStyles, /\.preview-article h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 500[^}]*line-height: 24px/s);
-  assert.doesNotMatch(studioStyles, /\.preview-article header[^}]*font-weight: 300/s);
-  assert.match(studioScript, /optical-margin-fallback/);
-  assert.match(articlePage, /optical-margin-fallback/);
+  assert.match(articleBody, /optical-margin-fallback/);
   assert.match(articlePage, /className="author-edit-action" hidden/);
   assert.match(authorMode, /thinkinghaus-author-mode/);
   assert.match(authorMode, /location\.hash === "#edit"/);

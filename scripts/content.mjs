@@ -1,12 +1,10 @@
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
 export const projectRoot = path.resolve(import.meta.dirname, "..");
-export const postsDirectory = path.join(projectRoot, "content", "posts");
-export const pagesDirectory = path.join(projectRoot, "content", "pages");
-export const nowDirectory = path.join(projectRoot, "content", "now");
-const deletedPostsDirectory = path.join(projectRoot, ".studio-trash", "posts");
-const editablePageSlugs = new Set(["about", "links"]);
+const postsDirectory = path.join(projectRoot, "content", "posts");
+const pagesDirectory = path.join(projectRoot, "content", "pages");
+const nowDirectory = path.join(projectRoot, "content", "now");
 
 const frontmatterPattern = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/;
 
@@ -34,16 +32,6 @@ function parseFrontmatter(source) {
 
 function quote(value) {
   return JSON.stringify(value ?? "");
-}
-
-export function slugify(value) {
-  return value
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 80);
 }
 
 export function calculateReadingTime(body) {
@@ -91,11 +79,11 @@ export function parsePost(source, filename = "") {
   };
 }
 
-export function parseNowEntry(source, filename = "") {
+function parseNowEntry(source, filename = "") {
   return { ...parsePost(source, filename), type: "now", title: "Now" };
 }
 
-export function parsePage(source, filename = "") {
+function parsePage(source, filename = "") {
   const { metadata, body } = parseFrontmatter(source);
   const slug = metadata.slug || filename.replace(/\.md$/, "");
   const paragraphs = body
@@ -130,18 +118,6 @@ export function serializePost(post) {
 
   metadata.push("---", "", post.body.trim(), "");
   return metadata.join("\n");
-}
-
-export function serializePage(page) {
-  return [
-    "---",
-    `title: ${quote(page.title)}`,
-    `slug: ${page.slug}`,
-    "---",
-    "",
-    page.body.trim(),
-    "",
-  ].join("\n");
 }
 
 export async function readPosts({ includeDrafts = false } = {}) {
@@ -187,27 +163,6 @@ export async function readNowEntries({ includeDrafts = false } = {}) {
     );
 }
 
-export async function savePost(post) {
-  const slug = slugify(post.slug || post.title);
-  if (!slug) throw new Error("Give the post a title before saving it.");
-  const file = path.join(postsDirectory, `${slug}.md`);
-  await writeFile(file, serializePost({ ...post, slug }), "utf8");
-  return { ...post, slug };
-}
-
-export async function deletePost(slug) {
-  const safeSlug = slugify(slug || "");
-  if (!safeSlug || safeSlug !== slug) throw new Error("Choose a valid post to delete.");
-  const original = path.join(postsDirectory, `${safeSlug}.md`);
-  const source = await readFile(original, "utf8");
-  const post = parsePost(source, `${safeSlug}.md`);
-  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  await mkdir(deletedPostsDirectory, { recursive: true });
-  const archived = path.join(deletedPostsDirectory, `${timestamp}-${safeSlug}.md`);
-  await rename(original, archived);
-  return { post, original, archived };
-}
-
 export async function readPages() {
   const files = (await readdir(pagesDirectory))
     .filter((file) => file.endsWith(".md"))
@@ -219,12 +174,4 @@ export async function readPages() {
       return parsePage(source, file);
     }),
   );
-}
-
-export async function savePage(page) {
-  const slug = slugify(page.slug || page.title);
-  if (!editablePageSlugs.has(slug)) throw new Error("That page cannot be changed here.");
-  const saved = { ...page, type: "page", slug };
-  await writeFile(path.join(pagesDirectory, `${slug}.md`), serializePage(saved), "utf8");
-  return saved;
 }

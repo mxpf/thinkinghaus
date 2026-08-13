@@ -5,7 +5,7 @@ export type InlineToken =
 
 const inlinePattern = /\[([^\]]+)\]\(([^)\s]+)\)|\*([^*\n]+)\*|_([^_\n]+)_/g;
 
-export function isSafeInlineHref(href: string) {
+function isSafeInlineHref(href: string) {
   if (href.startsWith("/") || href.startsWith("#")) return true;
   try {
     const protocol = new URL(href).protocol;
@@ -37,7 +37,7 @@ export function parseInlineMarkdown(value: string): InlineToken[] {
   return tokens;
 }
 
-export function stripInlineMarkdown(value: string) {
+export function stripInlineMarkdown(value: string): string {
   return parseInlineMarkdown(value)
     .map((token) => token.type === "text" ? token.value : stripInlineMarkdown(token.value))
     .join("");

@@ -1,13 +1,16 @@
 # Thinkinghaus
 
-A small home for essays, observations, and fragments by Max Pfennighaus.
+A deliberately quiet publishing system for essays, observations, and fragments by designer and creative director Max Pfennighaus.
 
-- Public site: [thinking.haus](https://thinking.haus)
-- Private editor: [Thinkinghaus Studio](https://thinkinghaus-studio.maxpfennighaus.workers.dev)
+**[Read Thinkinghaus](https://thinking.haus)**
+
+![Thinkinghaus article index](docs/preview.png)
+
+Thinkinghaus began as an experiment in using AI as a genuine writing collaborator—not simply to generate text, but to question, connect, criticize, and help articulate ideas that were still taking shape. The publishing system grew around that practice. It keeps the public site spare while giving the private Studio enough structure for drafting, revision, links, typography, publishing, and a small `/now` archive.
 
 ## How it works
 
-Writing lives as Markdown in `content/`. Thinkinghaus Studio keeps private drafts in its own database and writes a document here only when it is published. A push to `main` runs the GitHub workflow that rebuilds the public site and updates `gh-pages`.
+Published writing lives as Markdown in `content/`. The private Studio keeps drafts in its own database and writes a document here only when it is published. A push to `main` rebuilds the static site and updates GitHub Pages.
 
 ```text
 content/posts/   essays and fragments
@@ -45,3 +48,7 @@ The custom domain depends on `public/CNAME`. GitHub Pages also requires `.nojeky
 ## Design principle
 
 The public site is intentionally spare. Before adding an interface element, ask whether it helps someone find or read the writing. The Studio is a workbench; the public site is the quiet room beyond it.
+
+## Rights
+
+The repository is public so the publishing system and its development can be inspected. Unless otherwise noted, the essays, site content, identity, and original assets remain © Max Pfennighaus and are not offered for reuse.

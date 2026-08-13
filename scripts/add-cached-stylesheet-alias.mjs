@@ -9,7 +9,7 @@ const stylesheetDirectory = path.resolve("dist/client/_next/static/css");
 const cachedStylesheetName = "index.BcckSQMS.css";
 const stylesheetNames = await readdir(stylesheetDirectory);
 const currentStylesheetName = stylesheetNames.find(
-  (name) => /^index\.[\w-]+\.css$/.test(name) && name !== cachedStylesheetName,
+  (name) => /^[\w-]+\.[\w-]+\.css$/.test(name) && name !== cachedStylesheetName,
 );
 
 if (!currentStylesheetName) {

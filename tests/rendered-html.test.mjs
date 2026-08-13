@@ -184,7 +184,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   const aboutResponse = await render("/about");
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
-  assert.match(aboutHtml, /<title>About — Thinkinghaus<\/title>/i);
+  assert.match(aboutHtml, /<title>Thinkinghaus - About<\/title>/i);
   assert.match(aboutHtml, /<link rel="canonical" href="https:\/\/thinking\.haus\/about"/);
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
   assert.match(aboutHtml, /href="\/ai"/);
@@ -192,7 +192,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   const aiResponse = await render("/ai");
   assert.equal(aiResponse.status, 200);
   const aiHtml = await aiResponse.text();
-  assert.match(aiHtml, /<title>AI — Thinkinghaus<\/title>/i);
+  assert.match(aiHtml, /<title>Thinkinghaus - AI<\/title>/i);
   assert.match(aiHtml, /<em>made with AI<\/em>/);
   assert.match(
     aiHtml,
@@ -214,7 +214,7 @@ test("renders only the newest published Now entry on its stable route", async ()
   assert.equal(response.status, 200);
   const html = await response.text();
   const entries = await readNowEntries();
-  assert.match(html, /<title>Now — Thinkinghaus<\/title>/i);
+  assert.match(html, /<title>Thinkinghaus - Now<\/title>/i);
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus\/now"/);
   if (entries[0]) {
     assert.ok(html.includes(entries[0].paragraphs[0]));

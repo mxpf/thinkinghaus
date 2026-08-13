@@ -8,7 +8,7 @@ import { stripInlineMarkdown } from "../inline-markdown";
 import { currentNow } from "../posts";
 
 export const metadata: Metadata = {
-  title: "Now — Thinkinghaus",
+  title: "Now",
   description: currentNow
     ? stripInlineMarkdown(currentNow.paragraphs[0])
     : "What is holding my attention now.",

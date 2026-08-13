@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Thinkinghaus",
+  title: {
+    default: "Thinkinghaus",
+    template: "Thinkinghaus - %s",
+  },
   description: "Notes on attention, work, and the occasional strange thing.",
   metadataBase: new URL("https://thinking.haus"),
   icons: {

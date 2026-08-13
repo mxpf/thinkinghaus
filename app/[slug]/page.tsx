@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const standalonePage = getStandalonePage(slug);
   const content = post || standalonePage;
   return {
-    title: content ? `${content.title} — Thinkinghaus` : "Thinkinghaus",
+    title: content?.title,
     description: content ? stripInlineMarkdown(content.paragraphs[0]) : undefined,
     alternates: content ? {
       canonical: `/${slug}`,

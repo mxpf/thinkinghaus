@@ -5,6 +5,7 @@ export function Footer({ showBrand = false }: { showBrand?: boolean }) {
     <footer className="footer">
       {showBrand ? <a className="footer-brand" href="/">Thinkinghaus</a> : null}
       <nav className="footer-links" aria-label="Site">
+        <a href="https://maxpfennig.haus/" rel="me">Work</a>
         <a href="/about">About</a>
         <a href="/links">Links</a>
         <a href="/now">Now</a>

@@ -1,9 +1,9 @@
 ---
 title: "A system for looking"
 slug: a-system-for-looking
-date: 2026-08-05
-status: draft
-publishedAt: 2026-08-05T13:00:00.000Z
+date: 2026-08-13
+status: published
+publishedAt: 2026-08-13T18:19:00.000Z
 ---
 
 Before I make, I look.

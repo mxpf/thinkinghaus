@@ -20,7 +20,7 @@ That sounds almost perverse for a designer. We’re encouraged to make things di
 
 But most of the time, when I’m reading, I don’t need the typeface to introduce itself. I need it to help me *read*.
 
-That’s probably why Untitled Sans feels right for both my [portfolio](http://maxpfennig.haus/) and for Thinkinghaus. The work and the writing can wander around and follow unusual ideas. The letters stay put.
+That’s probably why Untitled Sans feels right for both my [portfolio](https://maxpfennig.haus/) and for Thinkinghaus. The work and the writing can wander around and follow unusual ideas. The letters stay put.
 
 Its plainness isn’t an absence of design. It’s what happens when a mountain of small decisions are made thoughtfully enough that they can recede. The type makes some room around the words instead of elbowing them for attention.
 

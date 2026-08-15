@@ -187,9 +187,6 @@ test("renders standalone About, AI, and Links pages", async () => {
   assert.match(aboutHtml, /<link rel="canonical" href="https:\/\/thinking\.haus\/about"/);
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
   assert.match(aboutHtml, /href="\/ai"/);
-  assert.match(aboutHtml, /class="internal-link-preview"/);
-  assert.match(aboutHtml, /class="internal-link-preview-title">AI<\/span>/);
-  assert.match(aboutHtml, /aria-controls="_R_/);
 
   const aiResponse = await render("/ai");
   assert.equal(aiResponse.status, 200);
@@ -209,24 +206,6 @@ test("renders standalone About, AI, and Links pages", async () => {
       pages.find((page) => page.slug === "links").paragraphs[0],
     ),
   );
-});
-
-test("adds quiet previews to known internal links only", async () => {
-  const [aboutResponse, aiResponse] = await Promise.all([
-    render("/about"),
-    render("/ai"),
-  ]);
-  assert.equal(aboutResponse.status, 200);
-  assert.equal(aiResponse.status, 200);
-
-  const aboutHtml = await aboutResponse.text();
-  assert.match(aboutHtml, /class="internal-link-preview-title">AI<\/span>/);
-  assert.match(aboutHtml, /class="internal-link-preview-excerpt">[^<]+<\/span>/);
-  assert.match(aboutHtml, /href="\/ai"/);
-
-  const aiHtml = await aiResponse.text();
-  assert.match(aiHtml, /href="https:\/\/www\.bydamo\.la\/p\/ai-manifesto"/);
-  assert.doesNotMatch(aiHtml, /class="internal-link-preview"/);
 });
 
 test("renders only the newest published Now entry on its stable route", async () => {

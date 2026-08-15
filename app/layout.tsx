@@ -37,6 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="webmention" href="https://webmention.io/thinking.haus/webmention" />
+      </head>
       <body>
         {children}
         <script defer src="/author-mode.js" />

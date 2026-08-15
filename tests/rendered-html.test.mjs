@@ -48,12 +48,17 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
     html,
     /<link rel="alternate" type="application\/rss\+xml" href="https:\/\/thinking\.haus\/rss\.xml"/,
   );
+  assert.match(
+    html,
+    /<link rel="webmention" href="https:\/\/webmention\.io\/thinking\.haus\/webmention"/,
+  );
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus"/);
   assert.match(
     html,
     /<script[^>]+src="https:\/\/trackinghaus-alpha\.vercel\.app\/tracker\.js"[^>]+data-site="thinkinghaus"[^>]+data-endpoint="https:\/\/trackinghaus-alpha\.vercel\.app\/api\/collect"/,
   );
   assert.match(html, /<script[^>]+src="\/author-mode\.js"/);
+  assert.doesNotMatch(html, />Mentioned by</);
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 
@@ -334,11 +339,11 @@ test("publishes semantic block quotes in articles and RSS", async () => {
 });
 
 test("calculates reading time and preserves draft status", () => {
-  assert.equal(calculateReadingTime("word ".repeat(180)), "1 minute");
-  assert.equal(calculateReadingTime("word ".repeat(181)), "2 minutes");
+  assert.equal(calculateReadingTime("word ".repeat(180)), "1 minute read");
+  assert.equal(calculateReadingTime("word ".repeat(181)), "2 minute read");
   assert.equal(
     calculateReadingTime("Read [this note](https://example.com/a/very/long/address) *slowly*."),
-    "1 minute",
+    "1 minute read",
   );
 
   const draft = parsePost(serializePost({
@@ -349,5 +354,5 @@ test("calculates reading time and preserves draft status", () => {
     body: "Not ready yet.",
   }));
   assert.equal(draft.status, "draft");
-  assert.equal(draft.readingTime, "1 minute");
+  assert.equal(draft.readingTime, "1 minute read");
 });

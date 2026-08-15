@@ -46,6 +46,18 @@ Normal writing and publishing happens in Studio. The public repository remains t
 
 The custom domain depends on `public/CNAME`. GitHub Pages also requires `.nojekyll`, which the publishing workflow adds to the generated branch.
 
+## Webmentions
+
+Thinkinghaus advertises a Webmention endpoint and refreshes public mentions during publication and once each day. The refresh is deliberately build-time rather than client-side: readers never contact Webmention.io, and a temporary service failure cannot break a page or erase the last good cache.
+
+Only an external source link and a short label are retained. Remote content, photos, private mentions, unsafe URLs, and links back to Thinkinghaus itself are excluded. A post shows a quiet “Mentioned by” list only when at least one real mention exists.
+
+To refresh the local cache manually:
+
+```bash
+npm run refresh:webmentions
+```
+
 ## Security and dependency updates
 
 The publishing workflow blocks deployment when a high-severity production dependency vulnerability is reported. A separate weekly workflow checks the complete development toolchain without blocking publication, and Dependabot proposes dependency and GitHub Actions updates for review.

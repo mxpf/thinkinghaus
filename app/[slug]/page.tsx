@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ArticleBody } from "../ArticleBody";
 import { Footer } from "../Footer";
 import { LetterCascade } from "../LetterCascade";
+import { Webmentions } from "../Webmentions";
 import { stripInlineMarkdown } from "../inline-markdown";
 import { getPost, getStandalonePage, posts, standalonePages } from "../posts";
 
@@ -68,6 +69,7 @@ export default async function PostPage({ params }: PageProps) {
               <p className="article-source"><a href={post.source.href}>{post.source.label}</a></p>
             ) : null}
           </div>
+          {post ? <Webmentions slug={slug} /> : null}
           <Footer showBrand />
         </article>
       </div>

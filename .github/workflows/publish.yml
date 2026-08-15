@@ -3,6 +3,9 @@ name: Publish Thinkinghaus
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "23 10 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -31,6 +34,10 @@ jobs:
 
       - name: Audit production dependencies
         run: npm run audit:production
+
+      - name: Refresh public Webmentions
+        run: npm run refresh:webmentions
+        continue-on-error: true
 
       - name: Build published writing
         shell: bash

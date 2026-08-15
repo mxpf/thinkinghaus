@@ -335,6 +335,43 @@ body {
   margin-top: 48px !important;
 }
 
+.webmentions {
+  padding-top: 24px;
+  margin-top: 72px;
+  border-top: 1px solid var(--blog-rule);
+}
+
+.webmentions h2 {
+  margin: 0 0 24px;
+  color: var(--blog-muted);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.webmentions ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.webmentions li {
+  margin: 0 0 12px;
+}
+
+.webmentions li:last-child {
+  margin-bottom: 0;
+}
+
+.webmentions a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .article-body a {
   text-decoration: underline;
   text-decoration-thickness: 1px;

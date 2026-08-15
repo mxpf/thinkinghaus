@@ -13,8 +13,6 @@ Working this way has made me less interested in whether something was *made with
 
 For me, AI has become a way of making thinking visible. The conversation forces ideas out of their comfortable vagueness and into language, where I can finally see what I believe, what I don’t, and what deserves another pass.
 
-I was here.
-
 —
 
 This page was inspired by ["Morenikeji’s /ai manifesto"](https://www.bydamo.la/p/ai-manifesto), which proposes a simple convention: if AI plays a role in your work, say how.

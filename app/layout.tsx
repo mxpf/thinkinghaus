@@ -1,6 +1,35 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const author = {
+  name: "Max Pfennighaus",
+  url: "https://maxpfennig.haus/",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://thinking.haus/#author",
+      name: author.name,
+      url: author.url,
+      sameAs: [
+        "https://thinking.haus/",
+        "https://www.linkedin.com/in/mxpfe/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://thinking.haus/#website",
+      url: "https://thinking.haus/",
+      name: "Thinkinghaus",
+      description: "Notes on attention, work, and the occasional strange thing.",
+      author: { "@id": "https://thinking.haus/#author" },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Thinkinghaus",
@@ -8,6 +37,9 @@ export const metadata: Metadata = {
   },
   description: "Notes on attention, work, and the occasional strange thing.",
   metadataBase: new URL("https://thinking.haus"),
+  authors: [author],
+  creator: author.name,
+  publisher: author.name,
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
@@ -43,6 +75,12 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
         <script defer src="/author-mode.js" />
         <script
           defer

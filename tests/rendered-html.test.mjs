@@ -37,6 +37,7 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.match(html, /class="letter-cascade is-in" aria-label="Thinkinghaus"/);
   for (const post of posts) assert.ok(html.includes(post.title));
   assert.match(html, /href="\/about"/);
+  assert.match(html, /href="https:\/\/maxpfennig\.haus\/" rel="me">Work<\/a>/);
   assert.match(html, /href="\/links"/);
   assert.match(html, /href="\/now"/);
   assert.match(html, /href="https:\/\/trackinghaus-alpha\.vercel\.app">Stats<\/a>/);
@@ -60,7 +61,22 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   );
   assert.match(html, /<script[^>]+src="\/author-mode\.js"/);
   assert.doesNotMatch(html, />Mentioned by</);
+  assert.match(html, /<meta name="author" content="Max Pfennighaus"/);
+  assert.match(html, /<meta name="creator" content="Max Pfennighaus"/);
+  assert.match(html, /<meta name="publisher" content="Max Pfennighaus"/);
+  assert.match(html, /<script type="application\/ld\+json">[^<]*"@type":"Person"/);
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
+});
+
+test("identifies Max as the author of published notes", async () => {
+  const post = (await readPosts())[0];
+  const response = await render(`/${post.slug}`);
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(
+    html,
+    /By <a href="https:\/\/maxpfennig\.haus\/" rel="author">Max Pfennighaus<\/a>/,
+  );
 });
 
 test("static homepage links point directly to exported article files", async () => {
@@ -193,6 +209,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   assert.match(aboutHtml, /<link rel="canonical" href="https:\/\/thinking\.haus\/about"/);
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
   assert.match(aboutHtml, /href="\/ai"/);
+  assert.match(aboutHtml, /href="https:\/\/maxpfennig\.haus\/"[^>]*>My professional work lives at maxpfennig\.haus\.<\/a>/);
 
   const aiResponse = await render("/ai");
   assert.equal(aiResponse.status, 200);
@@ -203,6 +220,7 @@ test("renders standalone About, AI, and Links pages", async () => {
     aiHtml,
     /href="https:\/\/www\.bydamo\.la\/p\/ai-manifesto" rel="noreferrer"/,
   );
+  assert.doesNotMatch(aiHtml, /I was here\./);
   assert.doesNotMatch(aiHtml, /<nav[^>]*>[\s\S]*?>AI<\/a>/);
 
   const linksResponse = await render("/links");

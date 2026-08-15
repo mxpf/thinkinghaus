@@ -59,6 +59,9 @@ export default async function PostPage({ params }: PageProps) {
             <h1>{content.title}</h1>
             {post ? <p>{post.date}</p> : null}
             {post ? <p>{post.readingTime}</p> : null}
+            {post ? (
+              <p>By <a href="https://maxpfennig.haus/" rel="author">Max Pfennighaus</a></p>
+            ) : null}
             <p className="author-edit-action" hidden>
               <a href="https://thinkinghaus-studio.maxpfennighaus.workers.dev/">Edit</a>
             </p>

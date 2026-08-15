@@ -38,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="me" href="https://github.com/mxpf" />
         <link rel="webmention" href="https://webmention.io/thinking.haus/webmention" />
       </head>
       <body>

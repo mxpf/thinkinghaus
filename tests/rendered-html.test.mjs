@@ -52,6 +52,7 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
     html,
     /<link rel="webmention" href="https:\/\/webmention\.io\/thinking\.haus\/webmention"/,
   );
+  assert.match(html, /<link rel="me" href="https:\/\/github\.com\/mxpf"/);
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus"/);
   assert.match(
     html,

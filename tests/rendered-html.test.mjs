@@ -290,9 +290,12 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site \.article-body h2\s*\{[^}]*margin: 48px 0 24px[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-weight: 400[^}]*letter-spacing: 0\.06em[^}]*line-height: 24px[^}]*text-transform: uppercase/s);
   assert.match(siteStyles, /\.article-body blockquote\s*\{[^}]*position: relative[^}]*padding: 0 0 0 24px[^}]*margin: 36px 0/s);
   assert.match(siteStyles, /\.article-body blockquote::before\s*\{[^}]*inset-block: 0[^}]*inset-inline-start: 0[^}]*width: 1px[^}]*background: var\(--blog-muted\)/s);
+  assert.match(siteStyles, /\.article-body \.article-numbered-list\s*\{[^}]*padding-inline-start: 2em[^}]*list-style: decimal/s);
+  assert.match(siteStyles, /\.article-body \.article-numbered-list li::marker\s*\{[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-variant-numeric: tabular-nums[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
   assert.match(articleBody, /<h2 key=/);
   assert.match(articleBody, /<blockquote key=/);
+  assert.match(articleBody, /<ol className="article-list article-numbered-list"/);
   assert.match(articleBody, /optical-margin-fallback/);
   assert.match(articlePage, /className="author-edit-action" hidden/);
   assert.match(authorMode, /thinkinghaus-author-mode/);
@@ -354,6 +357,17 @@ test("publishes semantic block quotes in articles and RSS", async () => {
   assert.match(feed, /<blockquote><p>A useful interruption\.<\/p><\/blockquote>/);
 });
 
+test("publishes semantic numbered lists in RSS", () => {
+  const feed = generateRssFeed([{
+    title: "Numbered list QA",
+    slug: "numbered-list-qa",
+    date: "2026-08-19",
+    publishedAt: "2026-08-19T12:00:00.000Z",
+    paragraphs: ["Before.", "3. First item.", "4. A *second* item.", "After."],
+  }]);
+  assert.match(feed, /<ol start="3"><li>First item\.<\/li><li>A <em>second<\/em> item\.<\/li><\/ol>/);
+});
+
 test("calculates reading time and preserves draft status", () => {
   assert.equal(calculateReadingTime("word ".repeat(180)), "1 minute read");
   assert.equal(calculateReadingTime("word ".repeat(181)), "2 minute read");
@@ -371,4 +385,27 @@ test("calculates reading time and preserves draft status", () => {
   }));
   assert.equal(draft.status, "draft");
   assert.equal(draft.readingTime, "1 minute read");
+});
+
+test("parses consecutive numbered Markdown items as distinct blocks", () => {
+  const post = parsePost(`---
+title: "A sequence"
+slug: a-sequence
+date: 2026-08-19
+status: draft
+---
+
+Before.
+
+1. First item.
+2. Second item
+   continues on another line.
+
+After.`);
+  assert.deepEqual(post.paragraphs, [
+    "Before.",
+    "1. First item.",
+    "2. Second item continues on another line.",
+    "After.",
+  ]);
 });

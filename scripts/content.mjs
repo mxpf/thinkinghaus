@@ -34,6 +34,26 @@ function quote(value) {
   return JSON.stringify(value ?? "");
 }
 
+function parseBodyBlocks(body) {
+  return body
+    .split(/\n\s*\n/)
+    .flatMap((block) => {
+      const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+      if (!/^(-|\d+\.)\s+/.test(lines[0] || "")) return [lines.join(" ")];
+
+      const items = [];
+      for (const line of lines) {
+        if (/^(-|\d+\.)\s+/.test(line)) {
+          items.push(line);
+        } else if (items.length) {
+          items[items.length - 1] += ` ${line}`;
+        }
+      }
+      return items;
+    })
+    .filter(Boolean);
+}
+
 export function calculateReadingTime(body) {
   const readableBody = body
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
@@ -57,10 +77,7 @@ export function displayDate(value) {
 export function parsePost(source, filename = "") {
   const { metadata, body } = parseFrontmatter(source);
   const slug = metadata.slug || filename.replace(/\.md$/, "");
-  const paragraphs = body
-    .split(/\n\s*\n/)
-    .map((paragraph) => paragraph.replace(/\n/g, " ").trim())
-    .filter(Boolean);
+  const paragraphs = parseBodyBlocks(body);
 
   return {
     type: "post",
@@ -86,10 +103,7 @@ function parseNowEntry(source, filename = "") {
 function parsePage(source, filename = "") {
   const { metadata, body } = parseFrontmatter(source);
   const slug = metadata.slug || filename.replace(/\.md$/, "");
-  const paragraphs = body
-    .split(/\n\s*\n/)
-    .map((paragraph) => paragraph.replace(/\n/g, " ").trim())
-    .filter(Boolean);
+  const paragraphs = parseBodyBlocks(body);
 
   return {
     type: "page",

@@ -329,10 +329,22 @@ body {
   margin-bottom: 0;
 }
 
-.article-body .article-list li::before {
+.article-body ul.article-list li::before {
   position: absolute;
   inset-inline-end: calc(100% + 0.45em);
   content: "•";
+}
+
+.article-body .article-numbered-list {
+  padding-inline-start: 2em;
+  list-style: decimal;
+}
+
+.article-body .article-numbered-list li::marker {
+  color: var(--blog-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
 }
 
 .article-source {

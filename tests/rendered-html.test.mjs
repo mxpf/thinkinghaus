@@ -68,15 +68,12 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 
-test("identifies Max as the author of published notes", async () => {
+test("omits the visible author byline from published notes", async () => {
   const post = (await readPosts())[0];
   const response = await render(`/${post.slug}`);
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(
-    html,
-    /By <a href="https:\/\/maxpfennig\.haus\/" rel="author">Max Pfennighaus<\/a>/,
-  );
+  assert.doesNotMatch(html, /By <a href="https:\/\/maxpfennig\.haus\/" rel="author">/);
 });
 
 test("static homepage links point directly to exported article files", async () => {
@@ -288,7 +285,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 700/s);
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
-  assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 500[^}]*line-height: 24px[^}]*text-wrap: balance/s);
+  assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.site \.article-body h2\s*\{[^}]*margin: 48px 0 24px[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-weight: 400[^}]*letter-spacing: 0\.06em[^}]*line-height: 24px[^}]*text-transform: uppercase/s);
   assert.match(siteStyles, /\.article-body blockquote\s*\{[^}]*position: relative[^}]*padding: 0 0 0 24px[^}]*margin: 36px 0/s);

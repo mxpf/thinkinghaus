@@ -250,7 +250,7 @@ body {
 .site .article-header h1 {
   max-inline-size: 30ch;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 24px;
   text-wrap: balance;
 }
@@ -416,6 +416,12 @@ body {
     margin-bottom: 24px;
   }
 
+  .footer-links {
+    max-width: 100%;
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+
   .article-column {
     min-height: calc(100svh - 48px);
   }
@@ -428,6 +434,12 @@ body {
 
   .article-column > .footer .footer-brand {
     margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 340px) {
+  .footer-links {
+    column-gap: 18px;
   }
 }
 

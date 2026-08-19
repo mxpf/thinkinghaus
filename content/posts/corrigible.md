@@ -8,7 +8,7 @@ publishedAt: 2026-08-10T16:28:36.163Z
 
 I’ve carried the word *incorrigible* around for years.
 
-I first remember hearing it in the Babe Ruth biopic with John Goodman. Ruth is a kid at St. Mary’s Industrial School, and somewhere in that story he gets branded with this terrible word. I don’t remember the scene precisely anymore, which is probably appropriate: the movie has mostly disappeared from my memory while the label survived. The historical version is bad enough. Ruth’s parents [petitioned the courts to declare their seven-year-old son “incorrigible”](https://sabr.org/bioproj/person/babe-ruth/) before sending him to St. Mary’s.
+I first remember hearing it in the Babe Ruth biopic with John Goodman. Ruth is a kid at St. Mary’s Industrial School, and somewhere in that story he gets branded with this terrible word. I don’t remember the scene precisely anymore, which is probably appropriate: the movie has mostly disappeared from my memory while the label survived. The historical version is bad enough. Ruth’s parents [petitioned the courts](https://sabr.org/bioproj/person/babe-ruth/) to declare their seven-year-old son “incorrigible” before sending him to St. Mary’s.
 
 There are much worse things you can call a child, but there is something unusually final about *incorrigible*. Difficult describes what is happening. Disobedient describes behavior. Incorrigible reaches forward in time. It says the correction has already failed.
 
@@ -26,19 +26,19 @@ The problem isn’t categorization. It’s forgetting that the category is compr
 
 I used to have fairly fixed ideas about conservatives and military culture. Then I lived in Washington, D.C., very close to the Pentagon, surrounded by thoughtful, kind, family-oriented people whom I respected and connected with. My politics didn’t suddenly disappear. Something more useful happened: the category stopped being able to contain the people. Up close, the abstraction had to compete with actual things.
 
-There’s a much more extreme version of this in [*Accidental Courtesy*](https://www.pbs.org/independentlens/documentaries/accidental-courtesy/), about Black musician Daryl Davis befriending Klansmen and eventually winding up with some of their robes.
+There’s a much more extreme version of this in [*Accidental Courtesy*](https://www.pbs.org/video/independent-lens-accidental-courtesy/), about Black musician Daryl Davis befriending Klansmen and eventually winding up with some of their robes.
 
-[A short essay on Bear Blog about philosophical melancholy](https://xtoblog.bearblog.dev/the-inevitable-loneliness-we-must-suffer/) led me to [a passage from David Hume](https://davidhume.org/texts/t/1/4/7) that feels like the same idea wearing eighteenth-century clothes.
+A short essay about philosophical melancholy led me to [a passage from David Hume](https://davidhume.org/texts/t/1/4/7) that feels like the same idea wearing eighteenth-century clothes.
 
-Hume has reasoned himself into a hole. His thoughts about human nature have become so consuming that reason itself can’t get him back out. His solution is magnificently undignified: “I dine, I play a game of back-gammon,” talk with friends, have a good time. A few hours later he returns to his grand speculations and finds them cold, strained, and faintly ridiculous.
+Hume has reasoned himself into a hole. His thoughts about human nature have become so consuming that reason itself can’t get him back out. His solution is magnificently undignified: “I dine, I play a game of back-gammon,” talk with friends, have a good time. A few hours later, he returns to his grand speculations and finds them cold, strained, and faintly ridiculous.
 
-I don’t read this as a vacation from thinking. Dinner and backgammon are doing epistemological work. Hume changes the conditions of the experiment. He lets sensation, play and other people back into the room. The philosophical problem hasn’t been disproved; its proportions have changed because reality has been allowed to vote again.
+I don’t read this as a vacation from thinking. Dinner and backgammon are doing epistemological work. Hume changes the conditions of the experiment. He lets sensation, play, and other people back into the room. The philosophical problem hasn’t been disproved; its proportions have changed because reality has been allowed to vote again.
 
-I’ve felt a version of this in monasteries. I’ve spent long stretches living in one, and a monastery can teach real things about interdependence, attention and community. But it is also a laboratory. The conditions have been arranged to make certain things easier to see. Coming home doesn’t invalidate what happened there. It removes the controls. Maintaining a Zen attitude around people who did not enroll in your spiritual experiment turns out to be a different curriculum.
+I’ve felt a version of this in monasteries. I’ve spent long stretches living in one, and a monastery can teach real things about interdependence, attention, and community. But it is also a laboratory. The conditions have been arranged to make certain things easier to see. Coming home doesn’t invalidate what happened there. It removes the controls. Maintaining a Zen attitude around people who did not enroll in your spiritual experiment turns out to be a different curriculum.
 
 Some truths become visible under controlled conditions. Others only appear when the controls come off, and the same seems to be true of ourselves.
 
-The Buddhist dialogue [*The Questions of King Milinda*](https://suttacentral.net/mil3.2.1/en/tw_rhysdavids) contains an exchange I keep coming back to. King Milinda asks Nāgasena whether a person who continues through time is the same person or another.
+The Buddhist dialogue [*The Questions of King Milinda*](https://suttacentral.net/mil3.2.1/en/kelly) contains an exchange I keep coming back to. King Milinda asks Nāgasena whether a person who continues through time is the same person or another.
 
 “Neither the same nor another.”
 

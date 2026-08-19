@@ -23,6 +23,8 @@ integrations/    private chat-to-Studio draft bridge
 
 Generated TypeScript modules, RSS, and the sitemap are intentionally not tracked. Development and production builds recreate them from the Markdown source.
 
+The shared social card at `public/og.png` is regenerated from the site palette and Untitled Sans as part of each production build. Run `npm run generate:og` to refresh it on its own.
+
 ## Content conventions
 
 Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, and bulleted or numbered lists. Numbered lists use standard Markdown such as `1. First item`.

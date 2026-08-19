@@ -55,6 +55,8 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   );
   assert.match(html, /<link rel="me" href="https:\/\/github\.com\/mxpf"/);
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/og\.png"/);
   assert.match(
     html,
     /<script[^>]+src="https:\/\/trackinghaus-alpha\.vercel\.app\/tracker\.js"[^>]+data-site="thinkinghaus"[^>]+data-endpoint="https:\/\/trackinghaus-alpha\.vercel\.app\/api\/collect"/,
@@ -74,6 +76,8 @@ test("omits the visible author byline from published notes", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.doesNotMatch(html, /By <a href="https:\/\/maxpfennig\.haus\/" rel="author">/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/og\.png"/);
 });
 
 test("static homepage links point directly to exported article files", async () => {
@@ -283,7 +287,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site \.index-frame \.desktop-brand\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.post-list a\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);
-  assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 700/s);
+  assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 500/s);
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);

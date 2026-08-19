@@ -5,25 +5,8 @@
     <link>https://thinking.haus/</link>
     <description>Notes on attention, work, and the occasional strange thing.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Aug 2026 18:19:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 15:48:16 GMT</lastBuildDate>
     <atom:link href="https://thinking.haus/rss.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>A system for looking</title>
-      <link>https://thinking.haus/a-system-for-looking</link>
-      <guid isPermaLink="true">https://thinking.haus/a-system-for-looking</guid>
-      <pubDate>Thu, 13 Aug 2026 18:19:00 GMT</pubDate>
-      <description>Before I make, I look.</description>
-      <content:encoded><![CDATA[<p>Before I make, I look.</p>
-<p>I used to confuse looking with collecting. I’d open a browser, save fifty images, and call the result research. My collection grew, my understanding did not.</p>
-<p>Now I try to begin with a question. What am I actually trying to understand? What has become so familiar that no one sees it anymore? What does a person need to know, feel, or do—and in what order? The question doesn’t need to point toward an answer. It only needs to give my looking a shape.</p>
-<p>I start near the subject. If I’m working on a corporate report, I look at reports. I need to understand the form before I decide what to do with it.</p>
-<p>Then I move farther away. I might look at newspapers, maps, instruction manuals, or paintings. A newspaper knows how to handle density. A map knows how to hold several scales at once. A painting may know something useful about directing the eye.</p>
-<p>I’m not looking for a style to borrow. I’m trying to notice what something is doing. When I save a reference, I write down why. The note is as at least as useful as the image. It gives me enough distance to carry the idea somewhere else without copying its appearance.</p>
-<p>Then I arrange what I’ve found and start removing things. One reference tells me what I like. Several references placed together begin to reveal to me what I think. The one that does not fit is often worth keeping around. Or it may be pointing to something the rest of the collection has politely avoided.</p>
-<p>Time helps too. I’m easily persuaded by novelty and veneer. If I leave the references alone for a day, some become less convincing, a few become more interesting.</p>
-<p>Eventually I make something, usually before I feel ready. A rough sketch shows whether an observation can survive contact with actual words, scale, and use. If it can’t, no matter how cute it is, it gets tossed off the cliff.</p>
-<p>So my system isn’t very complicated: begin with a question, look outside the category, name what matters, arrange, remove, make, and look again. The point is not to build an impressive moodboard. It’s to notice enough that a decision becomes easier.</p>]]></content:encoded>
-    </item>
     <item>
       <title>Now — August 13, 2026</title>
       <link>https://thinking.haus/now</link>
@@ -199,6 +182,24 @@
 <p>The useful version is quieter. Somebody understands why a decision was made instead of merely being told what it was. A good idea gets another day rather than being killed because it was shown too early. A person can move forward without waiting for three more people to weigh in. The project has a little less friction in it.</p>
 <p>Most of the evidence is indirect. Fewer surprises. Calmer handoffs. Decisions that still make sense a week later. Somebody else being able to pick up the thing without needing you standing beside them.</p>
 <p>I still prefer the days when I make something I can see. But I no longer think those are the only days that count.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A system for looking</title>
+      <link>https://thinking.haus/a-system-for-looking</link>
+      <guid isPermaLink="true">https://thinking.haus/a-system-for-looking</guid>
+      <pubDate>Wed, 05 Aug 2026 13:00:00 GMT</pubDate>
+      <description>Before I make, I look.</description>
+      <content:encoded><![CDATA[<p>Before I make, I look.</p>
+<p>I used to confuse looking with collecting. I’d open a browser, save fifty images, and call the result research. My collection grew; my understanding did not.</p>
+<p>Now I try to begin with a question. What am I actually trying to understand? What has become so familiar that no one sees it anymore? What does a person need to know, feel, or do—and in what order? The question doesn’t need to point toward an answer. It only needs to give my looking a shape.</p>
+<p>I start near the subject. If I’m working on a corporate report, I look at reports. I need to understand the form before I decide what to do with it.</p>
+<p>Then I move farther away. I might look at newspapers, maps, instruction manuals, or paintings. A newspaper knows how to handle density. A map knows how to hold several scales at once. A painting may know something useful about directing the eye.</p>
+<p>I’m not looking for a style to borrow. I’m trying to notice what something is doing. When I save a reference, I write down why.</p>
+<p>The note is at least as useful as the image. It gives me enough distance to carry the idea somewhere else without copying its appearance.</p>
+<p>Then I arrange what I’ve found and start removing things. One reference tells me what I like. Several references placed together begin to reveal what I think. The one that doesn’t fit is often worth keeping around. Or it may be pointing to something the rest of the collection has politely avoided.</p>
+<p>Time helps too. I’m easily persuaded by novelty and veneer. If I leave the references alone for a day, some become less convincing; a few become more interesting.</p>
+<p>Eventually, I make something, usually before I feel ready. A rough sketch shows whether an observation can survive contact with actual words, scale, and use. If it can’t, no matter how cute it is, it gets tossed off the cliff.</p>
+<p>So my system isn’t very complicated: begin with a question, look outside the category, name what matters, arrange, remove, make, and look again. The point is not to build an impressive moodboard. It’s to notice enough that a decision becomes easier.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

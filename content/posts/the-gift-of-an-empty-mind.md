@@ -5,7 +5,7 @@ date: 2026-06-28
 status: published
 publishedAt: 2026-08-06T14:00:00.000Z
 sourceLabel: "Read Zen Mind, Beginner’s Mind"
-sourceHref: "https://search.worldcat.org/title/1137753173"
+sourceHref: "https://www.shambhala.com/zen-mind-beginner-s-mind-9781611808414.html"
 ---
 
 One of my favorite books—favorite manuals, really—is [*Zen Mind, Beginner’s Mind*](https://www.shambhala.com/zen-mind-beginner-s-mind-9781611808414.html) by the Zen monk [Shunryu Suzuki](https://shunryusuzuki.com/suzuki/base.htm).

@@ -1,5 +1,5 @@
 ---
-title: "What happens next"
+title: "What happens next?"
 slug: what-happens-next
 date: 2026-08-13
 status: published

@@ -235,6 +235,10 @@ body {
   gap: 24px;
 }
 
+.footer-link-group {
+  display: contents;
+}
+
 .article-column {
   display: flex;
   min-height: calc(100svh - 48px);
@@ -418,8 +422,13 @@ body {
 
   .footer-links {
     max-width: 100%;
-    flex-wrap: wrap;
-    row-gap: 0;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-link-group {
+    display: flex;
+    gap: 24px;
   }
 
   .article-column {
@@ -434,12 +443,6 @@ body {
 
   .article-column > .footer .footer-brand {
     margin-bottom: 24px;
-  }
-}
-
-@media (max-width: 340px) {
-  .footer-links {
-    column-gap: 18px;
   }
 }
 

@@ -1,9 +1,10 @@
 ---
 title: "Work between the work"
 slug: work-between-the-work
-date: 2026-08-05
+date: 2026-07-20
 status: published
 publishedAt: 2026-08-05T14:00:00.000Z
+updatedAt: 2026-08-19T17:10:35.321Z
 ---
 
 Some of the most useful work I do leaves almost nothing behind.

@@ -351,6 +351,11 @@ body {
   margin-top: 48px !important;
 }
 
+.site .article-last-edited {
+  margin-top: 48px !important;
+  color: var(--blog-muted);
+}
+
 .webmentions {
   padding-top: 24px;
   margin-top: 72px;

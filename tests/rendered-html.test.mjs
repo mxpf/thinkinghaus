@@ -3,7 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
 import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
-import { calculateReadingTime, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
+import { calculateReadingTime, comparePostsByDate, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
 async function render(pathname = "/") {
@@ -293,10 +293,13 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.article-body \.article-numbered-list\s*\{[^}]*padding-inline-start: 2em[^}]*list-style: decimal/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list li::marker\s*\{[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-variant-numeric: tabular-nums[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
+  assert.match(siteStyles, /\.article-last-edited\s*\{[^}]*margin-top: 48px !important[^}]*color: var\(--blog-muted\)/s);
   assert.match(articleBody, /<h2 key=/);
   assert.match(articleBody, /<blockquote key=/);
   assert.match(articleBody, /<ol className="article-list article-numbered-list"/);
   assert.match(articleBody, /optical-margin-fallback/);
+  assert.match(articlePage, /post\?\.updatedAt/);
+  assert.match(articlePage, /Last edited \{post\.updatedAt\}/);
   assert.match(articlePage, /className="author-edit-action" hidden/);
   assert.match(authorMode, /thinkinghaus-author-mode/);
   assert.match(authorMode, /location\.hash === "#edit"/);
@@ -385,6 +388,25 @@ test("calculates reading time and preserves draft status", () => {
   }));
   assert.equal(draft.status, "draft");
   assert.equal(draft.readingTime, "1 minute read");
+
+  const revised = parsePost(serializePost({
+    title: "A revised thought",
+    slug: "a-revised-thought",
+    date: "2026-08-06",
+    publishedAt: "2026-08-06T12:00:00.000Z",
+    updatedAt: "2026-08-19T12:00:00.000Z",
+    status: "published",
+    body: "Changed after publication.",
+  }));
+  assert.equal(revised.updatedAt, "2026-08-19T12:00:00.000Z");
+});
+
+test("sorts the homepage by authored date without moving revised posts", () => {
+  const ordered = [
+    { slug: "revised-older-post", date: "2026-08-10", publishedAt: "2026-08-10T12:00:00.000Z", updatedAt: "2026-08-19T12:00:00.000Z" },
+    { slug: "newer-post", date: "2026-08-11", publishedAt: "2026-08-11T12:00:00.000Z", updatedAt: "" },
+  ].sort(comparePostsByDate);
+  assert.deepEqual(ordered.map((post) => post.slug), ["newer-post", "revised-older-post"]);
 });
 
 test("parses consecutive numbered Markdown items as distinct blocks", () => {

@@ -23,12 +23,19 @@ integrations/    private chat-to-Studio draft bridge
 
 Generated TypeScript modules, RSS, and the sitemap are intentionally not tracked. Development and production builds recreate them from the Markdown source.
 
+## Content conventions
+
+Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, and bulleted or numbered lists. Numbered lists use standard Markdown such as `1. First item`.
+
+Posts may include an optional `updatedAt` frontmatter field in ISO timestamp or `YYYY-MM-DD` form. Add it only when an already-published post is revised; the public site then shows a quiet “Last edited” note. Leave it out for an initial publication and for posts that have not been revised.
+
 ## Local checks
 
 ```bash
 npm install
 npm run dev
 npm run lint
+npm run typecheck
 npm test
 npm run audit:production
 ```
@@ -38,6 +45,12 @@ The static production path is:
 ```bash
 npm run build:pages
 node scripts/verify-static-export.mjs
+```
+
+To build a local staging version that includes drafts:
+
+```bash
+npm run build:staging
 ```
 
 ## Publishing

@@ -68,6 +68,9 @@ export default async function PostPage({ params }: PageProps) {
             {post?.source ? (
               <p className="article-source"><a href={post.source.href}>{post.source.label}</a></p>
             ) : null}
+            {post?.updatedAt ? (
+              <p className="article-last-edited"><em>Last edited {post.updatedAt}</em></p>
+            ) : null}
           </div>
           {post ? <Webmentions slug={slug} /> : null}
           <Footer showBrand />

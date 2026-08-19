@@ -74,6 +74,12 @@ export function displayDate(value) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
+export function comparePostsByDate(a, b) {
+  return b.date.localeCompare(a.date)
+    || (b.publishedAt || "").localeCompare(a.publishedAt || "")
+    || a.slug.localeCompare(b.slug);
+}
+
 export function parsePost(source, filename = "") {
   const { metadata, body } = parseFrontmatter(source);
   const slug = metadata.slug || filename.replace(/\.md$/, "");
@@ -85,6 +91,7 @@ export function parsePost(source, filename = "") {
     slug,
     date: metadata.date || new Date().toISOString().slice(0, 10),
     publishedAt: metadata.publishedAt || "",
+    updatedAt: metadata.updatedAt || "",
     status: metadata.status === "draft" ? "draft" : "published",
     body,
     paragraphs,
@@ -124,6 +131,7 @@ export function serializePost(post) {
   ];
 
   if (post.publishedAt) metadata.push(`publishedAt: ${post.publishedAt}`);
+  if (post.updatedAt) metadata.push(`updatedAt: ${post.updatedAt}`);
 
   if (post.source?.label && post.source?.href) {
     metadata.push(`sourceLabel: ${quote(post.source.label)}`);
@@ -148,9 +156,7 @@ export async function readPosts({ includeDrafts = false } = {}) {
 
   return posts
     .filter((post) => includeDrafts || post.status === "published")
-    .sort((a, b) =>
-      (b.publishedAt || b.date).localeCompare(a.publishedAt || a.date),
-    );
+    .sort(comparePostsByDate);
 }
 
 export async function readNowEntries({ includeDrafts = false } = {}) {

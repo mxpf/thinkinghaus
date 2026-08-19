@@ -8,13 +8,13 @@ sourceLabel: "Read Zen Mind, Beginner’s Mind"
 sourceHref: "https://search.worldcat.org/title/1137753173"
 ---
 
-One of my favorite books—favorite manuals, really—is *Zen Mind, Beginner’s Mind* by the Zen monk Shunryu Suzuki.
+One of my favorite books—favorite manuals, really—is [*Zen Mind, Beginner’s Mind*](https://www.shambhala.com/zen-mind-beginner-s-mind-9781611808414.html) by the Zen monk [Shunryu Suzuki](https://shunryusuzuki.com/suzuki/base.htm).
 
-He says, “In the beginner’s mind there are many possibilities, in the expert’s, there are few.”
+He says, “In the beginner’s mind there are many possibilities, but in the expert’s there are few.”
 
 Expertise is darn useful. It recognizes patterns, avoids old mistakes, knows which details matter. But it can also become a kind of compression. The more I know about something, the easier it is to see the category before I see the thing itself.
 
-Suzuki isn’t asking us to become stupid. Beginner’s mind isn’t the absence of knowledge or experience. It’s a way of standing inside what you know without letting your shoes turn to cement. I find this much harder than it sounds.
+Suzuki isn’t asking us to become stupid. [Beginner’s mind](https://shunryusuzuki.com/detail1?ID=78) isn’t the absence of knowledge or experience. It’s a way of standing inside what you know without letting your shoes turn to cement. I find this much harder than it sounds.
 
 The book is assembled from talks and still feels spoken. Ideas appear, disappear, return slightly changed. Sometimes an explanation leaves me less certain than I was when it began, which seems appropriate.
 

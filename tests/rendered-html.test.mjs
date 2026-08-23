@@ -294,7 +294,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
-  assert.match(siteStyles, /\.article-body\s*\{[^}]*color: #b0a99f/s);
+  assert.match(siteStyles, /\.article-body\s*\{[^}]*color: #b3aca2/s);
   assert.match(siteStyles, /\.article-body a\s*\{[^}]*transition: color 160ms ease/s);
   assert.match(siteStyles, /\.article-body a:hover,\s*\.article-body a:focus-visible\s*\{[^}]*color: var\(--blog-foreground\)[^}]*opacity: 1/s);
   assert.match(siteStyles, /@view-transition\s*\{\s*navigation: auto;/s);

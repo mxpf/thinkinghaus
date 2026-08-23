@@ -4,6 +4,7 @@ slug: corrigible
 date: 2026-08-10
 status: published
 publishedAt: 2026-08-10T16:28:36.163Z
+updatedAt: 2026-08-23T16:45:10.561Z
 ---
 
 I’ve carried the word *incorrigible* around for years.
@@ -28,7 +29,7 @@ I used to have fairly fixed ideas about conservatives and military culture. Then
 
 There’s a much more extreme version of this in [*Accidental Courtesy*](https://www.pbs.org/video/independent-lens-accidental-courtesy/), about Black musician Daryl Davis befriending Klansmen and eventually winding up with some of their robes.
 
-A short essay about philosophical melancholy led me to [a passage from David Hume](https://davidhume.org/texts/t/1/4/7) that feels like the same idea wearing eighteenth-century clothes.
+[A short essay on Bear Blog about philosophical melancholy](https://xtoblog.bearblog.dev/the-inevitable-loneliness-we-must-suffer/) led me to [a passage from David Hume](https://davidhume.org/texts/t/1/4/7) that feels like the same idea wearing eighteenth-century clothes.
 
 Hume has reasoned himself into a hole. His thoughts about human nature have become so consuming that reason itself can’t get him back out. His solution is magnificently undignified: “I dine, I play a game of back-gammon,” talk with friends, have a good time. A few hours later, he returns to his grand speculations and finds them cold, strained, and faintly ridiculous.
 

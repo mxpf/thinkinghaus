@@ -73,7 +73,7 @@ export default async function PostPage({ params }: PageProps) {
             ) : null}
           </div>
           {post ? <Webmentions slug={slug} /> : null}
-          <Footer showBrand />
+          <Footer showBrand revealAtEnd />
         </article>
       </div>
     </main>

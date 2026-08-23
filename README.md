@@ -23,7 +23,7 @@ integrations/    private chat-to-Studio draft bridge
 
 Generated TypeScript modules, RSS, and the sitemap are intentionally not tracked. Development and production builds recreate them from the Markdown source.
 
-The shared social card at `public/og.png` is regenerated from the site palette and Untitled Sans as part of each production build. Run `npm run generate:og` to refresh it on its own.
+The shared social card is committed at `public/og.png` and used by both the site and published posts.
 
 ## Content conventions
 

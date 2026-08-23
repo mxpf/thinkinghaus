@@ -46,7 +46,7 @@ export default function NowPage() {
               </>
             ) : <p>Nothing here yet.</p>}
           </div>
-          <Footer showBrand />
+          <Footer showBrand revealAtEnd />
         </article>
       </div>
     </main>

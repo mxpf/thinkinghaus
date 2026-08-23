@@ -267,6 +267,7 @@ test("keeps published writing readable and the visual system intentional", async
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../public/author-mode.js", import.meta.url), "utf8"),
   ]);
+  const typographyGuards = await readFile(new URL("../app/TypographyGuards.tsx", import.meta.url), "utf8");
   assert.doesNotMatch(siteStyles, /--step-article-title/);
   assert.match(siteStyles, /--reading-measure: 56ch/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
@@ -325,6 +326,10 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(authorMode, /thinkinghaus-author-mode/);
   assert.match(authorMode, /location\.hash === "#edit"/);
   assert.match(authorMode, /location\.hash === "#edit-off"/);
+  assert.match(typographyGuards, /hyphenBetweenWords = \/\(\?<=\[\\p\{L\}\\p\{N\}\]\)-\(\?=\[\\p\{L\}\\p\{N\}\]\)\/gu/);
+  assert.match(typographyGuards, /unguardedEnDash = \/\(\?<!\\u2060\)–\(\?!\\u2060\)\/gu/);
+  assert.match(typographyGuards, /data-preserve-typography/);
+  assert.match(typographyGuards, /new MutationObserver/);
   assert.match(authorMode, /thinkinghaus-studio\.maxpfennighaus\.workers\.dev/);
 });
 

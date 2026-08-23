@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { TypographyGuards } from "./TypographyGuards";
 
 const author = {
   name: "Max Pfennighaus",
@@ -75,6 +76,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <TypographyGuards />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

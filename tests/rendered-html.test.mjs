@@ -271,7 +271,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.doesNotMatch(siteStyles, /--step-article-title/);
   assert.match(siteStyles, /--reading-measure: 56ch/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
-  assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #211f1a;[^}]*--blog-foreground: #f1ede3;[^}]*--blog-muted: #9a9285;[^}]*color-scheme: dark;/s);
+  assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #1a1814;[^}]*--blog-foreground: #f1ede3;[^}]*--blog-muted: #9a9285;[^}]*color-scheme: dark;/s);
   assert.doesNotMatch(siteStyles, /prefers-color-scheme/);
   assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-Regular\.woff2/s);
@@ -295,6 +295,9 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body\s*\{[^}]*color: #b3aca2/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site,\s*\.index-frame\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.post-list li\s*\{[^}]*min-height: 56px/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site \.article-header h1\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
   assert.match(siteStyles, /\.article-body a\s*\{[^}]*transition: color 160ms ease/s);
   assert.match(siteStyles, /\.article-body a:hover,\s*\.article-body a:focus-visible\s*\{[^}]*color: var\(--blog-foreground\)[^}]*opacity: 1/s);
   assert.match(siteStyles, /@view-transition\s*\{\s*navigation: auto;/s);

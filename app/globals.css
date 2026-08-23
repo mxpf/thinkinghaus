@@ -1,5 +1,5 @@
 :root {
-  --blog-background: #211f1a;
+  --blog-background: #1a1814;
   --blog-foreground: #f1ede3;
   --blog-muted: #9a9285;
   --reading-measure: 56ch;
@@ -426,6 +426,12 @@ body {
     padding: 24px;
   }
 
+  .site,
+  .index-frame {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
   .site .desktop-brand {
     display: none;
   }
@@ -438,12 +444,12 @@ body {
   }
 
   .index-column > .footer {
-    padding-top: 60px;
+    padding-top: 56px;
   }
 
   .site .footer-brand {
     display: inline-block;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
   .footer-links {
@@ -457,6 +463,47 @@ body {
     gap: 24px;
   }
 
+  .post-list li {
+    min-height: 56px;
+  }
+
+  .article-header h1,
+  .article-header p,
+  .article-body p {
+    margin-bottom: 28px;
+  }
+
+  .site .article-header h1 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .site .article-body h2 {
+    margin: 56px 0 28px;
+    line-height: 28px;
+  }
+
+  .article-body blockquote {
+    margin: 42px 0;
+  }
+
+  .article-body blockquote p {
+    margin-bottom: 28px;
+  }
+
+  .article-body .article-list {
+    margin-bottom: 28px;
+  }
+
+  .article-body .article-list li {
+    margin-bottom: 26px;
+  }
+
+  .article-source,
+  .site .article-last-edited {
+    margin-top: 56px !important;
+  }
+
   .article-column {
     min-height: calc(100svh - 48px);
   }
@@ -464,7 +511,7 @@ body {
   .article-column > .footer {
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 108px;
+    padding-top: 112px;
   }
 
   .article-column > .footer .footer-brand {

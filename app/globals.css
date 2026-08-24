@@ -269,6 +269,7 @@ body {
 .article-body {
   width: 100%;
   color: #b3aca2;
+  font-weight: 400;
 }
 
 .article-body p {
@@ -411,7 +412,7 @@ body {
 .article-body em {
   font-family: "Untitled Sans", "Helvetica Neue", Arial, sans-serif;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .article-column > .footer {

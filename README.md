@@ -1,16 +1,16 @@
 # Thinkinghaus
 
-A deliberately quiet publishing system for essays, observations, and fragments by designer and creative director Max Pfennighaus.
+Thinkinghaus is where I follow ideas about attention, creative work, tools, systems, and the occasional strange thing. This repository is the machinery behind it.
 
 **[Read Thinkinghaus](https://thinking.haus)**
 
 ![Thinkinghaus article index](docs/preview.png)
 
-Thinkinghaus began as an experiment in using AI as a genuine writing collaborator—not simply to generate text, but to question, connect, criticize, and help articulate ideas that were still taking shape. The publishing system grew around that practice. It keeps the public site spare while giving the private Studio enough structure for drafting, revision, links, typography, publishing, and a small `/now` archive.
+The site grew out of using AI as a writing collaborator: not simply to generate text, but to question, connect, criticize, and help me articulate ideas that were still taking shape. The publishing system grew around that practice. The public side stays spare. The private Studio holds the messier work of drafting and revision until something is ready to leave the room.
 
-## How it works
+## What lives here
 
-Published writing lives as Markdown in `content/`. The private Studio keeps drafts in its own database and writes a document here only when it is published. A push to `main` rebuilds the static site and updates GitHub Pages.
+Published writing lives as Markdown in `content/`. Drafts stay in the private Studio and arrive here only when they are published. A push to `main` rebuilds the static site and updates GitHub Pages.
 
 ```text
 content/posts/   essays and fragments
@@ -21,15 +21,15 @@ scripts/         Markdown parsing and static publishing
 integrations/    private chat-to-Studio draft bridge
 ```
 
-Generated TypeScript modules, RSS, and the sitemap are intentionally not tracked. Development and production builds recreate them from the Markdown source.
+Generated TypeScript modules, RSS, and the sitemap are not tracked. Development and production builds recreate them from the Markdown source.
 
-The shared social card is committed at `public/og.png` and used by both the site and published posts.
+The site and its posts share the social card at `public/og.png`.
 
-## Content conventions
+## Writing conventions
 
-Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, and bulleted or numbered lists. Numbered lists use standard Markdown such as `1. First item`.
+Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, and bulleted or numbered lists. Numbered lists use the ordinary `1. First item` form.
 
-Posts may include an optional `updatedAt` frontmatter field in ISO timestamp or `YYYY-MM-DD` form. Add it only when an already-published post is revised; the public site then shows a quiet “Last edited” note. Leave it out for an initial publication and for posts that have not been revised.
+An already-published post can carry an `updatedAt` frontmatter field, either as an ISO timestamp or `YYYY-MM-DD`. That date produces a quiet “Last edited” note at the end of the piece. New and untouched posts leave it out.
 
 ## Local checks
 
@@ -55,17 +55,17 @@ To build a local staging version that includes drafts:
 npm run build:staging
 ```
 
-## Publishing
+## From draft to public
 
-Normal writing and publishing happens in Studio. The public repository remains the canonical record of published content, while Studio’s private database remains the canonical record of drafts.
+Writing and publishing normally happen in Studio. Its private database is the record of drafts; this public repository is the record of what has been published.
 
-The custom domain depends on `public/CNAME`. GitHub Pages also requires `.nojekyll`, which the publishing workflow adds to the generated branch.
+The custom domain depends on `public/CNAME`. The publishing workflow adds the `.nojekyll` file GitHub Pages needs to the generated branch.
 
 ## Webmentions
 
-Thinkinghaus advertises a Webmention endpoint and refreshes public mentions during publication and once each day. The refresh is deliberately build-time rather than client-side: readers never contact Webmention.io, and a temporary service failure cannot break a page or erase the last good cache.
+Thinkinghaus advertises a Webmention endpoint and checks for public mentions during publication and once each day. This happens at build time rather than in a reader’s browser. Readers never contact Webmention.io, and a temporary service failure cannot break a page or erase the last good cache.
 
-Only an external source link and a short label are retained. Remote content, photos, private mentions, unsafe URLs, and links back to Thinkinghaus itself are excluded. A post shows a quiet “Mentioned by” list only when at least one real mention exists.
+Only an external source link and a short label are kept. Remote content, photos, private mentions, unsafe URLs, and links back to Thinkinghaus itself are left out. A post shows “Mentioned by” only when there is something real to show.
 
 To refresh the local cache manually:
 
@@ -75,13 +75,13 @@ npm run refresh:webmentions
 
 ## Security and dependency updates
 
-The publishing workflow blocks deployment when a high-severity production dependency vulnerability is reported. A separate weekly workflow checks the complete development toolchain without blocking publication, and Dependabot proposes dependency and GitHub Actions updates for review.
+The publishing workflow stops a deployment when a high-severity production dependency vulnerability is reported. A separate weekly check looks at the complete development toolchain without blocking publication. Dependabot proposes dependency and GitHub Actions updates for review.
 
-Vinext currently depends on an `image-size` release with denial-of-service advisories in its ICNS, JXL, and HEIF parsers. In Thinkinghaus that package is development-only and reads committed metadata images during a trusted static build; it is not exposed to visitors or Studio uploads. Vinext is pinned until a compatible patched release can be reviewed and tested. See [SECURITY.md](SECURITY.md) for the boundary that must be preserved if image uploads are added later.
+Vinext currently depends on an `image-size` release with denial-of-service advisories in its ICNS, JXL, and HEIF parsers. Here, that package is development-only. It reads committed metadata images during a trusted static build and is not exposed to visitors or Studio uploads. Vinext remains pinned until a compatible patched release can be reviewed and tested. [SECURITY.md](SECURITY.md) describes the boundary that must remain in place if image uploads are added later.
 
-## Design principle
+## The useful constraint
 
-The public site is intentionally spare. Before adding an interface element, ask whether it helps someone find or read the writing. The Studio is a workbench; the public site is the quiet room beyond it.
+The public site is intentionally spare. Before adding something, I ask whether it helps someone find or read the writing. The Studio is the workbench. The public site is the quiet room beyond it.
 
 ## Rights
 

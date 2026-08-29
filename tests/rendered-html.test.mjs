@@ -27,14 +27,14 @@ async function render(pathname = "/") {
   );
 }
 
-test("renders the Thinkinghaus index from published Markdown", async () => {
+test("renders the thinking.haus index from published Markdown", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   const html = await response.text();
   const posts = await readPosts();
 
-  assert.match(html, /<title>Thinkinghaus<\/title>/i);
-  assert.match(html, /class="letter-cascade is-in" aria-label="Thinkinghaus"/);
+  assert.match(html, /<title>thinking\.haus<\/title>/);
+  assert.match(html, /class="letter-cascade is-in" aria-label="thinking\.haus"/);
   for (const post of posts) assert.ok(html.includes(post.title));
   assert.match(html, /href="\/about"/);
   assert.match(html, /href="https:\/\/maxpfennig\.haus\/" rel="me">Work<\/a>/);
@@ -56,7 +56,11 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.match(html, /<link rel="me" href="https:\/\/github\.com\/mxpf"/);
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus"/);
   assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /<meta name="application-name" content="thinking\.haus"/);
+  assert.match(html, /<meta property="og:site_name" content="thinking\.haus"/);
+  assert.match(html, /<meta property="og:title" content="thinking\.haus"/);
   assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /<meta name="twitter:title" content="thinking\.haus"/);
   assert.match(
     html,
     /<script[^>]+src="https:\/\/trackinghaus-alpha\.vercel\.app\/tracker\.js"[^>]+data-site="thinkinghaus"[^>]+data-endpoint="https:\/\/trackinghaus-alpha\.vercel\.app\/api\/collect"/,
@@ -67,6 +71,7 @@ test("renders the Thinkinghaus index from published Markdown", async () => {
   assert.match(html, /<meta name="creator" content="Max Pfennighaus"/);
   assert.match(html, /<meta name="publisher" content="Max Pfennighaus"/);
   assert.match(html, /<script type="application\/ld\+json">[^<]*"@type":"Person"/);
+  assert.match(html, /<script type="application\/ld\+json">[^<]*"@type":"WebSite"[^<]*"name":"thinking\.haus"/);
   assert.doesNotMatch(html, /Thinkinghaus Studio/);
 });
 
@@ -138,6 +143,7 @@ test("generates an RSS feed from published posts", async () => {
   assert.equal(generatedFeed, feed);
   assert.match(feed, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
   assert.match(feed, /<rss version="2\.0"/);
+  assert.match(feed, /<channel>\s*<title>thinking\.haus<\/title>/);
   assert.match(
     feed,
     /<atom:link href="https:\/\/thinking\.haus\/rss\.xml" rel="self" type="application\/rss\+xml" \/>/,
@@ -206,7 +212,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   const aboutResponse = await render("/about");
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
-  assert.match(aboutHtml, /<title>Thinkinghaus - About<\/title>/i);
+  assert.match(aboutHtml, /<title>thinking\.haus - About<\/title>/);
   assert.match(aboutHtml, /<link rel="canonical" href="https:\/\/thinking\.haus\/about"/);
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
   assert.match(aboutHtml, /href="\/ai"/);
@@ -215,7 +221,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   const aiResponse = await render("/ai");
   assert.equal(aiResponse.status, 200);
   const aiHtml = await aiResponse.text();
-  assert.match(aiHtml, /<title>Thinkinghaus - AI<\/title>/i);
+  assert.match(aiHtml, /<title>thinking\.haus - AI<\/title>/);
   assert.match(aiHtml, /<em>made with AI<\/em>/);
   assert.match(
     aiHtml,
@@ -238,7 +244,7 @@ test("renders only the newest published Now entry on its stable route", async ()
   assert.equal(response.status, 200);
   const html = await response.text();
   const entries = await readNowEntries();
-  assert.match(html, /<title>Thinkinghaus - Now<\/title>/i);
+  assert.match(html, /<title>thinking\.haus - Now<\/title>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus\/now"/);
   if (entries[0]) {
     assert.ok(html.includes(entries[0].paragraphs[0]));

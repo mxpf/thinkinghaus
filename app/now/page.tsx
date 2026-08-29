@@ -21,7 +21,7 @@ export default function NowPage() {
   return (
     <main className="site article-page">
       <div className="article-frame">
-        <a className="desktop-brand" href="/"><LetterCascade text="Thinkinghaus" /></a>
+        <a className="desktop-brand" href="/"><LetterCascade text="thinking.haus" /></a>
         <article
           className="article-column"
           data-content-slug={currentNow?.slug || ""}

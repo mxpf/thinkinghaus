@@ -1,10 +1,10 @@
-# Thinkinghaus
+# thinking.haus
 
-Thinkinghaus is where I follow ideas about attention, creative work, tools, systems, and the occasional strange thing. This repository is the machinery behind it.
+thinking.haus is where I follow ideas about attention, creative work, tools, systems, and the occasional strange thing. This repository is the machinery behind it.
 
-**[Read Thinkinghaus](https://thinking.haus)**
+**[Read thinking.haus](https://thinking.haus)**
 
-![Thinkinghaus article index](docs/preview.png)
+![thinking.haus article index](docs/preview.png)
 
 The site grew out of using AI as a writing collaborator: not simply to generate text, but to question, connect, criticize, and help me articulate ideas that were still taking shape. The publishing system grew around that practice. The public side stays spare. The private Studio holds the messier work of drafting and revision until something is ready to leave the room.
 
@@ -63,9 +63,9 @@ The custom domain depends on `public/CNAME`. The publishing workflow adds the `.
 
 ## Webmentions
 
-Thinkinghaus advertises a Webmention endpoint and checks for public mentions during publication and once each day. This happens at build time rather than in a reader’s browser. Readers never contact Webmention.io, and a temporary service failure cannot break a page or erase the last good cache.
+thinking.haus advertises a Webmention endpoint and checks for public mentions during publication and once each day. This happens at build time rather than in a reader’s browser. Readers never contact Webmention.io, and a temporary service failure cannot break a page or erase the last good cache.
 
-Only an external source link and a short label are kept. Remote content, photos, private mentions, unsafe URLs, and links back to Thinkinghaus itself are left out. A post shows “Mentioned by” only when there is something real to show.
+Only an external source link and a short label are kept. Remote content, photos, private mentions, unsafe URLs, and links back to thinking.haus itself are left out. A post shows “Mentioned by” only when there is something real to show.
 
 To refresh the local cache manually:
 

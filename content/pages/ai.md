@@ -3,7 +3,7 @@ title: "AI"
 slug: ai
 ---
 
-I use AI throughout Thinkinghaus.
+I use AI throughout thinking.haus.
 
 I use it to think out loud, interrogate half-formed ideas, research unfamiliar territory, make unlikely connections, argue with myself, edit, revise, and keep following a thought after I might otherwise have dropped it.
 

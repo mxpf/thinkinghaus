@@ -40,7 +40,7 @@ export default async function PostPage({ params }: PageProps) {
     return (
       <main className="site article-page">
         <div className="article-frame">
-          <a className="desktop-brand" href="/"><LetterCascade text="Thinkinghaus" /></a>
+          <a className="desktop-brand" href="/"><LetterCascade text="thinking.haus" /></a>
           <article className="article-column">
             <h1>Nothing here yet.</h1>
             <p><a href="/">Back to the notes.</a></p>
@@ -53,7 +53,7 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <main className="site article-page">
       <div className="article-frame">
-        <a className="desktop-brand" href="/"><LetterCascade text="Thinkinghaus" /></a>
+        <a className="desktop-brand" href="/"><LetterCascade text="thinking.haus" /></a>
         <article className="article-column" data-content-slug={slug} data-content-title={content.title}>
           <header className="article-header">
             <h1>{content.title}</h1>

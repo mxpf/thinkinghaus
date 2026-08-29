@@ -17,7 +17,7 @@ Please use GitHub’s private vulnerability reporting for this repository rather
 
 ## Trusted build inputs
 
-Thinkinghaus is a static publishing system. Its build reads source code, Markdown, fonts, and images committed to this repository. Those files are trusted and reviewed before they reach the build.
+thinking.haus is a static publishing system. Its build reads source code, Markdown, fonts, and images committed to this repository. Those files are trusted and reviewed before they reach the build.
 
 The private Studio does not pass visitor-supplied images to Vinext or `image-size`. If arbitrary image uploads are introduced later, they must be validated and processed outside this build path before the feature is enabled.
 

@@ -24,7 +24,7 @@ const structuredData = {
       "@type": "WebSite",
       "@id": "https://thinking.haus/#website",
       url: "https://thinking.haus/",
-      name: "Thinkinghaus",
+      name: "thinking.haus",
       description: "Notes on attention, work, and the occasional strange thing.",
       author: { "@id": "https://thinking.haus/#author" },
     },
@@ -32,9 +32,10 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
+  applicationName: "thinking.haus",
   title: {
-    default: "Thinkinghaus",
-    template: "Thinkinghaus - %s",
+    default: "thinking.haus",
+    template: "thinking.haus - %s",
   },
   description: "Notes on attention, work, and the occasional strange thing.",
   metadataBase: new URL("https://thinking.haus"),
@@ -51,13 +52,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Thinkinghaus",
+    siteName: "thinking.haus",
+    title: "thinking.haus",
     description: "Notes on attention, work, and the occasional strange thing.",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thinkinghaus",
+    title: "thinking.haus",
     description: "Notes on attention, work, and the occasional strange thing.",
     images: ["/og.png"],
   },

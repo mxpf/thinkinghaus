@@ -44,7 +44,7 @@ export function Footer({
 
   return (
     <footer className={className}>
-      {showBrand ? <a className="footer-brand" href="/">Thinkinghaus</a> : null}
+      {showBrand ? <a className="footer-brand" href="/">thinking.haus</a> : null}
       <nav className="footer-links" aria-label="Site">
         <span className="footer-link-group">
           <a href="https://maxpfennig.haus/" rel="me">Work</a>

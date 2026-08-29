@@ -1,4 +1,4 @@
-# Thinkinghaus editorial components design QA
+# thinking.haus editorial components design QA
 
 **Source visual truth**
 
@@ -15,9 +15,9 @@
 
 **Full-view comparison evidence**
 
-The selected quote visual and browser-rendered implementation were placed together in `/tmp/thinkinghaus-quote-comparison.png`. The source was normalized to the same displayed width and aspect ratio as the implementation. The live implementation preserves Thinkinghaus's current page shell while matching the selected component: a quiet full-height rail, unchanged body typography, and restrained separation from surrounding paragraphs.
+The selected quote visual and browser-rendered implementation were placed together in `/tmp/thinkinghaus-quote-comparison.png`. The source was normalized to the same displayed width and aspect ratio as the implementation. The live implementation preserves thinking.haus’s current page shell while matching the selected component: a quiet full-height rail, unchanged body typography, and restrained separation from surrounding paragraphs.
 
-The mock predates the live article's visible author line and full Thinkinghaus wordmark. Those page-shell differences are expected and outside the quote component; the focused region provides the fidelity comparison.
+The mock predates the live article's visible author line and full thinking.haus wordmark. Those page-shell differences are expected and outside the quote component; the focused region provides the fidelity comparison.
 
 **Focused-region comparison evidence**
 
@@ -44,7 +44,7 @@ The H2 component retains 12px type, 24px line height, 48px above, and 24px below
 
 **Comparison history**
 
-- H2: the initial 18px reference line height was changed to 24px to honor Thinkinghaus's 12px grid; post-fix desktop and mobile evidence passed.
+- H2: the initial 18px reference line height was changed to 24px to honor thinking.haus’s 12px grid; post-fix desktop and mobile evidence passed.
 - Quote: the first coded pass matched the selected Continuous Rail component with no actionable P0, P1, or P2 differences, so no visual correction loop was required.
 
 **Primary interactions tested**

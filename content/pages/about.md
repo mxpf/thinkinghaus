@@ -3,7 +3,7 @@ title: "About"
 slug: about
 ---
 
-Thinkinghaus is where I follow ideas about attention, creative work, tools, systems, and the occasional strange thing. I’m Max Pfennighaus, a creative and design leader based in New York. [My professional work lives at maxpfennig.haus.](https://maxpfennig.haus/)
+thinking.haus is where I follow ideas about attention, creative work, tools, systems, and the occasional strange thing. I’m Max Pfennighaus, a creative and design leader based in New York. [My professional work lives at maxpfennig.haus.](https://maxpfennig.haus/)
 
 The site grew out of a habit I didn’t expect to become important. Through [collaborating with AI](/ai), I found myself putting half-formed ideas into words, arguing with them, revising them, and gradually getting closer to what I actually meant. My writing stopped feeling like something that came after thinking. It became a way of articulating myself—and of noticing what had been rattling around in my head in the first place.
 

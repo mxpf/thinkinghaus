@@ -136,7 +136,7 @@ export function generateRssFeed(posts, nowEntries = []) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Thinkinghaus</title>
+    <title>thinking.haus</title>
     <link>${siteUrl}/</link>
     <description>Notes on attention, work, and the occasional strange thing.</description>
     <language>en-us</language>

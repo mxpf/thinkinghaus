@@ -4,7 +4,7 @@ slug: the-silent-type
 date: 2026-07-01
 status: published
 publishedAt: 2026-08-06T15:00:00.000Z
-updatedAt: 2026-08-25T18:13:27.000Z
+updatedAt: 2026-08-29
 sourceLabel: "Read Kris Sowersby’s notes on the Untitled Collection"
 sourceHref: "https://klim.co.nz/blog/untitled-sans-serif-design-information/"
 ---
@@ -19,7 +19,7 @@ Sowersby describes deliberately [removing traces](https://klim.co.nz/blog/untitl
 
 But most of the time, when I’m reading, I don’t need the typeface to introduce itself. I need it to help me read.
 
-That’s probably why Untitled Sans feels right for both my [portfolio](https://maxpfennig.haus/) and for [Thinkinghaus](https://thinking.haus/). The work and the writing can wander around and follow unusual ideas. The letters stay put.
+That’s probably why Untitled Sans feels right for both my [portfolio](https://maxpfennig.haus/) and for [thinking.haus](https://thinking.haus/). The work and the writing can wander around and follow unusual ideas. The letters stay put.
 
 Its plainness isn’t an absence of design. It’s what happens when a mountain of small decisions are made thoughtfully enough that they can recede. The type makes room around the words instead of elbowing them for attention.
 

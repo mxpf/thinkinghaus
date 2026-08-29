@@ -1,4 +1,4 @@
-name: Publish Thinkinghaus
+name: Publish thinking.haus
 
 on:
   push:

@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
+import { RSS_PATH, SITE_NAME } from "../site-config.mjs";
 import { Footer } from "./Footer";
-import { LetterCascade } from "./LetterCascade";
+import { SiteBrand } from "./SiteBrand";
 import { posts } from "./posts";
 
 const staticExport = process.env.STATIC_EXPORT === "1";
@@ -9,7 +9,7 @@ const staticExport = process.env.STATIC_EXPORT === "1";
 export const metadata: Metadata = {
   alternates: {
     canonical: "/",
-    types: { "application/rss+xml": "/rss.xml" },
+    types: { "application/rss+xml": RSS_PATH },
   },
 };
 
@@ -17,9 +17,9 @@ export default function Home() {
   return (
     <main className="site index-page">
       <div className="index-frame">
-        <a className="desktop-brand" href="/"><LetterCascade text="thinking.haus" /></a>
+        <SiteBrand />
         <div className="index-column">
-          <h1 className="sr-only">thinking.haus</h1>
+          <h1 className="sr-only">{SITE_NAME}</h1>
           <ol className="post-list">
             {posts.map((post) => (
               <li key={post.slug}>

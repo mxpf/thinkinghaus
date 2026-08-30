@@ -1,8 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
+import { SITE_URL } from "../site-config.mjs";
 import { projectRoot } from "./content.mjs";
-
-const siteUrl = "https://thinking.haus";
 
 function generateSitemap(posts, pages) {
   const paths = [
@@ -13,7 +12,7 @@ function generateSitemap(posts, pages) {
   ];
 
   const urls = paths
-    .map((pathname) => `  <url><loc>${new URL(pathname, siteUrl).href}</loc></url>`)
+    .map((pathname) => `  <url><loc>${new URL(pathname, SITE_URL).href}</loc></url>`)
     .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>

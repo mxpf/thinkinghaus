@@ -121,6 +121,25 @@ function parsePage(source, filename = "") {
   };
 }
 
+async function readMarkdownCollection(directory, parser, { optional = false } = {}) {
+  let files;
+  try {
+    files = (await readdir(directory))
+      .filter((file) => file.endsWith(".md"))
+      .sort();
+  } catch (error) {
+    if (!optional || error?.code !== "ENOENT") throw error;
+    return [];
+  }
+
+  return Promise.all(
+    files.map(async (file) => {
+      const source = await readFile(path.join(directory, file), "utf8");
+      return parser(source, file);
+    }),
+  );
+}
+
 export function serializePost(post) {
   const metadata = [
     "---",
@@ -143,16 +162,7 @@ export function serializePost(post) {
 }
 
 export async function readPosts({ includeDrafts = false } = {}) {
-  const files = (await readdir(postsDirectory))
-    .filter((file) => file.endsWith(".md"))
-    .sort();
-
-  const posts = await Promise.all(
-    files.map(async (file) => {
-      const source = await readFile(path.join(postsDirectory, file), "utf8");
-      return parsePost(source, file);
-    }),
-  );
+  const posts = await readMarkdownCollection(postsDirectory, parsePost);
 
   return posts
     .filter((post) => includeDrafts || post.status === "published")
@@ -160,21 +170,7 @@ export async function readPosts({ includeDrafts = false } = {}) {
 }
 
 export async function readNowEntries({ includeDrafts = false } = {}) {
-  let files = [];
-  try {
-    files = (await readdir(nowDirectory))
-      .filter((file) => file.endsWith(".md"))
-      .sort();
-  } catch (error) {
-    if (error?.code !== "ENOENT") throw error;
-  }
-
-  const entries = await Promise.all(
-    files.map(async (file) => {
-      const source = await readFile(path.join(nowDirectory, file), "utf8");
-      return parseNowEntry(source, file);
-    }),
-  );
+  const entries = await readMarkdownCollection(nowDirectory, parseNowEntry, { optional: true });
 
   return entries
     .filter((entry) => includeDrafts || entry.status === "published")
@@ -184,14 +180,5 @@ export async function readNowEntries({ includeDrafts = false } = {}) {
 }
 
 export async function readPages() {
-  const files = (await readdir(pagesDirectory))
-    .filter((file) => file.endsWith(".md"))
-    .sort();
-
-  return Promise.all(
-    files.map(async (file) => {
-      const source = await readFile(path.join(pagesDirectory, file), "utf8");
-      return parsePage(source, file);
-    }),
-  );
+  return readMarkdownCollection(pagesDirectory, parsePage);
 }

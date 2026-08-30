@@ -1,9 +1,10 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
+import { stripInlineMarkdown } from "../../lib/markdown.mjs";
+import { RSS_PATH } from "../../site-config.mjs";
 import { ArticleBody } from "../ArticleBody";
+import { AuthorEditAction } from "../AuthorEditAction";
 import { Footer } from "../Footer";
-import { LetterCascade } from "../LetterCascade";
-import { stripInlineMarkdown } from "../inline-markdown";
+import { SiteBrand } from "../SiteBrand";
 import { currentNow } from "../posts";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     : "What is holding my attention now.",
   alternates: {
     canonical: "/now",
-    types: { "application/rss+xml": "/rss.xml" },
+    types: { "application/rss+xml": RSS_PATH },
   },
 };
 
@@ -21,7 +22,7 @@ export default function NowPage() {
   return (
     <main className="site article-page">
       <div className="article-frame">
-        <a className="desktop-brand" href="/"><LetterCascade text="thinking.haus" /></a>
+        <SiteBrand />
         <article
           className="article-column"
           data-content-slug={currentNow?.slug || ""}
@@ -31,9 +32,7 @@ export default function NowPage() {
             <h1>Now</h1>
             {currentNow ? <p>{currentNow.date}</p> : null}
             {currentNow ? (
-              <p className="author-edit-action" hidden>
-                <a href="https://thinkinghaus-studio.maxpfennighaus.workers.dev/">Edit</a>
-              </p>
+              <AuthorEditAction />
             ) : null}
           </header>
           <div className="article-body">

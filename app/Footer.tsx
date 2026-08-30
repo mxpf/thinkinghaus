@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AUTHOR, RSS_PATH, SITE_NAME, TRACKINGHAUS } from "../site-config.mjs";
 
 export function Footer({
   showBrand = false,
@@ -44,17 +45,17 @@ export function Footer({
 
   return (
     <footer className={className}>
-      {showBrand ? <a className="footer-brand" href="/">thinking.haus</a> : null}
+      {showBrand ? <a className="footer-brand" href="/">{SITE_NAME}</a> : null}
       <nav className="footer-links" aria-label="Site">
         <span className="footer-link-group">
-          <a href="https://maxpfennig.haus/" rel="me">Work</a>
+          <a href={AUTHOR.url} rel="me">Work</a>
           <a href="/about">About</a>
           <a href="/links">Links</a>
           <a href="/now">Now</a>
         </span>
         <span className="footer-link-group">
-          <a href="https://trackinghaus-alpha.vercel.app">Stats</a>
-          <a href="/rss.xml" type="application/rss+xml">RSS</a>
+          <a href={TRACKINGHAUS.dashboardUrl}>Stats</a>
+          <a href={RSS_PATH} type="application/rss+xml">RSS</a>
         </span>
       </nav>
     </footer>

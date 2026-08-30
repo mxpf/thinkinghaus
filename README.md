@@ -17,8 +17,10 @@ content/posts/   essays and fragments
 content/pages/   About, AI, and Links
 content/now/     current and archived /now entries
 app/             public pages and presentation
-scripts/         Markdown parsing and static publishing
+lib/             shared Markdown interpretation
+scripts/         content loading and static publishing
 integrations/    private chat-to-Studio draft bridge
+site-config.mjs  public identity and service endpoints
 ```
 
 Generated TypeScript modules, RSS, and the sitemap are not tracked. Development and production builds recreate them from the Markdown source.

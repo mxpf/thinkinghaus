@@ -1,10 +1,11 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { SITE_URL } from "../site-config.mjs";
 import { projectRoot, readPosts } from "./content.mjs";
 
 const API_URL = "https://webmention.io/api/mentions.jf2";
-const SITE_URL = "https://thinking.haus";
+const siteHostname = new URL(SITE_URL).hostname;
 const cachePath = path.join(projectRoot, "data", "webmentions.json");
 
 function safeHttpUrl(value) {
@@ -19,7 +20,7 @@ function safeHttpUrl(value) {
 export function normalizeWebmention(entry) {
   if (!entry || entry["wm-private"] === true) return null;
   const source = safeHttpUrl(entry.url);
-  if (!source || source.hostname === "thinking.haus" || source.hostname.endsWith(".thinking.haus")) {
+  if (!source || source.hostname === siteHostname || source.hostname.endsWith(`.${siteHostname}`)) {
     return null;
   }
   if (source.href.length > 2048 || source.username || source.password) return null;

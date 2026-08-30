@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
+import { RSS_PATH } from "../../site-config.mjs";
+import { stripInlineMarkdown } from "../../lib/markdown.mjs";
 import { ArticleBody } from "../ArticleBody";
+import { AuthorEditAction } from "../AuthorEditAction";
 import { Footer } from "../Footer";
-import { LetterCascade } from "../LetterCascade";
+import { SiteBrand } from "../SiteBrand";
 import { Webmentions } from "../Webmentions";
-import { stripInlineMarkdown } from "../inline-markdown";
 import { getPost, getStandalonePage, posts, standalonePages } from "../posts";
 
 type PageProps = {
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: content ? stripInlineMarkdown(content.paragraphs[0]) : undefined,
     alternates: content ? {
       canonical: `/${slug}`,
-      types: { "application/rss+xml": "/rss.xml" },
+      types: { "application/rss+xml": RSS_PATH },
     } : undefined,
   };
 }
@@ -40,7 +42,7 @@ export default async function PostPage({ params }: PageProps) {
     return (
       <main className="site article-page">
         <div className="article-frame">
-          <a className="desktop-brand" href="/"><LetterCascade text="thinking.haus" /></a>
+          <SiteBrand />
           <article className="article-column">
             <h1>Nothing here yet.</h1>
             <p><a href="/">Back to the notes.</a></p>
@@ -53,15 +55,13 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <main className="site article-page">
       <div className="article-frame">
-        <a className="desktop-brand" href="/"><LetterCascade text="thinking.haus" /></a>
+        <SiteBrand />
         <article className="article-column" data-content-slug={slug} data-content-title={content.title}>
           <header className="article-header">
             <h1>{content.title}</h1>
             {post ? <p>{post.date}</p> : null}
             {post ? <p>{post.readingTime}</p> : null}
-            <p className="author-edit-action" hidden>
-              <a href="https://thinkinghaus-studio.maxpfennighaus.workers.dev/">Edit</a>
-            </p>
+            <AuthorEditAction />
           </header>
           <div className="article-body">
             <ArticleBody paragraphs={content.paragraphs} />

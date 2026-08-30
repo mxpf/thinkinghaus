@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
-import { parseInlineMarkdown, stripInlineMarkdown } from "../app/inline-markdown.ts";
+import { parseContentBlocks, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { calculateReadingTime, comparePostsByDate, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
@@ -267,17 +267,18 @@ test("keeps published writing readable and the visual system intentional", async
   assert.ok(posts.every((post) => post.body.length > 0));
   assert.ok(posts.every((post) => /^[a-z0-9-]+$/.test(post.slug)));
 
-  const [siteStyles, articleBody, articlePage, authorMode] = await Promise.all([
+  const [siteStyles, articleBody, articlePage, authorEditAction, authorMode] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/ArticleBody.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/AuthorEditAction.tsx", import.meta.url), "utf8"),
     readFile(new URL("../public/author-mode.js", import.meta.url), "utf8"),
   ]);
   const typographyGuards = await readFile(new URL("../app/TypographyGuards.tsx", import.meta.url), "utf8");
   assert.doesNotMatch(siteStyles, /--step-article-title/);
-  assert.match(siteStyles, /--reading-measure: 56ch/);
+  assert.doesNotMatch(siteStyles, /--reading-measure/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
-  assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #1a1814;[^}]*--blog-foreground: #f1ede3;[^}]*--blog-muted: #9a9285;[^}]*color-scheme: dark;/s);
+  assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #1a1814;[^}]*--blog-foreground: #f1ede3;[^}]*--blog-muted: #9a9285;[^}]*--blog-body: #b3aca2;[^}]*color-scheme: dark;/s);
   assert.doesNotMatch(siteStyles, /prefers-color-scheme/);
   assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-Regular\.woff2/s);
@@ -287,21 +288,20 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-Medium\.woff2[^}]*font-weight: 500/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-Bold\.woff2[^}]*font-weight: 700/s);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 300[^}]*line-height: 24px/s);
-  assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-family: "Untitled Sans"[^}]*font-style: italic[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-style: italic[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.desktop-brand\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.index-frame,\s*\.article-frame\s*\{[^}]*grid-template-columns: minmax\(0, 38fr\) minmax\(0, 62fr\)/s);
-  assert.match(siteStyles, /\.article-column\s*\{[^}]*width: 62%;[^}]*max-inline-size: none/s);
-  assert.match(siteStyles, /\.index-frame\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px/s);
+  assert.match(siteStyles, /\.article-column\s*\{[^}]*width: 62%;[^}]*min-height: calc\(100svh - 48px\)/s);
+  assert.match(siteStyles, /\.index-frame\s*\{[^}]*font-weight: 400/s);
   assert.doesNotMatch(siteStyles, /font-size:\s*15px/);
-  assert.match(siteStyles, /\.site \.index-frame \.desktop-brand\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.post-list a\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 500/s);
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
-  assert.match(siteStyles, /\.article-body\s*\{[^}]*color: #b3aca2[^}]*font-weight: 400/s);
-  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site,\s*\.index-frame\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
+  assert.match(siteStyles, /\.article-body\s*\{[^}]*color: var\(--blog-body\)[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.post-list li\s*\{[^}]*min-height: 56px/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site \.article-header h1\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
   assert.match(siteStyles, /\.article-body a\s*\{[^}]*transition: color 160ms ease/s);
@@ -324,14 +324,16 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.article-body \.article-numbered-list\s*\{[^}]*padding-inline-start: 2em[^}]*list-style: decimal/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list li::marker\s*\{[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-variant-numeric: tabular-nums[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
-  assert.match(siteStyles, /\.article-last-edited\s*\{[^}]*margin-top: 48px !important[^}]*color: var\(--blog-muted\)/s);
+  assert.match(siteStyles, /\.article-body \.article-source,\s*\.site \.article-last-edited\s*\{[^}]*margin-top: 48px/s);
+  assert.match(siteStyles, /\.site \.article-last-edited\s*\{[^}]*color: var\(--blog-muted\)/s);
   assert.match(articleBody, /<h2 key=/);
   assert.match(articleBody, /<blockquote key=/);
   assert.match(articleBody, /<ol className="article-list article-numbered-list"/);
   assert.match(articleBody, /optical-margin-fallback/);
   assert.match(articlePage, /post\?\.updatedAt/);
   assert.match(articlePage, /Last edited \{post\.updatedAt\}/);
-  assert.match(articlePage, /className="author-edit-action" hidden/);
+  assert.match(articlePage, /<AuthorEditAction \/>/);
+  assert.match(authorEditAction, /className="author-edit-action" hidden/);
   assert.match(authorMode, /thinkinghaus-author-mode/);
   assert.match(authorMode, /location\.hash === "#edit"/);
   assert.match(authorMode, /location\.hash === "#edit-off"/);
@@ -382,6 +384,24 @@ test("supports safe inline italics and links", async () => {
     new URL("../public/fonts/TestUntitledSansWeb-Bold.woff2", import.meta.url),
   );
   assert.equal(boldFont.size, 9392);
+});
+
+test("interprets article and RSS block structure from one shared parser", () => {
+  assert.deepEqual(parseContentBlocks([
+    "Before.",
+    "## A small heading",
+    "> A useful interruption.",
+    "- First item.",
+    "- Second item.",
+    "3. Third item.",
+    "4. Fourth item.",
+  ]), [
+    { type: "paragraph", index: 0, text: "Before." },
+    { type: "heading", index: 1, text: "A small heading" },
+    { type: "blockquote", index: 2, text: "A useful interruption." },
+    { type: "unordered-list", index: 3, items: ["First item.", "Second item."] },
+    { type: "ordered-list", index: 5, start: 3, items: ["Third item.", "Fourth item."] },
+  ]);
 });
 
 test("publishes semantic block quotes in articles and RSS", async () => {

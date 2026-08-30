@@ -1,66 +1,73 @@
 import type { Metadata } from "next";
+import {
+  AUTHOR,
+  RSS_PATH,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  TRACKINGHAUS,
+  WEBMENTION_ENDPOINT,
+} from "../site-config.mjs";
 import "./globals.css";
 import { TypographyGuards } from "./TypographyGuards";
 
-const author = {
-  name: "Max Pfennighaus",
-  url: "https://maxpfennig.haus/",
-};
+const authorId = `${SITE_URL}/#author`;
+const websiteId = `${SITE_URL}/#website`;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://thinking.haus/#author",
-      name: author.name,
-      url: author.url,
+      "@id": authorId,
+      name: AUTHOR.name,
+      url: AUTHOR.url,
       sameAs: [
-        "https://thinking.haus/",
-        "https://www.linkedin.com/in/mxpfe/",
+        `${SITE_URL}/`,
+        AUTHOR.linkedInUrl,
       ],
     },
     {
       "@type": "WebSite",
-      "@id": "https://thinking.haus/#website",
-      url: "https://thinking.haus/",
-      name: "thinking.haus",
-      description: "Notes on attention, work, and the occasional strange thing.",
-      author: { "@id": "https://thinking.haus/#author" },
+      "@id": websiteId,
+      url: `${SITE_URL}/`,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      author: { "@id": authorId },
     },
   ],
 };
 
 export const metadata: Metadata = {
-  applicationName: "thinking.haus",
+  applicationName: SITE_NAME,
   title: {
-    default: "thinking.haus",
-    template: "thinking.haus - %s",
+    default: SITE_NAME,
+    template: `${SITE_NAME} - %s`,
   },
-  description: "Notes on attention, work, and the occasional strange thing.",
-  metadataBase: new URL("https://thinking.haus"),
-  authors: [author],
-  creator: author.name,
-  publisher: author.name,
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  authors: [{ name: AUTHOR.name, url: AUTHOR.url }],
+  creator: AUTHOR.name,
+  publisher: AUTHOR.name,
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
   },
   alternates: {
     types: {
-      "application/rss+xml": "/rss.xml",
+      "application/rss+xml": RSS_PATH,
     },
   },
   openGraph: {
-    siteName: "thinking.haus",
-    title: "thinking.haus",
-    description: "Notes on attention, work, and the occasional strange thing.",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "thinking.haus",
-    description: "Notes on attention, work, and the occasional strange thing.",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
     images: ["/og.png"],
   },
 };
@@ -73,8 +80,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="me" href="https://github.com/mxpf" />
-        <link rel="webmention" href="https://webmention.io/thinking.haus/webmention" />
+        <link rel="me" href={AUTHOR.githubUrl} />
+        <link rel="webmention" href={WEBMENTION_ENDPOINT} />
       </head>
       <body>
         {children}
@@ -88,9 +95,9 @@ export default function RootLayout({
         <script defer src="/author-mode.js" />
         <script
           defer
-          src="https://trackinghaus-alpha.vercel.app/tracker.js"
-          data-site="thinkinghaus"
-          data-endpoint="https://trackinghaus-alpha.vercel.app/api/collect"
+          src={TRACKINGHAUS.trackerUrl}
+          data-site={TRACKINGHAUS.siteKey}
+          data-endpoint={TRACKINGHAUS.collectUrl}
         />
       </body>
     </html>

@@ -9,8 +9,8 @@
       "_hash-B9TVtkv9.js"
     ]
   },
-  "_app-rsc-cache-busting-CbHEDFse.js": {
-    "file": "_next/static/chunks/app-rsc-cache-busting-CbHEDFse.js",
+  "_app-rsc-cache-busting-DIgUK4nZ.js": {
+    "file": "_next/static/chunks/app-rsc-cache-busting-DIgUK4nZ.js",
     "name": "app-rsc-cache-busting",
     "imports": [
       "_rolldown-runtime-hePW80VL.js",
@@ -84,6 +84,16 @@
       "_framework-CgvwdT60.js"
     ]
   },
+  "app/ScrollProgress.tsx": {
+    "file": "_next/static/chunks/ScrollProgress-x4ptvP0k.js",
+    "name": "ScrollProgress",
+    "src": "app/ScrollProgress.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-CgvwdT60.js"
+    ]
+  },
   "app/TypographyGuards.tsx": {
     "file": "_next/static/chunks/TypographyGuards-BRGnKR4J.js",
     "name": "TypographyGuards",
@@ -95,7 +105,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
-    "file": "_next/static/chunks/app-route-prefetch-policy-BqgLbb77.js",
+    "file": "_next/static/chunks/app-route-prefetch-policy-DFhrxcxq.js",
     "name": "app-route-prefetch-policy",
     "src": "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
     "isDynamicEntry": true,
@@ -104,7 +114,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/internal/hybrid-client-route-owner.js": {
-    "file": "_next/static/chunks/hybrid-client-route-owner-DeOM_QA0.js",
+    "file": "_next/static/chunks/hybrid-client-route-owner-7vZrSbsj.js",
     "name": "hybrid-client-route-owner",
     "src": "node_modules/vinext/dist/shims/internal/hybrid-client-route-owner.js",
     "isDynamicEntry": true,
@@ -115,7 +125,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-CSwMeOFV.js",
+    "file": "_next/static/chunks/layout-segment-context-BFzphTKS.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -127,7 +137,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/link.js": {
-    "file": "_next/static/chunks/link-xJP-9Cg-.js",
+    "file": "_next/static/chunks/link-B5DNA0el.js",
     "name": "link",
     "src": "node_modules/vinext/dist/shims/link.js",
     "isDynamicEntry": true,
@@ -145,7 +155,7 @@
       "node_modules/vinext/dist/shims/internal/hybrid-client-route-owner.js",
       "virtual:vinext-app-browser-entry",
       "_app-elements-DHcpiQtq.js",
-      "_app-rsc-cache-busting-CbHEDFse.js",
+      "_app-rsc-cache-busting-DIgUK4nZ.js",
       "_app-rsc-render-mode-fsLZfEO0.js",
       "_headers-CjJR8pP7.js"
     ]
@@ -161,7 +171,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-H6mFpfWw.js",
+    "file": "_next/static/chunks/index-DNT41ppO.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -173,13 +183,14 @@
       "_app-elements-DHcpiQtq.js",
       "_hash-B9TVtkv9.js",
       "_navigation-errors-C078jkgP.js",
-      "_app-rsc-cache-busting-CbHEDFse.js"
+      "_app-rsc-cache-busting-DIgUK4nZ.js"
     ],
     "dynamicImports": [
       "node_modules/vinext/dist/shims/internal/hybrid-client-route-owner.js",
       "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
       "app/Footer.tsx",
       "virtual:vinext-app-browser-entry",
+      "app/ScrollProgress.tsx",
       "node_modules/vinext/dist/shims/layout-segment-context.js",
       "node_modules/vinext/dist/shims/streamed-icons.js",
       "node_modules/vinext/dist/shims/link.js",

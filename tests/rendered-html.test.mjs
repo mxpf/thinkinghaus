@@ -83,6 +83,7 @@ test("omits the visible author byline from published notes", async () => {
   assert.doesNotMatch(html, /By <a href="https:\/\/maxpfennig\.haus\/" rel="author">/);
   assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/og\.png"/);
   assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /class="scroll-progress"/);
 });
 
 test("static homepage links point directly to exported article files", async () => {
@@ -217,6 +218,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
   assert.match(aboutHtml, /href="\/ai"/);
   assert.match(aboutHtml, /href="https:\/\/maxpfennig\.haus\/"[^>]*>My professional work lives at maxpfennig\.haus\.<\/a>/);
+  assert.doesNotMatch(aboutHtml, /class="scroll-progress"/);
 
   const aiResponse = await render("/ai");
   assert.equal(aiResponse.status, 200);
@@ -246,6 +248,7 @@ test("renders only the newest published Now entry on its stable route", async ()
   const entries = await readNowEntries();
   assert.match(html, /<title>thinking\.haus - Now<\/title>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/thinking\.haus\/now"/);
+  assert.doesNotMatch(html, /class="scroll-progress"/);
   if (entries[0]) {
     assert.ok(html.includes(entries[0].paragraphs[0]));
     assert.match(html, /<ul class="article-list"><li>Reading <a href="https:\/\/pushkinpress\.com\/book\/strange-houses\/"/);
@@ -267,12 +270,13 @@ test("keeps published writing readable and the visual system intentional", async
   assert.ok(posts.every((post) => post.body.length > 0));
   assert.ok(posts.every((post) => /^[a-z0-9-]+$/.test(post.slug)));
 
-  const [siteStyles, articleBody, articlePage, authorEditAction, authorMode] = await Promise.all([
+  const [siteStyles, articleBody, articlePage, authorEditAction, authorMode, scrollProgress] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/ArticleBody.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/AuthorEditAction.tsx", import.meta.url), "utf8"),
     readFile(new URL("../public/author-mode.js", import.meta.url), "utf8"),
+    readFile(new URL("../app/ScrollProgress.tsx", import.meta.url), "utf8"),
   ]);
   const typographyGuards = await readFile(new URL("../app/TypographyGuards.tsx", import.meta.url), "utf8");
   assert.doesNotMatch(siteStyles, /--step-article-title/);
@@ -290,13 +294,16 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 300[^}]*line-height: 24px/s);
   assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-style: italic[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.desktop-brand\s*\{[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.scroll-progress\s*\{[^}]*position: fixed[^}]*inset: 0 0 auto[^}]*height: 1px[^}]*background: var\(--blog-body\)[^}]*transform: scaleX\(var\(--scroll-progress\)\)[^}]*transform-origin: left/s);
+  assert.match(siteStyles, /html\s*\{[^}]*scrollbar-width: none/s);
+  assert.match(siteStyles, /html::-webkit-scrollbar\s*\{[^}]*display: none/s);
   assert.match(siteStyles, /\.index-frame,\s*\.article-frame\s*\{[^}]*grid-template-columns: minmax\(0, 38fr\) minmax\(0, 62fr\)/s);
   assert.match(siteStyles, /\.article-column\s*\{[^}]*width: 62%;[^}]*min-height: calc\(100svh - 48px\)/s);
   assert.match(siteStyles, /\.index-frame\s*\{[^}]*font-weight: 400/s);
   assert.doesNotMatch(siteStyles, /font-size:\s*15px/);
   assert.match(siteStyles, /\.site \.post-list a\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);
-  assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 500/s);
+  assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 400/s);
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
@@ -333,7 +340,10 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(articlePage, /post\?\.updatedAt/);
   assert.match(articlePage, /Last edited \{post\.updatedAt\}/);
   assert.match(articlePage, /<AuthorEditAction \/>/);
+  assert.match(articlePage, /post \? <ScrollProgress \/> : null/);
   assert.match(authorEditAction, /className="author-edit-action" hidden/);
+  assert.match(scrollProgress, /window\.requestAnimationFrame\(updateProgress\)/);
+  assert.match(scrollProgress, /window\.addEventListener\("scroll", scheduleUpdate, \{ passive: true \}\)/);
   assert.match(authorMode, /thinkinghaus-author-mode/);
   assert.match(authorMode, /location\.hash === "#edit"/);
   assert.match(authorMode, /location\.hash === "#edit-off"/);

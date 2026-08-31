@@ -115,6 +115,27 @@ body {
   border: 0;
 }
 
+.scroll-progress {
+  --scroll-progress: 0;
+  position: fixed;
+  z-index: 10;
+  inset: 0 0 auto;
+  height: 1px;
+  background: var(--blog-body);
+  pointer-events: none;
+  transform: scaleX(var(--scroll-progress));
+  transform-origin: left;
+  will-change: transform;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 .index-frame,
 .article-frame {
   display: grid;
@@ -219,7 +240,7 @@ body {
 
 .site .footer-brand {
   display: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .footer-links {

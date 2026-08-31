@@ -5,6 +5,7 @@ import { stripInlineMarkdown } from "../../lib/markdown.mjs";
 import { ArticleBody } from "../ArticleBody";
 import { AuthorEditAction } from "../AuthorEditAction";
 import { Footer } from "../Footer";
+import { ScrollProgress } from "../ScrollProgress";
 import { SiteBrand } from "../SiteBrand";
 import { Webmentions } from "../Webmentions";
 import { getPost, getStandalonePage, posts, standalonePages } from "../posts";
@@ -54,6 +55,7 @@ export default async function PostPage({ params }: PageProps) {
 
   return (
     <main className="site article-page">
+      {post ? <ScrollProgress /> : null}
       <div className="article-frame">
         <SiteBrand />
         <article className="article-column" data-content-slug={slug} data-content-title={content.title}>

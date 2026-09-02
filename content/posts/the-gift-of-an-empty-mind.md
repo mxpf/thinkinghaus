@@ -4,6 +4,7 @@ slug: the-gift-of-an-empty-mind
 date: 2026-06-28
 status: published
 publishedAt: 2026-08-06T14:00:00.000Z
+updatedAt: 2026-09-02T23:40:21.181Z
 sourceLabel: "Read Zen Mind, Beginner’s Mind"
 sourceHref: "https://www.shambhala.com/zen-mind-beginner-s-mind-9781611808414.html"
 ---

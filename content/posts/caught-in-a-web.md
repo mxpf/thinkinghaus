@@ -4,7 +4,7 @@ slug: caught-in-a-web
 date: 2026-07-13
 status: published
 publishedAt: 2026-08-08T20:57:18.320Z
-updatedAt: 2026-08-31
+updatedAt: 2026-09-02T23:35:22.364Z
 ---
 
 I’ve been returning to [Andrew Plotkin](https://www.eblong.com/zarf/myself.html)’s website for about twenty years. Back then, I was obsessed with interactive fiction, and I had never seen anything like the way [*Spider and Web*](https://eblong.com/zarf/zweb/tangle/) played with deception, memory, and the role of the player. I was so struck by its craft that I went looking for the person who had made it.

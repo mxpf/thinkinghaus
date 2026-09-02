@@ -10,7 +10,7 @@ The site grew out of using AI as a writing collaborator: not simply to generate 
 
 ## What lives here
 
-Published writing lives as Markdown in `content/`. Drafts stay in the private Studio and arrive here only when they are published. A push to `main` rebuilds the static site and updates GitHub Pages.
+Published writing lives as Markdown in [`content/`](content/). Drafts stay in the private Studio and arrive here only when they are published. A push to [`main`](https://github.com/mxpf/thinkinghaus/tree/main) rebuilds the static site and updates [GitHub Pages](https://pages.github.com/).
 
 ```text
 content/posts/   essays and fragments
@@ -25,7 +25,7 @@ site-config.mjs  public identity and service endpoints
 
 Generated TypeScript modules, RSS, and the sitemap are not tracked. Development and production builds recreate them from the Markdown source.
 
-The site and its posts share the social card at `public/og.png`.
+The site and its posts share the social card at [`public/og.png`](public/og.png).
 
 ## Writing conventions
 
@@ -61,11 +61,11 @@ npm run build:staging
 
 Writing and publishing normally happen in Studio. Its private database is the record of drafts; this public repository is the record of what has been published.
 
-The custom domain depends on `public/CNAME`. The publishing workflow adds the `.nojekyll` file GitHub Pages needs to the generated branch.
+The custom domain depends on [`public/CNAME`](public/CNAME). The [publishing workflow](.github/workflows/publish.yml) adds the `.nojekyll` file GitHub Pages needs to the generated branch.
 
 ## Webmentions
 
-thinking.haus advertises a Webmention endpoint and checks for public mentions during publication and once each day. This happens at build time rather than in a reader’s browser. Readers never contact Webmention.io, and a temporary service failure cannot break a page or erase the last good cache.
+thinking.haus advertises a [Webmention](https://www.w3.org/TR/webmention/) endpoint and checks for public mentions during publication and once each day. This happens at build time rather than in a reader’s browser. Readers never contact [Webmention.io](https://webmention.io/), and a temporary service failure cannot break a page or erase the last good cache.
 
 Only an external source link and a short label are kept. Remote content, photos, private mentions, unsafe URLs, and links back to thinking.haus itself are left out. A post shows “Mentioned by” only when there is something real to show.
 
@@ -77,9 +77,9 @@ npm run refresh:webmentions
 
 ## Security and dependency updates
 
-The publishing workflow stops a deployment when a high-severity production dependency vulnerability is reported. A separate weekly check looks at the complete development toolchain without blocking publication. Dependabot proposes dependency and GitHub Actions updates for review.
+The publishing workflow stops a deployment when a high-severity production dependency vulnerability is reported. A separate weekly check looks at the complete development toolchain without blocking publication. [Dependabot](https://docs.github.com/en/code-security/dependabot) proposes dependency and GitHub Actions updates for review.
 
-Vinext currently depends on an `image-size` release with denial-of-service advisories in its ICNS, JXL, and HEIF parsers. Here, that package is development-only. It reads committed metadata images during a trusted static build and is not exposed to visitors or Studio uploads. Vinext remains pinned until a compatible patched release can be reviewed and tested. [SECURITY.md](SECURITY.md) describes the boundary that must remain in place if image uploads are added later.
+[Vinext](https://github.com/cloudflare/vinext) currently depends on an `image-size` release with denial-of-service advisories in its ICNS, JXL, and HEIF parsers. Here, that package is development-only. It reads committed metadata images during a trusted static build and is not exposed to visitors or Studio uploads. Vinext remains pinned until a compatible patched release can be reviewed and tested. [SECURITY.md](SECURITY.md) describes the boundary that must remain in place if image uploads are added later.
 
 ## The useful constraint
 

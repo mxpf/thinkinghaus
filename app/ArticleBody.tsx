@@ -35,6 +35,17 @@ export function ArticleBody({ paragraphs }: { paragraphs: readonly string[] }) {
       );
     }
 
+    if (block.type === "image") {
+      return (
+        <figure className="article-image" key={`${block.index}-${block.src}`}>
+          {/* Article images are authored dynamically in Markdown, so their dimensions are not known at build time. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={block.src} alt={block.alt} loading="lazy" decoding="async" />
+          {block.title ? <figcaption>{block.title}</figcaption> : null}
+        </figure>
+      );
+    }
+
     return (
       <p className={paragraphClassName(block.text)} key={`${block.index}-${block.text}`}>
         <InlineText text={block.text} />

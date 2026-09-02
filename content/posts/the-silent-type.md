@@ -15,6 +15,8 @@ Kris Sowersby removed some of the more noticeable details, lost the thread, put 
 
 I love that the explanation arrived late. That feels closer to how making usually works: the work moves before the story catches up.
 
+![A line drawing of Kris Sowersby with his arms crossed](/images/the-silent-type-line-drawing.png)
+
 Sowersby describes deliberately [removing traces](https://klim.co.nz/blog/untitled-sans-serif-design-information/) of his own recognizable style from the letters, which sounds almost perverse to my designer brain. I'm encouraged to make things distinctive, ownable, memorable—something that can stand up in a presentation and explain why it deserves to exist.
 
 But most of the time, when I’m reading, I don’t need the typeface to introduce itself. I need it to help me read.

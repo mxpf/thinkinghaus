@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
-import { parseContentBlocks, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
+import { parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { calculateReadingTime, comparePostsByDate, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
@@ -330,12 +330,19 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.article-body blockquote::before\s*\{[^}]*inset-block: 0[^}]*inset-inline-start: 0[^}]*width: 1px[^}]*background: var\(--blog-muted\)/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list\s*\{[^}]*padding-inline-start: 2em[^}]*list-style: decimal/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list li::marker\s*\{[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-variant-numeric: tabular-nums[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.article-body \.article-image\s*\{[^}]*width: 112\.5%[^}]*margin: 60px -6\.25%/s);
+  assert.match(siteStyles, /\.article-body \.article-image img\s*\{[^}]*display: block[^}]*width: 100%[^}]*height: auto[^}]*border-radius: 4px/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)\s*\{[^}]*\.article-body \.article-image\s*\{[^}]*width: 100%[^}]*margin: 48px 0/s);
+  assert.match(siteStyles, /\.article-body \.article-image figcaption\s*\{[^}]*margin-top: 8px[^}]*color: var\(--blog-muted\)[^}]*font-size: calc\(1em - 8px\)[^}]*text-align: right/s);
   assert.match(siteStyles, /\.article-body p\.optical-margin-fallback\s*\{[^}]*text-indent: -0\.42em/s);
   assert.match(siteStyles, /\.article-body \.article-source,\s*\.site \.article-last-edited\s*\{[^}]*margin-top: 48px/s);
   assert.match(siteStyles, /\.site \.article-last-edited\s*\{[^}]*color: var\(--blog-muted\)/s);
   assert.match(articleBody, /<h2 key=/);
   assert.match(articleBody, /<blockquote key=/);
   assert.match(articleBody, /<ol className="article-list article-numbered-list"/);
+  assert.match(articleBody, /<figure className="article-image"/);
+  assert.match(articleBody, /loading="lazy" decoding="async"/);
+  assert.match(articleBody, /<figcaption>\{block\.title\}<\/figcaption>/);
   assert.match(articleBody, /optical-margin-fallback/);
   assert.match(articlePage, /post\?\.updatedAt/);
   assert.match(articlePage, /Last edited \{post\.updatedAt\}/);
@@ -394,6 +401,45 @@ test("supports safe inline italics and links", async () => {
     new URL("../public/fonts/TestUntitledSansWeb-Bold.woff2", import.meta.url),
   );
   assert.equal(boldFont.size, 9392);
+});
+
+test("renders safe article images at the shared block layer", () => {
+  const localImage = "![A foggy hillside](/images/hillside.jpg)";
+  const remoteImage = "![A distant light](https://images.example.com/light.jpg \"At dusk\")";
+
+  assert.deepEqual(parseImageMarkdown(localImage), {
+    alt: "A foggy hillside",
+    src: "/images/hillside.jpg",
+    title: undefined,
+  });
+  assert.deepEqual(parseContentBlocks([localImage, remoteImage]), [
+    {
+      type: "image",
+      index: 0,
+      alt: "A foggy hillside",
+      src: "/images/hillside.jpg",
+      title: undefined,
+    },
+    {
+      type: "image",
+      index: 1,
+      alt: "A distant light",
+      src: "https://images.example.com/light.jpg",
+      title: "At dusk",
+    },
+  ]);
+  assert.equal(stripInlineMarkdown(localImage), "A foggy hillside");
+  assert.equal(parseImageMarkdown("![No](javascript:alert(1))"), null);
+  assert.equal(parseImageMarkdown("![No](//example.com/image.jpg)"), null);
+
+  const feed = generateRssFeed([{
+    title: "With an image",
+    slug: "with-an-image",
+    date: "2026-09-02",
+    paragraphs: ["A short note.", localImage, remoteImage],
+  }]);
+  assert.match(feed, /<figure><img src="https:\/\/thinking\.haus\/images\/hillside\.jpg" alt="A foggy hillside" loading="lazy" \/><\/figure>/);
+  assert.match(feed, /<figure><img src="https:\/\/images\.example\.com\/light\.jpg" alt="A distant light" loading="lazy" \/><figcaption>At dusk<\/figcaption><\/figure>/);
 });
 
 test("interprets article and RSS block structure from one shared parser", () => {

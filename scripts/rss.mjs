@@ -49,6 +49,11 @@ function renderPostHtml(post) {
       const startAttribute = block.start === 1 ? "" : ` start="${block.start}"`;
       return `<ol${startAttribute}>${items}</ol>`;
     }
+    if (block.type === "image") {
+      const src = block.src.startsWith("/") ? `${SITE_URL}${block.src}` : block.src;
+      const caption = block.title ? `<figcaption>${escapeXml(block.title)}</figcaption>` : "";
+      return `<figure><img src="${escapeXml(src)}" alt="${escapeXml(block.alt)}" loading="lazy" />${caption}</figure>`;
+    }
     return `<p>${renderInlineHtml(block.text)}</p>`;
   });
   if (post.source) {

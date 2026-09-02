@@ -16,6 +16,8 @@ Expertise is darn useful. It recognizes patterns, avoids old mistakes, knows whi
 
 Suzuki isn’t asking us to become stupid. [Beginner’s mind](https://shunryusuzuki.com/detail1?ID=78) isn’t the absence of knowledge or experience. It’s a way of standing inside what you know without letting your shoes turn to cement. I find this much harder than it sounds.
 
+![A line drawing of Shunryu Suzuki looking downward](/images/shunryu-suzuki-line-drawing.png)
+
 The book is assembled from talks and still feels spoken. Ideas appear, disappear, return slightly changed. Sometimes an explanation leaves me less certain than I was when it began, which seems appropriate.
 
 Suzuki talks about posture, breathing, repetition, effort, and the very ordinary difficulty of sitting still. The spiritual life he describes is physical. It’s in my hands, my spine, my breath, and my willingness to sit there without turning the whole thing into another achievement.

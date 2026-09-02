@@ -29,7 +29,9 @@ The site and its posts share the social card at [`public/og.png`](public/og.png)
 
 ## Writing conventions
 
-Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, and bulleted or numbered lists. Numbered lists use the ordinary `1. First item` form.
+Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, images, and bulleted or numbered lists. Numbered lists use the ordinary `1. First item` form.
+
+Article images live in [`public/images/`](public/images/) and appear as standalone Markdown blocks: `![A useful description](/images/example.jpg)`. On desktop they extend slightly beyond the text measure, with 2.5 lines of vertical breathing room; on mobile they return to the article width. Images keep their natural proportions and use the portfolio's 4px corner radius. Add a flush-right caption with the optional title: `![A useful description](/images/example.jpg "A little more context")`.
 
 An already-published post can carry an `updatedAt` frontmatter field, either as an ISO timestamp or `YYYY-MM-DD`. That date produces a quiet “Last edited” note at the end of the piece. New and untouched posts leave it out.
 

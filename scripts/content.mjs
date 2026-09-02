@@ -56,6 +56,7 @@ function parseBodyBlocks(body) {
 
 export function calculateReadingTime(body) {
   const readableBody = body
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replace(/[*_]/g, "");
   const words = readableBody.trim().match(/[\p{L}\p{N}’'-]+/gu)?.length ?? 0;

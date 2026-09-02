@@ -23,6 +23,8 @@ His site does the opposite. The [About Zarfhome](https://www.eblong.com/zarf/) p
 
 The site is mostly plain HTML, and the About page tells the reader to “choose your own damn default background color.” The plainness isn’t neglect. It’s a decision to make the site durable, to let it work anywhere rather than control every pixel.
 
+![A line drawing of stacked folders, notebooks, and unfinished ideas](/images/caught-in-a-web-line-drawing.png)
+
 A person keeps putting things somewhere for long enough and eventually patterns emerge that no About paragraph could have manufactured. The kinds of problems he returns to. Books he buys. Jokes he repeats. Technical standards and systems he helps maintain. The game that took years longer than expected. The thing he was excited about in 1997 and the thing he’s still thinking about in 2025.
 
 Because enough of the material survives, the portrait isn’t clean. Even the About page contains a little crack in its own philosophy. In 2000, Plotkin announces his desire to show unfinished projects and failures. In the 2010 update, he admits that, well, he hasn’t done as well at that as he wanted to. As his standards rose, fewer unfinished things made it onto the site. He labels the problem vanity. So the guy who built a website partly to resist hiding unfinished work eventually became self-conscious enough to start hiding more unfinished work.

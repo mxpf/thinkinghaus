@@ -13,6 +13,8 @@ A portfolio case study is an unfairly antiseptic account of a project. Here is a
 
 What disappears are the personalities, budgets, old decisions, new anxieties, unclear language, and deadlines that don’t care whether the idea is ready. For a long time, I thought of all of this as the stuff surrounding the work. The real work was what I could see. That got harder to believe as I started leading more projects.
 
+![A line drawing of two people moving between large architectural forms](/images/work-between-the-work-line-drawing.webp)
+
 Much of the invisible part is translation. Someone says they want “more impact.” Maybe they mean contrast. Maybe confidence. Maybe they’re worried the CEO is going to flip past the page without noticing it. The request and the actual worry are often two different animals, and asking one more question can often keep a room full of people from spending a week solving the wrong problem in excruciating detail.
 
 There are days when I leave work having “made” almost nothing. Maybe I've clarified a decision, connected two people, moved something out of somebody’s way, given a designer another afternoon before showing the work, or written down enough context so we didn’t have go on an archaeological dig through Slack messages.

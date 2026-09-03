@@ -2,7 +2,7 @@
 title: "Corrigible"
 slug: corrigible
 date: 2026-08-10
-status: published
+status: draft
 publishedAt: 2026-08-10T16:28:36.163Z
 updatedAt: 2026-08-23T16:45:10.561Z
 ---

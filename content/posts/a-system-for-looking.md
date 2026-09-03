@@ -14,6 +14,8 @@ Now I try to begin with a question. What am I actually trying to understand? Wha
 
 I start near the subject. If I’m working on a corporate report, I look at reports. I need to understand the form before I decide what to do with it.
 
+![A branching diagram of eyes following different paths of observation](/images/a-system-for-looking-line-drawing.webp)
+
 Then I move farther away. I might look at newspapers, maps, instruction manuals, or paintings. A newspaper knows how to handle density. A map knows how to hold several scales at once. A painting may know something useful about directing the eye.
 
 I’m not looking for a style to borrow. I’m trying to notice what something is doing. When I save a reference, I write down why.

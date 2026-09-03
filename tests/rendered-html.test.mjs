@@ -442,6 +442,20 @@ test("renders safe article images at the shared block layer", () => {
   assert.match(feed, /<figure><img src="https:\/\/images\.example\.com\/light\.jpg" alt="A distant light" loading="lazy" \/><figcaption>At dusk<\/figcaption><\/figure>/);
 });
 
+test("keeps published article image payloads modest", async () => {
+  const posts = await readPosts({ includeDrafts: true });
+  const imagePaths = posts.flatMap((post) =>
+    [...post.body.matchAll(/!\[[^\]]*\]\((\/images\/[^)\s]+)(?:\s+"[^"]*")?\)/g)]
+      .map((match) => match[1]),
+  );
+
+  assert.ok(imagePaths.length > 0);
+  for (const imagePath of imagePaths) {
+    const image = await stat(new URL(`../public${imagePath}`, import.meta.url));
+    assert.ok(image.size <= 250 * 1024, `${imagePath} exceeds the 250 KB article-image budget`);
+  }
+});
+
 test("interprets article and RSS block structure from one shared parser", () => {
   assert.deepEqual(parseContentBlocks([
     "Before.",

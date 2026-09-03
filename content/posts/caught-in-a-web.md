@@ -23,7 +23,7 @@ His site does the opposite. The [About Zarfhome](https://www.eblong.com/zarf/) p
 
 The site is mostly plain HTML, and the About page tells the reader to “choose your own damn default background color.” The plainness isn’t neglect. It’s a decision to make the site durable, to let it work anywhere rather than control every pixel.
 
-![A line drawing of stacked folders, notebooks, and unfinished ideas](/images/caught-in-a-web-line-drawing.png)
+![A line drawing of stacked folders, notebooks, and unfinished ideas](/images/caught-in-a-web-line-drawing.webp)
 
 A person keeps putting things somewhere for long enough and eventually patterns emerge that no About paragraph could have manufactured. The kinds of problems he returns to. Books he buys. Jokes he repeats. Technical standards and systems he helps maintain. The game that took years longer than expected. The thing he was excited about in 1997 and the thing he’s still thinking about in 2025.
 

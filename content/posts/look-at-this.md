@@ -21,7 +21,7 @@ What exactly is this cocktail before I file it away under “cocktail?” Well�
 
 Naming things is useful, but it also shrink-wraps them. Cocktail. Café. Friend. Stranger. Job. Website. Tree. Myself. Once something has a name, it becomes very easy to stop encountering it. We know what that is. Move along. The world becomes incredibly efficient and navigable this way, and also slightly dead.
 
-![A line drawing of Jean-Paul Sartre holding a pipe](/images/look-at-this-line-drawing.png)
+![A line drawing of Jean-Paul Sartre holding a pipe](/images/look-at-this-line-drawing.webp)
 
 To me, there are actually two encounters happening at that table. Sartre is encountering the cocktail differently, but he’s also encountering Aron: somebody who had gone somewhere, found something that rearranged the furniture in his head, and come back excited enough to try to make his friends see what he’d seen.
 

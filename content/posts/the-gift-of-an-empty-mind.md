@@ -17,7 +17,7 @@ Expertise is darn useful. It recognizes patterns, avoids old mistakes, knows whi
 
 Suzuki isn’t asking us to become stupid. [Beginner’s mind](https://shunryusuzuki.com/detail1?ID=78) isn’t the absence of knowledge or experience. It’s a way of standing inside what you know without letting your shoes turn to cement. I find this much harder than it sounds.
 
-![A line drawing of Shunryu Suzuki looking downward](/images/shunryu-suzuki-line-drawing.png)
+![A line drawing of an open hand reaching toward a small distant point](/images/shunryu-suzuki-line-drawing.webp)
 
 The book is assembled from talks and still feels spoken. Ideas appear, disappear, return slightly changed. Sometimes an explanation leaves me less certain than I was when it began, which seems appropriate.
 

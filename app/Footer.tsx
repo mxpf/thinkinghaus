@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AUTHOR, RSS_PATH, SITE_NAME, TRACKINGHAUS } from "../site-config.mjs";
+import { AUTHOR, RSS_PATH, SITE_NAME, SUPPORT_URL, TRACKINGHAUS } from "../site-config.mjs";
 
 export function Footer({
   showBrand = false,
@@ -47,16 +47,14 @@ export function Footer({
     <footer className={className}>
       {showBrand ? <a className="footer-brand" href="/">{SITE_NAME}</a> : null}
       <nav className="footer-links" aria-label="Site">
-        <span className="footer-link-group">
-          <a href={AUTHOR.url} rel="me">Work</a>
-          <a href="/about">About</a>
-          <a href="/links">Links</a>
-          <a href="/now">Now</a>
-        </span>
-        <span className="footer-link-group">
-          <a href={TRACKINGHAUS.dashboardUrl}>Stats</a>
-          <a href={RSS_PATH} type="application/rss+xml">RSS</a>
-        </span>
+        <a href={AUTHOR.url} rel="me">Design</a>
+        <a href={AUTHOR.githubUrl}>Code</a>
+        <a href="/about">About</a>
+        <a href="/links">Links</a>
+        <a href="/now">Now</a>
+        <a href={TRACKINGHAUS.dashboardUrl}>Stats</a>
+        <a href={RSS_PATH} type="application/rss+xml">RSS</a>
+        <a href={SUPPORT_URL}>Support</a>
       </nav>
     </footer>
   );

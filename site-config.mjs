@@ -10,6 +10,7 @@ export const AUTHOR = {
 };
 
 export const RSS_PATH = "/rss.xml";
+export const SUPPORT_URL = "https://ko-fi.com/thinkinghaus";
 export const STUDIO_URL = "https://thinkinghaus-studio.maxpfennighaus.workers.dev/";
 
 export const TRACKINGHAUS = {

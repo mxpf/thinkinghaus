@@ -245,11 +245,9 @@ html::-webkit-scrollbar {
 
 .footer-links {
   display: flex;
-  gap: 24px;
-}
-
-.footer-link-group {
-  display: contents;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 0;
 }
 
 .article-header h1,
@@ -482,13 +480,6 @@ html::-webkit-scrollbar {
 
   .footer-links {
     max-width: 100%;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .footer-link-group {
-    display: flex;
-    gap: 24px;
   }
 
   .post-list li {

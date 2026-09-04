@@ -37,7 +37,7 @@ test("renders the thinking.haus index from published Markdown", async () => {
   assert.match(html, /class="letter-cascade is-in" aria-label="thinking\.haus"/);
   for (const post of posts) assert.ok(html.includes(post.title));
   assert.match(html, /href="\/about"/);
-  assert.match(html, /href="https:\/\/maxpfennig\.haus\/" rel="me">Design<\/a>/);
+  assert.match(html, /href="https:\/\/maxpfennig\.haus\/" rel="me">Work<\/a>/);
   assert.match(html, /href="https:\/\/github\.com\/mxpf">Code<\/a>/);
   assert.match(html, /href="\/links"/);
   assert.match(html, /href="\/now"/);
@@ -46,7 +46,7 @@ test("renders the thinking.haus index from published Markdown", async () => {
   assert.match(html, /href="https:\/\/ko-fi\.com\/thinkinghaus">Support<\/a>/);
   assert.ok(html.indexOf(">Stats</a>") < html.indexOf(">RSS</a>"));
   assert.ok(html.indexOf(">RSS</a>") < html.indexOf(">Support</a>"));
-  assert.ok(html.indexOf(">Design</a>") < html.indexOf(">Code</a>"));
+  assert.ok(html.indexOf(">Work</a>") < html.indexOf(">Code</a>"));
   assert.ok(html.indexOf(">Code</a>") < html.indexOf(">About</a>"));
   assert.ok(html.indexOf(">Links</a>") < html.indexOf(">Now</a>"));
   assert.ok(html.indexOf(">Now</a>") < html.indexOf(">Stats</a>"));

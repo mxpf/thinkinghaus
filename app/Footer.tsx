@@ -47,7 +47,7 @@ export function Footer({
     <footer className={className}>
       {showBrand ? <a className="footer-brand" href="/">{SITE_NAME}</a> : null}
       <nav className="footer-links" aria-label="Site">
-        <a href={AUTHOR.url} rel="me">Design</a>
+        <a href={AUTHOR.url} rel="me">Work</a>
         <a href={AUTHOR.githubUrl}>Code</a>
         <a href="/about">About</a>
         <a href="/links">Links</a>

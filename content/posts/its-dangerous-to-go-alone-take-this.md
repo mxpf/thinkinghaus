@@ -4,14 +4,16 @@ slug: its-dangerous-to-go-alone-take-this
 date: 2026-09-11
 status: published
 publishedAt: 2026-09-11T14:40:17Z
-updatedAt: 2026-09-11T15:03:09Z
+updatedAt: 2026-09-11T16:08:56Z
 ---
 
-Leave home with basic supplies. Notice something interesting and walk toward it, allowing another point of interest to supersede the first. Talk to people. Accept dead ends. Eventually, return home.
+Leave home with [basic supplies](https://i.kym-cdn.com/entries/icons/original/000/000/240/Its-Dangerous-to-Go-Alone-Take-This-meme-banner.jpg). Notice something interesting and walk toward it, allowing another point of interest to supersede the first. Talk to people. Accept dead ends. Eventually, return home.
+
+![A line drawing of a traveler receiving a sword from an old man between two fires in a cave](/images/zelda-cave-line-drawing.webp)
 
 It sounds trivial written out, but there is a real [change in attention](/look-at-this) hidden inside it. Instead of treating the landscape as empty space separating me from destinations, I start treating it as a *field of possible interactions*.
 
-The [adventure-game metaphor](https://www.rockpapershotgun.com/best-adventure-games) helps because it changes what counts as significant. A strange staircase becomes a path. A shop becomes an encounter. A distant structure becomes something worth moving toward, at least until something else catches my attention. A dead end isn’t wasted time; it is *explored territory*. The whole thing gives me [permission to be inefficient](/what-happens-next).
+The [adventure-game metaphor](https://www.rockpapershotgun.com/best-adventure-games) helps because it changes what counts as significant. A strange staircase becomes a path. A shop becomes an [encounter](https://en.wikipedia.org/wiki/Random_encounter). A distant structure becomes something worth moving toward, at least until something else catches my attention. A dead end isn’t wasted time; it is *explored territory*. The whole thing gives me [permission to be inefficient](/what-happens-next).
 
 The basic rule is simple: treat everything as *potentially interesting*, and treat *public access* as a constraint of the game.
 

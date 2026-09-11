@@ -291,12 +291,9 @@ test("keeps published writing readable and the visual system intentional", async
   assert.doesNotMatch(siteStyles, /prefers-color-scheme/);
   assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-Regular\.woff2/s);
-  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-RegularItalic\.woff[^}]*font-style: italic/s);
-  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-Light\.woff2[^}]*font-weight: 300/s);
-  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-LightItalic\.woff2[^}]*font-style: italic[^}]*font-weight: 300/s);
-  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-Medium\.woff2[^}]*font-weight: 500/s);
-  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*TestUntitledSansWeb-Bold\.woff2[^}]*font-weight: 700/s);
-  assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 300[^}]*line-height: 24px/s);
+  assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-RegularItalic\.woff2[^}]*font-style: italic[^}]*font-weight: 400/s);
+  assert.doesNotMatch(siteStyles, /TestUntitledSansWeb|font-weight: (?:300|500|700)/);
+  assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px/s);
   assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-style: italic[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.desktop-brand\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.scroll-progress\s*\{[^}]*position: fixed[^}]*inset: 0 0 auto[^}]*height: 1px[^}]*background: var\(--blog-body\)[^}]*transform: scaleX\(var\(--scroll-progress\)\)[^}]*transform-origin: left/s);
@@ -311,6 +308,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 400/s);
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
   assert.match(siteStyles, /\.site \.article-header h1\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px[^}]*text-wrap: balance/s);
+  assert.match(siteStyles, /\.article-header p\s*\{[^}]*color: var\(--blog-muted\)/s);
   assert.match(siteStyles, /\.article-body p\s*\{[^}]*hanging-punctuation: first[^}]*text-wrap: pretty/s);
   assert.match(siteStyles, /\.article-body\s*\{[^}]*color: var\(--blog-body\)[^}]*font-weight: 400/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
@@ -383,29 +381,13 @@ test("supports safe inline italics and links", async () => {
   ]);
 
   const italicFont = await stat(
-    new URL("../public/fonts/UntitledSansWeb-RegularItalic.woff", import.meta.url),
+    new URL("../public/fonts/UntitledSansWeb-RegularItalic.woff2", import.meta.url),
   );
-  assert.equal(italicFont.size, 47346);
+  assert.equal(italicFont.size, 35853);
   const regularFont = await stat(
     new URL("../public/fonts/UntitledSansWeb-Regular.woff2", import.meta.url),
   );
-  assert.equal(regularFont.size, 23275);
-  const lightFont = await stat(
-    new URL("../public/fonts/TestUntitledSansWeb-Light.woff2", import.meta.url),
-  );
-  assert.equal(lightFont.size, 5349);
-  const lightItalicFont = await stat(
-    new URL("../public/fonts/TestUntitledSansWeb-LightItalic.woff2", import.meta.url),
-  );
-  assert.equal(lightItalicFont.size, 5554);
-  const mediumFont = await stat(
-    new URL("../public/fonts/TestUntitledSansWeb-Medium.woff2", import.meta.url),
-  );
-  assert.equal(mediumFont.size, 9298);
-  const boldFont = await stat(
-    new URL("../public/fonts/TestUntitledSansWeb-Bold.woff2", import.meta.url),
-  );
-  assert.equal(boldFont.size, 9392);
+  assert.equal(regularFont.size, 34893);
 });
 
 test("renders safe article images at the shared block layer", () => {

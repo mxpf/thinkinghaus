@@ -88,7 +88,7 @@ body {
   position: fixed;
   z-index: 10;
   inset: 0 0 auto;
-  height: 1px;
+  height: 2px;
   background: var(--blog-body);
   pointer-events: none;
   transform: scaleX(var(--scroll-progress));

@@ -296,7 +296,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px/s);
   assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-style: italic[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.desktop-brand\s*\{[^}]*font-weight: 400/s);
-  assert.match(siteStyles, /\.scroll-progress\s*\{[^}]*position: fixed[^}]*inset: 0 0 auto[^}]*height: 1px[^}]*background: var\(--blog-body\)[^}]*transform: scaleX\(var\(--scroll-progress\)\)[^}]*transform-origin: left/s);
+  assert.match(siteStyles, /\.scroll-progress\s*\{[^}]*position: fixed[^}]*inset: 0 0 auto[^}]*height: 2px[^}]*background: var\(--blog-body\)[^}]*transform: scaleX\(var\(--scroll-progress\)\)[^}]*transform-origin: left/s);
   assert.match(siteStyles, /html\s*\{[^}]*scrollbar-width: none/s);
   assert.match(siteStyles, /html::-webkit-scrollbar\s*\{[^}]*display: none/s);
   assert.match(siteStyles, /\.index-frame,\s*\.article-frame\s*\{[^}]*grid-template-columns: minmax\(0, 38fr\) minmax\(0, 62fr\)/s);
@@ -467,9 +467,9 @@ test("publishes semantic block quotes in articles and RSS", async () => {
     slug: "quote-style-qa",
     date: "2026-08-13",
     publishedAt: "2026-08-13T12:00:00.000Z",
-    paragraphs: ["Before.", "> A useful interruption.", "After."],
+    paragraphs: ["Before.", "> «*A useful interruption.*»", "After."],
   }]);
-  assert.match(feed, /<blockquote><p>A useful interruption\.<\/p><\/blockquote>/);
+  assert.match(feed, /<blockquote><p>«<em>A useful interruption\.<\/em>»<\/p><\/blockquote>/);
 });
 
 test("publishes semantic numbered lists in RSS", () => {

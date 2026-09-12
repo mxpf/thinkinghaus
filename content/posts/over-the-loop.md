@@ -37,10 +37,7 @@ If hundreds of employees repeatedly approve recommendations from a system, someb
 
 A [UK government review of algorithmic decision-making](https://www.gov.uk/government/publications/cdei-publishes-review-into-bias-in-algorithmic-decision-making/main-report-cdei-review-into-bias-in-algorithmic-decision-making) drew a distinction between a human in the loop and humans over the loop: people who understand the system well enough to monitor the fairness and effectiveness of the whole decision process and who carry responsibility for it.
 
+A person over the loop is able to reconstruct how a choice became possible. Who chose these inputs? Who set this threshold? Who decided what our reviewers would see?
+
 The person in the loop encounters a case.
-
-The person over the loop has to encounter the system.
-
-They need to be able to reconstruct how a choice became possible. Who chose these inputs? Who set this threshold? Who decided what our reviewers would see?
-
-They aren’t just the last domino. Their job is to see what the chain is doing.
+The person over the loop has to *encounter the system,* to see what the chain of dominos is doing.

@@ -27,10 +27,8 @@
 <p>So the problem cannot simply be that nobody possesses the entire decision. The question is whether somebody is responsible for how the pieces behave together.</p>
 <p>If hundreds of employees repeatedly approve recommendations from a system, somebody needs to notice what the pattern of approvals, overrides, appeals, and reversals says about the machinery producing them. The exception cannot always be treated as an isolated failure by the person who happened to touch the case last.</p>
 <p>A <a href="https://www.gov.uk/government/publications/cdei-publishes-review-into-bias-in-algorithmic-decision-making/main-report-cdei-review-into-bias-in-algorithmic-decision-making">UK government review of algorithmic decision-making</a> drew a distinction between a human in the loop and humans over the loop: people who understand the system well enough to monitor the fairness and effectiveness of the whole decision process and who carry responsibility for it.</p>
-<p>The person in the loop encounters a case.</p>
-<p>The person over the loop has to encounter the system.</p>
-<p>They need to be able to reconstruct how a choice became possible. Who chose these inputs? Who set this threshold? Who decided what our reviewers would see?</p>
-<p>They aren’t just the last domino. Their job is to see what the chain is doing.</p>
+<p>A person over the loop is able to reconstruct how a choice became possible. Who chose these inputs? Who set this threshold? Who decided what our reviewers would see?</p>
+<p>The person in the loop encounters a case. The person over the loop has to <em>encounter the system,</em> to see what the chain of dominos is doing.</p>
 <p><a href="https://firstchurchofthesingularity.com/sermons/2026-09-11">Read “The Workflow Is an Alibi”</a></p>]]></content:encoded>
     </item>
     <item>

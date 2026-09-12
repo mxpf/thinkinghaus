@@ -4,7 +4,7 @@ slug: personal-folklore
 date: 2026-08-08
 status: published
 publishedAt: 2026-08-08T03:33:21.440Z
-updatedAt: 2026-08-23T16:45:17.617Z
+updatedAt: 2026-09-11T23:11:30-04:00
 ---
 
 Keep a journal long enough and patterns emerge. The same fear in different clothes, the same bad bargain becoming tempting again, a particular kind of excitement I’ve learned to trust, the moment when I start making a simple thing complicated because complication feels safer than finishing it. Eventually, particulars begin to give way to larger realities about myself.
@@ -16,5 +16,7 @@ A family has three disastrous camping trips and ten years later everyone says, �
 Some of them are useful and some are assuredly complete nonsense, which is what makes the whole thing interesting. Folklore isn’t truth. “I always do this” is folklore. “I’m not the kind of person who…” is folklore too. A story can begin as a pretty accurate description and quietly harden into identity. Three bad camping trips become a family trait.
 
 This makes a journal seem less like a record of a stable self and more like a place where a mythology is being manufactured in real time. I’m remembering, simplifying, exaggerating, finding patterns that are probably real, and occasionally drawing a constellation between completely unrelated stars. Years later, I inherit the whole mess from the people I used to be: useful warnings alongside old misunderstandings, good instincts alongside conclusions that may have expired without telling me.
+
+![A line drawing of a person with a campfire burning in place of their head](/images/personal-folklore-line-drawing.webp)
 
 Riley’s list feels like a lifetime of personal folklore compressed down to a portable size. It's a great list, and it reminds me to be aware of which stories I keep telling myself, where they came from, and whether they’re still true.

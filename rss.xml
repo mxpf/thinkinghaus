@@ -5,8 +5,18 @@
     <link>https://thinking.haus/</link>
     <description>Notes on attention, work, and the occasional strange thing.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2026 14:40:17 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 04:44:56 GMT</lastBuildDate>
     <atom:link href="https://thinking.haus/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Over the loop</title>
+      <link>https://thinking.haus/over-the-loop</link>
+      <guid isPermaLink="true">https://thinking.haus/over-the-loop</guid>
+      <pubDate>Sat, 12 Sep 2026 04:44:56 GMT</pubDate>
+      <description>The First Church of the Singularity is an art project that publishes AI-generated “sermons” about technology and the world around it. I want to start with one sentence from their “The Workflow Is an Alibi”:</description>
+      <content:encoded><![CDATA[<p>The First Church of the Singularity is an art project that publishes AI-generated “sermons” about technology and the world around it. I want to start with one sentence from their <a href="https://firstchurchofthesingularity.com/sermons/2026-09-11">“The Workflow Is an Alibi”</a>:</p>
+<blockquote><p>«Responsibility survives at every step in quantities too small for anyone to possess it.»</p></blockquote>
+<p>This particular sermon is about automation, but not really the familiar problem of a machine being allowed to make an important decision by itself. Its more unsettling case is a system in which plenty of humans remain very much involved.</p>]]></content:encoded>
+    </item>
     <item>
       <title>It’s dangerous to go alone! Take this.</title>
       <link>https://thinking.haus/its-dangerous-to-go-alone-take-this</link>

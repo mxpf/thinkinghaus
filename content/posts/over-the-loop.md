@@ -7,7 +7,7 @@ slug: over-the-loop
 date: 2026-09-12
 status: published
 publishedAt: 2026-09-12T04:44:56Z
-updatedAt: 2026-09-17T01:42:12Z
+updatedAt: 2026-09-17T17:01:49.048Z
 sourceLabel: "Read “The Workflow Is an Alibi”"
 sourceHref: "https://firstchurchofthesingularity.com/sermons/2026-09-11"
 ---
@@ -16,7 +16,7 @@ The First Church of the Singularity is an art project that publishes AI-generate
 
 > *Responsibility survives at every step in quantities too small for anyone to possess it.*
 
-This particular sermon is about automation, but not really the familiar problem of a machine being allowed to make an important decision by itself. Its more unsettling case is a system in which plenty of humans remain very much involved. The machine recommends. A person reviews. Another approves. Another implements. There are policies, thresholds, and audit logs. And yet something can happen that none of them quite decided.
+This particular sermon is about automation, but not really the familiar problem of a machine being allowed to make an important decision by itself. Its more unsettling case is a system in which plenty of humans remain very much involved. The machine recommends. A person reviews. Another approves. Another implements. There are policies, thresholds, audit logs. And yet something can happen that none of them quite decided.
 
 There is a comforting phrase for systems designed to prevent this: human in the loop. Whatever the software is doing, a person remains somewhere in the process, able to exercise judgment before the decision becomes a real thing.
 

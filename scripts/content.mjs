@@ -8,6 +8,7 @@ const nowDirectory = path.join(projectRoot, "content", "now");
 const manifestPath = path.join(projectRoot, "content", "identity-manifest.json");
 
 const frontmatterPattern = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/;
+const documentIdPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const publicPathPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*\.md$/;
 const aliasUrlPattern = /^\/[a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
@@ -149,7 +150,7 @@ export function validateContentGraph(documents) {
   const routes = new Map();
   const redirects = new Map();
   for (const document of documents) {
-    if (!document.id.trim()) throw new Error(`${document.slug || "Untitled"} needs an immutable id.`);
+    if (!documentIdPattern.test(document.id)) throw new Error(`${document.slug || "Untitled"} needs an immutable UUID id.`);
     if (ids.has(document.id)) throw new Error(`Duplicate document id ${document.id}: ${ids.get(document.id)} and ${document.slug}.`);
     ids.set(document.id, document.slug);
     if (!publicPathPattern.test(document.publicPath)) throw new Error(`${document.slug} needs a stable .md publicPath.`);

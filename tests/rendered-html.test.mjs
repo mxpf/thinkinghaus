@@ -111,7 +111,7 @@ test("static homepage links point directly to exported article files", async () 
 
 test("publishes immutable document identities and compatibility redirects", async () => {
   const documents = [...await readPosts({ includeDrafts: true }), ...await readPages(), ...await readNowEntries({ includeDrafts: true })];
-  assert.ok(documents.every((document) => document.id && document.publicPath.endsWith(".md")));
+  assert.ok(documents.every((document) => /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(document.id) && document.publicPath.endsWith(".md")));
   const manifest = await readIdentityManifest();
   assert.equal(manifest.version, 1);
   assert.equal(manifest.documents.length, documents.filter((document) => document.type === "page" || document.status === "published").length);
@@ -547,7 +547,7 @@ test("calculates reading time and preserves draft status", () => {
 
   const draft = parsePost(serializePost({
     title: "A private thought",
-    id: "legacy/drafts/a-private-thought.md",
+    id: "33333333-3333-4333-8333-333333333333",
     publicPath: "a-private-thought.md",
     slug: "a-private-thought",
     date: "2026-08-06",
@@ -559,7 +559,7 @@ test("calculates reading time and preserves draft status", () => {
 
   const revised = parsePost(serializePost({
     title: "A revised thought",
-    id: "legacy/published/a-revised-thought.md",
+    id: "44444444-4444-4444-8444-444444444444",
     publicPath: "a-revised-thought.md",
     slug: "a-revised-thought",
     date: "2026-08-06",
@@ -582,16 +582,16 @@ test("sorts the homepage by authored date without moving revised posts", () => {
 test("rejects broken document identity and URL graphs", () => {
   const first = {
     type: "post",
-    id: "legacy/posts/first.md",
+    id: "11111111-1111-4111-8111-111111111111",
     publicPath: "first.md",
     sourcePath: "content/posts/first.md",
     slug: "first",
     aliases: ["/former-first.html"],
-    body: "A [second piece](doc:legacy%2Fpages%2Fsecond.md).",
+    body: "A [second piece](doc:22222222-2222-4222-8222-222222222222).",
   };
   const second = {
     type: "page",
-    id: "legacy/pages/second.md",
+    id: "22222222-2222-4222-8222-222222222222",
     publicPath: "second.md",
     sourcePath: "content/pages/second.md",
     slug: "second",
@@ -600,12 +600,13 @@ test("rejects broken document identity and URL graphs", () => {
   };
   assert.doesNotThrow(() => validateContentGraph([first, second]));
   assert.equal(resolveDocumentLinks(first.body, [first, second]), "A [second piece](/second).");
+  assert.throws(() => validateContentGraph([{ ...first, id: "legacy/posts/first.md" }, second]), /needs an immutable UUID id/);
   assert.throws(() => validateContentGraph([first, { ...second, id: first.id }]), /Duplicate document id/);
   assert.throws(() => validateContentGraph([first, { ...second, slug: first.slug }]), /Duplicate public slug/);
   assert.throws(() => validateContentGraph([first, { ...second, aliases: ["/former-first.html"] }]), /claimed by more than one/);
   assert.throws(() => validateContentGraph([first, { ...second, slug: "former-first" }]), /collides with the public slug/);
   assert.throws(
-    () => validateContentGraph([{ ...first, body: "[Missing](doc:missing%2Fdocument.md)" }, second]),
+    () => validateContentGraph([{ ...first, body: "[Missing](doc:33333333-3333-4333-8333-333333333333)" }, second]),
     /unknown document id/,
   );
   assert.throws(() => validateContentGraph([{ ...first, body: "[Missing](/not-here)" }, second]), /unknown internal URL/);

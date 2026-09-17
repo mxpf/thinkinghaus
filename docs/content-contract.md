@@ -7,13 +7,13 @@ The Markdown document is the portable publishing manifest shared by Studio, KDri
 Every post, page, and Now entry carries:
 
 ```yaml
-id: opaque-identity-retained-from-studio
+id: 46940085-c1e7-4be0-bd56-5e2d4ccfa60e
 publicPath: its-dangerous-to-go-alone-take-this.md
 slug: its-dangerous-to-go-alone-take-this
 aliases: ["/former-address.html"]
 ```
 
-- `id` is an immutable opaque value created once. Existing path-shaped Studio IDs remain valid and must be preserved through edits, renames, folder moves, status changes, imports, and republishes.
+- `id` is an immutable UUID created once. Deployed public UUIDs remain canonical through edits, renames, folder moves, status changes, imports, and republishes. Historical path-shaped Studio IDs may be retained privately as migration lookup provenance, but must never be emitted as canonical IDs.
 - `publicPath` is the stable Markdown filename within its snapshot collection.
 - `slug` is the explicit public address. Studio must not regenerate it from the title or derive it from a KDrive path after creation.
 - `aliases` is an optional JSON array of former root-relative `.html` URLs. Before changing a published slug, Studio must append the previous URL and retain all earlier aliases.
@@ -25,10 +25,10 @@ Posts and Now entries additionally carry `date` and `status`. Published material
 Authored links between Thinkinghaus documents use the persistent ID:
 
 ```markdown
-[change in attention](doc:path%2Fshaped%2For-opaque-id)
+[change in attention](doc:44180f64-b72b-4bfe-b721-e47acf9d7328)
 ```
 
-The public build URI-decodes the ID and resolves that relationship to the target’s current `.html` URL. Ordinary external URLs and public asset paths remain ordinary Markdown links.
+The public build resolves that UUID relationship to the target’s current `.html` URL. Ordinary external URLs and public asset paths remain ordinary Markdown links.
 
 ## Publishing boundary
 
@@ -36,7 +36,7 @@ Studio publishes a flat snapshot into `content/posts`, `content/pages`, or `cont
 
 The public build validates the complete snapshot before producing the site. It rejects:
 
-- missing or duplicate IDs;
+- missing, malformed, or duplicate UUIDs;
 - missing, invalid, or mismatched `publicPath` values;
 - invalid or duplicate public slugs;
 - aliases that are invalid, duplicated, or collide with a current slug;
@@ -53,7 +53,7 @@ At reader request time the deployed site is a static GitHub Pages snapshot. It d
 
 The Studio implementation must:
 
-1. Preserve every existing ID exactly, including legacy path-shaped IDs.
+1. Preserve every deployed public UUID exactly and assign UUIDs to drafts before publication; retain any legacy path-shaped IDs only as private migration lookup provenance.
 2. Index KDrive path separately as mutable location metadata.
 3. Preserve `publicPath` and the explicit slug instead of recreating either from the title.
 4. Append the previous published `.html` URL to `aliases` before a slug change.

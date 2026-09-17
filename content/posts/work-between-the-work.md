@@ -1,6 +1,8 @@
 ---
 title: "Work between the work"
+id: e43e4733-1e15-42af-8550-5fc4eade6fb7
 slug: work-between-the-work
+aliases: the-work-between-the-work
 date: 2026-07-20
 status: published
 publishedAt: 2026-08-05T14:00:00.000Z

@@ -1,5 +1,6 @@
 ---
 title: "Corrigible"
+id: 1f3e467b-ac40-4b7f-b9df-10575122ce24
 slug: corrigible
 date: 2026-08-10
 status: draft

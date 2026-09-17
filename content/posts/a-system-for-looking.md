@@ -1,5 +1,6 @@
 ---
 title: "A system for looking"
+id: dc2939e1-4a4e-4f55-a806-18a0b246253c
 slug: a-system-for-looking
 date: 2026-08-05
 status: published

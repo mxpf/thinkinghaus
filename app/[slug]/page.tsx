@@ -58,7 +58,7 @@ export default async function PostPage({ params }: PageProps) {
       {post ? <ScrollProgress /> : null}
       <div className="article-frame">
         <SiteBrand />
-        <article className="article-column" data-content-slug={slug} data-content-title={content.title}>
+        <article className="article-column" data-content-id={content.id} data-content-slug={slug} data-content-title={content.title}>
           <header className="article-header">
             <h1>{content.title}</h1>
             {post ? <p>{post.date}</p> : null}

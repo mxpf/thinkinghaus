@@ -3,8 +3,10 @@ import { generatedNowEntries } from "./generated-now";
 import { generatedPosts } from "./generated-posts";
 
 export type Post = {
+  id: string;
   title: string;
   slug: string;
+  aliases: readonly string[];
   date: string;
   updatedAt?: string;
   readingTime: string;
@@ -15,6 +17,7 @@ export type Post = {
 export const posts: readonly Post[] = generatedPosts;
 
 type NowEntry = {
+  id: string;
   title: "Now";
   slug: string;
   date: string;
@@ -25,8 +28,10 @@ const nowEntries: readonly NowEntry[] = generatedNowEntries;
 export const currentNow = nowEntries[0];
 
 export type StandalonePage = {
+  id: string;
   title: string;
   slug: string;
+  aliases: readonly string[];
   paragraphs: readonly string[];
 };
 

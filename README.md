@@ -12,6 +12,8 @@ The site grew out of using AI as a writing collaborator: not simply to generate 
 
 Published writing lives as Markdown in [`content/`](content/). Drafts stay in the private Studio and arrive here only when they are published. A push to [`main`](https://github.com/mxpf/thinkinghaus/tree/main) rebuilds the static site and updates [GitHub Pages](https://pages.github.com/).
 
+Every document carries an immutable UUID and an explicit public slug. Its KDrive folder or repository path can change without changing its public identity. Former published slugs remain as aliases, and links between Thinkinghaus documents can target their IDs instead of mutable URLs. The full shared Studio/public contract is documented in [`docs/content-contract.md`](docs/content-contract.md).
+
 ```text
 content/posts/   essays and fragments
 content/pages/   About, AI, and Links
@@ -34,6 +36,8 @@ Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block qu
 Article images live in [`public/images/`](public/images/) and appear as standalone Markdown blocks: `![A useful description](/images/example.webp)`. On desktop they extend slightly beyond the text measure, with 2.5 lines of vertical breathing room; on mobile they return to the article width. Images keep their natural proportions and use the portfolio's 4px corner radius. Add a flush-right caption with the optional title: `![A useful description](/images/example.webp "A little more context")`. Full-resolution originals stay in [`assets/source-images/`](assets/source-images/); WebP derivatives keep the public pages light.
 
 An already-published post can carry an `updatedAt` frontmatter field, either as an ISO timestamp or `YYYY-MM-DD`. That date produces a quiet “Last edited” note at the end of the piece. New and untouched posts leave it out.
+
+Internal links should use the target document’s persistent ID: `[related note](doc:uuid)`. The build resolves the current public URL and fails rather than publishing an unresolved relationship. If a published slug changes, add its previous value to the comma-separated `aliases` field before publishing.
 
 ## Local checks
 

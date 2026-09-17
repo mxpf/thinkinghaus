@@ -15,8 +15,10 @@ export async function generatePostsModule() {
   const includeDrafts = process.env.INCLUDE_DRAFTS === "1";
   const sourcePosts = await readPosts({ includeDrafts });
   const posts = sourcePosts.map((post) => ({
+    id: post.id,
     title: post.title,
     slug: post.slug,
+    aliases: post.aliases,
     date: displayDate(post.date),
     ...(post.updatedAt ? { updatedAt: displayDate(post.updatedAt.slice(0, 10)) } : {}),
     readingTime: post.readingTime,
@@ -28,6 +30,7 @@ export async function generatePostsModule() {
 
   const sourceNowEntries = await readNowEntries({ includeDrafts });
   const nowEntries = sourceNowEntries.map((entry) => ({
+    id: entry.id,
     title: "Now",
     slug: entry.slug,
     date: displayDate(entry.date),
@@ -36,8 +39,10 @@ export async function generatePostsModule() {
   await writeGeneratedModule("generated-now.ts", "now", "generatedNowEntries", nowEntries);
 
   const pages = (await readPages()).map((page) => ({
+    id: page.id,
     title: page.title,
     slug: page.slug,
+    aliases: page.aliases,
     paragraphs: page.paragraphs,
   }));
   await writeGeneratedModule("generated-pages.ts", "pages", "generatedPages", pages);

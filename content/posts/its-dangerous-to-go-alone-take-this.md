@@ -1,5 +1,6 @@
 ---
 title: "It’s dangerous to go alone! Take this."
+id: 46940085-c1e7-4be0-bd56-5e2d4ccfa60e
 slug: its-dangerous-to-go-alone-take-this
 date: 2026-09-11
 status: published
@@ -11,9 +12,9 @@ Leave home with [basic supplies](https://i.kym-cdn.com/entries/icons/original/00
 
 ![A line drawing of a traveler receiving a sword from an old man between two fires in a cave](/images/zelda-cave-line-drawing.webp)
 
-It sounds trivial written out, but there is a real [change in attention](/look-at-this) hidden inside it. Instead of treating the landscape as empty space separating me from destinations, I start treating it as a *field of possible interactions*.
+It sounds trivial written out, but there is a real [change in attention](doc:44180f64-b72b-4bfe-b721-e47acf9d7328) hidden inside it. Instead of treating the landscape as empty space separating me from destinations, I start treating it as a *field of possible interactions*.
 
-The [adventure-game metaphor](https://www.rockpapershotgun.com/best-adventure-games) helps because it changes what counts as significant. A strange staircase becomes a path. A shop becomes an [encounter](https://en.wikipedia.org/wiki/Random_encounter). A distant structure becomes something worth moving toward, at least until something else catches my attention. A dead end isn’t wasted time; it is *explored territory*. The whole thing gives me [permission to be inefficient](/what-happens-next).
+The [adventure-game metaphor](https://www.rockpapershotgun.com/best-adventure-games) helps because it changes what counts as significant. A strange staircase becomes a path. A shop becomes an [encounter](https://en.wikipedia.org/wiki/Random_encounter). A distant structure becomes something worth moving toward, at least until something else catches my attention. A dead end isn’t wasted time; it is *explored territory*. The whole thing gives me [permission to be inefficient](doc:9d4bb605-9cbd-4c62-a9bd-36b3452f8210).
 
 The basic rule is simple: treat everything as *potentially interesting*, and treat *public access* as a constraint of the game.
 

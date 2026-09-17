@@ -1,5 +1,6 @@
 ---
 title: "What happens next?"
+id: 9d4bb605-9cbd-4c62-a9bd-36b3452f8210
 slug: what-happens-next
 date: 2026-08-13
 status: published

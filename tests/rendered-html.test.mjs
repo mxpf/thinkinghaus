@@ -4,7 +4,8 @@ import test from "node:test";
 import vm from "node:vm";
 import { parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { guardTypographyString } from "../lib/typography.mjs";
-import { calculateReadingTime, comparePostsByDate, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
+import { calculateReadingTime, comparePostsByDate, parsePost, readNowEntries, readPages, readPosts, resolveDocumentLinks, serializePost, validateContentGraph } from "../scripts/content.mjs";
+import { redirectDocument } from "../scripts/generate-redirects.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
 async function render(pathname = "/") {
@@ -106,6 +107,20 @@ test("static homepage links point directly to exported article files", async () 
     assert.match(index, new RegExp(`href="/${post.slug}\\.html"`));
     assert.match(index, new RegExp(`href="/${post.slug}\\.html">[^<]+</a><time class="post-date">${displayDate}</time>`));
   }
+});
+
+test("publishes immutable document identities and compatibility redirects", async () => {
+  const documents = [...await readPosts({ includeDrafts: true }), ...await readPages(), ...await readNowEntries({ includeDrafts: true })];
+  assert.ok(documents.every((document) => /^[0-9a-f-]{36}$/.test(document.id)));
+
+  const article = await readFile(new URL("../dist/client/its-dangerous-to-go-alone-take-this.html", import.meta.url), "utf8");
+  assert.match(article, /href="\/look-at-this\.html"/);
+  assert.match(article, /href="\/what-happens-next\.html"/);
+  assert.match(article, /data-content-id="46940085-c1e7-4be0-bd56-5e2d4ccfa60e"/);
+
+  const redirect = await readFile(new URL("../dist/client/the-work-between-the-work.html", import.meta.url), "utf8");
+  assert.match(redirect, /rel="canonical" href="\/work-between-the-work\.html"/);
+  assert.match(redirect, /location\.replace\("\/work-between-the-work\.html" \+ location\.search \+ location\.hash\)/);
 });
 
 test("keeps edit controls private until author mode is activated", async () => {
@@ -554,6 +569,35 @@ test("sorts the homepage by authored date without moving revised posts", () => {
     { slug: "newer-post", date: "2026-08-11", publishedAt: "2026-08-11T12:00:00.000Z", updatedAt: "" },
   ].sort(comparePostsByDate);
   assert.deepEqual(ordered.map((post) => post.slug), ["newer-post", "revised-older-post"]);
+});
+
+test("rejects broken document identity and URL graphs", () => {
+  const first = {
+    type: "post",
+    id: "11111111-1111-4111-8111-111111111111",
+    slug: "first",
+    aliases: ["former-first"],
+    body: "A [second piece](doc:22222222-2222-4222-8222-222222222222).",
+  };
+  const second = {
+    type: "page",
+    id: "22222222-2222-4222-8222-222222222222",
+    slug: "second",
+    aliases: [],
+    body: "Back to [first](/first).",
+  };
+  assert.doesNotThrow(() => validateContentGraph([first, second]));
+  assert.equal(resolveDocumentLinks(first.body, [first, second]), "A [second piece](/second).");
+  assert.throws(() => validateContentGraph([first, { ...second, id: first.id }]), /Duplicate document id/);
+  assert.throws(() => validateContentGraph([first, { ...second, slug: first.slug }]), /Duplicate public slug/);
+  assert.throws(() => validateContentGraph([first, { ...second, aliases: ["former-first"] }]), /claimed by more than one/);
+  assert.throws(() => validateContentGraph([first, { ...second, slug: "former-first" }]), /collides with the public slug/);
+  assert.throws(
+    () => validateContentGraph([{ ...first, body: "[Missing](doc:33333333-3333-4333-8333-333333333333)" }, second]),
+    /unknown document id/,
+  );
+  assert.throws(() => validateContentGraph([{ ...first, body: "[Missing](/not-here)" }, second]), /unknown internal URL/);
+  assert.match(redirectDocument("second"), /location\.replace\("\/second\.html" \+ location\.search \+ location\.hash\)/);
 });
 
 test("parses consecutive numbered Markdown items as distinct blocks", () => {

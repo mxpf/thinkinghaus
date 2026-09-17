@@ -7,40 +7,45 @@ slug: over-the-loop
 date: 2026-09-12
 status: published
 publishedAt: 2026-09-12T04:44:56Z
-updatedAt: 2026-09-17T17:01:49.048Z
+updatedAt: 2026-09-17T17:25:55.706Z
 sourceLabel: "Read “The Workflow Is an Alibi”"
 sourceHref: "https://firstchurchofthesingularity.com/sermons/2026-09-11"
 ---
 
-The First Church of the Singularity is an art project that publishes AI-generated “sermons” about technology and the world around it. I want to start with one sentence from their [“The Workflow Is an Alibi”](https://firstchurchofthesingularity.com/sermons/2026-09-11):
+The First Church of the Singularity is an art project that publishes AI-generated “sermons” about technology and the world around it. I want to start with one sentence from their “The Workflow Is an Alibi”:
 
-> *Responsibility survives at every step in quantities too small for anyone to possess it.*
+Responsibility survives at every step in quantities too small for anyone to possess it.
 
-This particular sermon is about automation, but not really the familiar problem of a machine being allowed to make an important decision by itself. Its more unsettling case is a system in which plenty of humans remain very much involved. The machine recommends. A person reviews. Another approves. Another implements. There are policies, thresholds, audit logs. And yet something can happen that none of them quite decided.
+This particular sermon is about automation, but not really the familiar problem of a machine being allowed to make an important decision by itself. Its more unsettling case is a system in which plenty of humans remain very much involved. The machine recommends. A person reviews. Another approves. Another implements. There are policies, thresholds, audit logs…and yet things can happen that none of them quite decided.
 
-There is a comforting phrase for systems designed to prevent this: human in the loop. Whatever the software is doing, a person remains somewhere in the process, able to exercise judgment before the decision becomes a real thing.
+There is a comforting phrase for the systems designed to prevent this: human in the loop. Whatever the software is doing, a person remains somewhere in the process, able to exercise judgment before the decision becomes a real thing.
 
-About ten years ago, the State of Michigan’s [MiDAS unemployment system](https://www.michigan.gov/leo/news/2017/08/11/michigans-unemployment-agency-completes-review-of-fraud-determination-cases-comprehensive-changes-u) automatically identified people it believed had committed unemployment fraud and, for a period, could resolve those cases without human intervention. The state eventually went back through tens of thousands of cases. Out of more than 40,000 fraud findings originally resolved by computer, 85% were reversed.
+About ten years ago, the State of Michigan’s MiDAS unemployment system automatically identified people it believed had committed unemployment fraud and, for a period, could resolve those cases without human intervention. The state eventually went back through tens of thousands of cases. Out of more than 40,000 fraud findings originally resolved by computer, 85% were reversed.
 
 Well, this is why a human belongs in the loop, right?
 
-Well... Michigan also reviewed another 22,000 cases that had been initiated by the computer and then referred to an investigator. 44% of those fraud findings were reversed too.
+Well... Michigan also reviewed another 22K cases that had been initiated by the computer and then referred to an investigator. 44% of those fraud findings were reversed too.
 
-Better? But not great.
+Better, but not great.
 
-By the time a person sits down in front of the big green APPROVE button, a lot has already happened. A system has decided which information is relevant. A model has assigned a score. Somebody has determined the threshold at which that score becomes suspicious. A queue has placed this case ahead of that one. The UI has chosen what to prioritize and what to bury. A policy has established which actions are considered “normal.” Then we point to the domino at the end of the chain and say: human in the loop.
+By the time a person sits down in front of their big green APPROVE button, a lot has already happened. A system decided which information is relevant. A model has assigned a score. Somebody determined the threshold at which that score becomes suspicious. A queue placed this case ahead of that one. The UI chose what to prioritize and what to bury. A policy has established which actions are considered “normal.” Then we point to the domino at the end of the chain and say: all good, there’s a human in the loop.
 
 Can this person understand where the recommendation came from? Do they have enough time to disagree? Is disagreement operationally realistic? It might technically be possible to reject something, but if I’m working inside a process that makes rejection unusual, expensive, slow, or professionally risky, it gets tricky.
 
-Decisions are distributed on purpose all the time. A surgeon does not manufacture the drug, maintain the imaging machine, establish hospital safety policy, interpret every laboratory result, and personally verify every instrument before an operation. Aviation is full of overlapping procedures, independent checks, specialized roles, automated systems, and people responsible for different pieces of the same flight.
+Obviously, decisions are distributed on purpose all the time. Surgeons don’t manufacture drugs, maintain imaging machines, establish hospital safety policies, or personally verify every instrument before operations. Aviation is full of overlapping procedures, automated systems, and people responsible for different pieces of the same flight.
 
-So the problem cannot simply be that nobody possesses the entire decision. The question is whether somebody is responsible for how the pieces behave together.
+So the problem isn’t that nobody possesses the entire decision. The issue is whether somebody is responsible for how the pieces behave together.
 
 If hundreds of employees repeatedly approve recommendations from a system, somebody needs to notice what the pattern of approvals, overrides, appeals, and reversals says about the machinery producing them. The exception cannot always be treated as an isolated failure by the person who happened to touch the case last.
 
-A [UK government review of algorithmic decision-making](https://www.gov.uk/government/publications/cdei-publishes-review-into-bias-in-algorithmic-decision-making/main-report-cdei-review-into-bias-in-algorithmic-decision-making) drew a distinction between a human in the loop and humans over the loop: people who understand the system well enough to monitor the fairness and effectiveness of the whole decision process and who carry responsibility for it.
+A 2020 UK government review of algorithmic decision-making makes a distinction between humans in the loop and humans over the loop: people who understand the system well enough to monitor the fairness and effectiveness of the whole decision process and who carry responsibility for it.
 
-A person over the loop is able to reconstruct how a choice became possible. Who chose these inputs? Who set this threshold? Who decided what our reviewers would see?
+A person over the loop is able to reconstruct how choices become possible. Who chose these inputs? Who set this threshold? Who decided what our reviewers would see?
 
-The person in the loop encounters a case.
-The person over the loop has to *encounter the system,* to see what the chain of dominos is doing.
+The person in the loop encounters a case. The person over the loop needs to encounter the system, to see what the chain of dominos is doing.
+
+To bring it over to design for a minute, the idea of designing systems rather than iterating on artifacts is not new. Grid systems, style sheets, brand guidelines: we’re used to thinking about how individual choices add up to something larger.
+
+If approving a recommendation takes one click, but questioning it means digging through supporting information and writing a justification, we’ve built a DarkUI Pattern, making arriving at one outcome easier than the other. These are crucial design decisions about how judgment gets exercised, and we’ve made them before a reviewer ever sees a case.
+
+Which means our responsibility has to extend beyond the click. We need to sit shotgun while people use the thing. See whether they can or will challenge it. And see whether those challenges can reach anyone with the authority to do something about it.

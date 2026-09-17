@@ -7,7 +7,7 @@ slug: over-the-loop
 date: 2026-09-12
 status: published
 publishedAt: 2026-09-12T04:44:56Z
-updatedAt: 2026-09-17T18:10:11.066Z
+updatedAt: 2026-09-17T18:19:06.584Z
 sourceLabel: "Read “The Workflow Is an Alibi”"
 sourceHref: "https://firstchurchofthesingularity.com/sermons/2026-09-11"
 ---
@@ -29,6 +29,8 @@ Well... Michigan also reviewed another 22K cases that had been initiated by the 
 These were different sets of cases, so we can’t say how much the investigators helped. But their involvement didn’t prevent thousands of fraud findings that the state later reversed.
 
 By the time a person sits down in front of their APPROVE button (or their Exec-u-Calm™ Decision Make[r](https://mitxela.com/projects/execucalm)) , a lot has already happened. A system decided which information is relevant. A model has assigned a score. Somebody determined the threshold at which that score becomes suspicious. A queue placed this case ahead of that one. The UI chose what to prioritize and what to bury. A policy has established which actions are considered “normal.” Then we point to the domino at the end of the chain and say: all good, there’s a human in the loop.
+
+![Sam Lowry leans over a desk, turning the crank of a small decision-making machine that drops a suspended weight toward “Yes” or “No.”](/images/over-the-loop-f882511f.jpg "Sam Lowry’s executive decision maker in *Brazil* (1985), directed by Terry Gilliam. Film still via [mitxela](https://mitxela.com/projects/execucalm). Copyright remains with the film’s respective rights holders.")
 
 Can this person understand where the recommendation came from? Do they have enough time to disagree? [Is disagreement operationally realistic?](https://www.gov.uk/government/publications/cdei-publishes-review-into-bias-in-algorithmic-decision-making/main-report-cdei-review-into-bias-in-algorithmic-decision-making) It might technically be possible to reject something, but if I’m working inside a process that makes rejection unusual, expensive, slow, or professionally risky, it gets tricky.
 

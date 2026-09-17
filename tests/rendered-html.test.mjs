@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
-import { parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
+import { parseCaptionMarkdown, parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { guardTypographyString } from "../lib/typography.mjs";
 import { calculateReadingTime, comparePostsByDate, parsePost, readIdentityManifest, readNowEntries, readPages, readPosts, resolveDocumentLinks, serializePost, validateContentGraph } from "../scripts/content.mjs";
 import { redirectDocument } from "../scripts/generate-redirects.mjs";
@@ -248,7 +248,7 @@ test("renders standalone About, AI, and Links pages", async () => {
   assert.match(aboutHtml, /<title>thinking\.haus - About<\/title>/);
   assert.match(aboutHtml, /<link rel="canonical" href="https:\/\/thinking\.haus\/about"/);
   assert.ok(aboutHtml.includes(pages.find((page) => page.slug === "about").paragraphs[0]));
-  assert.match(aboutHtml, /href="\/ai"/);
+  assert.match(aboutHtml, /href="\/ai\.html"/);
   assert.match(aboutHtml, /href="https:\/\/maxpfennig\.haus\/"[^>]*>My professional work lives at maxpfennig\.haus\.<\/a>/);
   assert.doesNotMatch(aboutHtml, /class="scroll-progress"/);
 
@@ -387,7 +387,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(scrollFadeImage, /entry\.intersectionRatio \/ fullyVisibleRatio/);
   assert.match(scrollFadeImage, /0\.6 \+ \(0\.4 \* progress\)/);
   assert.match(scrollFadeImage, /loading="lazy" decoding="async"/);
-  assert.match(scrollFadeImage, /<figcaption>\{title\}<\/figcaption>/);
+  assert.match(scrollFadeImage, /<figcaption><CaptionText text=\{title\} \/><\/figcaption>/);
   assert.match(articleBody, /optical-margin-fallback/);
   assert.match(articlePage, /post\?\.updatedAt/);
   assert.match(articlePage, /Last edited \{post\.updatedAt\}/);
@@ -447,6 +447,8 @@ test("guards article typography before the first paint", () => {
 test("renders safe article images at the shared block layer", () => {
   const localImage = "![A foggy hillside](/images/hillside.jpg)";
   const remoteImage = "![A distant light](https://images.example.com/light.jpg \"At dusk\")";
+  const formattedImage = "![A map](/images/map.jpg \"A trip to *Brazil* by [mitxela](https://mitxela.com/projects/execucalm)\")";
+  const escapedTitleImage = '![A note](/images/note.jpg "He said \\"look\\" at \\\\*Brazil\\\\*")';
 
   assert.deepEqual(parseImageMarkdown(localImage), {
     alt: "A foggy hillside",
@@ -472,15 +474,53 @@ test("renders safe article images at the shared block layer", () => {
   assert.equal(stripInlineMarkdown(localImage), "A foggy hillside");
   assert.equal(parseImageMarkdown("![No](javascript:alert(1))"), null);
   assert.equal(parseImageMarkdown("![No](//example.com/image.jpg)"), null);
+  assert.equal(parseImageMarkdown(formattedImage)?.title, "A trip to *Brazil* by [mitxela](https://mitxela.com/projects/execucalm)");
+  assert.equal(parseImageMarkdown(escapedTitleImage)?.title, 'He said "look" at \\*Brazil\\*');
+  assert.deepEqual(parseCaptionMarkdown("A trip to *Brazil* by [mitxela](https://mitxela.com/projects/execucalm)"), [
+    { text: "A trip to " },
+    { text: "Brazil", italic: true },
+    { text: " by " },
+    { text: "mitxela", href: "https://mitxela.com/projects/execucalm" },
+  ]);
+  assert.deepEqual(parseCaptionMarkdown("[*Nested [label]*](https://example.com/a\\(b\\)) and snake_case"), [
+    { text: "Nested [label]", italic: true, href: "https://example.com/a(b)" },
+    { text: " and snake_case" },
+  ]);
+  assert.deepEqual(parseCaptionMarkdown("[unsafe](javascript:alert(1))"), [
+    { text: "[unsafe](javascript:alert(1))" },
+  ]);
+  assert.deepEqual(parseCaptionMarkdown("[unsafe]( https://example.com)"), [
+    { text: "[unsafe]( https://example.com)" },
+  ]);
+  assert.deepEqual(parseCaptionMarkdown("\\*Brazil\\* and \\[mitxela\\]\\(home\\)"), [
+    { text: "*Brazil* and [mitxela](home)" },
+  ]);
+  for (const unsafe of [
+    "[No](//example.com)",
+    "[No](data:text/html,hi)",
+    "[No](vbscript:msgbox(1))",
+    "[No](https://example.com/a b)",
+    "[No](https:\\example.com)",
+  ]) {
+    assert.deepEqual(parseCaptionMarkdown(unsafe), [{ text: unsafe }]);
+  }
+  assert.equal(parseCaptionMarkdown("[Section](#details)")[0].href, "#details");
+  assert.equal(parseCaptionMarkdown("[Local](/about.html)")[0].href, "/about.html");
+  assert.equal(parseCaptionMarkdown("[Mail](mailto:hello@example.com)")[0].href, "mailto:hello@example.com");
 
   const feed = generateRssFeed([{
     title: "With an image",
     slug: "with-an-image",
     date: "2026-09-02",
-    paragraphs: ["A short note.", localImage, remoteImage],
+    paragraphs: ["A short note.", localImage, remoteImage, formattedImage, "![No](/images/no.jpg \"[unsafe](javascript:alert(1))\")", "![Literal](/images/literal.jpg \"<script>alert(1)</script>\")"],
   }]);
   assert.match(feed, /<figure><img src="https:\/\/thinking\.haus\/images\/hillside\.jpg" alt="A foggy hillside" loading="lazy" \/><\/figure>/);
   assert.match(feed, /<figure><img src="https:\/\/images\.example\.com\/light\.jpg" alt="A distant light" loading="lazy" \/><figcaption>At dusk<\/figcaption><\/figure>/);
+  assert.match(feed, /<figcaption>A trip to <em>Brazil<\/em> by <a href="https:\/\/mitxela\.com\/projects\/execucalm" rel="noopener noreferrer">mitxela<\/a><\/figcaption>/);
+  assert.doesNotMatch(feed, /href="javascript:/);
+  assert.match(feed, /<figcaption>\[unsafe\]\(javascript:alert\(1\)\)<\/figcaption>/);
+  assert.doesNotMatch(feed, /<figcaption><script>/);
+  assert.match(feed, /<figcaption>&lt;script&gt;alert\(1\)&lt;\/script&gt;<\/figcaption>/);
 });
 
 test("keeps published article image payloads modest", async () => {

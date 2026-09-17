@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { CaptionText } from "./CaptionText";
 
 const fullyVisibleRatio = 2 / 3;
 const thresholds = Array.from({ length: 101 }, (_, index) => index / 100);
@@ -30,7 +31,7 @@ export function ScrollFadeImage({ alt, src, title }: {
       {/* Article images are authored dynamically in Markdown, so their dimensions are not known at build time. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={alt} loading="lazy" decoding="async" />
-      {title ? <figcaption>{title}</figcaption> : null}
+      {title ? <figcaption><CaptionText text={title} /></figcaption> : null}
     </figure>
   );
 }

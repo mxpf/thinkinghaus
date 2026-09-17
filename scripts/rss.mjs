@@ -1,6 +1,6 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
-import { parseContentBlocks, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
+import { parseCaptionMarkdown, parseContentBlocks, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { RSS_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../site-config.mjs";
 import { displayDate, projectRoot } from "./content.mjs";
 
@@ -23,6 +23,23 @@ function renderInlineHtml(value) {
     if (token.type === "italic") return `<em>${renderInlineHtml(token.value)}</em>`;
     return escapeXml(token.value);
   }).join("");
+}
+
+function renderCaptionHtml(value) {
+  const runs = parseCaptionMarkdown(value);
+  let html = "";
+  for (let index = 0; index < runs.length;) {
+    const href = runs[index].href;
+    let label = "";
+    do {
+      const run = runs[index];
+      const text = escapeXml(run.text);
+      label += run.italic ? `<em>${text}</em>` : text;
+      index += 1;
+    } while (href && index < runs.length && runs[index].href === href);
+    html += href ? `<a href="${escapeXml(href)}" rel="noopener noreferrer">${label}</a>` : label;
+  }
+  return html;
 }
 
 function publicationDate(post) {
@@ -51,7 +68,7 @@ function renderPostHtml(post) {
     }
     if (block.type === "image") {
       const src = block.src.startsWith("/") ? `${SITE_URL}${block.src}` : block.src;
-      const caption = block.title ? `<figcaption>${escapeXml(block.title)}</figcaption>` : "";
+      const caption = block.title ? `<figcaption>${renderCaptionHtml(block.title)}</figcaption>` : "";
       return `<figure><img src="${escapeXml(src)}" alt="${escapeXml(block.alt)}" loading="lazy" />${caption}</figure>`;
     }
     return `<p>${renderInlineHtml(block.text)}</p>`;

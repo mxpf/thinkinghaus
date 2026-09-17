@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { guardTypographyString } from "../lib/typography.mjs";
 
 const skippedTags = new Set([
   "BUTTON",
@@ -14,9 +15,6 @@ const skippedTags = new Set([
   "SVG",
   "TEXTAREA",
 ]);
-
-const hyphenBetweenWords = /(?<=[\p{L}\p{N}])-(?=[\p{L}\p{N}])/gu;
-const unguardedEnDash = /(?<!\u2060)–(?!\u2060)/gu;
 
 function shouldSkipTextNode(node: Text) {
   for (let element = node.parentElement; element; element = element.parentElement) {
@@ -38,9 +36,7 @@ export function guardTypography(node: Text) {
   const value = node.nodeValue;
   if (!value) return;
 
-  const guarded = value
-    .replace(hyphenBetweenWords, "‑")
-    .replace(unguardedEnDash, "\u2060–\u2060");
+  const guarded = guardTypographyString(value);
 
   if (guarded !== value) node.nodeValue = guarded;
 }

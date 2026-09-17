@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { parseInlineMarkdown } from "../lib/markdown.mjs";
+import { guardTypographyString } from "../lib/typography.mjs";
 
 const staticExport = process.env.STATIC_EXPORT === "1";
 
@@ -29,6 +30,6 @@ export function InlineText({ text }: { text: string }) {
         </a>
       );
     }
-    return token.value;
+    return guardTypographyString(token.value);
   });
 }

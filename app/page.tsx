@@ -24,6 +24,7 @@ export default function Home() {
             {posts.map((post) => (
               <li key={post.slug}>
                 <a href={`/${post.slug}${staticExport ? ".html" : ""}`}>{post.title}</a>
+                <time className="post-date">{post.date}</time>
               </li>
             ))}
           </ol>

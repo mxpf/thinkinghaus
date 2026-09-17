@@ -58,12 +58,12 @@ body {
 
 .site a {
   text-decoration: none;
-  transition: opacity 160ms ease;
+  transition: color 160ms ease;
 }
 
 .site a:hover,
 .site a:focus-visible {
-  opacity: 0.48;
+  color: var(--blog-muted);
 }
 
 .site a:focus-visible {
@@ -127,6 +127,11 @@ html::-webkit-scrollbar {
   white-space: nowrap;
 }
 
+.article-frame .desktop-brand {
+  position: sticky;
+  top: 24px;
+}
+
 @keyframes letter-cascade-in {
   to {
     opacity: 1;
@@ -185,8 +190,28 @@ html::-webkit-scrollbar {
 }
 
 .post-list li {
+  position: relative;
   min-height: 48px;
   margin: 0;
+}
+
+.post-date {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: calc(100% + 24px);
+  color: var(--blog-muted);
+  opacity: 0;
+  pointer-events: none;
+  text-align: end;
+  white-space: nowrap;
+  transition: opacity 420ms ease-out;
+}
+
+.post-list a:hover + .post-date,
+.post-list a:focus-visible + .post-date {
+  opacity: 1;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
 }
 
 .site .post-list a {
@@ -326,8 +351,12 @@ html::-webkit-scrollbar {
 }
 
 .article-body .article-image {
+  --article-image-opacity: 0.6;
   width: 112.5%;
   margin: 60px -6.25%;
+  opacity: var(--article-image-opacity);
+  transition: opacity 80ms linear;
+  will-change: opacity;
 }
 
 .article-body .article-image img {
@@ -415,6 +444,7 @@ html::-webkit-scrollbar {
 }
 
 .article-column > .footer {
+  width: calc(100% / 0.62);
   margin-top: auto;
   padding-top: 108px;
 }
@@ -458,6 +488,10 @@ html::-webkit-scrollbar {
     min-height: 56px;
   }
 
+  .post-date {
+    display: none;
+  }
+
   .article-header h1,
   .article-header p,
   .article-body p {
@@ -496,6 +530,7 @@ html::-webkit-scrollbar {
   }
 
   .article-column > .footer {
+    width: 100%;
     padding-top: 112px;
   }
 
@@ -506,6 +541,15 @@ html::-webkit-scrollbar {
 
 @media (prefers-reduced-motion: reduce) {
   .site a {
+    transition: none;
+  }
+
+  .post-date {
+    transition: none;
+  }
+
+  .article-body .article-image {
+    opacity: 1;
     transition: none;
   }
 }

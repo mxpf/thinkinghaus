@@ -3,6 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
 import { parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
+import { guardTypographyString } from "../lib/typography.mjs";
 import { calculateReadingTime, comparePostsByDate, parsePost, readNowEntries, readPages, readPosts, serializePost } from "../scripts/content.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
@@ -96,7 +97,14 @@ test("static homepage links point directly to exported article files", async () 
   const posts = await readPosts();
 
   for (const post of posts) {
+    const displayDate = new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(`${post.date}T00:00:00Z`));
     assert.match(index, new RegExp(`href="/${post.slug}\\.html"`));
+    assert.match(index, new RegExp(`href="/${post.slug}\\.html">[^<]+</a><time class="post-date">${displayDate}</time>`));
   }
 });
 
@@ -275,15 +283,19 @@ test("keeps published writing readable and the visual system intentional", async
   assert.ok(posts.every((post) => post.body.length > 0));
   assert.ok(posts.every((post) => /^[a-z0-9-]+$/.test(post.slug)));
 
-  const [siteStyles, articleBody, articlePage, authorEditAction, authorMode, scrollProgress] = await Promise.all([
+  const [siteStyles, articleBody, articlePage, authorEditAction, authorMode, scrollProgress, scrollFadeImage] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/ArticleBody.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/AuthorEditAction.tsx", import.meta.url), "utf8"),
     readFile(new URL("../public/author-mode.js", import.meta.url), "utf8"),
     readFile(new URL("../app/ScrollProgress.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/ScrollFadeImage.tsx", import.meta.url), "utf8"),
   ]);
-  const typographyGuards = await readFile(new URL("../app/TypographyGuards.tsx", import.meta.url), "utf8");
+  const [typographyGuards, typography] = await Promise.all([
+    readFile(new URL("../app/TypographyGuards.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../lib/typography.mjs", import.meta.url), "utf8"),
+  ]);
   assert.doesNotMatch(siteStyles, /--step-article-title/);
   assert.doesNotMatch(siteStyles, /--reading-measure/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
@@ -296,14 +308,20 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px[^}]*font-weight: 400[^}]*line-height: 24px/s);
   assert.match(siteStyles, /\.article-body em\s*\{[^}]*font-style: italic[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.desktop-brand\s*\{[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.article-frame \.desktop-brand\s*\{[^}]*position: sticky[^}]*top: 24px/s);
   assert.match(siteStyles, /\.scroll-progress\s*\{[^}]*position: fixed[^}]*inset: 0 0 auto[^}]*height: 2px[^}]*background: var\(--blog-body\)[^}]*transform: scaleX\(var\(--scroll-progress\)\)[^}]*transform-origin: left/s);
   assert.match(siteStyles, /html\s*\{[^}]*scrollbar-width: none/s);
   assert.match(siteStyles, /html::-webkit-scrollbar\s*\{[^}]*display: none/s);
   assert.match(siteStyles, /\.index-frame,\s*\.article-frame\s*\{[^}]*grid-template-columns: minmax\(0, 38fr\) minmax\(0, 62fr\)/s);
   assert.match(siteStyles, /\.article-column\s*\{[^}]*width: 62%;[^}]*min-height: calc\(100svh - 48px\)/s);
+  assert.match(siteStyles, /\.article-column > \.footer\s*\{[^}]*width: calc\(100% \/ 0\.62\)[^}]*margin-top: auto/s);
   assert.match(siteStyles, /\.index-frame\s*\{[^}]*font-weight: 400/s);
   assert.doesNotMatch(siteStyles, /font-size:\s*15px/);
   assert.match(siteStyles, /\.site \.post-list a\s*\{[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.site a\s*\{[^}]*transition: color 160ms ease/s);
+  assert.match(siteStyles, /\.site a:hover,\s*\.site a:focus-visible\s*\{[^}]*color: var\(--blog-muted\)/s);
+  assert.match(siteStyles, /\.post-date\s*\{[^}]*inset-inline-end: calc\(100% \+ 24px\)[^}]*color: var\(--blog-muted\)[^}]*opacity: 0[^}]*text-align: end[^}]*transition: opacity 420ms ease-out/s);
+  assert.match(siteStyles, /\.post-list a:hover \+ \.post-date,\s*\.post-list a:focus-visible \+ \.post-date\s*\{[^}]*opacity: 1[^}]*transition-duration: 180ms[^}]*transition-timing-function: ease/s);
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site \.footer-brand\s*\{[^}]*font-weight: 400/s);
   assert.doesNotMatch(siteStyles, /Untitled Sans Italic/);
@@ -313,7 +331,9 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.article-body\s*\{[^}]*color: var\(--blog-body\)[^}]*font-weight: 400/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.post-list li\s*\{[^}]*min-height: 56px/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.post-date\s*\{[^}]*display: none/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site \.article-header h1\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.article-column > \.footer\s*\{[^}]*width: 100%[^}]*padding-top: 112px/s);
   assert.match(siteStyles, /\.article-body a\s*\{[^}]*transition: color 160ms ease/s);
   assert.match(siteStyles, /\.article-body a:hover,\s*\.article-body a:focus-visible\s*\{[^}]*color: var\(--blog-foreground\)[^}]*opacity: 1/s);
   assert.match(siteStyles, /@view-transition\s*\{\s*navigation: auto;/s);
@@ -333,7 +353,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.article-body blockquote::before\s*\{[^}]*inset-block: 0[^}]*inset-inline-start: 0[^}]*width: 1px[^}]*background: var\(--blog-muted\)/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list\s*\{[^}]*padding-inline-start: 2em[^}]*list-style: decimal/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list li::marker\s*\{[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-variant-numeric: tabular-nums[^}]*font-weight: 400/s);
-  assert.match(siteStyles, /\.article-body \.article-image\s*\{[^}]*width: 112\.5%[^}]*margin: 60px -6\.25%/s);
+  assert.match(siteStyles, /\.article-body \.article-image\s*\{[^}]*--article-image-opacity: 0\.6[^}]*width: 112\.5%[^}]*margin: 60px -6\.25%[^}]*opacity: var\(--article-image-opacity\)[^}]*transition: opacity 80ms linear/s);
   assert.match(siteStyles, /\.article-body \.article-image img\s*\{[^}]*display: block[^}]*width: 100%[^}]*height: auto[^}]*border-radius: 4px/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)\s*\{[^}]*\.article-body \.article-image\s*\{[^}]*width: 100%[^}]*margin: 48px 0/s);
   assert.match(siteStyles, /\.article-body \.article-image figcaption\s*\{[^}]*margin-top: 8px[^}]*color: var\(--blog-muted\)[^}]*font-size: calc\(1em - 8px\)[^}]*text-align: right/s);
@@ -343,9 +363,12 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(articleBody, /<h2 key=/);
   assert.match(articleBody, /<blockquote key=/);
   assert.match(articleBody, /<ol className="article-list article-numbered-list"/);
-  assert.match(articleBody, /<figure className="article-image"/);
-  assert.match(articleBody, /loading="lazy" decoding="async"/);
-  assert.match(articleBody, /<figcaption>\{block\.title\}<\/figcaption>/);
+  assert.match(articleBody, /<ScrollFadeImage key=/);
+  assert.match(scrollFadeImage, /fullyVisibleRatio = 2 \/ 3/);
+  assert.match(scrollFadeImage, /entry\.intersectionRatio \/ fullyVisibleRatio/);
+  assert.match(scrollFadeImage, /0\.6 \+ \(0\.4 \* progress\)/);
+  assert.match(scrollFadeImage, /loading="lazy" decoding="async"/);
+  assert.match(scrollFadeImage, /<figcaption>\{title\}<\/figcaption>/);
   assert.match(articleBody, /optical-margin-fallback/);
   assert.match(articlePage, /post\?\.updatedAt/);
   assert.match(articlePage, /Last edited \{post\.updatedAt\}/);
@@ -357,8 +380,9 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(authorMode, /thinkinghaus-author-mode/);
   assert.match(authorMode, /location\.hash === "#edit"/);
   assert.match(authorMode, /location\.hash === "#edit-off"/);
-  assert.match(typographyGuards, /hyphenBetweenWords = \/\(\?<=\[\\p\{L\}\\p\{N\}\]\)-\(\?=\[\\p\{L\}\\p\{N\}\]\)\/gu/);
-  assert.match(typographyGuards, /unguardedEnDash = \/\(\?<!\\u2060\)–\(\?!\\u2060\)\/gu/);
+  assert.match(typography, /hyphenBetweenWords = \/\(\?<=\[\\p\{L\}\\p\{N\}\]\)-\(\?=\[\\p\{L\}\\p\{N\}\]\)\/gu/);
+  assert.match(typography, /unguardedEnDash = \/\(\?<!\\u2060\)–\(\?!\\u2060\)\/gu/);
+  assert.match(typographyGuards, /guardTypographyString\(value\)/);
   assert.match(typographyGuards, /data-preserve-typography/);
   assert.match(typographyGuards, /new MutationObserver/);
   assert.match(authorMode, /thinkinghaus-studio\.maxpfennighaus\.workers\.dev/);
@@ -388,6 +412,17 @@ test("supports safe inline italics and links", async () => {
     new URL("../public/fonts/UntitledSansWeb-Regular.woff2", import.meta.url),
   );
   assert.equal(regularFont.size, 34893);
+});
+
+test("guards article typography before the first paint", () => {
+  assert.equal(
+    guardTypographyString("Bec-de-Gaz, 2019–2022—unchanged"),
+    "Bec‑de‑Gaz, 2019⁠–⁠2022—unchanged",
+  );
+  assert.equal(
+    guardTypographyString("Bec‑de‑Gaz, 2019⁠–⁠2022"),
+    "Bec‑de‑Gaz, 2019⁠–⁠2022",
+  );
 });
 
 test("renders safe article images at the shared block layer", () => {

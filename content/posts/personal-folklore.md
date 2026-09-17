@@ -1,7 +1,8 @@
 ---
+id: "4b9dc1b6-d6c2-41b3-aa5e-583acdffc1bc"
+publicPath: "personal-folklore.md"
+aliases: []
 title: "Personal folklore"
-id: 4b9dc1b6-d6c2-41b3-aa5e-583acdffc1bc
-publicPath: personal-folklore.md
 slug: personal-folklore
 date: 2026-08-08
 status: published

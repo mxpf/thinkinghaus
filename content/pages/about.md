@@ -1,13 +1,14 @@
 ---
+id: "fefc379b-c787-4eaf-b01a-fc7ecc8facb4"
+publicPath: "about.md"
+aliases: []
 title: "About"
-id: fefc379b-c787-4eaf-b01a-fc7ecc8facb4
-publicPath: about.md
 slug: about
 ---
 
 thinking.haus is where I follow ideas about attention, creative work, tools, systems, and the occasional strange thing. I’m Max Pfennighaus, a creative and design leader based in New York. [My professional work lives at maxpfennig.haus.](https://maxpfennig.haus/)
 
-The site grew out of a habit I didn’t expect to become important. Through [collaborating with AI](doc:b5249606-953e-44d1-9d5c-368727cb5687), I found myself putting half-formed ideas into words, arguing with them, revising them, and gradually getting closer to what I actually meant. My writing stopped feeling like something that came after thinking. It became a way of articulating myself—and of noticing what had been rattling around in my head in the first place.
+The site grew out of a habit I didn’t expect to become important. Through [collaborating with AI](/ai.html), I found myself putting half-formed ideas into words, arguing with them, revising them, and gradually getting closer to what I actually meant. My writing stopped feeling like something that came after thinking. It became a way of articulating myself—and of noticing what had been rattling around in my head in the first place.
 
 The writing here tries to move in both directions. I like to experiment with tools, systems, methods, frames, and ways of seeing that help me make work that feels more genuinely mine. But I’m just as interested in people who’ve committed themselves to expressing something in their own particular way. I want to understand their processes, systems, approaches, and perspectives; to meet the work on its own terms; and to see what kind of connection becomes possible when somebody has put enough of themselves into a thing for another person to find them there.
 

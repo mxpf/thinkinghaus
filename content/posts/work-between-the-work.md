@@ -1,9 +1,9 @@
 ---
-title: "Work between the work"
-id: e43e4733-1e15-42af-8550-5fc4eade6fb7
-publicPath: work-between-the-work.md
-slug: work-between-the-work
+id: "e43e4733-1e15-42af-8550-5fc4eade6fb7"
+publicPath: "work-between-the-work.md"
 aliases: ["/the-work-between-the-work.html"]
+title: "Work between the work"
+slug: work-between-the-work
 date: 2026-07-20
 status: published
 publishedAt: 2026-08-05T14:00:00.000Z

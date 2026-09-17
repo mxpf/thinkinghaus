@@ -1,7 +1,8 @@
 ---
+id: "b5249606-953e-44d1-9d5c-368727cb5687"
+publicPath: "ai.md"
+aliases: []
 title: "AI"
-id: b5249606-953e-44d1-9d5c-368727cb5687
-publicPath: ai.md
 slug: ai
 ---
 

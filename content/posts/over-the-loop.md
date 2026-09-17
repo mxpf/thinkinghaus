@@ -1,7 +1,8 @@
 ---
+id: "74bf8489-c7fd-485a-9104-3e41c244a486"
+publicPath: "over-the-loop.md"
+aliases: []
 title: "Over the loop"
-id: 74bf8489-c7fd-485a-9104-3e41c244a486
-publicPath: over-the-loop.md
 slug: over-the-loop
 date: 2026-09-12
 status: published

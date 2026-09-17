@@ -7,13 +7,16 @@ The Markdown document is the portable publishing manifest shared by Studio, KDri
 Every post, page, and Now entry carries:
 
 ```yaml
-id: 46940085-c1e7-4be0-bd56-5e2d4ccfa60e
+id: opaque-identity-retained-from-studio
+publicPath: its-dangerous-to-go-alone-take-this.md
 slug: its-dangerous-to-go-alone-take-this
+aliases: ["/former-address.html"]
 ```
 
-- `id` is an immutable UUID created once. Studio must preserve it through edits, renames, folder moves, status changes, imports, and republishes.
+- `id` is an immutable opaque value created once. Existing path-shaped Studio IDs remain valid and must be preserved through edits, renames, folder moves, status changes, imports, and republishes.
+- `publicPath` is the stable Markdown filename within its snapshot collection.
 - `slug` is the explicit public address. Studio must not regenerate it from the title or derive it from a KDrive path after creation.
-- `aliases` is an optional comma-separated list of former slugs. Before changing a published slug, Studio must append the previous slug and retain all earlier aliases.
+- `aliases` is an optional JSON array of former root-relative `.html` URLs. Before changing a published slug, Studio must append the previous URL and retain all earlier aliases.
 
 Posts and Now entries additionally carry `date` and `status`. Published material may carry `publishedAt` and `updatedAt`. Pages do not need editorial dates.
 
@@ -22,25 +25,27 @@ Posts and Now entries additionally carry `date` and `status`. Published material
 Authored links between Thinkinghaus documents use the persistent ID:
 
 ```markdown
-[change in attention](doc:44180f64-b72b-4bfe-b721-e47acf9d7328)
+[change in attention](doc:path%2Fshaped%2For-opaque-id)
 ```
 
-The public build resolves that relationship to the target’s current slug. Ordinary external URLs and public asset paths remain ordinary Markdown links.
+The public build URI-decodes the ID and resolves that relationship to the target’s current `.html` URL. Ordinary external URLs and public asset paths remain ordinary Markdown links.
 
 ## Publishing boundary
 
-Studio should publish a flat snapshot into `content/posts`, `content/pages`, or `content/now`. The source KDrive location is deliberately absent from the public contract. Moving a document between KDrive editorial folders may change private state or presentation, but it must not change `id`, `slug`, or `aliases`.
+Studio publishes a flat snapshot into `content/posts`, `content/pages`, or `content/now`, plus `content/identity-manifest.json`. The manifest uses `{version: 1, documents: [{id, type, slug, path, url, aliases}], redirects: {oldUrl: currentUrl}}` and includes published documents only. The source KDrive location is deliberately absent from the public contract. Moving a document between KDrive editorial folders may change private state or presentation, but it must not change `id`, `publicPath`, `slug`, or `aliases`.
 
 The public build validates the complete snapshot before producing the site. It rejects:
 
-- missing, malformed, or duplicate IDs;
+- missing or duplicate IDs;
+- missing, invalid, or mismatched `publicPath` values;
 - invalid or duplicate public slugs;
 - aliases that are invalid, duplicated, or collide with a current slug;
 - redirect cycles (also structurally prevented by alias-to-canonical mapping);
 - unresolved `doc:` relationships; and
 - unresolved root-relative content links.
+- any disagreement between published Markdown and `identity-manifest.json`.
 
-Each alias produces a durable compatibility document that forwards the old `.html` address to the current one while preserving query strings and fragments. GitHub Pages cannot emit application-controlled HTTP 301 responses, so these are canonicalized HTML redirects rather than server-status redirects.
+The build emits routes from `slug` and redirects from the manifest. Each alias produces a durable compatibility document that forwards the old `.html` address to the current one while preserving query strings and fragments. GitHub Pages cannot emit application-controlled HTTP 301 responses, so these are canonicalized HTML redirects rather than server-status redirects.
 
 At reader request time the deployed site is a static GitHub Pages snapshot. It does not contact KDrive or Studio.
 
@@ -48,12 +53,13 @@ At reader request time the deployed site is a static GitHub Pages snapshot. It d
 
 The Studio implementation must:
 
-1. Replace path-derived document identity with the frontmatter UUID.
-2. index KDrive path separately as mutable location metadata;
-3. preserve the explicit slug instead of recreating it from the title;
-4. append the previous published slug to `aliases` before a slug change;
-5. serialize `id`, `slug`, and `aliases` on every save and publish;
-6. resolve database/cache records by `id`, using path only for synchronization; and
-7. publish ID-based internal relationships without converting them back to path identity.
+1. Preserve every existing ID exactly, including legacy path-shaped IDs.
+2. Index KDrive path separately as mutable location metadata.
+3. Preserve `publicPath` and the explicit slug instead of recreating either from the title.
+4. Append the previous published `.html` URL to `aliases` before a slug change.
+5. Serialize `id`, `publicPath`, `slug`, and `aliases` on every save and publish.
+6. Resolve database/cache records by `id`, using path only for synchronization.
+7. Resolve authoring links before export and publish a matching version-1 identity manifest.
+8. Gate publishing with `THINKINGHAUS_PUBLIC_CONTRACT_VERSION=1` until this contract is available publicly.
 
 D1 may cache or index this information, but KDrive Markdown remains canonical for article bodies and folder hierarchy, and the identity fields stored with each Markdown document remain authoritative.

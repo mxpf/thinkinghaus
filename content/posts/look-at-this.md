@@ -1,6 +1,7 @@
 ---
 title: "Look at this"
 id: 44180f64-b72b-4bfe-b721-e47acf9d7328
+publicPath: look-at-this.md
 slug: look-at-this
 date: 2026-07-07
 status: published

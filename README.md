@@ -12,7 +12,7 @@ The site grew out of using AI as a writing collaborator: not simply to generate 
 
 Published writing lives as Markdown in [`content/`](content/). Drafts stay in the private Studio and arrive here only when they are published. A push to [`main`](https://github.com/mxpf/thinkinghaus/tree/main) rebuilds the static site and updates [GitHub Pages](https://pages.github.com/).
 
-Every document carries an immutable UUID and an explicit public slug. Its KDrive folder or repository path can change without changing its public identity. Former published slugs remain as aliases, and links between Thinkinghaus documents can target their IDs instead of mutable URLs. The full shared Studio/public contract is documented in [`docs/content-contract.md`](docs/content-contract.md).
+Every document carries an immutable opaque ID, a stable snapshot filename, and an explicit public slug. Its KDrive folder can change without changing its public identity. Former published URLs remain as aliases, and links between Thinkinghaus documents can target their IDs instead of mutable URLs. The complete published snapshot is indexed by [`content/identity-manifest.json`](content/identity-manifest.json); the full shared Studio/public contract is documented in [`docs/content-contract.md`](docs/content-contract.md).
 
 ```text
 content/posts/   essays and fragments
@@ -37,7 +37,7 @@ Article images live in [`public/images/`](public/images/) and appear as standalo
 
 An already-published post can carry an `updatedAt` frontmatter field, either as an ISO timestamp or `YYYY-MM-DD`. That date produces a quiet “Last edited” note at the end of the piece. New and untouched posts leave it out.
 
-Internal links should use the target document’s persistent ID: `[related note](doc:uuid)`. The build resolves the current public URL and fails rather than publishing an unresolved relationship. If a published slug changes, add its previous value to the comma-separated `aliases` field before publishing.
+Internal links should use the target document’s persistent, URI-encoded ID: `[related note](doc:opaque-id)`. The build resolves the current public URL and fails rather than publishing an unresolved relationship. If a published slug changes, add its previous root-relative `.html` URL to the JSON-array `aliases` field before publishing.
 
 ## Local checks
 

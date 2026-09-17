@@ -1,6 +1,7 @@
 ---
 title: "The silent type"
 id: 21d33773-816f-4358-abd9-330872fe84ed
+publicPath: the-silent-type.md
 slug: the-silent-type
 date: 2026-07-01
 status: published

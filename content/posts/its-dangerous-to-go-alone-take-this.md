@@ -1,6 +1,7 @@
 ---
 title: "It’s dangerous to go alone! Take this."
 id: 46940085-c1e7-4be0-bd56-5e2d4ccfa60e
+publicPath: its-dangerous-to-go-alone-take-this.md
 slug: its-dangerous-to-go-alone-take-this
 date: 2026-09-11
 status: published

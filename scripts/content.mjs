@@ -5,10 +5,12 @@ export const projectRoot = path.resolve(import.meta.dirname, "..");
 const postsDirectory = path.join(projectRoot, "content", "posts");
 const pagesDirectory = path.join(projectRoot, "content", "pages");
 const nowDirectory = path.join(projectRoot, "content", "now");
+const manifestPath = path.join(projectRoot, "content", "identity-manifest.json");
 
 const frontmatterPattern = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/;
-const documentIdPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const publicPathPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*\.md$/;
+const aliasUrlPattern = /^\/[a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
 
 function parseFrontmatter(source) {
   const match = source.replace(/\r\n/g, "\n").match(frontmatterPattern);
@@ -32,7 +34,17 @@ function quote(value) {
 }
 
 function parseAliases(value = "") {
-  return value.split(",").map((alias) => alias.trim()).filter(Boolean);
+  if (!value) return [];
+  let aliases;
+  try {
+    aliases = JSON.parse(value);
+  } catch {
+    throw new Error(`Aliases must be a JSON array of root-relative .html URLs: ${value}`);
+  }
+  if (!Array.isArray(aliases) || aliases.some((alias) => typeof alias !== "string")) {
+    throw new Error("Aliases must be a JSON array of strings.");
+  }
+  return aliases;
 }
 
 function parseBodyBlocks(body) {
@@ -79,7 +91,8 @@ export function parsePost(source, filename = "") {
   const { metadata, body } = parseFrontmatter(source);
   const slug = metadata.slug || filename.replace(/\.md$/, "");
   return {
-    type: "post", id: metadata.id || "", title: metadata.title || "Untitled", slug,
+    type: "post", id: metadata.id || "", publicPath: metadata.publicPath || "", sourcePath: `content/posts/${filename}`,
+    title: metadata.title || "Untitled", slug,
     aliases: parseAliases(metadata.aliases),
     date: metadata.date || new Date().toISOString().slice(0, 10),
     publishedAt: metadata.publishedAt || "", updatedAt: metadata.updatedAt || "",
@@ -92,14 +105,15 @@ export function parsePost(source, filename = "") {
 }
 
 function parseNowEntry(source, filename = "") {
-  return { ...parsePost(source, filename), type: "now", title: "Now" };
+  return { ...parsePost(source, filename), type: "now", sourcePath: `content/now/${filename}`, title: "Now" };
 }
 
 function parsePage(source, filename = "") {
   const { metadata, body } = parseFrontmatter(source);
   const slug = metadata.slug || filename.replace(/\.md$/, "");
   return {
-    type: "page", id: metadata.id || "", title: metadata.title || "Untitled", slug,
+    type: "page", id: metadata.id || "", publicPath: metadata.publicPath || "", sourcePath: `content/pages/${filename}`,
+    title: metadata.title || "Untitled", slug,
     aliases: parseAliases(metadata.aliases), body, paragraphs: parseBodyBlocks(body),
   };
 }
@@ -122,6 +136,10 @@ function documentRoute(document) {
   return document.type === "now" ? "now" : document.slug;
 }
 
+function documentUrl(document) {
+  return `/${documentRoute(document)}.html`;
+}
+
 function normalizeInternalPath(href) {
   return href.split(/[?#]/, 1)[0].replace(/^\/+|\/+$/g, "").replace(/\.html$/, "");
 }
@@ -131,9 +149,11 @@ export function validateContentGraph(documents) {
   const routes = new Map();
   const redirects = new Map();
   for (const document of documents) {
-    if (!documentIdPattern.test(document.id)) throw new Error(`${document.slug || "Untitled"} needs an immutable UUID id.`);
+    if (!document.id.trim()) throw new Error(`${document.slug || "Untitled"} needs an immutable id.`);
     if (ids.has(document.id)) throw new Error(`Duplicate document id ${document.id}: ${ids.get(document.id)} and ${document.slug}.`);
     ids.set(document.id, document.slug);
+    if (!publicPathPattern.test(document.publicPath)) throw new Error(`${document.slug} needs a stable .md publicPath.`);
+    if (!document.sourcePath.endsWith(`/${document.publicPath}`)) throw new Error(`${document.slug} publicPath must match its snapshot filename.`);
     if (!slugPattern.test(document.slug)) throw new Error(`Invalid slug: ${document.slug}.`);
     const route = documentRoute(document);
     if (routes.has(route)) throw new Error(`Duplicate public slug ${route}: ${routes.get(route)} and ${document.slug}.`);
@@ -142,26 +162,29 @@ export function validateContentGraph(documents) {
   }
   for (const document of documents) {
     for (const alias of document.aliases) {
-      if (!slugPattern.test(alias)) throw new Error(`Invalid alias ${alias} on ${document.slug}.`);
-      if (routes.has(alias)) throw new Error(`Alias ${alias} collides with the public slug for ${routes.get(alias)}.`);
+      if (!aliasUrlPattern.test(alias)) throw new Error(`Invalid alias URL ${alias} on ${document.slug}.`);
+      const route = normalizeInternalPath(alias);
+      if (routes.has(route)) throw new Error(`Alias ${alias} collides with the public slug for ${routes.get(route)}.`);
       if (redirects.has(alias)) throw new Error(`Alias ${alias} is claimed by more than one document.`);
-      redirects.set(alias, documentRoute(document));
+      redirects.set(alias, documentUrl(document));
     }
   }
   for (const start of redirects.keys()) {
     const visited = new Set();
-    let route = start;
-    while (redirects.has(route)) {
-      if (visited.has(route)) throw new Error(`Redirect loop detected at ${route}.`);
-      visited.add(route);
-      route = redirects.get(route);
+    let url = start;
+    while (redirects.has(url)) {
+      if (visited.has(url)) throw new Error(`Redirect loop detected at ${url}.`);
+      visited.add(url);
+      url = redirects.get(url);
     }
   }
   for (const document of documents) {
     for (const match of document.body.matchAll(/!?\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g)) {
       const href = match[1];
       if (href.startsWith("doc:")) {
-        const id = href.slice(4).split("#", 1)[0];
+        const encodedId = href.slice(4).split("#", 1)[0];
+        let id;
+        try { id = decodeURIComponent(encodedId); } catch { throw new Error(`${document.slug} has a malformed document id link.`); }
         if (!ids.has(id)) throw new Error(`${document.slug} links to unknown document id ${id}.`);
         continue;
       }
@@ -173,9 +196,43 @@ export function validateContentGraph(documents) {
   return { ids, routes, redirects };
 }
 
+export async function readIdentityManifest() {
+  const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  if (manifest.version !== 1 || !Array.isArray(manifest.documents) || typeof manifest.redirects !== "object" || !manifest.redirects) {
+    throw new Error("content/identity-manifest.json must use contract version 1.");
+  }
+  return manifest;
+}
+
+export async function validateIdentityManifest(documents) {
+  const manifest = await readIdentityManifest();
+  const published = documents.filter((document) => document.type === "page" || document.status === "published");
+  const byPath = (a, b) => a.path.localeCompare(b.path);
+  const expected = published.map((document) => ({
+    id: document.id,
+    type: document.type,
+    slug: document.slug,
+    path: document.sourcePath,
+    url: documentUrl(document),
+    aliases: document.aliases,
+  })).sort(byPath);
+  const actual = [...manifest.documents].sort(byPath);
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    throw new Error("identity-manifest.json documents do not match the published Markdown snapshot.");
+  }
+  const expectedRedirects = Object.fromEntries(expected.flatMap((document) => document.aliases.map((alias) => [alias, document.url])));
+  const redirectEntries = (redirects) => Object.entries(redirects).sort(([a], [b]) => a.localeCompare(b));
+  if (JSON.stringify(redirectEntries(manifest.redirects)) !== JSON.stringify(redirectEntries(expectedRedirects))) {
+    throw new Error("identity-manifest.json redirects do not match the published aliases.");
+  }
+  return manifest;
+}
+
 export function resolveDocumentLinks(body, documents) {
   const byId = new Map(documents.map((document) => [document.id, document]));
-  return body.replace(/(\]\()doc:([0-9a-f-]+)(#[^)\s]+)?(\))/gi, (_, open, id, hash = "", close) => {
+  return body.replace(/(\]\()doc:([^#)\s]+)(#[^)\s]+)?(\))/gi, (_, open, encodedId, hash = "", close) => {
+    let id;
+    try { id = decodeURIComponent(encodedId); } catch { throw new Error(`Cannot decode document id ${encodedId}.`); }
     const target = byId.get(id);
     if (!target) throw new Error(`Cannot resolve document id ${id}.`);
     return `${open}/${documentRoute(target)}${hash}${close}`;
@@ -190,6 +247,7 @@ async function readContentRepository() {
   ]);
   const documents = [...posts, ...entries, ...pages];
   validateContentGraph(documents);
+  await validateIdentityManifest(documents);
   return documents.map((document) => {
     const body = resolveDocumentLinks(document.body, documents);
     return { ...document, body, paragraphs: parseBodyBlocks(body) };
@@ -197,8 +255,8 @@ async function readContentRepository() {
 }
 
 export function serializePost(post) {
-  const metadata = ["---", `title: ${quote(post.title)}`, `id: ${post.id}`, `slug: ${post.slug}`, `date: ${post.date}`, `status: ${post.status === "published" ? "published" : "draft"}`];
-  if (post.aliases?.length) metadata.push(`aliases: ${post.aliases.join(", ")}`);
+  const metadata = ["---", `title: ${quote(post.title)}`, `id: ${post.id}`, `publicPath: ${post.publicPath}`, `slug: ${post.slug}`, `date: ${post.date}`, `status: ${post.status === "published" ? "published" : "draft"}`];
+  if (post.aliases?.length) metadata.push(`aliases: ${JSON.stringify(post.aliases)}`);
   if (post.publishedAt) metadata.push(`publishedAt: ${post.publishedAt}`);
   if (post.updatedAt) metadata.push(`updatedAt: ${post.updatedAt}`);
   if (post.source?.label && post.source?.href) {

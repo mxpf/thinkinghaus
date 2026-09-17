@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "documents": [
+    { "id": "dc2939e1-4a4e-4f55-a806-18a0b246253c", "type": "post", "slug": "a-system-for-looking", "path": "content/posts/a-system-for-looking.md", "url": "/a-system-for-looking.html", "aliases": [] },
+    { "id": "0c4234d3-f726-4915-a854-0cfc83d96b55", "type": "post", "slug": "caught-in-a-web", "path": "content/posts/caught-in-a-web.md", "url": "/caught-in-a-web.html", "aliases": [] },
+    { "id": "46940085-c1e7-4be0-bd56-5e2d4ccfa60e", "type": "post", "slug": "its-dangerous-to-go-alone-take-this", "path": "content/posts/its-dangerous-to-go-alone-take-this.md", "url": "/its-dangerous-to-go-alone-take-this.html", "aliases": [] },
+    { "id": "44180f64-b72b-4bfe-b721-e47acf9d7328", "type": "post", "slug": "look-at-this", "path": "content/posts/look-at-this.md", "url": "/look-at-this.html", "aliases": [] },
+    { "id": "74bf8489-c7fd-485a-9104-3e41c244a486", "type": "post", "slug": "over-the-loop", "path": "content/posts/over-the-loop.md", "url": "/over-the-loop.html", "aliases": [] },
+    { "id": "4b9dc1b6-d6c2-41b3-aa5e-583acdffc1bc", "type": "post", "slug": "personal-folklore", "path": "content/posts/personal-folklore.md", "url": "/personal-folklore.html", "aliases": [] },
+    { "id": "8d9b0306-482a-4d6d-8bb5-6d13cf70d47a", "type": "post", "slug": "the-gift-of-an-empty-mind", "path": "content/posts/the-gift-of-an-empty-mind.md", "url": "/the-gift-of-an-empty-mind.html", "aliases": [] },
+    { "id": "21d33773-816f-4358-abd9-330872fe84ed", "type": "post", "slug": "the-silent-type", "path": "content/posts/the-silent-type.md", "url": "/the-silent-type.html", "aliases": [] },
+    { "id": "9d4bb605-9cbd-4c62-a9bd-36b3452f8210", "type": "post", "slug": "what-happens-next", "path": "content/posts/what-happens-next.md", "url": "/what-happens-next.html", "aliases": [] },
+    { "id": "e43e4733-1e15-42af-8550-5fc4eade6fb7", "type": "post", "slug": "work-between-the-work", "path": "content/posts/work-between-the-work.md", "url": "/work-between-the-work.html", "aliases": ["/the-work-between-the-work.html"] },
+    { "id": "1122095f-8746-49fe-8411-2585248779c3", "type": "now", "slug": "now-20260813154755", "path": "content/now/now-20260813154755.md", "url": "/now.html", "aliases": [] },
+    { "id": "fefc379b-c787-4eaf-b01a-fc7ecc8facb4", "type": "page", "slug": "about", "path": "content/pages/about.md", "url": "/about.html", "aliases": [] },
+    { "id": "b5249606-953e-44d1-9d5c-368727cb5687", "type": "page", "slug": "ai", "path": "content/pages/ai.md", "url": "/ai.html", "aliases": [] },
+    { "id": "2a940d94-4ab8-4192-82fe-b4f074d42f95", "type": "page", "slug": "links", "path": "content/pages/links.md", "url": "/links.html", "aliases": [] }
+  ],
+  "redirects": {
+    "/the-work-between-the-work.html": "/work-between-the-work.html"
+  }
+}

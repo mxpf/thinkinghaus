@@ -1,14 +1,14 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { readPages, readPosts } from "./content.mjs";
+import { readIdentityManifest, readPosts } from "./content.mjs";
 
 function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
 }
 
 export function redirectDocument(target) {
-  const href = `/${target}.html`;
+  const href = target;
   const escapedHref = escapeHtml(href);
   return `<!doctype html>
 <html lang="en">
@@ -28,18 +28,17 @@ export function redirectDocument(target) {
 }
 
 export async function writeRedirects(outputDirectory = path.resolve("dist/client")) {
-  const documents = [...await readPosts(), ...await readPages()];
+  await readPosts();
+  const manifest = await readIdentityManifest();
   let count = 0;
   await mkdir(outputDirectory, { recursive: true });
-  for (const document of documents) {
-    for (const alias of document.aliases) {
-      await writeFile(
-        path.join(outputDirectory, `${alias}.html`),
-        redirectDocument(document.slug),
-        "utf8",
-      );
-      count += 1;
-    }
+  for (const [alias, target] of Object.entries(manifest.redirects)) {
+    await writeFile(
+      path.join(outputDirectory, alias.slice(1)),
+      redirectDocument(target),
+      "utf8",
+    );
+    count += 1;
   }
   return count;
 }

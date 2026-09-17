@@ -4,7 +4,7 @@ import test from "node:test";
 import vm from "node:vm";
 import { parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { guardTypographyString } from "../lib/typography.mjs";
-import { calculateReadingTime, comparePostsByDate, parsePost, readNowEntries, readPages, readPosts, resolveDocumentLinks, serializePost, validateContentGraph } from "../scripts/content.mjs";
+import { calculateReadingTime, comparePostsByDate, parsePost, readIdentityManifest, readNowEntries, readPages, readPosts, resolveDocumentLinks, serializePost, validateContentGraph } from "../scripts/content.mjs";
 import { redirectDocument } from "../scripts/generate-redirects.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
@@ -111,7 +111,11 @@ test("static homepage links point directly to exported article files", async () 
 
 test("publishes immutable document identities and compatibility redirects", async () => {
   const documents = [...await readPosts({ includeDrafts: true }), ...await readPages(), ...await readNowEntries({ includeDrafts: true })];
-  assert.ok(documents.every((document) => /^[0-9a-f-]{36}$/.test(document.id)));
+  assert.ok(documents.every((document) => document.id && document.publicPath.endsWith(".md")));
+  const manifest = await readIdentityManifest();
+  assert.equal(manifest.version, 1);
+  assert.equal(manifest.documents.length, documents.filter((document) => document.type === "page" || document.status === "published").length);
+  assert.equal(manifest.redirects["/the-work-between-the-work.html"], "/work-between-the-work.html");
 
   const article = await readFile(new URL("../dist/client/its-dangerous-to-go-alone-take-this.html", import.meta.url), "utf8");
   assert.match(article, /href="\/look-at-this\.html"/);
@@ -543,6 +547,8 @@ test("calculates reading time and preserves draft status", () => {
 
   const draft = parsePost(serializePost({
     title: "A private thought",
+    id: "legacy/drafts/a-private-thought.md",
+    publicPath: "a-private-thought.md",
     slug: "a-private-thought",
     date: "2026-08-06",
     status: "draft",
@@ -553,6 +559,8 @@ test("calculates reading time and preserves draft status", () => {
 
   const revised = parsePost(serializePost({
     title: "A revised thought",
+    id: "legacy/published/a-revised-thought.md",
+    publicPath: "a-revised-thought.md",
     slug: "a-revised-thought",
     date: "2026-08-06",
     publishedAt: "2026-08-06T12:00:00.000Z",
@@ -574,30 +582,34 @@ test("sorts the homepage by authored date without moving revised posts", () => {
 test("rejects broken document identity and URL graphs", () => {
   const first = {
     type: "post",
-    id: "11111111-1111-4111-8111-111111111111",
+    id: "legacy/posts/first.md",
+    publicPath: "first.md",
+    sourcePath: "content/posts/first.md",
     slug: "first",
-    aliases: ["former-first"],
-    body: "A [second piece](doc:22222222-2222-4222-8222-222222222222).",
+    aliases: ["/former-first.html"],
+    body: "A [second piece](doc:legacy%2Fpages%2Fsecond.md).",
   };
   const second = {
     type: "page",
-    id: "22222222-2222-4222-8222-222222222222",
+    id: "legacy/pages/second.md",
+    publicPath: "second.md",
+    sourcePath: "content/pages/second.md",
     slug: "second",
     aliases: [],
-    body: "Back to [first](/first).",
+    body: "Back to [first](/first.html).",
   };
   assert.doesNotThrow(() => validateContentGraph([first, second]));
   assert.equal(resolveDocumentLinks(first.body, [first, second]), "A [second piece](/second).");
   assert.throws(() => validateContentGraph([first, { ...second, id: first.id }]), /Duplicate document id/);
   assert.throws(() => validateContentGraph([first, { ...second, slug: first.slug }]), /Duplicate public slug/);
-  assert.throws(() => validateContentGraph([first, { ...second, aliases: ["former-first"] }]), /claimed by more than one/);
+  assert.throws(() => validateContentGraph([first, { ...second, aliases: ["/former-first.html"] }]), /claimed by more than one/);
   assert.throws(() => validateContentGraph([first, { ...second, slug: "former-first" }]), /collides with the public slug/);
   assert.throws(
-    () => validateContentGraph([{ ...first, body: "[Missing](doc:33333333-3333-4333-8333-333333333333)" }, second]),
+    () => validateContentGraph([{ ...first, body: "[Missing](doc:missing%2Fdocument.md)" }, second]),
     /unknown document id/,
   );
   assert.throws(() => validateContentGraph([{ ...first, body: "[Missing](/not-here)" }, second]), /unknown internal URL/);
-  assert.match(redirectDocument("second"), /location\.replace\("\/second\.html" \+ location\.search \+ location\.hash\)/);
+  assert.match(redirectDocument("/second.html"), /location\.replace\("\/second\.html" \+ location\.search \+ location\.hash\)/);
 });
 
 test("parses consecutive numbered Markdown items as distinct blocks", () => {

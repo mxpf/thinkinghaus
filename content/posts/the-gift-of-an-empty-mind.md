@@ -1,6 +1,7 @@
 ---
 title: "The gift of an empty mind"
 id: 8d9b0306-482a-4d6d-8bb5-6d13cf70d47a
+publicPath: the-gift-of-an-empty-mind.md
 slug: the-gift-of-an-empty-mind
 date: 2026-06-28
 status: published

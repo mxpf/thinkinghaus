@@ -1,6 +1,7 @@
 ---
 title: "About"
 id: fefc379b-c787-4eaf-b01a-fc7ecc8facb4
+publicPath: about.md
 slug: about
 ---
 

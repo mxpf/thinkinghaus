@@ -16,6 +16,7 @@ export async function generatePostsModule() {
   const sourcePosts = await readPosts({ includeDrafts });
   const posts = sourcePosts.map((post) => ({
     id: post.id,
+    publicPath: post.publicPath,
     title: post.title,
     slug: post.slug,
     aliases: post.aliases,
@@ -31,6 +32,7 @@ export async function generatePostsModule() {
   const sourceNowEntries = await readNowEntries({ includeDrafts });
   const nowEntries = sourceNowEntries.map((entry) => ({
     id: entry.id,
+    publicPath: entry.publicPath,
     title: "Now",
     slug: entry.slug,
     date: displayDate(entry.date),
@@ -40,6 +42,7 @@ export async function generatePostsModule() {
 
   const pages = (await readPages()).map((page) => ({
     id: page.id,
+    publicPath: page.publicPath,
     title: page.title,
     slug: page.slug,
     aliases: page.aliases,

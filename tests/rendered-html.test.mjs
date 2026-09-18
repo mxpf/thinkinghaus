@@ -31,7 +31,7 @@ async function render(pathname = "/") {
 }
 
 test("pins the compatible Write Placid core contract", () => {
-  assert.equal(coreVersion, "1.1.1");
+  assert.equal(coreVersion, "1.2.1");
   assert.equal(publicSnapshotContractVersion, 1);
 });
 

@@ -10,7 +10,7 @@ The site grew out of using AI as a writing collaborator: not simply to generate 
 
 ## What lives here
 
-Published writing lives as Markdown in [`content/`](content/). Drafts stay in the private Studio and arrive here only when they are published. A push to [`main`](https://github.com/mxpf/thinkinghaus/tree/main) rebuilds the static site and updates [GitHub Pages](https://pages.github.com/).
+Published writing lives here as Markdown in [`content/`](content/), but KDrive is the canonical editorial source. Studio is the authoring interface, and D1 supports it with a replaceable cache and private state. This repository receives the generated snapshot of the complete Published set. A push to [`main`](https://github.com/mxpf/thinkinghaus/tree/main) rebuilds the static site and updates [GitHub Pages](https://pages.github.com/).
 
 Every document carries an immutable UUID, a stable snapshot filename, and an explicit public slug. Its KDrive folder can change without changing its public identity. Former published URLs remain as aliases, and links between Thinkinghaus documents can target their IDs instead of mutable URLs. Legacy path-shaped Studio IDs are migration lookup provenance only and are never published as canonical IDs. The complete published snapshot is indexed by [`content/identity-manifest.json`](content/identity-manifest.json); the full shared Studio/public contract is documented in [`docs/content-contract.md`](docs/content-contract.md).
 
@@ -35,7 +35,7 @@ The site and its posts share the social card at [`public/og.png`](public/og.png)
 
 Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, images, and bulleted or numbered lists. Numbered lists use the ordinary `1. First item` form.
 
-Article images live in [`public/images/`](public/images/) and appear as standalone Markdown blocks: `![A useful description](/images/example.webp)`. On desktop they extend slightly beyond the text measure, with 2.5 lines of vertical breathing room; on mobile they return to the article width. Images keep their natural proportions and use the portfolio's 4px corner radius. Add a flush-right caption with the optional title: `![A useful description](/images/example.webp "A little more context")`. Full-resolution originals stay in [`assets/source-images/`](assets/source-images/); WebP derivatives keep the public pages light.
+Article images live in [`public/images/`](public/images/) and appear as standalone Markdown blocks: `![A useful description](/images/example.webp)`. On desktop they extend slightly beyond the text measure, with 2.5 lines of vertical breathing room; on mobile they return to the article width. Images keep their natural proportions and use the portfolio's 4px corner radius. Add a flush-right caption with the optional title: `![A useful description](/images/example.webp "A little more context")`. Captions support safe inline italics and links under the shared [content contract](docs/content-contract.md). Full-resolution originals stay in [`assets/source-images/`](assets/source-images/); WebP derivatives keep the public pages light.
 
 An already-published post can carry an `updatedAt` frontmatter field, either as an ISO timestamp or `YYYY-MM-DD`. That date produces a quiet “Last edited” note at the end of the piece. New and untouched posts leave it out.
 
@@ -67,7 +67,7 @@ npm run build:staging
 
 ## From draft to public
 
-Writing and publishing normally happen in Studio. Its private database is the record of drafts; this public repository is the record of what has been published.
+Writing and publishing normally happen in Studio, with KDrive holding the canonical editorial files. Saving a piece already in Published can send it live on the configured five-minute publication run; the manual Publish action exports the same complete Published set immediately. Saving a private draft does not publish it. D1 remains supporting cache and private state, while this public repository is the generated record of what has been published.
 
 The custom domain depends on [`public/CNAME`](public/CNAME). The [publishing workflow](.github/workflows/publish.yml) adds the `.nojekyll` file GitHub Pages needs to the generated branch.
 

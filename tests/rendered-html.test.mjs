@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
+import { publicSnapshotContractVersion, version as coreVersion } from "@mxpf/write-placid-core";
 import { parseCaptionMarkdown, parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { guardTypographyString } from "../lib/typography.mjs";
 import { calculateReadingTime, comparePostsByDate, parsePost, readIdentityManifest, readNowEntries, readPages, readPosts, resolveDocumentLinks, serializePost, validateContentGraph } from "../scripts/content.mjs";
@@ -28,6 +29,11 @@ async function render(pathname = "/") {
     },
   );
 }
+
+test("pins the compatible Write Placid core contract", () => {
+  assert.equal(coreVersion, "1.1.1");
+  assert.equal(publicSnapshotContractVersion, 1);
+});
 
 test("renders the thinking.haus index from published Markdown", async () => {
   const response = await render();

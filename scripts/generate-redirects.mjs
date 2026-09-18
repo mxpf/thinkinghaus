@@ -1,30 +1,11 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { redirectDocument as generateRedirectDocument } from "@mxpf/write-placid-core/site";
 import { readIdentityManifest, readPosts } from "./content.mjs";
 
-function escapeHtml(value) {
-  return value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
-}
-
 export function redirectDocument(target) {
-  const href = target;
-  const escapedHref = escapeHtml(href);
-  return `<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="${escapedHref}">
-  <meta http-equiv="refresh" content="0; url=${escapedHref}">
-  <title>Moved · thinking.haus</title>
-</head>
-<body>
-  <p>This page moved to <a href="${escapedHref}">${escapedHref}</a>.</p>
-  <script>location.replace(${JSON.stringify(href)} + location.search + location.hash)</script>
-</body>
-</html>
-`;
+  return generateRedirectDocument(target, { siteName: "thinking.haus" });
 }
 
 export async function writeRedirects(outputDirectory = path.resolve("dist/client")) {

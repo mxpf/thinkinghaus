@@ -19,13 +19,15 @@ content/posts/   essays and fragments
 content/pages/   About, AI, and Links
 content/now/     current and archived /now entries
 app/             public pages and presentation
-lib/             shared Markdown interpretation
-scripts/         content loading and static publishing
+lib/             thin public-site adapters
+scripts/         instance configuration and static publishing
 integrations/    private chat-to-Studio draft bridge
 site-config.mjs  public identity and service endpoints
 ```
 
 Generated TypeScript modules, RSS, and the sitemap are not tracked. Development and production builds recreate them from the Markdown source.
+
+Reusable Markdown, content identity, feed, sitemap, and redirect behavior comes from the exactly pinned [`@mxpf/write-placid-core`](https://github.com/mxpf/write-placid/releases/tag/v1.1.1) package. This repository keeps the writing, visual system, public routes, navigation, analytics settings, and deployment configuration. See [`docs/core-upgrades.md`](docs/core-upgrades.md) for the update and rollback procedure.
 
 The site and its posts share the social card at [`public/og.png`](public/og.png).
 

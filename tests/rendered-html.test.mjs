@@ -31,7 +31,7 @@ async function render(pathname = "/") {
 }
 
 test("pins the compatible Write Placid core contract", () => {
-  assert.equal(coreVersion, "1.3.0");
+  assert.equal(coreVersion, "1.4.0");
   assert.equal(publicSnapshotContractVersion, 1);
 });
 
@@ -389,7 +389,9 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.article-body blockquote::before\s*\{[^}]*inset-block: 0[^}]*inset-inline-start: 0[^}]*width: 1px[^}]*background: var\(--blog-muted\)/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list\s*\{[^}]*padding-inline-start: 2em[^}]*list-style: decimal/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list li::marker\s*\{[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-variant-numeric: tabular-nums[^}]*font-weight: 400/s);
-  assert.match(siteStyles, /\.article-body \.article-image\s*\{[^}]*--article-image-opacity: 0\.6[^}]*width: 112\.5%[^}]*margin: 60px -6\.25%[^}]*opacity: var\(--article-image-opacity\)[^}]*transition: opacity 80ms linear/s);
+  assert.match(siteStyles, /\.article-body \.article-image\s*\{[^}]*width: 112\.5%[^}]*margin: 60px -6\.25%[^}]*opacity: 1[^}]*transition: opacity 80ms linear/s);
+  assert.match(siteStyles, /\.article-body \.article-image\[data-scroll-fade-active\]\s*\{[^}]*opacity: var\(--article-image-opacity, 1\)[^}]*will-change: opacity/s);
+  assert.match(siteStyles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.article-body \.article-image,\s*\.article-body \.article-image\[data-scroll-fade-active\]\s*\{[^}]*opacity: 1[^}]*transition: none[^}]*will-change: auto/s);
   assert.match(siteStyles, /\.article-body \.article-image img\s*\{[^}]*display: block[^}]*width: 100%[^}]*height: auto[^}]*border-radius: 4px/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)\s*\{[^}]*\.article-body \.article-image\s*\{[^}]*width: 100%[^}]*margin: 48px 0/s);
   assert.match(siteStyles, /\.article-body \.article-image figcaption\s*\{[^}]*margin-top: 8px[^}]*color: var\(--blog-muted\)[^}]*font-size: calc\(1em - 8px\)[^}]*text-align: right/s);
@@ -400,9 +402,8 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(articleBody, /<blockquote key=/);
   assert.match(articleBody, /<ol className="article-list article-numbered-list"/);
   assert.match(articleBody, /<ScrollFadeImage key=/);
-  assert.match(scrollFadeImage, /fullyVisibleRatio = 2 \/ 3/);
-  assert.match(scrollFadeImage, /entry\.intersectionRatio \/ fullyVisibleRatio/);
-  assert.match(scrollFadeImage, /0\.6 \+ \(0\.4 \* progress\)/);
+  assert.match(scrollFadeImage, /@mxpf\/write-placid-core\/scroll-fade/);
+  assert.match(scrollFadeImage, /return attachScrollFade\(figure\)/);
   assert.match(scrollFadeImage, /loading="lazy" decoding="async"/);
   assert.match(scrollFadeImage, /<figcaption><CaptionText text=\{title\} \/><\/figcaption>/);
   assert.match(articleBody, /optical-margin-fallback/);

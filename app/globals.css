@@ -351,11 +351,14 @@ html::-webkit-scrollbar {
 }
 
 .article-body .article-image {
-  --article-image-opacity: 0.6;
   width: 112.5%;
   margin: 60px -6.25%;
-  opacity: var(--article-image-opacity);
+  opacity: 1;
   transition: opacity 80ms linear;
+}
+
+.article-body .article-image[data-scroll-fade-active] {
+  opacity: var(--article-image-opacity, 1);
   will-change: opacity;
 }
 
@@ -548,9 +551,11 @@ html::-webkit-scrollbar {
     transition: none;
   }
 
-  .article-body .article-image {
+  .article-body .article-image,
+  .article-body .article-image[data-scroll-fade-active] {
     opacity: 1;
     transition: none;
+    will-change: auto;
   }
 }
 

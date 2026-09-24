@@ -50,6 +50,14 @@
       "aliases": []
     },
     {
+      "id": "dd0b4d4e-97c0-4a74-93e3-dd01cbfd3c76",
+      "type": "post",
+      "slug": "deep-minimal",
+      "path": "content/posts/deep-minimal.md",
+      "url": "/deep-minimal.html",
+      "aliases": []
+    },
+    {
       "id": "46940085-c1e7-4be0-bd56-5e2d4ccfa60e",
       "type": "post",
       "slug": "its-dangerous-to-go-alone-take-this",

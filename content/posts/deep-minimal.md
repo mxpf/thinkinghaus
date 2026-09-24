@@ -7,14 +7,14 @@ slug: deep-minimal
 date: 2026-09-24
 status: published
 publishedAt: 2026-09-24T19:45:33.162Z
-updatedAt: 2026-09-24T21:12:43.685Z
+updatedAt: 2026-09-24T21:20:17.275Z
 ---
 
 The mainstream minimalist web is about subtraction from an otherwise conventional affuent life: decluttering, capsule wardrobes, screen-time reduction, etc. Lots of Instagram-worthy photos of white space and blonde wood.
 
 But the much more interesting minimalism material out there is about designing a life whose requirements are intrinsically small. Deep Minimal.
 
-![An illustration of a minimal house with roots growing into the ground](/images/deep-minimal-d76dc09e.png)
+![An illustration of a minimal house with roots growing into the ground](/images/deep-minimal-d76dc09e.webp)
 
 [100 Rabbits](https://100r.co/) needs less because the boat imposes constraints. [Hiker Backpacker](https://hackerbikepacker.com/) needs less because everything has to travel on a bicycle. [MiniMotives](https://minimotives.com/) asks how much house is actually necessary. [Low-tech Magazine](https://solar.lowtechmagazine.com/) asks how much technology and energy are actually necessary. [3 Mules](https://3mules.com/) has roamed the western U.S. with a few mules nonstop for sonething like *40 years.*
 

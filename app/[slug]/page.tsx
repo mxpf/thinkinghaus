@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
-import { RSS_PATH } from "../../site-config.mjs";
-import { stripInlineMarkdown } from "../../lib/markdown.mjs";
+import { buildSocialMetadata } from "@mxpf/write-placid-core/site";
+import { RSS_PATH, SITE_NAME, SITE_URL } from "../../site-config.mjs";
 import { ArticleBody } from "../ArticleBody";
 import { AuthorEditAction } from "../AuthorEditAction";
 import { Footer } from "../Footer";
@@ -23,13 +23,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPost(slug);
   const standalonePage = getStandalonePage(slug);
   const content = post || standalonePage;
+  const socialMetadata = content ? buildSocialMetadata(content, {
+    siteName: SITE_NAME,
+    siteUrl: SITE_URL,
+    fallbackImage: "/og.png",
+    pathname: `/${slug}`,
+  }) : undefined;
+
   return {
     title: content?.title,
-    description: content ? stripInlineMarkdown(content.paragraphs[0]) : undefined,
+    description: socialMetadata?.openGraph.description,
     alternates: content ? {
       canonical: `/${slug}`,
       types: { "application/rss+xml": RSS_PATH },
     } : undefined,
+    ...socialMetadata,
   };
 }
 

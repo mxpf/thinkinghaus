@@ -31,7 +31,7 @@ async function render(pathname = "/") {
 }
 
 test("pins the compatible Write Placid core contract", () => {
-  assert.equal(coreVersion, "1.2.1");
+  assert.equal(coreVersion, "1.3.0");
   assert.equal(publicSnapshotContractVersion, 1);
 });
 
@@ -89,14 +89,25 @@ test("renders the thinking.haus index from published Markdown", async () => {
 });
 
 test("omits the visible author byline from published notes", async () => {
-  const post = (await readPosts())[0];
-  const response = await render(`/${post.slug}`);
+  const response = await render("/over-the-loop");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.doesNotMatch(html, /By <a href="https:\/\/maxpfennig\.haus\/" rel="author">/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/og\.png"/);
-  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/images\/over-the-loop-f882511f\.jpg"/);
+  assert.match(html, /<meta property="og:image:alt" content="Sam Lowry leans over a desk, turning the crank of a small decision-making machine that drops a suspended weight toward “Yes” or “No\.”/);
+  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/images\/over-the-loop-f882511f\.jpg"/);
+  assert.match(html, /<meta name="twitter:image:alt" content="Sam Lowry leans over a desk, turning the crank of a small decision-making machine that drops a suspended weight toward “Yes” or “No\.”/);
   assert.match(html, /class="scroll-progress"/);
+});
+
+test("keeps the site card as the fallback for image-free posts", async () => {
+  const response = await render("/what-happens-next");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /<meta property="og:image:alt" content="thinking\.haus social card"/);
+  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/og\.png"/);
+  assert.match(html, /<meta name="twitter:image:alt" content="thinking\.haus social card"/);
 });
 
 test("static homepage links point directly to exported article files", async () => {

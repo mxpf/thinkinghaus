@@ -7,10 +7,10 @@ slug: deep-minimal
 date: 2026-09-24
 status: published
 publishedAt: 2026-09-24T19:45:33.162Z
-updatedAt: 2026-09-24T21:20:17.275Z
+updatedAt: 2026-09-24T21:40:53.896Z
 ---
 
-The mainstream minimalist web is about subtraction from an otherwise conventional affuent life: decluttering, capsule wardrobes, screen-time reduction, etc. Lots of Instagram-worthy photos of white space and blonde wood.
+The mainstream minimalist web is about subtraction from an otherwise conventional affluent life: decluttering, capsule wardrobes, screen-time reduction, etc. Lots of Instagram-worthy photos of white space and blonde wood.
 
 But the much more interesting minimalism material out there is about designing a life whose requirements are intrinsically small. Deep Minimal.
 

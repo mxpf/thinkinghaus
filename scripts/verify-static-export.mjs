@@ -1,7 +1,7 @@
 import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
-const outputDirectory = path.resolve(process.argv[2] || "dist/client");
+const outputDirectory = path.resolve(process.argv[2] || "dist/public");
 const missing = new Set();
 const globalStylesheets = new Set();
 let htmlFiles = 0;

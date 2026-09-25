@@ -1,1 +1,0 @@
-var e=/(?<=[\p{L}\p{N}])-(?=[\p{L}\p{N}])/gu,t=/(?<!\u2060)–(?!\u2060)/gu;function n(n){return n.replace(e,`‑`).replace(t,`⁠–⁠`)}export{n as t};

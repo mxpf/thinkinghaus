@@ -319,8 +319,9 @@ test("keeps published writing readable and the visual system intentional", async
   assert.ok(posts.every((post) => post.body.length > 0));
   assert.ok(posts.every((post) => /^[a-z0-9-]+$/.test(post.slug)));
 
-  const [siteStyles, articleBody, articlePage, authorEditAction, authorMode, scrollProgress, scrollFadeImage] = await Promise.all([
+  const [siteStyles, paletteStyles, articleBody, articlePage, authorEditAction, authorMode, scrollProgress, scrollFadeImage] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/thinkinghaus-palette.css", import.meta.url), "utf8"),
     readFile(new URL("../app/ArticleBody.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/AuthorEditAction.tsx", import.meta.url), "utf8"),
@@ -332,11 +333,38 @@ test("keeps published writing readable and the visual system intentional", async
     readFile(new URL("../app/TypographyGuards.tsx", import.meta.url), "utf8"),
     readFile(new URL("../lib/typography.mjs", import.meta.url), "utf8"),
   ]);
+  const favicon = await readFile(new URL("../public/favicon.svg", import.meta.url), "utf8");
+  const paletteTokens = JSON.parse(await readFile(new URL("../app/thinkinghaus-palette.tokens.json", import.meta.url), "utf8"));
   assert.doesNotMatch(siteStyles, /--step-article-title/);
   assert.doesNotMatch(siteStyles, /--reading-measure/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
-  assert.match(siteStyles, /:root\s*\{[^}]*--blog-background: #1a1814;[^}]*--blog-foreground: #f1ede3;[^}]*--blog-muted: #9a9285;[^}]*--blog-body: #adadaa;[^}]*color-scheme: dark;/s);
+  assert.match(siteStyles, /^@import "\.\/thinkinghaus-palette\.css";/);
+  assert.match(paletteStyles, /Thinkinghaus palette v0\.5/);
+  assert.match(paletteStyles, /e37b642b6903788cc3ff7cbb522c4644c16fe6fd/);
+  assert.match(paletteStyles, /--th-neutral-0: #F4EDDF;/);
+  assert.match(paletteStyles, /--th-neutral-150: #D9D2C6;/);
+  assert.match(paletteStyles, /--th-neutral-200: #D0CBBF;/);
+  assert.match(paletteStyles, /--th-neutral-300: #BFBCB3;/);
+  assert.match(paletteStyles, /--th-neutral-400: #AFADA6;/);
+  assert.match(paletteStyles, /--th-neutral-500: #9C9281;/);
+  assert.match(paletteStyles, /--th-neutral-1000: #1C1811;/);
+  assert.match(paletteStyles, /--th-link: var\(--th-patina-400\);/);
+  assert.match(paletteStyles, /--th-focus: var\(--th-ochre-400\);/);
+  assert.match(paletteStyles, /--th-success: var\(--th-moss-400\);/);
+  assert.match(paletteStyles, /--th-warning: var\(--th-ochre-400\);/);
+  assert.match(paletteStyles, /--th-error: var\(--th-clay-400\);/);
+  assert.equal(paletteTokens.version, "0.5");
+  assert.deepEqual(paletteTokens.anchors, {
+    charcoal: "#1C1811",
+    ivory: "#F4EDDF",
+    taupe: "#9C9281",
+    body: "#AFADA6",
+  });
+  assert.equal(paletteTokens.contrastChecks.filter((check) => check.pass).length, 106);
+  assert.match(paletteStyles, /--blog-background: var\(--th-bg\);[^}]*--blog-foreground: var\(--th-text\);[^}]*--blog-body: var\(--th-text-body\);[^}]*--blog-muted: var\(--th-text-muted\);/s);
   assert.doesNotMatch(siteStyles, /prefers-color-scheme/);
+  assert.match(favicon, /fill="#1C1811"/);
+  assert.match(favicon, /fill="#F4EDDF"/);
   assert.match(siteStyles, /\.letter-cascade\s*\{[^}]*gap: 0;[^}]*letter-spacing: 0;/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-Regular\.woff2/s);
   assert.match(siteStyles, /font-family: "Untitled Sans";[^}]*UntitledSansWeb-RegularItalic\.woff2[^}]*font-style: italic[^}]*font-weight: 400/s);
@@ -356,6 +384,8 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.site \.post-list a\s*\{[^}]*font-weight: 400/s);
   assert.match(siteStyles, /\.site a\s*\{[^}]*transition: color 160ms ease/s);
   assert.match(siteStyles, /\.site a:hover,\s*\.site a:focus-visible\s*\{[^}]*color: var\(--blog-muted\)/s);
+  assert.match(siteStyles, /\.site a:focus-visible\s*\{[^}]*outline: 1px solid var\(--th-focus\)/s);
+  assert.match(siteStyles, /::selection\s*\{[^}]*background: var\(--th-selection-bg\)[^}]*color: var\(--th-selection-text\)/s);
   assert.match(siteStyles, /\.post-date\s*\{[^}]*inset-inline-end: calc\(100% \+ 24px\)[^}]*color: var\(--blog-muted\)[^}]*opacity: 0[^}]*text-align: end[^}]*transition: opacity 420ms ease-out/s);
   assert.match(siteStyles, /\.post-list a:hover \+ \.post-date,\s*\.post-list a:focus-visible \+ \.post-date\s*\{[^}]*opacity: 1[^}]*transition-duration: 180ms[^}]*transition-timing-function: ease/s);
   assert.match(siteStyles, /\.site \.footer\s*\{[^}]*font-weight: 400/s);
@@ -370,7 +400,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.post-date\s*\{[^}]*display: none/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site \.article-header h1\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.article-column > \.footer\s*\{[^}]*width: 100%[^}]*padding-top: 112px/s);
-  assert.match(siteStyles, /\.article-body a\s*\{[^}]*transition: color 160ms ease/s);
+  assert.match(siteStyles, /\.article-body a\s*\{[^}]*color: var\(--th-link\)[^}]*transition: color 160ms ease/s);
   assert.match(siteStyles, /\.article-body a:hover,\s*\.article-body a:focus-visible\s*\{[^}]*color: var\(--blog-foreground\)[^}]*opacity: 1/s);
   assert.match(siteStyles, /@view-transition\s*\{\s*navigation: auto;/s);
   assert.match(siteStyles, /::view-transition-old\(root\)\s*\{[^}]*page-fade-out/s);

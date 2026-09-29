@@ -1,10 +1,4 @@
-:root {
-  --blog-background: #1a1814;
-  --blog-foreground: #f1ede3;
-  --blog-muted: #9a9285;
-  --blog-body: #adadaa;
-  color-scheme: dark;
-}
+@import "./thinkinghaus-palette.css";
 
 @font-face {
   font-family: "Untitled Sans";
@@ -67,8 +61,13 @@ body {
 }
 
 .site a:focus-visible {
-  outline: 1px solid currentColor;
+  outline: 1px solid var(--th-focus);
   outline-offset: 4px;
+}
+
+::selection {
+  background: var(--th-selection-bg);
+  color: var(--th-selection-text);
 }
 
 .sr-only {
@@ -262,6 +261,7 @@ html::-webkit-scrollbar {
 }
 
 .author-edit-action a {
+  color: var(--th-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -423,12 +423,14 @@ html::-webkit-scrollbar {
 }
 
 .webmentions a {
+  color: var(--th-link);
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
 .article-body a {
+  color: var(--th-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;

@@ -7,7 +7,7 @@ const outputDirectory = resolve("dist/public");
 const result = await buildStaticPublic({
   sourceDirectory,
   outputDirectory,
-  canvasColor: "#1a1814",
+  canvasColor: "#1c1811",
   colorScheme: "dark",
   viewTransitions: true,
   enhancements: {

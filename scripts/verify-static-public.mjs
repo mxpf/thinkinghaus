@@ -41,8 +41,8 @@ for (const sourceFile of sourceFiles.filter((file) => file.endsWith(".html"))) {
   const stylesheetIndex = after.indexOf('rel="stylesheet"');
   if (shellIndex < 0 || (stylesheetIndex >= 0 && shellIndex > stylesheetIndex)) failures.push(`${path}: early shell is not before stylesheet`);
   const required = [
-    ":root{color-scheme:dark;background:#1a1814}",
-    "html,body{background:#1a1814}",
+    ":root{color-scheme:dark;background:#1c1811}",
+    "html,body{background:#1c1811}",
     "@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}",
     "/write-placid-enhancements.mjs",
   ];

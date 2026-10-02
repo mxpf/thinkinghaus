@@ -339,8 +339,8 @@ test("keeps published writing readable and the visual system intentional", async
   assert.doesNotMatch(siteStyles, /--reading-measure/);
   assert.match(siteStyles, /\.site\s*\{[^}]*font-size: 16px/s);
   assert.match(siteStyles, /^@import "\.\/thinkinghaus-palette\.css";/);
-  assert.match(paletteStyles, /Thinkinghaus palette v0\.5/);
-  assert.match(paletteStyles, /e37b642b6903788cc3ff7cbb522c4644c16fe6fd/);
+  assert.match(paletteStyles, /Thinkinghaus palette v0\.6/);
+  assert.match(paletteStyles, /7ac354fa15ac0798db84ed4291215d8a44f35947/);
   assert.match(paletteStyles, /--th-neutral-0: #F4EDDF;/);
   assert.match(paletteStyles, /--th-neutral-150: #D9D2C6;/);
   assert.match(paletteStyles, /--th-neutral-200: #D0CBBF;/);
@@ -348,12 +348,13 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(paletteStyles, /--th-neutral-400: #AFADA6;/);
   assert.match(paletteStyles, /--th-neutral-500: #9C9281;/);
   assert.match(paletteStyles, /--th-neutral-1000: #1C1811;/);
-  assert.match(paletteStyles, /--th-link: var\(--th-patina-400\);/);
+  assert.match(paletteStyles, /--th-link: var\(--th-body\);/);
+  assert.match(paletteStyles, /\[data-theme="light"\][^{]*\{[^}]*--th-link: var\(--th-neutral-800\);/s);
   assert.match(paletteStyles, /--th-focus: var\(--th-ochre-400\);/);
   assert.match(paletteStyles, /--th-success: var\(--th-moss-400\);/);
   assert.match(paletteStyles, /--th-warning: var\(--th-ochre-400\);/);
   assert.match(paletteStyles, /--th-error: var\(--th-clay-400\);/);
-  assert.equal(paletteTokens.version, "0.5");
+  assert.equal(paletteTokens.version, "0.6");
   assert.deepEqual(paletteTokens.anchors, {
     charcoal: "#1C1811",
     ivory: "#F4EDDF",
@@ -400,7 +401,7 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.post-date\s*\{[^}]*display: none/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.site \.article-header h1\s*\{[^}]*font-size: 18px[^}]*line-height: 28px/s);
   assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.article-column > \.footer\s*\{[^}]*width: 100%[^}]*padding-top: 112px/s);
-  assert.match(siteStyles, /\.article-body a\s*\{[^}]*color: var\(--th-link\)[^}]*transition: color 160ms ease/s);
+  assert.match(siteStyles, /\.article-body a,\s*\.article-body a:visited\s*\{[^}]*color: var\(--th-link\)[^}]*text-decoration: underline[^}]*transition: color 160ms ease/s);
   assert.match(siteStyles, /\.article-body a:hover,\s*\.article-body a:focus-visible\s*\{[^}]*color: var\(--blog-foreground\)[^}]*opacity: 1/s);
   assert.match(siteStyles, /@view-transition\s*\{\s*navigation: auto;/s);
   assert.match(siteStyles, /::view-transition-old\(root\)\s*\{[^}]*page-fade-out/s);

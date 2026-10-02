@@ -260,7 +260,8 @@ html::-webkit-scrollbar {
   color: var(--blog-muted);
 }
 
-.author-edit-action a {
+.author-edit-action a,
+.author-edit-action a:visited {
   color: var(--th-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -422,14 +423,16 @@ html::-webkit-scrollbar {
   margin-bottom: 0;
 }
 
-.webmentions a {
+.webmentions a,
+.webmentions a:visited {
   color: var(--th-link);
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-.article-body a {
+.article-body a,
+.article-body a:visited {
   color: var(--th-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;

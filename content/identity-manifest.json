@@ -114,6 +114,14 @@
       "aliases": []
     },
     {
+      "id": "8db0136a-fbdc-4972-bc96-f139d8ee2c54",
+      "type": "post",
+      "slug": "the-wrong-right-move",
+      "path": "content/posts/the-wrong-right-move.md",
+      "url": "/the-wrong-right-move.html",
+      "aliases": []
+    },
+    {
       "id": "9d4bb605-9cbd-4c62-a9bd-36b3452f8210",
       "type": "post",
       "slug": "what-happens-next",

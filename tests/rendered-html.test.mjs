@@ -103,6 +103,19 @@ test("omits the visible author byline from published notes", async () => {
   assert.match(html, /class="scroll-progress"/);
 });
 
+test("renders the authored dek between the title and article metadata", async () => {
+  const response = await render("/the-gift-of-an-empty-mind");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  const title = "<h1>The gift of an empty mind</h1>";
+  const dek = '<p class="article-dek">Expertise helps us recognize what we’re looking at. It can also keep us from seeing it.</p>';
+  const date = "<p>June 28, 2026</p>";
+
+  assert.ok(html.indexOf(title) < html.indexOf(dek));
+  assert.ok(html.indexOf(dek) < html.indexOf(date));
+  assert.match(html, /<meta name="description" content="Expertise helps us recognize what we’re looking at\. It can also keep us from seeing it\."/);
+});
+
 test("gives image-free posts their own correctly sized social card", async () => {
   const response = await render("/what-happens-next");
   assert.equal(response.status, 200);
@@ -632,8 +645,8 @@ test("interprets article and RSS block structure from one shared parser", () => 
     { type: "paragraph", index: 0, text: "Before." },
     { type: "heading", index: 1, text: "A small heading" },
     { type: "blockquote", index: 2, text: "A useful interruption." },
-    { type: "unordered-list", index: 3, items: ["First item.", "Second item."] },
-    { type: "ordered-list", index: 5, start: 3, items: ["Third item.", "Fourth item."] },
+    { type: "unordered-list", index: 3, items: [{ text: "First item." }, { text: "Second item." }] },
+    { type: "ordered-list", index: 5, start: 3, items: [{ text: "Third item." }, { text: "Fourth item." }] },
   ]);
 });
 

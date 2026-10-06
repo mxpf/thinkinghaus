@@ -6,6 +6,7 @@ export type Post = {
   id: string;
   publicPath: string;
   title: string;
+  dek?: string;
   slug: string;
   aliases: readonly string[];
   date: string;
@@ -33,6 +34,7 @@ export type StandalonePage = {
   id: string;
   publicPath: string;
   title: string;
+  dek?: string;
   slug: string;
   aliases: readonly string[];
   paragraphs: readonly string[];

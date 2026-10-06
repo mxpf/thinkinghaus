@@ -3,6 +3,7 @@ id: "4b9dc1b6-d6c2-41b3-aa5e-583acdffc1bc"
 publicPath: "personal-folklore.md"
 aliases: []
 title: "Personal folklore"
+dek: "A journal records the past, but it may also be manufacturing the stories that become a self."
 slug: personal-folklore
 date: 2026-08-08
 status: published

@@ -3,6 +3,7 @@ id: "0c4234d3-f726-4915-a854-0cfc83d96b55"
 publicPath: "caught-in-a-web.md"
 aliases: []
 title: "Caught in a web"
+dek: "Twenty years of wandering through Andrew Plotkin’s website has changed what I think a personal site can reveal."
 slug: caught-in-a-web
 date: 2026-07-13
 status: published

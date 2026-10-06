@@ -3,6 +3,7 @@ id: "fdb64d1d-1875-4038-8197-5ed27c7bd732"
 publicPath: "the-unbearable-rightness-of-being.md"
 aliases: []
 title: "The Unbearable Rightness of Being"
+dek: "AI can generate the visible signs of honest inquiry. The harder question is whether anything was ever allowed to threaten the conclusion."
 slug: the-unbearable-rightness-of-being
 date: 2026-10-02
 status: published

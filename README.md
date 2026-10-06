@@ -27,13 +27,15 @@ site-config.mjs  public identity and service endpoints
 
 Generated TypeScript modules, RSS, and the sitemap are not tracked. Development and production builds recreate them from the Markdown source.
 
-Reusable Markdown, content identity, social metadata, feed, sitemap, and redirect behavior comes from the exactly pinned [`@mxpf/write-placid-core`](https://github.com/mxpf/write-placid/releases/tag/v1.3.0) package. This repository keeps the writing, visual system, public routes, navigation, analytics settings, and deployment configuration. See [`docs/core-upgrades.md`](docs/core-upgrades.md) for the update and rollback procedure.
+Reusable Markdown, content identity, social metadata, feed, sitemap, and redirect behavior comes from the immutable [`@mxpf/write-placid-core`](https://github.com/mxpf/write-placid/commit/37324d739f1df1d1766c34c1a2d1b8d88955c2be) v1.6.0 candidate commit. This repository keeps the writing, visual system, public routes, navigation, analytics settings, and deployment configuration. See [`docs/core-upgrades.md`](docs/core-upgrades.md) for the update and rollback procedure.
 
 The site and its posts share the social card at [`public/og.png`](public/og.png).
 
 ## Writing conventions
 
 Posts and pages use a small Markdown subset: paragraphs, `##` subheads, block quotes, inline italics and links, images, and bulleted or numbered lists. Numbered lists use the ordinary `1. First item` form.
+
+Posts may carry an optional one-line `dek` frontmatter field. The public article renders it between the title and metadata, and the shared metadata and RSS generators prefer it over the first body paragraph when summarizing the piece.
 
 Article images live in [`public/images/`](public/images/) and appear as standalone Markdown blocks: `![A useful description](/images/example.webp)`. On desktop they extend slightly beyond the text measure, with 2.5 lines of vertical breathing room; on mobile they return to the article width. Images keep their natural proportions and use the portfolio's 4px corner radius. Add a flush-right caption with the optional title: `![A useful description](/images/example.webp "A little more context")`. Captions support safe inline italics and links under the shared [content contract](docs/content-contract.md). Full-resolution originals stay in [`assets/source-images/`](assets/source-images/); WebP derivatives keep the public pages light.
 

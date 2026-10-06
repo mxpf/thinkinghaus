@@ -3,6 +3,7 @@ id: "dc2939e1-4a4e-4f55-a806-18a0b246253c"
 publicPath: "a-system-for-looking.md"
 aliases: []
 title: "A system for looking"
+dek: "A moodboard can hold fifty images and still reveal almost nothing about what you’ve seen."
 slug: a-system-for-looking
 date: 2026-08-05
 status: published

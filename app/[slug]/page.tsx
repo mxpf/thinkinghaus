@@ -5,6 +5,7 @@ import { RSS_PATH, SITE_NAME, SITE_URL } from "../../site-config.mjs";
 import { ArticleBody } from "../ArticleBody";
 import { AuthorEditAction } from "../AuthorEditAction";
 import { Footer } from "../Footer";
+import { InlineText } from "../InlineText";
 import { ScrollProgress } from "../ScrollProgress";
 import { SiteBrand } from "../SiteBrand";
 import { Webmentions } from "../Webmentions";
@@ -60,6 +61,7 @@ export default async function PostPage({ params }: PageProps) {
   const post = getPost(slug);
   const standalonePage = getStandalonePage(slug);
   const content = post || standalonePage;
+  const dek = post?.dek;
 
   if (!content) {
     notFound();
@@ -73,6 +75,7 @@ export default async function PostPage({ params }: PageProps) {
         <article className="article-column" data-content-id={content.id} data-content-slug={slug} data-content-title={content.title}>
           <header className="article-header">
             <h1>{content.title}</h1>
+            {dek ? <p className="article-dek"><InlineText text={dek} /></p> : null}
             {post ? <p>{post.date}</p> : null}
             {post ? <p>{post.readingTime}</p> : null}
             <AuthorEditAction />

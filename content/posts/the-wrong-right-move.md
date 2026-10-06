@@ -3,6 +3,7 @@ id: "8db0136a-fbdc-4972-bc96-f139d8ee2c54"
 publicPath: "the-wrong-right-move.md"
 aliases: []
 title: "The Wrong Right Move"
+dek: "A technique can work beautifully and still be wrong for the thing it is doing."
 slug: the-wrong-right-move
 date: 2026-10-05
 status: published

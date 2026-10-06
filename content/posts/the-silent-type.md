@@ -3,6 +3,7 @@ id: "21d33773-816f-4358-abd9-330872fe84ed"
 publicPath: "the-silent-type.md"
 aliases: []
 title: "The silent type"
+dek: "Untitled Sans removes nearly everything a designer is taught to make memorable."
 slug: the-silent-type
 date: 2026-07-01
 status: published

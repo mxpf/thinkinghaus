@@ -24,7 +24,7 @@
     "audit:full": "npm audit --audit-level=high"
   },
   "dependencies": {
-    "@mxpf/write-placid-core": "https://github.com/mxpf/write-placid/releases/download/v1.6.0/mxpf-write-placid-core-1.6.0.tgz",
+    "@mxpf/write-placid-core": "https://codeload.github.com/mxpf/write-placid/tar.gz/37324d739f1df1d1766c34c1a2d1b8d88955c2be",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },

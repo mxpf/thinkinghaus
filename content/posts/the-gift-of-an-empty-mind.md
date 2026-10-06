@@ -3,6 +3,7 @@ id: "8d9b0306-482a-4d6d-8bb5-6d13cf70d47a"
 publicPath: "the-gift-of-an-empty-mind.md"
 aliases: []
 title: "The gift of an empty mind"
+dek: "Expertise helps us recognize what we’re looking at. It can also keep us from seeing it."
 slug: the-gift-of-an-empty-mind
 date: 2026-06-28
 status: published

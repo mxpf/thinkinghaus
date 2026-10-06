@@ -3,6 +3,7 @@ id: "dd0b4d4e-97c0-4a74-93e3-dd01cbfd3c76"
 publicPath: "deep-minimal.md"
 aliases: []
 title: "Deep minimal"
+dek: "Minimalism becomes a different thing when less is designed into the life rather than edited out of it."
 slug: deep-minimal
 date: 2026-09-24
 status: published

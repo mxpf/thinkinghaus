@@ -2,6 +2,25 @@ import { parseContentBlocks, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { InlineText } from "./InlineText";
 import { ScrollFadeImage } from "./ScrollFadeImage";
 
+type ArticleListBlock = Extract<ReturnType<typeof parseContentBlocks>[number], { type: "ordered-list" | "unordered-list" }>;
+
+function ArticleList({ block, keyPrefix }: { block: ArticleListBlock; keyPrefix: string }) {
+  const items = block.items.map((item, itemIndex) => (
+    <li key={`${keyPrefix}-${itemIndex}-${item.text}`}>
+      <InlineText text={item.text} />
+      {item.children?.map((child, childIndex) => (
+        <ArticleList block={child} key={`${keyPrefix}-${itemIndex}-${childIndex}`} keyPrefix={`${keyPrefix}-${itemIndex}-${childIndex}`} />
+      ))}
+    </li>
+  ));
+
+  return block.type === "ordered-list" ? (
+    <ol className="article-list article-numbered-list" start={block.start}>{items}</ol>
+  ) : (
+    <ul className="article-list">{items}</ul>
+  );
+}
+
 function paragraphClassName(paragraph: string) {
   return /^[“‘"']/.test(stripInlineMarkdown(paragraph).trimStart())
     ? "optical-margin-fallback"
@@ -23,17 +42,7 @@ export function ArticleBody({ paragraphs }: { paragraphs: readonly string[] }) {
     }
 
     if (block.type === "unordered-list" || block.type === "ordered-list") {
-      const items = block.items.map((item, itemIndex) => (
-        <li key={`${block.index + itemIndex}-${item}`}><InlineText text={item} /></li>
-      ));
-
-      return block.type === "ordered-list" ? (
-        <ol className="article-list article-numbered-list" key={`list-${block.index}`} start={block.start}>
-          {items}
-        </ol>
-      ) : (
-        <ul className="article-list" key={`list-${block.index}`}>{items}</ul>
-      );
+      return <ArticleList block={block} key={`list-${block.index}`} keyPrefix={`list-${block.index}`} />;
     }
 
     if (block.type === "image") {

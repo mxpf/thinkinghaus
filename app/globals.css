@@ -281,6 +281,12 @@ html::-webkit-scrollbar {
   color: var(--blog-muted);
 }
 
+.article-header .article-dek {
+  max-inline-size: 52ch;
+  color: var(--blog-body);
+  text-wrap: pretty;
+}
+
 .author-edit-action a,
 .author-edit-action a:visited {
   color: var(--th-link);

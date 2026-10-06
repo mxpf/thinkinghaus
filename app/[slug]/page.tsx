@@ -29,6 +29,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     fallbackImage: "/og.png",
     pathname: `/${slug}`,
   }) : undefined;
+  const socialImage = content ? {
+    url: `/social-cards/${content.slug}.png`,
+    alt: `${content.title} social card`,
+    width: 1200,
+    height: 630,
+  } : undefined;
 
   return {
     title: content?.title,
@@ -38,6 +44,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       types: { "application/rss+xml": RSS_PATH },
     } : undefined,
     ...socialMetadata,
+    openGraph: socialMetadata && socialImage ? {
+      ...socialMetadata.openGraph,
+      images: [socialImage],
+    } : socialMetadata?.openGraph,
+    twitter: socialMetadata && socialImage ? {
+      ...socialMetadata.twitter,
+      images: [socialImage],
+    } : socialMetadata?.twitter,
   };
 }
 

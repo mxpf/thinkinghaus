@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
+import sharp from "sharp";
 import { publicSnapshotContractVersion, version as coreVersion } from "@mxpf/write-placid-core";
 import { parseCaptionMarkdown, parseContentBlocks, parseImageMarkdown, parseInlineMarkdown, stripInlineMarkdown } from "../lib/markdown.mjs";
 import { guardTypographyString } from "../lib/typography.mjs";
@@ -93,21 +94,34 @@ test("omits the visible author byline from published notes", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.doesNotMatch(html, /By <a href="https:\/\/maxpfennig\.haus\/" rel="author">/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/images\/over-the-loop-f882511f\.jpg"/);
-  assert.match(html, /<meta property="og:image:alt" content="Sam Lowry leans over a desk, turning the crank of a small decision-making machine that drops a suspended weight toward “Yes” or “No\.”/);
-  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/images\/over-the-loop-f882511f\.jpg"/);
-  assert.match(html, /<meta name="twitter:image:alt" content="Sam Lowry leans over a desk, turning the crank of a small decision-making machine that drops a suspended weight toward “Yes” or “No\.”/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/social-cards\/over-the-loop\.png"/);
+  assert.match(html, /<meta property="og:image:alt" content="Over the loop social card"/);
+  assert.match(html, /<meta property="og:image:width" content="1200"/);
+  assert.match(html, /<meta property="og:image:height" content="630"/);
+  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/social-cards\/over-the-loop\.png"/);
+  assert.match(html, /<meta name="twitter:image:alt" content="Over the loop social card"/);
   assert.match(html, /class="scroll-progress"/);
 });
 
-test("keeps the site card as the fallback for image-free posts", async () => {
+test("gives image-free posts their own correctly sized social card", async () => {
   const response = await render("/what-happens-next");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/og\.png"/);
-  assert.match(html, /<meta property="og:image:alt" content="thinking\.haus social card"/);
-  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/og\.png"/);
-  assert.match(html, /<meta name="twitter:image:alt" content="thinking\.haus social card"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/thinking\.haus\/social-cards\/what-happens-next\.png"/);
+  assert.match(html, /<meta property="og:image:alt" content="What happens next\? social card"/);
+  assert.match(html, /<meta name="twitter:image" content="https:\/\/thinking\.haus\/social-cards\/what-happens-next\.png"/);
+  assert.match(html, /<meta name="twitter:image:alt" content="What happens next\? social card"/);
+});
+
+test("generates a 1200 by 630 social card for every article and standalone page", async () => {
+  const documents = [...await readPosts(), ...await readPages()];
+
+  for (const document of documents) {
+    const cardPath = new URL(`../public/social-cards/${document.slug}.png`, import.meta.url);
+    const metadata = await sharp(await readFile(cardPath)).metadata();
+    assert.equal(metadata.width, 1200, `${document.slug} social card width`);
+    assert.equal(metadata.height, 630, `${document.slug} social card height`);
+  }
 });
 
 test("static homepage links point directly to exported article files", async () => {

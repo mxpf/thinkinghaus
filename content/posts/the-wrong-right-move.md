@@ -18,7 +18,7 @@ That’s Technique Without Taste: a creative technique gets used because it’s 
 
 There’s a relationship here to [kitsch](https://ia.net/topics/learning-to-see), at least in the sense illustrated by the diagram below: form can look right while being wrong for the thing it’s supposed to do. Technique Without Taste is a kind of rhetorical version of that. The move may be attractive, polished, even effective on its own terms. It just doesn’t belong here.
 
-![A four-quadrant diagram contrasting function and form: boldness is functional but not pretty, beauty is functional and pretty, trash is neither, and kitsch is pretty but dysfunctional.](/images/the-wrong-right-move-227014ee.png)
+![A four-quadrant diagram contrasting function and form: boldness is functional but not pretty, beauty is functional and pretty, trash is neither, and kitsch is pretty but dysfunctional.](/images/the-wrong-right-move-227014ee.webp)
 
 Then we went through our draft looking for exactly the kind of failure we were describing. And, well, it wasn’t great. There were too many isolated sentences. Some jokes were doing useful work; most weren’t. A few thoughts were getting more force from their presentation than the thought beneath them warranted. I see you, dramatic one-sentence paragraph.
 

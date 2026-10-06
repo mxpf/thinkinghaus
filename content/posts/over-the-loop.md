@@ -8,7 +8,7 @@ slug: over-the-loop
 date: 2026-09-12
 status: published
 publishedAt: 2026-09-12T04:44:56Z
-updatedAt: 2026-09-17T18:19:06.584Z
+updatedAt: 2026-10-06T21:41:10.040Z
 sourceLabel: "Read “The Workflow Is an Alibi”"
 sourceHref: "https://firstchurchofthesingularity.com/sermons/2026-09-11"
 ---

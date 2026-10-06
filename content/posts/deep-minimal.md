@@ -8,7 +8,7 @@ slug: deep-minimal
 date: 2026-09-24
 status: published
 publishedAt: 2026-09-24T19:45:33.162Z
-updatedAt: 2026-09-24T21:40:53.896Z
+updatedAt: 2026-10-06T21:41:08.829Z
 ---
 
 The mainstream minimalist web is about subtraction from an otherwise conventional affluent life: decluttering, capsule wardrobes, screen-time reduction, etc. Lots of Instagram-worthy photos of white space and blonde wood.

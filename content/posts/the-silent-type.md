@@ -8,7 +8,7 @@ slug: the-silent-type
 date: 2026-07-01
 status: published
 publishedAt: 2026-08-06T15:00:00.000Z
-updatedAt: 2026-09-02T23:40:23.772Z
+updatedAt: 2026-10-06T21:41:11.138Z
 sourceLabel: "Read Kris Sowersby’s notes on the Untitled Collection"
 sourceHref: "https://klim.co.nz/blog/untitled-sans-serif-design-information/"
 ---

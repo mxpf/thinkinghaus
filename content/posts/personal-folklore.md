@@ -8,7 +8,7 @@ slug: personal-folklore
 date: 2026-08-08
 status: published
 publishedAt: 2026-08-08T03:33:21.440Z
-updatedAt: 2026-09-11T23:11:30-04:00
+updatedAt: 2026-10-06T21:41:10.651Z
 ---
 
 Keep a journal long enough and patterns emerge. The same fear in different clothes, the same bad bargain becoming tempting again, a particular kind of excitement I’ve learned to trust, the moment when I start making a simple thing complicated because complication feels safer than finishing it. Eventually, particulars begin to give way to larger realities about myself.

@@ -8,7 +8,7 @@ slug: work-between-the-work
 date: 2026-07-20
 status: published
 publishedAt: 2026-08-05T14:00:00.000Z
-updatedAt: 2026-08-23T16:50:11.844Z
+updatedAt: 2026-10-06T21:25:34.271Z
 ---
 
 Some of the most useful work I do leaves almost nothing behind.

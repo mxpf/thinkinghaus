@@ -8,6 +8,7 @@ slug: a-system-for-looking
 date: 2026-08-05
 status: published
 publishedAt: 2026-08-05T13:00:00.000Z
+updatedAt: 2026-10-06T21:41:08.342Z
 ---
 
 Before I make, I look.

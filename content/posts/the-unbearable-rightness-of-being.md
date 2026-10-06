@@ -8,7 +8,7 @@ slug: the-unbearable-rightness-of-being
 date: 2026-10-02
 status: published
 publishedAt: 2026-10-02T17:59:09Z
-updatedAt: 2026-10-06T01:30:07.791Z
+updatedAt: 2026-10-06T21:41:11.392Z
 ---
 
 Our hero, let’s call them “the writer,” has spent some time examining a problem. They notice something other people seem not to notice. By the final paragraphs, the observation has hardened into a division: there are people who understand what’s really happening, and there are people who don’t.

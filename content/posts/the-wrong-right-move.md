@@ -8,7 +8,7 @@ slug: the-wrong-right-move
 date: 2026-10-05
 status: published
 publishedAt: 2026-10-05T22:56:02.464Z
-updatedAt: 2026-10-05T23:46:02.846Z
+updatedAt: 2026-10-06T21:25:29.278Z
 ---
 
 So there I was, writing an essay about Technique Without Taste with my superintelligent writing partner, bouncing things back and forth, getting some meaningful word count under our belts.

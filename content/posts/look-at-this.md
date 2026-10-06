@@ -8,7 +8,7 @@ slug: look-at-this
 date: 2026-07-07
 status: published
 publishedAt: 2026-08-07T20:55:38.943Z
-updatedAt: 2026-09-02T23:35:27.453Z
+updatedAt: 2026-10-06T21:41:09.797Z
 ---
 
 It’s 1933 and Jean-Paul Sartre and Simone de Beauvoir meet their pal Raymond Aron at the Bec-de-Gaz bar on the rue Montparnasse. Aron had recently been in Berlin, where he’d encountered the philosophy of a certain Mr. [Edmund Husserl](https://plato.stanford.edu/entries/husserl/), who had this crazy new thing he was calling *phenomenology*. As Sarah Bakewell [tells the story](https://www.penguinrandomhouse.com/books/645311/at-the-existentialist-cafe-by-sarah-bakewell/), Aron pointed at the drink in front of him and basically told Sartre that with phenomenology you could make philosophy out of this cocktail.

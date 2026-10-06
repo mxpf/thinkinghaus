@@ -8,6 +8,7 @@ slug: what-happens-next
 date: 2026-08-13
 status: published
 publishedAt: 2026-08-13T14:38:33.652Z
+updatedAt: 2026-10-06T21:25:33.831Z
 ---
 
 Jasper Morrison’s [*Utilism vs. Uselessnism*](https://jaspermorrison.com/publications/essays/utilism-vs-uselessnism) describes what he calls Utilism’s greatest urban triumph: a bus station at Fisch Platz in Graz. He and his collaborators removed travel company stickers from the café windows so passengers could see whether their buses had arrived, then added a couple of speed bumps so they could cross the road safely. That was more or less the project.

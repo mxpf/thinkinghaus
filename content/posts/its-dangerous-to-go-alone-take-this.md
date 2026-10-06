@@ -8,7 +8,7 @@ slug: its-dangerous-to-go-alone-take-this
 date: 2026-09-11
 status: published
 publishedAt: 2026-09-11T14:40:17Z
-updatedAt: 2026-09-11T16:08:56Z
+updatedAt: 2026-10-06T21:41:09.559Z
 ---
 
 Leave home with [basic supplies](https://i.kym-cdn.com/entries/icons/original/000/000/240/Its-Dangerous-to-Go-Alone-Take-This-meme-banner.jpg). Notice something interesting and walk toward it, allowing another point of interest to supersede the first. Talk to people. Accept dead ends. Eventually, return home.

@@ -7,6 +7,7 @@ slug: the-unbearable-rightness-of-being
 date: 2026-10-02
 status: published
 publishedAt: 2026-10-02T17:59:09Z
+updatedAt: 2026-10-06T01:30:07.791Z
 ---
 
 Our hero, let’s call them “the writer,” has spent some time examining a problem. They notice something other people seem not to notice. By the final paragraphs, the observation has hardened into a division: there are people who understand what’s really happening, and there are people who don’t.
@@ -28,15 +29,21 @@ Here’s the thing: the model can learn the linguistic sequence without having t
 Humans tend to do something like this:
 
 1. Encounter
+
 2. Investigate
+
 3. Change perception
+
 4. Conclude
 
 LLMs have another route available:
 
 1. Receive context
+
 2. Recognize patterns
+
 3. Construct a plausible continuation
+
 4. Conclude
 
 For the LLM, once the prose has established that people commonly think X but the essay has discovered Y, the next paragraph is increasingly likely to be written from inside Y.
@@ -49,7 +56,7 @@ But here’s the next thing: people, as we know, don’t reward only truth.
 
 This isn’t theoretical. [Anthropic’s early work on sycophancy](https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models) found that answers matching a user’s beliefs could be preferred even when agreement pulled the model away from accuracy. In 2025, OpenAI got a more public lesson when an overly agreeable GPT-4o update had to be rolled back; its [postmortem](https://openai.com/index/sycophancy-in-gpt-4o/) implicated, among other things, signals based on short-term user feedback. More recent work has shown both [how preference-based training can amplify sycophancy](https://proceedings.mlr.press/v306/shapira26a.html) and how [reward models can absorb unintended preferences](https://alignment.openai.com/argo/) for things like agreement and superficial stylistic qualities.
 
-So far, so terrifying. Back to our essay.
+So far, so terrifying. Back to our hero’s essay.
 
 Well, as it happens, a self-righteous conclusion bundles together many of the qualities these systems can reward. It offers confidence. It offers synthesis. It gives the reader an emotional payoff. It flies wing-to-wing with the established intellectual direction. It reassures the writer that the investigation was worthwhile. It can sound insightful, decisive, humane, skeptical, sophisticated.
 

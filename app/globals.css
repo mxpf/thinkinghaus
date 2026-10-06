@@ -183,6 +183,26 @@ html::-webkit-scrollbar {
   min-height: calc(100svh - 48px);
 }
 
+.not-found-column {
+  color: var(--blog-body);
+}
+
+.not-found-column h1,
+.not-found-column p {
+  margin: 0 0 24px;
+}
+
+.not-found-column h1 {
+  color: var(--blog-foreground);
+}
+
+.not-found-column a {
+  color: var(--th-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .post-list {
   padding: 0;
   margin: 0;
@@ -494,6 +514,11 @@ html::-webkit-scrollbar {
     display: none;
   }
 
+  .site .not-found-brand {
+    display: inline-block;
+    margin-bottom: 56px;
+  }
+
   .index-column,
   .article-column {
     width: 100%;
@@ -523,7 +548,9 @@ html::-webkit-scrollbar {
 
   .article-header h1,
   .article-header p,
-  .article-body p {
+  .article-body p,
+  .not-found-column h1,
+  .not-found-column p {
     margin-bottom: 28px;
   }
 

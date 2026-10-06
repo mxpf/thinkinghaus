@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { buildSocialMetadata } from "@mxpf/write-placid-core/site";
 import { RSS_PATH, SITE_NAME, SITE_URL } from "../../site-config.mjs";
 import { ArticleBody } from "../ArticleBody";
@@ -62,17 +62,7 @@ export default async function PostPage({ params }: PageProps) {
   const content = post || standalonePage;
 
   if (!content) {
-    return (
-      <main className="site article-page">
-        <div className="article-frame">
-          <SiteBrand />
-          <article className="article-column">
-            <h1>Nothing here yet.</h1>
-            <p><a href="/">Back to the notes.</a></p>
-          </article>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   return (

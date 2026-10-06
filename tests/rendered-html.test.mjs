@@ -304,6 +304,19 @@ test("renders standalone About, AI, and Links pages", async () => {
   );
 });
 
+test("renders the shared not-found page with a real 404 response", async () => {
+  const response = await render("/this-page-does-not-exist");
+  const html = await response.text();
+
+  assert.equal(response.status, 404);
+  assert.match(html, /<title>thinking\.haus - Page not found<\/title>/);
+  assert.match(html, /<meta name="robots" content="noindex"/);
+  assert.match(html, /<h1>Page not found<\/h1>/);
+  assert.match(html, /There is no page at this address\./);
+  assert.match(html, /<a href="\/">Return home<\/a>\./);
+  assert.match(html, /class="desktop-brand not-found-brand" href="\/">thinking\.haus<\/a>/);
+});
+
 test("renders only the newest published Now entry on its stable route", async () => {
   const response = await render("/now");
   assert.equal(response.status, 200);

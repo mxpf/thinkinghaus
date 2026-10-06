@@ -32,7 +32,7 @@ async function render(pathname = "/") {
 }
 
 test("pins the compatible Write Placid core contract", () => {
-  assert.equal(coreVersion, "1.5.0");
+  assert.equal(coreVersion, "1.6.0");
   assert.equal(publicSnapshotContractVersion, 1);
 });
 
@@ -434,6 +434,12 @@ test("keeps published writing readable and the visual system intentional", async
   assert.match(siteStyles, /\.article-body blockquote::before\s*\{[^}]*inset-block: 0[^}]*inset-inline-start: 0[^}]*width: 1px[^}]*background: var\(--blog-muted\)/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list\s*\{[^}]*padding-inline-start: 2em[^}]*list-style: decimal/s);
   assert.match(siteStyles, /\.article-body \.article-numbered-list li::marker\s*\{[^}]*color: var\(--blog-muted\)[^}]*font-size: 12px[^}]*font-variant-numeric: tabular-nums[^}]*font-weight: 400/s);
+  assert.match(siteStyles, /\.article-body \.article-list \.article-list\s*\{[^}]*margin: 8px 0 0/s);
+  assert.match(siteStyles, /\.article-body \.article-list ul\.article-list\s*\{[^}]*padding-inline-start: 1\.5em/s);
+  assert.match(siteStyles, /\.article-body \.article-list \.article-list li\s*\{[^}]*margin-bottom: 16px/s);
+  assert.match(siteStyles, /\.article-body \.article-list li:has\(> \.article-list\)\s*\{[^}]*margin-bottom: 32px/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.article-body \.article-list \.article-list li\s*\{[^}]*margin-bottom: 18px/s);
+  assert.match(siteStyles, /@media \(max-width: 767px\)[\s\S]*\.article-body \.article-list li:has\(> \.article-list\)\s*\{[^}]*margin-bottom: 36px/s);
   assert.match(siteStyles, /\.article-body \.article-image\s*\{[^}]*width: 112\.5%[^}]*margin: 60px -6\.25%[^}]*opacity: 1[^}]*transition: opacity 80ms linear/s);
   assert.match(siteStyles, /\.article-body \.article-image\[data-scroll-fade-active\]\s*\{[^}]*opacity: var\(--article-image-opacity, 1\)[^}]*will-change: opacity/s);
   assert.match(siteStyles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.article-body \.article-image,\s*\.article-body \.article-image\[data-scroll-fade-active\]\s*\{[^}]*opacity: 1[^}]*transition: none[^}]*will-change: auto/s);

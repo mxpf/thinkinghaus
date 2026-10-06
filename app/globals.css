@@ -1,4 +1,5 @@
 @import "./thinkinghaus-palette.css";
+@import "@mxpf/write-placid-core/article-layout.css";
 
 @font-face {
   font-family: "Untitled Sans";
@@ -333,6 +334,26 @@ html::-webkit-scrollbar {
   margin-bottom: 0;
 }
 
+.article-body .article-list .article-list {
+  margin: 8px 0 0;
+}
+
+.article-body .article-list ul.article-list {
+  padding-inline-start: 1.5em;
+}
+
+.article-body .article-list .article-list li {
+  margin-bottom: 16px;
+}
+
+.article-body .article-list .article-list li:last-child {
+  margin-bottom: 0;
+}
+
+.article-body .article-list li:has(> .article-list) {
+  margin-bottom: 32px;
+}
+
 .article-body ul.article-list li::before {
   position: absolute;
   inset-inline-end: calc(100% + 0.45em);
@@ -530,6 +551,18 @@ html::-webkit-scrollbar {
 
   .article-body .article-list li {
     margin-bottom: 26px;
+  }
+
+  .article-body .article-list .article-list li {
+    margin-bottom: 18px;
+  }
+
+  .article-body .article-list .article-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-body .article-list li:has(> .article-list) {
+    margin-bottom: 36px;
   }
 
   .article-body .article-source,

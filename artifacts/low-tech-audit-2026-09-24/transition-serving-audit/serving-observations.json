@@ -1,0 +1,5204 @@
+[
+  {
+    "name": "production-1440",
+    "base": "https://thinking.haus",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 197.89999997615814,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 21.5,
+          "opacity": "0.390627"
+        },
+        {
+          "elapsed": 32.59999996423721,
+          "opacity": "0.511897"
+        },
+        {
+          "elapsed": 46.69999998807907,
+          "opacity": "0.623293"
+        },
+        {
+          "elapsed": 63,
+          "opacity": "0.723399"
+        },
+        {
+          "elapsed": 79.69999998807907,
+          "opacity": "0.812178"
+        },
+        {
+          "elapsed": 96.19999998807907,
+          "opacity": "0.886845"
+        },
+        {
+          "elapsed": 112.59999996423721,
+          "opacity": "0.94588"
+        },
+        {
+          "elapsed": 129.29999995231628,
+          "opacity": "0.985155"
+        },
+        {
+          "elapsed": 146.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 162.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 179.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 195.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 212.5999999642372,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 229.29999995231628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 246,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 262.5999999642372,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 279.2999999523163,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 296.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 312.5999999642372,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "https://thinking.haus/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "https://thinking.haus/deep-minimal.html",
+      "pageswap": {
+        "at": 777.8999999761581,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "https://thinking.haus/",
+          "entry": "https://thinking.haus/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 75.69999998807907,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 8.599999964237213,
+          "opacity": null
+        },
+        {
+          "elapsed": 24.599999964237213,
+          "opacity": null
+        },
+        {
+          "elapsed": 41,
+          "opacity": null
+        },
+        {
+          "elapsed": 57.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 74.79999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 91,
+          "opacity": null
+        },
+        {
+          "elapsed": 107.79999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 124.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 141.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 157.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 174.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 191.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 207.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 224.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 241.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 257.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 274.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 290.7999999523163,
+          "opacity": null
+        },
+        {
+          "elapsed": 307.5,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 549.9820000808686,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "https://thinking.haus/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "age": "293",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "content-length": "7203",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Fri, 25 Sep 2026 00:06:28 GMT",
+          "etag": "W/\"6ab5b478-9297\"",
+          "expires": "Thu, 24 Sep 2026 23:56:44 GMT",
+          "last-modified": "Thu, 24 Sep 2026 23:38:32 GMT",
+          "server": "GitHub.com",
+          "vary": "Accept-Encoding",
+          "via": "1.1 varnish",
+          "x-cache": "HIT",
+          "x-cache-hits": "1",
+          "x-fastly-request-id": "81ffe3ea951649d046da1aca3c899bfc9139de06",
+          "x-github-edge-region": "iad",
+          "x-github-request-id": "0A24:46CF3:3F9FEC:44D662:6AB5B663",
+          "x-proxy-cache": "MISS",
+          "x-served-by": "cache-ewr-kewr1740073-EWR",
+          "x-timer": "S1790294789.776027,VS0,VE1"
+        }
+      },
+      {
+        "url": "https://thinking.haus/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "h2",
+        "headers": {
+          "x-fastly-request-id": "5097b558d8bc09aa6ac0539d7830f8195a09440e",
+          "content-encoding": "gzip",
+          "etag": "W/\"6ab5b478-22cc\"",
+          "age": "294",
+          "x-github-request-id": "EA18:89933:4458CA:4991C1:6AB5B65F",
+          "expires": "Thu, 24 Sep 2026 23:56:40 GMT",
+          "x-proxy-cache": "MISS",
+          "x-cache": "HIT",
+          "date": "Fri, 25 Sep 2026 00:06:28 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:38:32 GMT",
+          "x-served-by": "cache-ewr-kewr1740073-EWR",
+          "x-cache-hits": "2",
+          "vary": "Accept-Encoding",
+          "cache-control": "max-age=600",
+          "x-github-edge-region": "iad",
+          "x-timer": "S1790294789.805575,VS0,VE1",
+          "via": "1.1 varnish",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "2426",
+          "x-origin-cache": "HIT",
+          "server": "GitHub.com"
+        }
+      }
+    ]
+  },
+  {
+    "name": "production-390",
+    "base": "https://thinking.haus",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 56.299999952316284,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 1.100000023841858,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 3.699999988079071,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 35.19999998807907,
+          "opacity": "0.120489"
+        },
+        {
+          "elapsed": 40.30000001192093,
+          "opacity": "0.259919"
+        },
+        {
+          "elapsed": 54.30000001192093,
+          "opacity": "0.39062"
+        },
+        {
+          "elapsed": 67.60000002384186,
+          "opacity": "0.51189"
+        },
+        {
+          "elapsed": 83.40000003576279,
+          "opacity": "0.623287"
+        },
+        {
+          "elapsed": 100.10000002384186,
+          "opacity": "0.723393"
+        },
+        {
+          "elapsed": 117.19999998807907,
+          "opacity": "0.812173"
+        },
+        {
+          "elapsed": 133.69999998807907,
+          "opacity": "0.88684"
+        },
+        {
+          "elapsed": 150.10000002384186,
+          "opacity": "0.945877"
+        },
+        {
+          "elapsed": 167.19999998807907,
+          "opacity": "0.985153"
+        },
+        {
+          "elapsed": 183.5,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 200.30000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 217,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 233.4000000357628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 250.4000000357628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 266.9000000357628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 295.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 300.10000002384186,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "https://thinking.haus/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "https://thinking.haus/deep-minimal.html",
+      "pageswap": {
+        "at": 642.0999999642372,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "https://thinking.haus/",
+          "entry": "https://thinking.haus/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 82.30000001192093,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 0.699999988079071,
+          "opacity": null
+        },
+        {
+          "elapsed": 16.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 39.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 51.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 64.90000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 81.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 98.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 114.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 132.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 148,
+          "opacity": null
+        },
+        {
+          "elapsed": 164.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 181.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 197.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 214.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 231.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 247.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 264.4000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 281.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 297.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 314.4000000357628,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "https://thinking.haus/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "age": "294",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "content-length": "7203",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Fri, 25 Sep 2026 00:06:30 GMT",
+          "etag": "W/\"6ab5b478-9297\"",
+          "expires": "Thu, 24 Sep 2026 23:56:44 GMT",
+          "last-modified": "Thu, 24 Sep 2026 23:38:32 GMT",
+          "server": "GitHub.com",
+          "vary": "Accept-Encoding",
+          "via": "1.1 varnish",
+          "x-cache": "HIT",
+          "x-cache-hits": "2",
+          "x-fastly-request-id": "65a15e135d091be112e39b6a7aae7e005fac2eaa",
+          "x-github-edge-region": "iad",
+          "x-github-request-id": "0A24:46CF3:3F9FEC:44D662:6AB5B663",
+          "x-proxy-cache": "MISS",
+          "x-served-by": "cache-ewr-kewr1740073-EWR",
+          "x-timer": "S1790294790.106927,VS0,VE2"
+        }
+      },
+      {
+        "url": "https://thinking.haus/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "h2",
+        "headers": {
+          "x-fastly-request-id": "e031d4c8d680426e5cc47e5f98ba90119ba22c03",
+          "content-encoding": "gzip",
+          "etag": "W/\"6ab5b478-22cc\"",
+          "age": "295",
+          "x-github-request-id": "EA18:89933:4458CA:4991C1:6AB5B65F",
+          "expires": "Thu, 24 Sep 2026 23:56:40 GMT",
+          "x-proxy-cache": "MISS",
+          "x-cache": "HIT",
+          "date": "Fri, 25 Sep 2026 00:06:30 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:38:32 GMT",
+          "x-served-by": "cache-ewr-kewr1740073-EWR",
+          "x-cache-hits": "4",
+          "vary": "Accept-Encoding",
+          "cache-control": "max-age=600",
+          "x-github-edge-region": "iad",
+          "x-timer": "S1790294790.137546,VS0,VE2",
+          "via": "1.1 varnish",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "2426",
+          "x-origin-cache": "HIT",
+          "server": "GitHub.com"
+        }
+      }
+    ]
+  },
+  {
+    "name": "prototype-http10-1440",
+    "base": "http://127.0.0.1:4314",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 29.30000001192093,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 2,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 8.100000023841858,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 24.600000023841858,
+          "opacity": "0.120062"
+        },
+        {
+          "elapsed": 41.39999997615814,
+          "opacity": "0.260332"
+        },
+        {
+          "elapsed": 57.89999997615814,
+          "opacity": "0.391005"
+        },
+        {
+          "elapsed": 74.89999997615814,
+          "opacity": "0.511549"
+        },
+        {
+          "elapsed": 91.30000001192093,
+          "opacity": "0.622975"
+        },
+        {
+          "elapsed": 108.19999998807907,
+          "opacity": "0.723684"
+        },
+        {
+          "elapsed": 124.60000002384186,
+          "opacity": "0.811931"
+        },
+        {
+          "elapsed": 141.30000001192093,
+          "opacity": "0.887047"
+        },
+        {
+          "elapsed": 158.39999997615814,
+          "opacity": "0.94603"
+        },
+        {
+          "elapsed": 174.89999997615814,
+          "opacity": "0.985408"
+        },
+        {
+          "elapsed": 191.60000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 208.30000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 225.60000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 241.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 258,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 274.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 292.10000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 308.19999998807907,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4314/deep-minimal.html",
+      "pageswap": {
+        "at": 553.3000000119209,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4314/",
+          "entry": "http://127.0.0.1:4314/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 33,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 3.600000023841858,
+          "opacity": null
+        },
+        {
+          "elapsed": 18,
+          "opacity": null
+        },
+        {
+          "elapsed": 35,
+          "opacity": null
+        },
+        {
+          "elapsed": 51.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 68.20000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 84.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 101.20000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 117.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 134.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 151,
+          "opacity": null
+        },
+        {
+          "elapsed": 167.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 184.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 201.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 217.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 234.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 251.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 267.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 284.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 301.5,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 550,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 590.0000000000001,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9329999100416,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.0",
+        "headers": {
+          "Content-Length": "9693",
+          "Content-type": "text/html",
+          "Date": "Fri, 25 Sep 2026 00:06:31 GMT",
+          "Last-Modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "Server": "SimpleHTTP/0.6 Python/3.14.6"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.0",
+        "headers": {
+          "Content-Length": "8908",
+          "Date": "Fri, 25 Sep 2026 00:06:31 GMT",
+          "Content-type": "text/css",
+          "Last-Modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "Server": "SimpleHTTP/0.6 Python/3.14.6"
+        }
+      }
+    ]
+  },
+  {
+    "name": "prototype-http10-390",
+    "base": "http://127.0.0.1:4314",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 44.90000003576279,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 7.300000011920929,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 38.89999997615814,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 53.30000001192093,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 70,
+          "opacity": "0.120419"
+        },
+        {
+          "elapsed": 86.80000001192093,
+          "opacity": "0.260665"
+        },
+        {
+          "elapsed": 104.39999997615814,
+          "opacity": "0.39056"
+        },
+        {
+          "elapsed": 120.30000001192093,
+          "opacity": "0.511137"
+        },
+        {
+          "elapsed": 136.69999998807907,
+          "opacity": "0.623236"
+        },
+        {
+          "elapsed": 153.30000001192093,
+          "opacity": "0.723917"
+        },
+        {
+          "elapsed": 170.19999998807907,
+          "opacity": "0.812133"
+        },
+        {
+          "elapsed": 186.89999997615814,
+          "opacity": "0.886808"
+        },
+        {
+          "elapsed": 204.39999997615814,
+          "opacity": "0.945853"
+        },
+        {
+          "elapsed": 220.69999998807907,
+          "opacity": "0.98514"
+        },
+        {
+          "elapsed": 236.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 253.5,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 270,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 286.60000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 303.5,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4314/deep-minimal.html",
+      "pageswap": {
+        "at": 545.6000000238419,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4314/",
+          "entry": "http://127.0.0.1:4314/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 32.5,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 10.300000011920929,
+          "opacity": null
+        },
+        {
+          "elapsed": 27,
+          "opacity": null
+        },
+        {
+          "elapsed": 41.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 58,
+          "opacity": null
+        },
+        {
+          "elapsed": 75.70000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 91.20000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 107.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 124.40000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 141.4000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 158.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 174.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 191.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 207.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 224.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 241.20000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 258.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 274.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 291.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 308.30000001192093,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.0",
+        "headers": {
+          "Content-Length": "9693",
+          "Content-type": "text/html",
+          "Date": "Fri, 25 Sep 2026 00:06:32 GMT",
+          "Last-Modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "Server": "SimpleHTTP/0.6 Python/3.14.6"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.0",
+        "headers": {
+          "Content-Length": "8908",
+          "Date": "Fri, 25 Sep 2026 00:06:32 GMT",
+          "Content-type": "text/css",
+          "Last-Modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "Server": "SimpleHTTP/0.6 Python/3.14.6"
+        }
+      }
+    ]
+  },
+  {
+    "name": "prototype-http11-1440",
+    "base": "http://127.0.0.1:4315",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 34.40000003576279,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 2,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 15.699999988079071,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 32,
+          "opacity": "0.120594"
+        },
+        {
+          "elapsed": 48.89999997615814,
+          "opacity": "0.260827"
+        },
+        {
+          "elapsed": 65.5,
+          "opacity": "0.390711"
+        },
+        {
+          "elapsed": 82.30000001192093,
+          "opacity": "0.511974"
+        },
+        {
+          "elapsed": 98.80000001192093,
+          "opacity": "0.622727"
+        },
+        {
+          "elapsed": 115.39999997615814,
+          "opacity": "0.723462"
+        },
+        {
+          "elapsed": 132.19999998807907,
+          "opacity": "0.811739"
+        },
+        {
+          "elapsed": 148.89999997615814,
+          "opacity": "0.886889"
+        },
+        {
+          "elapsed": 165.5,
+          "opacity": "0.945913"
+        },
+        {
+          "elapsed": 182.89999997615814,
+          "opacity": "0.985174"
+        },
+        {
+          "elapsed": 199.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 215.30000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 232.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 249.30000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 265.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 282.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 299,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 315.5,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/deep-minimal.html",
+      "pageswap": {
+        "at": 554.6000000238419,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/",
+          "entry": "http://127.0.0.1:4315/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 30.80000001192093,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 3.800000011920929,
+          "opacity": null
+        },
+        {
+          "elapsed": 14.100000023841858,
+          "opacity": null
+        },
+        {
+          "elapsed": 30.399999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 47.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 63.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 81.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 97.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 113.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 130.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 147.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 163.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 181.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 197.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 214.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 231,
+          "opacity": null
+        },
+        {
+          "elapsed": 247.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 263.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 280.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 297,
+          "opacity": null
+        },
+        {
+          "elapsed": 313.60000002384186,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 550,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 590.0000000000001,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9570000000298,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:33 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9693",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:33 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "prototype-http11-390",
+    "base": "http://127.0.0.1:4315",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 29.5,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 1.899999976158142,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 10.800000011920929,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 27.5,
+          "opacity": "0.120289"
+        },
+        {
+          "elapsed": 44.10000002384186,
+          "opacity": "0.259732"
+        },
+        {
+          "elapsed": 60.69999998807907,
+          "opacity": "0.390446"
+        },
+        {
+          "elapsed": 77.30000001192093,
+          "opacity": "0.51173"
+        },
+        {
+          "elapsed": 93.89999997615814,
+          "opacity": "0.623141"
+        },
+        {
+          "elapsed": 110.80000001192093,
+          "opacity": "0.723831"
+        },
+        {
+          "elapsed": 127.89999997615814,
+          "opacity": "0.81206"
+        },
+        {
+          "elapsed": 144.30000001192093,
+          "opacity": "0.887152"
+        },
+        {
+          "elapsed": 160.60000002384186,
+          "opacity": "0.945808"
+        },
+        {
+          "elapsed": 177.19999998807907,
+          "opacity": "0.985284"
+        },
+        {
+          "elapsed": 194.10000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 210.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 227.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 243.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 260.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 277.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 294.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 310.80000001192093,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/deep-minimal.html",
+      "pageswap": {
+        "at": 546.4000000357628,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/",
+          "entry": "http://127.0.0.1:4315/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 27,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 2.799999952316284,
+          "opacity": null
+        },
+        {
+          "elapsed": 12.099999964237213,
+          "opacity": null
+        },
+        {
+          "elapsed": 29.299999952316284,
+          "opacity": null
+        },
+        {
+          "elapsed": 45.299999952316284,
+          "opacity": null
+        },
+        {
+          "elapsed": 62,
+          "opacity": null
+        },
+        {
+          "elapsed": 79.59999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 96.09999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 112.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 128.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 146,
+          "opacity": null
+        },
+        {
+          "elapsed": 161.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 178.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 195.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 212,
+          "opacity": null
+        },
+        {
+          "elapsed": 228.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 245.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 261.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 278.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 296.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 312,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:35 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9693",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:35 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "prototype-h2-1440",
+    "base": "https://localhost:4316",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 45.59999996423721,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 9.099999964237213,
+          "opacity": "0.5112"
+        },
+        {
+          "elapsed": 23.899999976158142,
+          "opacity": "0.622657"
+        },
+        {
+          "elapsed": 37.5,
+          "opacity": "0.723399"
+        },
+        {
+          "elapsed": 54,
+          "opacity": "0.812178"
+        },
+        {
+          "elapsed": 70.19999998807907,
+          "opacity": "0.886845"
+        },
+        {
+          "elapsed": 87.89999997615814,
+          "opacity": "0.94588"
+        },
+        {
+          "elapsed": 103.69999998807907,
+          "opacity": "0.985324"
+        },
+        {
+          "elapsed": 120.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 137.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 153.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 170.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 187.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 203.5999999642372,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 221.30000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 237.0999999642372,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 254.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 269.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 287.0999999642372,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 302.89999997615814,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "https://localhost:4316/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "https://localhost:4316/deep-minimal.html",
+      "pageswap": {
+        "at": 636.1999999880791,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "https://localhost:4316/",
+          "entry": "https://localhost:4316/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 33.200000047683716,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 0.19999998807907104,
+          "opacity": null
+        },
+        {
+          "elapsed": 15.600000023841858,
+          "opacity": null
+        },
+        {
+          "elapsed": 32.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 49.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 65.90000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 82.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 98.90000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 115.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 132.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 149.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 165.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 182.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 198.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 215.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 232.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 248.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 266.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 282.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 298.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 315.60000002384186,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 550,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 590.0000000000001,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9219999581576,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "https://localhost:4316/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9693",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Fri, 25 Sep 2026 00:06:36 GMT",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "https://localhost:4316/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "public, max-age=31536000, immutable",
+          "content-length": "8908",
+          "date": "Fri, 25 Sep 2026 00:06:36 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "prototype-h2-390",
+    "base": "https://localhost:4316",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 30.69999998807907,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 1.699999988079071,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 3.199999988079071,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 17.69999998807907,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 34.10000002384186,
+          "opacity": "0.120062"
+        },
+        {
+          "elapsed": 50.60000002384186,
+          "opacity": "0.260332"
+        },
+        {
+          "elapsed": 67.19999998807907,
+          "opacity": "0.391005"
+        },
+        {
+          "elapsed": 84.5,
+          "opacity": "0.511549"
+        },
+        {
+          "elapsed": 100.69999998807907,
+          "opacity": "0.622975"
+        },
+        {
+          "elapsed": 117.39999997615814,
+          "opacity": "0.723684"
+        },
+        {
+          "elapsed": 133.89999997615814,
+          "opacity": "0.812424"
+        },
+        {
+          "elapsed": 150.5,
+          "opacity": "0.887047"
+        },
+        {
+          "elapsed": 167.60000002384186,
+          "opacity": "0.94603"
+        },
+        {
+          "elapsed": 184,
+          "opacity": "0.98524"
+        },
+        {
+          "elapsed": 200.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 217.30000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 233.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 250.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 267.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 283.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 301.30000001192093,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "https://localhost:4316/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "https://localhost:4316/deep-minimal.html",
+      "pageswap": {
+        "at": 541.5999999642372,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "https://localhost:4316/",
+          "entry": "https://localhost:4316/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 30.19999998807907,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 13.800000011920929,
+          "opacity": null
+        },
+        {
+          "elapsed": 30.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 47.200000047683716,
+          "opacity": null
+        },
+        {
+          "elapsed": 64.40000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 80.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 97.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 113.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 130.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 147,
+          "opacity": null
+        },
+        {
+          "elapsed": 163.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 180.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 197.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 213.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 230.4000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 247,
+          "opacity": null
+        },
+        {
+          "elapsed": 263.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 280.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 297.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 313.9000000357628,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "https://localhost:4316/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9693",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Fri, 25 Sep 2026 00:06:37 GMT",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "https://localhost:4316/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "public, max-age=31536000, immutable",
+          "content-length": "8908",
+          "date": "Fri, 25 Sep 2026 00:06:37 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "minimal-http11-1440",
+    "base": "http://127.0.0.1:4315/vt-minimal",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 54.30000001192093,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 22.400000035762787,
+          "opacity": null
+        },
+        {
+          "elapsed": 31.600000023841858,
+          "opacity": null
+        },
+        {
+          "elapsed": 48.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 65,
+          "opacity": null
+        },
+        {
+          "elapsed": 81.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 99.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 115.90000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 131.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 148.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 165.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 181.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 198.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 214.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 231.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 248.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 264.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 281.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 298.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 314.69999998807907,
+          "opacity": null
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/vt-minimal/style.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/vt-minimal/page.html",
+      "pageswap": {
+        "at": 518.3000000119209,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/vt-minimal/",
+          "entry": "http://127.0.0.1:4315/vt-minimal/page.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 39.30000001192093,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 14.699999988079071,
+          "opacity": null
+        },
+        {
+          "elapsed": 17.899999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 35.59999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 51.59999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 68.59999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 84.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 101.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 118.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 134.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 151.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 168.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 184.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 202.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 218.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 235.29999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 251.29999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 267.7999999523163,
+          "opacity": null
+        },
+        {
+          "elapsed": 284.7999999523163,
+          "opacity": null
+        },
+        {
+          "elapsed": 301.39999997615814,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/vt-minimal/page.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:39 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "298",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/vt-minimal/style.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "max-age=600",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "320",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:39 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "minimal-http11-390",
+    "base": "http://127.0.0.1:4315/vt-minimal",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 47.39999997615814,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 26.900000035762787,
+          "opacity": null
+        },
+        {
+          "elapsed": 37,
+          "opacity": null
+        },
+        {
+          "elapsed": 54,
+          "opacity": null
+        },
+        {
+          "elapsed": 71.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 86.90000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 103.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 120.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 137.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 154,
+          "opacity": null
+        },
+        {
+          "elapsed": 170.4000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 187.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 204,
+          "opacity": null
+        },
+        {
+          "elapsed": 220.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 237.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 253.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 270.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 287,
+          "opacity": null
+        },
+        {
+          "elapsed": 304.4000000357628,
+          "opacity": null
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/vt-minimal/style.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/vt-minimal/page.html",
+      "pageswap": {
+        "at": 519.6999999880791,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/vt-minimal/",
+          "entry": "http://127.0.0.1:4315/vt-minimal/page.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 56,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 25.399999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 26.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 42.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 58.59999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 75.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 92.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 109.09999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 126,
+          "opacity": null
+        },
+        {
+          "elapsed": 142.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 159.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 175.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 192.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 208.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 225.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 242.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 259.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 275.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 292.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 308.80000001192093,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/vt-minimal/page.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:40 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "298",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/vt-minimal/style.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "max-age=600",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "320",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:40 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "minimal-h2-1440",
+    "base": "https://localhost:4316/vt-minimal",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 77.79999995231628,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 26.099999964237213,
+          "opacity": null
+        },
+        {
+          "elapsed": 46.799999952316284,
+          "opacity": null
+        },
+        {
+          "elapsed": 52.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 68.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 86,
+          "opacity": null
+        },
+        {
+          "elapsed": 102.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 118.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 135.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 152.29999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 169.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 185.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 203.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 219.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 235.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 253,
+          "opacity": null
+        },
+        {
+          "elapsed": 268.7999999523163,
+          "opacity": null
+        },
+        {
+          "elapsed": 285.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 302.2999999523163,
+          "opacity": null
+        }
+      ],
+      "styleSheets": [
+        "https://localhost:4316/vt-minimal/style.css"
+      ]
+    },
+    "forward": {
+      "url": "https://localhost:4316/vt-minimal/page.html",
+      "pageswap": {
+        "at": 555.3999999761581,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "https://localhost:4316/vt-minimal/",
+          "entry": "https://localhost:4316/vt-minimal/page.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 61.19999998807907,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 23.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 45.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 50.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 67.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 84.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 100.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 117.09999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 134,
+          "opacity": null
+        },
+        {
+          "elapsed": 150.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 166.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 183.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 200.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 217.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 234.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 250.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 266.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 283.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 300.0999999642372,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "https://localhost:4316/vt-minimal/page.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "298",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Fri, 25 Sep 2026 00:06:41 GMT",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "https://localhost:4316/vt-minimal/style.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "320",
+          "date": "Fri, 25 Sep 2026 00:06:41 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "minimal-h2-390",
+    "base": "https://localhost:4316/vt-minimal",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 61.90000003576279,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 41,
+          "opacity": null
+        },
+        {
+          "elapsed": 54.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 77.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 88.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 104.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 121.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 138.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 154.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 171.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 188.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 204.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 221.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 238,
+          "opacity": null
+        },
+        {
+          "elapsed": 255,
+          "opacity": null
+        },
+        {
+          "elapsed": 271.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 288.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 304.5999999642372,
+          "opacity": null
+        }
+      ],
+      "styleSheets": [
+        "https://localhost:4316/vt-minimal/style.css"
+      ]
+    },
+    "forward": {
+      "url": "https://localhost:4316/vt-minimal/page.html",
+      "pageswap": {
+        "at": 516.8000000119209,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "https://localhost:4316/vt-minimal/",
+          "entry": "https://localhost:4316/vt-minimal/page.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 42.10000002384186,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 13.100000023841858,
+          "opacity": null
+        },
+        {
+          "elapsed": 27,
+          "opacity": null
+        },
+        {
+          "elapsed": 43.90000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 60.40000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 77.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 93.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 110.40000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 127,
+          "opacity": null
+        },
+        {
+          "elapsed": 143.70000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 160.4000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 177.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 194.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 210.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 226.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 243.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 260.4000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 276.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 293.7000000476837,
+          "opacity": null
+        },
+        {
+          "elapsed": 310.60000002384186,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "https://localhost:4316/vt-minimal/page.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "298",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Fri, 25 Sep 2026 00:06:42 GMT",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "https://localhost:4316/vt-minimal/style.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "h2",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "320",
+          "date": "Fri, 25 Sep 2026 00:06:42 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Fri, 25 Sep 2026 00:04:42 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "noscripts-http11-1440",
+    "base": "http://127.0.0.1:4315/noscripts",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 69.59999996423721,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 47.10000002384186,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 52.90000003576279,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 69.40000003576279,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 86.5,
+          "opacity": "0.120324"
+        },
+        {
+          "elapsed": 102.69999998807907,
+          "opacity": "0.260575"
+        },
+        {
+          "elapsed": 120.19999998807907,
+          "opacity": "0.390477"
+        },
+        {
+          "elapsed": 137.4000000357628,
+          "opacity": "0.511758"
+        },
+        {
+          "elapsed": 154.80000001192093,
+          "opacity": "0.623166"
+        },
+        {
+          "elapsed": 170.4000000357628,
+          "opacity": "0.723285"
+        },
+        {
+          "elapsed": 186.80000001192093,
+          "opacity": "0.812079"
+        },
+        {
+          "elapsed": 203.5,
+          "opacity": "0.887168"
+        },
+        {
+          "elapsed": 220,
+          "opacity": "0.94582"
+        },
+        {
+          "elapsed": 236.9000000357628,
+          "opacity": "0.98529"
+        },
+        {
+          "elapsed": 253.9000000357628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 270.4000000357628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 286.60000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 303.80000001192093,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/noscripts/deep-minimal.html",
+      "pageswap": {
+        "at": 532,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/noscripts/",
+          "entry": "http://127.0.0.1:4315/noscripts/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 32.69999998807907,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 15,
+          "opacity": null
+        },
+        {
+          "elapsed": 19.399999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 33.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 51.09999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 67.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 83.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 100.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 116.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 133.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 149.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 166.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 183.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 200,
+          "opacity": null
+        },
+        {
+          "elapsed": 216.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 233.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 249.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 266.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 283.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 300.0999999642372,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 550,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 590.0000000000001,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 599.9930000009015,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/noscripts/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:44 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "8980",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:44 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "noscripts-http11-390",
+    "base": "http://127.0.0.1:4315/noscripts",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 28.600000023841858,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 11.599999964237213,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 54.799999952316284,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 57.39999997615814,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 74.29999995231628,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 90.59999996423721,
+          "opacity": "0.120463"
+        },
+        {
+          "elapsed": 106.89999997615814,
+          "opacity": "0.260705"
+        },
+        {
+          "elapsed": 124.39999997615814,
+          "opacity": "0.390597"
+        },
+        {
+          "elapsed": 141.69999998807907,
+          "opacity": "0.511869"
+        },
+        {
+          "elapsed": 157.5999999642372,
+          "opacity": "0.622631"
+        },
+        {
+          "elapsed": 174.5999999642372,
+          "opacity": "0.723376"
+        },
+        {
+          "elapsed": 190.5999999642372,
+          "opacity": "0.812158"
+        },
+        {
+          "elapsed": 207.39999997615814,
+          "opacity": "0.886828"
+        },
+        {
+          "elapsed": 224.0999999642372,
+          "opacity": "0.945868"
+        },
+        {
+          "elapsed": 241.0999999642372,
+          "opacity": "0.985317"
+        },
+        {
+          "elapsed": 257.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 274.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 291.0999999642372,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 307.89999997615814,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/noscripts/deep-minimal.html",
+      "pageswap": {
+        "at": 544,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/noscripts/",
+          "entry": "http://127.0.0.1:4315/noscripts/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 30.900000035762787,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 15.600000023841858,
+          "opacity": null
+        },
+        {
+          "elapsed": 23.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 38.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 55.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 72.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 89,
+          "opacity": null
+        },
+        {
+          "elapsed": 106.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 123.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 139,
+          "opacity": null
+        },
+        {
+          "elapsed": 155.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 172.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 188.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 205.4000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 222.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 238.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 255.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 272.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 289,
+          "opacity": null
+        },
+        {
+          "elapsed": 305.60000002384186,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/noscripts/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:45 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "8980",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:45 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "no-enhancement-http11-1440",
+    "base": "http://127.0.0.1:4315/no-enhancement",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 28.899999976158142,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 2,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 17.399999976158142,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 34.10000002384186,
+          "opacity": "0.119967"
+        },
+        {
+          "elapsed": 51.30000001192093,
+          "opacity": "0.260243"
+        },
+        {
+          "elapsed": 67.39999997615814,
+          "opacity": "0.390922"
+        },
+        {
+          "elapsed": 84.5,
+          "opacity": "0.511472"
+        },
+        {
+          "elapsed": 100.80000001192093,
+          "opacity": "0.622905"
+        },
+        {
+          "elapsed": 118.80000001192093,
+          "opacity": "0.723621"
+        },
+        {
+          "elapsed": 134.39999997615814,
+          "opacity": "0.811877"
+        },
+        {
+          "elapsed": 151.19999998807907,
+          "opacity": "0.887002"
+        },
+        {
+          "elapsed": 167.60000002384186,
+          "opacity": "0.945997"
+        },
+        {
+          "elapsed": 184.30000001192093,
+          "opacity": "0.985221"
+        },
+        {
+          "elapsed": 201.5,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 217.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 234.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 251.60000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 268.60000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 284.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 300.80000001192093,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/no-enhancement/deep-minimal.html",
+      "pageswap": {
+        "at": 528.8999999761581,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/no-enhancement/",
+          "entry": "http://127.0.0.1:4315/no-enhancement/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 31,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 15,
+          "opacity": null
+        },
+        {
+          "elapsed": 32.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 49,
+          "opacity": null
+        },
+        {
+          "elapsed": 65,
+          "opacity": null
+        },
+        {
+          "elapsed": 81.40000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 98.70000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 115.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 131.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 148.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 165,
+          "opacity": null
+        },
+        {
+          "elapsed": 181.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 198.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 215,
+          "opacity": null
+        },
+        {
+          "elapsed": 231.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 248.20000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 265,
+          "opacity": null
+        },
+        {
+          "elapsed": 281.9000000357628,
+          "opacity": null
+        },
+        {
+          "elapsed": 298.7000000476837,
+          "opacity": null
+        },
+        {
+          "elapsed": 315,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 550,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 583.3290000485256,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/no-enhancement/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:46 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9748",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:46 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "no-enhancement-http11-390",
+    "base": "http://127.0.0.1:4315/no-enhancement",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 38.09999996423721,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 2,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 3.699999988079071,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 19.100000023841858,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 36,
+          "opacity": "0.120036"
+        },
+        {
+          "elapsed": 52,
+          "opacity": "0.260308"
+        },
+        {
+          "elapsed": 68.5,
+          "opacity": "0.390982"
+        },
+        {
+          "elapsed": 85.5,
+          "opacity": "0.512225"
+        },
+        {
+          "elapsed": 102,
+          "opacity": "0.622956"
+        },
+        {
+          "elapsed": 119.5,
+          "opacity": "0.723666"
+        },
+        {
+          "elapsed": 135.60000002384186,
+          "opacity": "0.811917"
+        },
+        {
+          "elapsed": 152,
+          "opacity": "0.887035"
+        },
+        {
+          "elapsed": 168.60000002384186,
+          "opacity": "0.946021"
+        },
+        {
+          "elapsed": 185.4000000357628,
+          "opacity": "0.985235"
+        },
+        {
+          "elapsed": 202.4000000357628,
+          "opacity": "0.999999"
+        },
+        {
+          "elapsed": 218.5,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 235.19999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 251.9000000357628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 268.5,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 285.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 302,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/no-enhancement/deep-minimal.html",
+      "pageswap": {
+        "at": 533.3999999761581,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/no-enhancement/",
+          "entry": "http://127.0.0.1:4315/no-enhancement/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 27.599999964237213,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 0.3999999761581421,
+          "opacity": null
+        },
+        {
+          "elapsed": 20.399999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 34.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 49.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 65.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 82.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 99.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 115.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 132.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 149.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 166,
+          "opacity": null
+        },
+        {
+          "elapsed": 182.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 199.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 216.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 233.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 249.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 265.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 282.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 299.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 315.89999997615814,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/no-enhancement/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:47 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9748",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:47 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "no-author-http11-1440",
+    "base": "http://127.0.0.1:4315/no-author",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 27,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 1.699999988079071,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 17.19999998807907,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 32.30000001192093,
+          "opacity": "0.119671"
+        },
+        {
+          "elapsed": 49.39999997615814,
+          "opacity": "0.260778"
+        },
+        {
+          "elapsed": 65.80000001192093,
+          "opacity": "0.390665"
+        },
+        {
+          "elapsed": 82.39999997615814,
+          "opacity": "0.511235"
+        },
+        {
+          "elapsed": 100.60000002384186,
+          "opacity": "0.623325"
+        },
+        {
+          "elapsed": 117.60000002384186,
+          "opacity": "0.723428"
+        },
+        {
+          "elapsed": 133.10000002384186,
+          "opacity": "0.81171"
+        },
+        {
+          "elapsed": 149.89999997615814,
+          "opacity": "0.886865"
+        },
+        {
+          "elapsed": 166.10000002384186,
+          "opacity": "0.945895"
+        },
+        {
+          "elapsed": 182.89999997615814,
+          "opacity": "0.985164"
+        },
+        {
+          "elapsed": 200,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 216.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 232.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 249.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 267.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 282.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 299.39999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 316,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/no-author/deep-minimal.html",
+      "pageswap": {
+        "at": 543.5,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/no-author/",
+          "entry": "http://127.0.0.1:4315/no-author/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 30.80000001192093,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 3.899999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 16,
+          "opacity": null
+        },
+        {
+          "elapsed": 32.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 49.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 66,
+          "opacity": null
+        },
+        {
+          "elapsed": 82.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 99.79999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 116,
+          "opacity": null
+        },
+        {
+          "elapsed": 132.79999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 149.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 166.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 182.79999995231628,
+          "opacity": null
+        },
+        {
+          "elapsed": 199.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 216.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 233,
+          "opacity": null
+        },
+        {
+          "elapsed": 249.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 266.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 283.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 299.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 316.19999998807907,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 550,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 590.0000000000001,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0330000620336,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/no-author/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:49 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9728",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:49 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "no-author-http11-390",
+    "base": "http://127.0.0.1:4315/no-author",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 30,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 1.7000000476837158,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 5.200000047683716,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 21.80000001192093,
+          "opacity": "0.120437"
+        },
+        {
+          "elapsed": 38.40000003576279,
+          "opacity": "0.260681"
+        },
+        {
+          "elapsed": 55.200000047683716,
+          "opacity": "0.390575"
+        },
+        {
+          "elapsed": 72,
+          "opacity": "0.511849"
+        },
+        {
+          "elapsed": 88.40000003576279,
+          "opacity": "0.622612"
+        },
+        {
+          "elapsed": 105.90000003576279,
+          "opacity": "0.723359"
+        },
+        {
+          "elapsed": 122.90000003576279,
+          "opacity": "0.812143"
+        },
+        {
+          "elapsed": 139,
+          "opacity": "0.886816"
+        },
+        {
+          "elapsed": 156.20000004768372,
+          "opacity": "0.945859"
+        },
+        {
+          "elapsed": 172.30000001192093,
+          "opacity": "0.985312"
+        },
+        {
+          "elapsed": 189.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 205.80000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 222.4000000357628,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 239.10000002384186,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 255.70000004768372,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 272.2000000476837,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 288.7000000476837,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 305.60000002384186,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/no-author/deep-minimal.html",
+      "pageswap": {
+        "at": 536.1999999880791,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/no-author/",
+          "entry": "http://127.0.0.1:4315/no-author/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 28.900000035762787,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 3.399999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 13.399999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 25.899999976158142,
+          "opacity": null
+        },
+        {
+          "elapsed": 42.09999996423721,
+          "opacity": null
+        },
+        {
+          "elapsed": 59.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 75.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 91.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 108.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 124.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 141.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 158.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 175,
+          "opacity": null
+        },
+        {
+          "elapsed": 191.5999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 208.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 224.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 241.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 258.0999999642372,
+          "opacity": null
+        },
+        {
+          "elapsed": 274.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 291.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 308.19999998807907,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/no-author/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:50 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9728",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:50 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "no-tracker-http11-1440",
+    "base": "http://127.0.0.1:4315/no-tracker",
+    "width": 1440,
+    "initial": {
+      "pagereveal": {
+        "at": 29.5,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 5.199999988079071,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 51.5,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 62.59999996423721,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 77.09999996423721,
+          "opacity": "0.121072"
+        },
+        {
+          "elapsed": 92.79999995231628,
+          "opacity": "0.260462"
+        },
+        {
+          "elapsed": 109.79999995231628,
+          "opacity": "0.391125"
+        },
+        {
+          "elapsed": 124.5,
+          "opacity": "0.512357"
+        },
+        {
+          "elapsed": 142.29999995231628,
+          "opacity": "0.622441"
+        },
+        {
+          "elapsed": 158.79999995231628,
+          "opacity": "0.723775"
+        },
+        {
+          "elapsed": 174.29999995231628,
+          "opacity": "0.81201"
+        },
+        {
+          "elapsed": 191,
+          "opacity": "0.886707"
+        },
+        {
+          "elapsed": 207.5,
+          "opacity": "0.946077"
+        },
+        {
+          "elapsed": 224.29999995231628,
+          "opacity": "0.985435"
+        },
+        {
+          "elapsed": 240.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 258.2999999523163,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 273.89999997615814,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 290.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 308.0999999642372,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/no-tracker/deep-minimal.html",
+      "pageswap": {
+        "at": 547.1999999880791,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/no-tracker/",
+          "entry": "http://127.0.0.1:4315/no-tracker/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 34.69999998807907,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 10.300000011920929,
+          "opacity": null
+        },
+        {
+          "elapsed": 18.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 32.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 49.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 66.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 82.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 99.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 116.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 132.80000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 149.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 166.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 182.89999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 199.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 216.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 232.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 249.39999997615814,
+          "opacity": null
+        },
+        {
+          "elapsed": 266.19999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 282.69999998807907,
+          "opacity": null
+        },
+        {
+          "elapsed": 299.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 316.19999998807907,
+          "opacity": null
+        }
+      ],
+      "animations": [
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 550,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 590.0000000000001,
+          "playState": "finished"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        },
+        {
+          "name": "letter-cascade-in",
+          "pseudo": null,
+          "currentTime": 600.0320000153035,
+          "playState": "running"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/no-tracker/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:51 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9612",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:51 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  },
+  {
+    "name": "no-tracker-http11-390",
+    "base": "http://127.0.0.1:4315/no-tracker",
+    "width": 390,
+    "initial": {
+      "pagereveal": {
+        "at": 29.600000023841858,
+        "hasViewTransition": false,
+        "activation": null
+      },
+      "intro": [
+        {
+          "elapsed": 5,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 27.69999998807907,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 43,
+          "opacity": "0"
+        },
+        {
+          "elapsed": 59.89999997615814,
+          "opacity": "0.120776"
+        },
+        {
+          "elapsed": 75.5,
+          "opacity": "0.260186"
+        },
+        {
+          "elapsed": 93.5,
+          "opacity": "0.390869"
+        },
+        {
+          "elapsed": 108.89999997615814,
+          "opacity": "0.511423"
+        },
+        {
+          "elapsed": 125.19999998807907,
+          "opacity": "0.622861"
+        },
+        {
+          "elapsed": 141.19999998807907,
+          "opacity": "0.723581"
+        },
+        {
+          "elapsed": 157.10000002384186,
+          "opacity": "0.811843"
+        },
+        {
+          "elapsed": 173.80000001192093,
+          "opacity": "0.886974"
+        },
+        {
+          "elapsed": 190.30000001192093,
+          "opacity": "0.945976"
+        },
+        {
+          "elapsed": 207,
+          "opacity": "0.985378"
+        },
+        {
+          "elapsed": 223.69999998807907,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 240.30000001192093,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 257,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 273.5,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 290.5,
+          "opacity": "1"
+        },
+        {
+          "elapsed": 307,
+          "opacity": "1"
+        }
+      ],
+      "styleSheets": [
+        "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css"
+      ]
+    },
+    "forward": {
+      "url": "http://127.0.0.1:4315/no-tracker/deep-minimal.html",
+      "pageswap": {
+        "at": 520.1999999880791,
+        "hasViewTransition": true,
+        "activation": {
+          "from": "http://127.0.0.1:4315/no-tracker/",
+          "entry": "http://127.0.0.1:4315/no-tracker/deep-minimal.html",
+          "navigationType": "push"
+        }
+      },
+      "pagereveal": {
+        "at": 30,
+        "hasViewTransition": true,
+        "activation": null
+      },
+      "active": false,
+      "intro": [
+        {
+          "elapsed": 10.300000011920929,
+          "opacity": null
+        },
+        {
+          "elapsed": 17.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 29.700000047683716,
+          "opacity": null
+        },
+        {
+          "elapsed": 46.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 62.90000003576279,
+          "opacity": null
+        },
+        {
+          "elapsed": 79.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 96.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 112.70000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 130.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 146.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 162.60000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 179.20000004768372,
+          "opacity": null
+        },
+        {
+          "elapsed": 196.10000002384186,
+          "opacity": null
+        },
+        {
+          "elapsed": 212.5,
+          "opacity": null
+        },
+        {
+          "elapsed": 229.30000001192093,
+          "opacity": null
+        },
+        {
+          "elapsed": 246,
+          "opacity": null
+        },
+        {
+          "elapsed": 262.7000000476837,
+          "opacity": null
+        },
+        {
+          "elapsed": 279.2000000476837,
+          "opacity": null
+        },
+        {
+          "elapsed": 296,
+          "opacity": null
+        },
+        {
+          "elapsed": 312.60000002384186,
+          "opacity": null
+        }
+      ],
+      "animations": []
+    },
+    "responses": [
+      {
+        "url": "http://127.0.0.1:4315/no-tracker/deep-minimal.html",
+        "status": 200,
+        "mimeType": "text/html",
+        "protocol": "http/1.1",
+        "headers": {
+          "Connection": "keep-alive",
+          "Date": "Fri, 25 Sep 2026 00:06:52 GMT",
+          "Keep-Alive": "timeout=5",
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=600",
+          "content-length": "9612",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      },
+      {
+        "url": "http://127.0.0.1:4315/_next/static/css/layout.D0VXG4a-.css",
+        "status": 200,
+        "mimeType": "text/css",
+        "protocol": "http/1.1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable",
+          "Connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-length": "8908",
+          "Keep-Alive": "timeout=5",
+          "Date": "Fri, 25 Sep 2026 00:06:52 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Thu, 24 Sep 2026 23:50:06 GMT",
+          "vary": "Accept-Encoding"
+        }
+      }
+    ]
+  }
+]

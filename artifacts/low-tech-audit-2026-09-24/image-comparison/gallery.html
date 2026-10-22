@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thinkinghaus image treatment comparison</title>
+<style>
+  :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #171613; color: #eeeae3; }
+  body { margin: 0; padding: 32px; }
+  h1 { font-size: 20px; font-weight: 500; margin: 0 0 8px; }
+  .note { color: #aaa59c; margin: 0 0 32px; }
+  .comparison { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  figure { margin: 0; }
+  img { display: block; width: 100%; height: auto; background: #f4efe3; }
+  figcaption { display: grid; gap: 4px; margin-top: 12px; font-size: 14px; line-height: 1.35; }
+  small { color: #aaa59c; }
+  @media (max-width: 800px) { body { padding: 20px; } .comparison { grid-template-columns: 1fr; } }
+</style>
+<body>
+  <h1>Deep minimal — image treatment comparison</h1>
+  <p class="note">Unpublished prototype. Each source remains 1254 × 1254; resize the window to inspect article and mobile display sizes.</p>
+  <main class="comparison">
+    <figure>
+      <img src="current.webp" alt="Current warm paper-textured illustration">
+      <figcaption><span>Current treatment</span><small>WebP, 44,062 bytes</small></figcaption>
+    </figure>
+    <figure>
+      <img src="dithered-fixed-4-gray.png" alt="Four-level grayscale dithered illustration">
+      <figcaption><span>Four-level grayscale + Floyd–Steinberg dithering</span><small>Indexed PNG, 268,630 bytes</small></figcaption>
+    </figure>
+    <figure>
+      <img src="compressed-original-q70.webp" alt="Warm paper-textured illustration compressed more efficiently">
+      <figcaption><span>Efficiently compressed original</span><small>WebP quality 70, 21,484 bytes</small></figcaption>
+    </figure>
+  </main>
+</body>
+</html>

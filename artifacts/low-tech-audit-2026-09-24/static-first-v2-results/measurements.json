@@ -1,0 +1,1258 @@
+[
+  {
+    "name": "live-home",
+    "url": "https://thinking.haus/",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 23,
+    "transferredBytes": 174406,
+    "javascriptBytes": 131023,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "https://thinking.haus/_next/static/chunks/framework-CgvwdT60.js",
+        "type": "Script",
+        "bytes": 59815
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/index-BM0XXxyz.js",
+        "type": "Script",
+        "bytes": 55080
+      },
+      {
+        "url": "https://thinking.haus/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35079
+      },
+      {
+        "url": "https://thinking.haus/",
+        "type": "Document",
+        "bytes": 4809
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-elements-DHcpiQtq.js",
+        "type": "Script",
+        "bytes": 4551
+      },
+      {
+        "url": "https://thinking.haus/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2602
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-rsc-cache-busting-D4PdMnkX.js",
+        "type": "Script",
+        "bytes": 2406
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/navigation-errors-C078jkgP.js",
+        "type": "Script",
+        "bytes": 1757
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/headers-CjJR8pP7.js",
+        "type": "Script",
+        "bytes": 1429
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/Footer-BizqttLx.js",
+        "type": "Script",
+        "bytes": 964
+      },
+      {
+        "url": "https://thinking.haus/author-mode.js",
+        "type": "Script",
+        "bytes": 825
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/TypographyGuards-B9kAaWNW.js",
+        "type": "Script",
+        "bytes": 730
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/layout-segment-context-DoHvW0L6.js",
+        "type": "Script",
+        "bytes": 653
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/rolldown-runtime-hePW80VL.js",
+        "type": "Script",
+        "bytes": 571
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/protocol-headers-De2985Ry.js",
+        "type": "Script",
+        "bytes": 531
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-rsc-render-mode-fsLZfEO0.js",
+        "type": "Script",
+        "bytes": 531
+      },
+      {
+        "url": "https://thinking.haus/favicon.svg",
+        "type": "Other",
+        "bytes": 458
+      },
+      {
+        "url": "https://thinking.haus/favicon.svg",
+        "type": "Other",
+        "bytes": 435
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/typography-CtI95EFj.js",
+        "type": "Script",
+        "bytes": 360
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/hash-B9TVtkv9.js",
+        "type": "Script",
+        "bytes": 323
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/record-BGze3w87.js",
+        "type": "Script",
+        "bytes": 259
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/deployment-id-omnKpZ2w.js",
+        "type": "Script",
+        "bytes": 238
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus",
+      "textLength": 471,
+      "links": 21,
+      "image": null,
+      "progress": null,
+      "footer": null,
+      "editVisible": null,
+      "trackerContract": true,
+      "typographyGuarded": false
+    },
+    "scrollState": null
+  },
+  {
+    "name": "prototype-home",
+    "url": "http://127.0.0.1:4314/",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 9,
+    "transferredBytes": 44368,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/",
+        "type": "Document",
+        "bytes": 1616
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "http://127.0.0.1:4314/favicon.svg",
+        "type": "Other",
+        "bytes": 693
+      },
+      {
+        "url": "http://127.0.0.1:4314/favicon.svg",
+        "type": "Other",
+        "bytes": 693
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus",
+      "textLength": 471,
+      "links": 21,
+      "image": null,
+      "progress": null,
+      "footer": null,
+      "editVisible": null,
+      "trackerContract": true,
+      "typographyGuarded": false
+    },
+    "scrollState": null
+  },
+  {
+    "name": "live-over-the-loop",
+    "url": "https://thinking.haus/over-the-loop.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 25,
+    "transferredBytes": 266875,
+    "javascriptBytes": 133729,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "https://thinking.haus/_next/static/chunks/framework-CgvwdT60.js",
+        "type": "Script",
+        "bytes": 59994
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/index-BM0XXxyz.js",
+        "type": "Script",
+        "bytes": 55127
+      },
+      {
+        "url": "https://thinking.haus/images/over-the-loop-f882511f.jpg",
+        "type": "Image",
+        "bytes": 50442
+      },
+      {
+        "url": "https://thinking.haus/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36188
+      },
+      {
+        "url": "https://thinking.haus/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35083
+      },
+      {
+        "url": "https://thinking.haus/over-the-loop.html",
+        "type": "Document",
+        "bytes": 8827
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-elements-DHcpiQtq.js",
+        "type": "Script",
+        "bytes": 4354
+      },
+      {
+        "url": "https://thinking.haus/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2606
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-rsc-cache-busting-D4PdMnkX.js",
+        "type": "Script",
+        "bytes": 2218
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/ScrollFadeImage-DtTAb8HG.js",
+        "type": "Script",
+        "bytes": 2047
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/navigation-errors-C078jkgP.js",
+        "type": "Script",
+        "bytes": 1760
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/headers-CjJR8pP7.js",
+        "type": "Script",
+        "bytes": 1429
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/Footer-BizqttLx.js",
+        "type": "Script",
+        "bytes": 966
+      },
+      {
+        "url": "https://thinking.haus/author-mode.js",
+        "type": "Script",
+        "bytes": 821
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/ScrollProgress-x4ptvP0k.js",
+        "type": "Script",
+        "bytes": 795
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/TypographyGuards-B9kAaWNW.js",
+        "type": "Script",
+        "bytes": 779
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/rolldown-runtime-hePW80VL.js",
+        "type": "Script",
+        "bytes": 744
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/layout-segment-context-DoHvW0L6.js",
+        "type": "Script",
+        "bytes": 531
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-rsc-render-mode-fsLZfEO0.js",
+        "type": "Script",
+        "bytes": 512
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/record-BGze3w87.js",
+        "type": "Script",
+        "bytes": 414
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/protocol-headers-De2985Ry.js",
+        "type": "Script",
+        "bytes": 343
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/hash-B9TVtkv9.js",
+        "type": "Script",
+        "bytes": 341
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/typography-CtI95EFj.js",
+        "type": "Script",
+        "bytes": 313
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/deployment-id-omnKpZ2w.js",
+        "type": "Script",
+        "bytes": 241
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Over the loop",
+      "textLength": 5422,
+      "links": 23,
+      "image": {
+        "active": true,
+        "opacity": "0.6",
+        "value": "0.6"
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": true,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": null
+  },
+  {
+    "name": "prototype-over-the-loop",
+    "url": "http://127.0.0.1:4314/over-the-loop.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 9,
+    "transferredBytes": 132184,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/images/over-the-loop-f882511f.jpg",
+        "type": "Image",
+        "bytes": 50675
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36263
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/over-the-loop.html",
+        "type": "Document",
+        "bytes": 3880
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Over the loop",
+      "textLength": 5422,
+      "links": 23,
+      "image": {
+        "active": true,
+        "opacity": "0.6",
+        "value": "0.6"
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": true,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": null
+  },
+  {
+    "name": "live-deep-minimal",
+    "url": "https://thinking.haus/deep-minimal.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 25,
+    "transferredBytes": 259308,
+    "javascriptBytes": 133682,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "https://thinking.haus/_next/static/chunks/framework-CgvwdT60.js",
+        "type": "Script",
+        "bytes": 59959
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/index-BM0XXxyz.js",
+        "type": "Script",
+        "bytes": 55081
+      },
+      {
+        "url": "https://thinking.haus/images/deep-minimal-d76dc09e.webp",
+        "type": "Image",
+        "bytes": 44284
+      },
+      {
+        "url": "https://thinking.haus/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36185
+      },
+      {
+        "url": "https://thinking.haus/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35108
+      },
+      {
+        "url": "https://thinking.haus/deep-minimal.html",
+        "type": "Document",
+        "bytes": 7416
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-elements-DHcpiQtq.js",
+        "type": "Script",
+        "bytes": 4377
+      },
+      {
+        "url": "https://thinking.haus/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2633
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-rsc-cache-busting-D4PdMnkX.js",
+        "type": "Script",
+        "bytes": 2254
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/ScrollFadeImage-DtTAb8HG.js",
+        "type": "Script",
+        "bytes": 1840
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/navigation-errors-C078jkgP.js",
+        "type": "Script",
+        "bytes": 1811
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/headers-CjJR8pP7.js",
+        "type": "Script",
+        "bytes": 1433
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/Footer-BizqttLx.js",
+        "type": "Script",
+        "bytes": 959
+      },
+      {
+        "url": "https://thinking.haus/author-mode.js",
+        "type": "Script",
+        "bytes": 821
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/TypographyGuards-B9kAaWNW.js",
+        "type": "Script",
+        "bytes": 797
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/ScrollProgress-x4ptvP0k.js",
+        "type": "Script",
+        "bytes": 784
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/layout-segment-context-DoHvW0L6.js",
+        "type": "Script",
+        "bytes": 679
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/rolldown-runtime-hePW80VL.js",
+        "type": "Script",
+        "bytes": 598
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/app-rsc-render-mode-fsLZfEO0.js",
+        "type": "Script",
+        "bytes": 547
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/protocol-headers-De2985Ry.js",
+        "type": "Script",
+        "bytes": 492
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/record-BGze3w87.js",
+        "type": "Script",
+        "bytes": 388
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/hash-B9TVtkv9.js",
+        "type": "Script",
+        "bytes": 322
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/typography-CtI95EFj.js",
+        "type": "Script",
+        "bytes": 317
+      },
+      {
+        "url": "https://thinking.haus/_next/static/chunks/deployment-id-omnKpZ2w.js",
+        "type": "Script",
+        "bytes": 223
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Deep minimal",
+      "textLength": 3361,
+      "links": 25,
+      "image": {
+        "active": true,
+        "opacity": "1",
+        "value": "1"
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": true,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": {
+      "threshold": {
+        "scrollY": 87,
+        "imageOpacity": "1",
+        "progress": "matrix(0.0514184, 0, 0, 1, 0, 0)",
+        "footerRevealed": false
+      },
+      "past": {
+        "scrollY": 1112,
+        "imageOpacity": "0.6",
+        "progress": "matrix(0.65721, 0, 0, 1, 0, 0)",
+        "footerRevealed": false
+      },
+      "reverse": {
+        "scrollY": 87,
+        "imageOpacity": "1",
+        "progress": "matrix(0.0514184, 0, 0, 1, 0, 0)",
+        "footerRevealed": false
+      },
+      "end": {
+        "scrollY": 1692,
+        "imageOpacity": "0.6",
+        "progress": "matrix(1, 0, 0, 1, 0, 0)",
+        "footerRevealed": true
+      }
+    }
+  },
+  {
+    "name": "prototype-deep-minimal",
+    "url": "http://127.0.0.1:4314/deep-minimal.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 9,
+    "transferredBytes": 125112,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/images/deep-minimal-d76dc09e.webp",
+        "type": "Image",
+        "bytes": 44472
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36263
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "type": "Document",
+        "bytes": 3011
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Deep minimal",
+      "textLength": 3361,
+      "links": 25,
+      "image": {
+        "active": true,
+        "opacity": "1",
+        "value": "1"
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": true,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": {
+      "threshold": {
+        "scrollY": 87,
+        "imageOpacity": "1",
+        "progress": "matrix(0.0514184, 0, 0, 1, 0, 0)",
+        "footerRevealed": false
+      },
+      "past": {
+        "scrollY": 1112,
+        "imageOpacity": "0.6",
+        "progress": "matrix(0.65721, 0, 0, 1, 0, 0)",
+        "footerRevealed": false
+      },
+      "reverse": {
+        "scrollY": 87,
+        "imageOpacity": "1",
+        "progress": "matrix(0.0514184, 0, 0, 1, 0, 0)",
+        "footerRevealed": false
+      },
+      "end": {
+        "scrollY": 1692,
+        "imageOpacity": "0.6",
+        "progress": "matrix(1, 0, 0, 1, 0, 0)",
+        "footerRevealed": true
+      }
+    }
+  },
+  {
+    "name": "prototype-home-mobile",
+    "url": "http://127.0.0.1:4314/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 7,
+    "transferredBytes": 42982,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/",
+        "type": "Document",
+        "bytes": 1616
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus",
+      "textLength": 288,
+      "links": 21,
+      "image": null,
+      "progress": null,
+      "footer": null,
+      "editVisible": null,
+      "trackerContract": true,
+      "typographyGuarded": false
+    },
+    "scrollState": null
+  },
+  {
+    "name": "prototype-deep-minimal-mobile",
+    "url": "http://127.0.0.1:4314/deep-minimal.html",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 9,
+    "transferredBytes": 125112,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/images/deep-minimal-d76dc09e.webp",
+        "type": "Image",
+        "bytes": 44472
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36263
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "type": "Document",
+        "bytes": 3011
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Deep minimal",
+      "textLength": 3349,
+      "links": 25,
+      "image": {
+        "active": true,
+        "opacity": "1",
+        "value": "1"
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": true,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": null
+  },
+  {
+    "name": "prototype-deep-minimal-nojs",
+    "url": "http://127.0.0.1:4314/deep-minimal.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": false,
+    "reducedMotion": false,
+    "requestCount": 5,
+    "transferredBytes": 121603,
+    "javascriptBytes": 0,
+    "failedRequests": [],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/images/deep-minimal-d76dc09e.webp",
+        "type": "Image",
+        "bytes": 44472
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36263
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "type": "Document",
+        "bytes": 3011
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Deep minimal",
+      "textLength": 3361,
+      "links": 25,
+      "image": {
+        "active": false,
+        "opacity": "1",
+        "value": ""
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": false,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": null
+  },
+  {
+    "name": "prototype-deep-minimal-reduced",
+    "url": "http://127.0.0.1:4314/deep-minimal.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": true,
+    "requestCount": 9,
+    "transferredBytes": 125112,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/images/deep-minimal-d76dc09e.webp",
+        "type": "Image",
+        "bytes": 44472
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36263
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "type": "Document",
+        "bytes": 3011
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Deep minimal",
+      "textLength": 3361,
+      "links": 25,
+      "image": {
+        "active": false,
+        "opacity": "1",
+        "value": ""
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": false,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": null
+  },
+  {
+    "name": "prototype-deep-minimal-observer-failure",
+    "url": "http://127.0.0.1:4314/deep-minimal.html",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 9,
+    "transferredBytes": 125112,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/images/deep-minimal-d76dc09e.webp",
+        "type": "Image",
+        "bytes": 44472
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36263
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "type": "Document",
+        "bytes": 3011
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Deep minimal",
+      "textLength": 3361,
+      "links": 25,
+      "image": {
+        "active": false,
+        "opacity": "1",
+        "value": ""
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": true,
+        "revealed": false
+      },
+      "editVisible": false,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": null
+  },
+  {
+    "name": "prototype-deep-minimal-author",
+    "url": "http://127.0.0.1:4314/deep-minimal.html#edit",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "javascript": true,
+    "reducedMotion": false,
+    "requestCount": 9,
+    "transferredBytes": 125112,
+    "javascriptBytes": 3509,
+    "failedRequests": [
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "errorText": "net::ERR_BLOCKED_BY_ORB"
+      }
+    ],
+    "consoleErrors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4314/images/deep-minimal-d76dc09e.webp",
+        "type": "Image",
+        "bytes": 44472
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-RegularItalic.woff2",
+        "type": "Font",
+        "bytes": 36263
+      },
+      {
+        "url": "http://127.0.0.1:4314/fonts/UntitledSansWeb-Regular.woff2",
+        "type": "Font",
+        "bytes": 35303
+      },
+      {
+        "url": "http://127.0.0.1:4314/deep-minimal.html",
+        "type": "Document",
+        "bytes": 3011
+      },
+      {
+        "url": "http://127.0.0.1:4314/_next/static/css/layout.D0VXG4a-.css",
+        "type": "Stylesheet",
+        "bytes": 2554
+      },
+      {
+        "url": "http://127.0.0.1:4314/prototype-enhancements.mjs",
+        "type": "Script",
+        "bytes": 1428
+      },
+      {
+        "url": "http://127.0.0.1:4314/write-placid-scroll-fade-v1.4.0.mjs",
+        "type": "Script",
+        "bytes": 1107
+      },
+      {
+        "url": "http://127.0.0.1:4314/author-mode.js",
+        "type": "Script",
+        "bytes": 974
+      },
+      {
+        "url": "https://trackinghaus-alpha.vercel.app/tracker.js",
+        "type": "Script",
+        "bytes": 0
+      }
+    ],
+    "state": {
+      "title": "thinking.haus - Deep minimal",
+      "textLength": 3367,
+      "links": 25,
+      "image": {
+        "active": true,
+        "opacity": "1",
+        "value": "1"
+      },
+      "progress": "matrix(0, 0, 0, 1, 0, 0)",
+      "footer": {
+        "armed": true,
+        "revealed": false
+      },
+      "editVisible": true,
+      "trackerContract": true,
+      "typographyGuarded": true
+    },
+    "scrollState": null
+  }
+]

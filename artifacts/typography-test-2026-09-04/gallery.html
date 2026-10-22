@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keepinghaus typography-in-use test</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #11100e; color: #eee9df; }
+    main { width: min(1500px, 100%); margin: auto; padding: 40px 24px 96px; }
+    h1 { max-width: 18ch; margin: 0 0 16px; font-size: clamp(32px, 5vw, 68px); line-height: .98; font-weight: 500; }
+    h2 { margin: 64px 0 20px; font-size: 18px; font-weight: 500; }
+    p { max-width: 72ch; color: #b7b0a5; line-height: 1.55; }
+    a { color: inherit; }
+    .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 560px), 1fr)); gap: 28px; }
+    figure { margin: 0; }
+    img { display: block; width: 100%; height: auto; background: #1a1814; border: 1px solid #302d28; }
+    figcaption { margin-top: 8px; color: #90897e; font-size: 13px; }
+    details { margin-top: 28px; border-top: 1px solid #302d28; padding-top: 18px; }
+    summary { cursor: pointer; font-size: 18px; }
+    .matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; margin-top: 20px; align-items: start; }
+    .matrix.mobile { grid-template-columns: repeat(auto-fit, minmax(260px, 390px)); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Typography in use</h1>
+  <p>Four font conditions rendered through the same Keepinghaus pages. Everything except typography is held constant. Desktop is 1280 × 800; mobile is 390 × 844.</p>
+
+  <h2>Direct comparisons</h2>
+  <div class="comparison-grid" id="comparisons"></div>
+
+  <h2>All full-page evidence</h2>
+  <div id="full-captures"></div>
+</main>
+<script>
+  const comparisons = [
+    ["01-index-desktop", "Index · desktop"],
+    ["02-prose-desktop", "Normal prose · desktop"],
+    ["03-prose-mobile", "Normal prose · mobile"],
+    ["04-links-desktop", "Persistent links · desktop"],
+    ["05-list-mobile", "Lists · mobile"],
+    ["06-media-desktop", "Long prose with media · desktop"],
+    ["07-longform-full-desktop", "Complete long page · desktop"],
+  ];
+  const conditions = ["charter", "untitled-serif", "untitled-sans", "browser-serif"];
+  const pages = ["index", "personal-folklore", "look-at-this", "links", "now"];
+
+  document.querySelector("#comparisons").innerHTML = comparisons.map(([file, label]) => `
+    <figure><a href="comparisons/${file}.png"><img src="comparisons/${file}.png" alt="${label} typography comparison"></a><figcaption>${label}</figcaption></figure>
+  `).join("");
+
+  document.querySelector("#full-captures").innerHTML = conditions.map((condition) => `
+    <details>
+      <summary>${condition.replaceAll("-", " ")}</summary>
+      <h2>Desktop</h2>
+      <div class="matrix">${pages.map((page) => `<figure><a href="screenshots/${condition}-${page}-desktop.png"><img loading="lazy" src="screenshots/${condition}-${page}-desktop.png" alt="${condition}, ${page}, desktop"></a><figcaption>${page}</figcaption></figure>`).join("")}</div>
+      <h2>Mobile</h2>
+      <div class="matrix mobile">${pages.map((page) => `<figure><a href="screenshots/${condition}-${page}-mobile.png"><img loading="lazy" src="screenshots/${condition}-${page}-mobile.png" alt="${condition}, ${page}, mobile"></a><figcaption>${page}</figcaption></figure>`).join("")}</div>
+    </details>
+  `).join("");
+</script>
+</body>
+</html>

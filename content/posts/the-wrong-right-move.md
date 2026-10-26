@@ -8,53 +8,83 @@ slug: the-wrong-right-move
 date: 2026-10-05
 status: published
 publishedAt: 2026-10-05T22:56:02.464Z
-updatedAt: 2026-10-06T21:25:29.278Z
+updatedAt: 2026-10-25T19:35:00.000Z
 ---
 
-So there I was, writing an essay about Technique Without Taste with my superintelligent writing partner, bouncing things back and forth, getting some meaningful word count under our belts.
+So there I was, writing an essay about Technique Without Taste with my superintelligent writing partner. We were bouncing things back and forth, getting some meaningful word count under our belts, and gradually producing the very problem we were trying to describe.
 
-We were talking about how a writer’s technique is often very visible, and how their taste often isn’t. By taste we mean a kind of discretionary judgment: recognizing that something effective can still be wrong for this particular situation.
+We were talking about how a writer's technique is often very visible, and how their taste often isn't. By taste I mean a kind of discretionary judgment: recognizing that something effective can still be wrong for this particular situation.
 
-That’s Technique Without Taste: a creative technique gets used because it’s known historically to “work,” or because it’s recognized as a signature element of the creator’s style, rather than because the material actually calls for it.
+A writer has recognizable moves. Jokes, metaphors, digressions, little one-sentence paragraphs that announce something terribly important. Some of these become signatures. But knowing how to produce a recognizable effect isn't the same as knowing when it belongs.
 
-There’s a relationship here to [kitsch](https://ia.net/topics/learning-to-see), at least in the sense illustrated by the diagram below: form can look right while being wrong for the thing it’s supposed to do. Technique Without Taste is a kind of rhetorical version of that. The move may be attractive, polished, even effective on its own terms. It just doesn’t belong here.
+There's a relationship here to kitsch, at least in the sense illustrated by this diagram:
 
-![A four-quadrant diagram contrasting function and form: boldness is functional but not pretty, beauty is functional and pretty, trash is neither, and kitsch is pretty but dysfunctional.](/images/the-wrong-right-move-227014ee.png)
+![A four-quadrant diagram contrasting form and function: Boldness, Beauty, Trash, and Kitsch.](/images/the-wrong-right-move-227014ee.png)
 
-Then we went through our draft looking for exactly the kind of failure we were describing. And, well, it wasn’t great. There were too many isolated sentences. Some jokes were doing useful work; most weren’t. A few thoughts were getting more force from their presentation than the thought beneath them warranted. I see you, dramatic one-sentence paragraph.
+*After the four-quadrant diagram discussed in [iA's “Learning to See”](https://ia.net/topics/learning-to-see).*
 
-So we removed them, and this complicated the issue. Now the AI had access to something it didn’t have in the finished essays I’d originally given it: rejection. It learned, at least locally, that *this* joke was too cute, *this* sentence didn’t need its own spotlight, *this* metaphor was trying too hard. The revision history contained evidence of choices that hadn’t survived.
+The interesting quadrant is the bottom right: something attractive that doesn't work particularly well. In writing, form and purpose aren't so easily separated. Sometimes an attractive turn of phrase is worth having simply because it's attractive. But the distinction is useful. A sentence can be beautifully made and still be wrong for the passage it occupies.
 
-That means it’s not quite right to say AI only sees what remains. In collaboration, we can show it what we reject too.
+Anyway, we went through our draft looking for exactly that sort of failure. And, well, it wasn't great. There were too many isolated sentences. Some jokes were doing useful work; most weren't. A few thoughts were getting more force from their presentation than the thoughts beneath them warranted. I see you, dramatic one-sentence paragraph.
 
-But those rejection patterns can themselves become constraints, and constraints can become recipes. Fewer one-line paragraphs. Less ornamental metaphor. Humor that grows out of observation. All useful guidance. All potentially just another set of instructions.
+So we started cutting.
 
-Now instead of automatically inserting the joke, the model can automatically remove it. Taste still hasn’t manifested; the ruleset just became more sophisticated.
+This introduced an interesting complication. The AI now had access to something it didn't have in the finished essays I'd originally given it: rejection. It could see not only what I'd written but what I'd decided not to keep.
 
-Taste is difficult to encode because it’s so contextual. The same joke can save one paragraph and cheapen another. The same metaphor can suddenly make something visible in one essay and turn into decorative fog in the next. A dramatic isolated sentence can be exactly right once and Paragraph Theater three pages later. There isn’t a stable rule that settles every case because the answer keeps depending on the material.
+That's potentially valuable information. Show a model twenty essays I'm proud of, and it can identify my habits. I like humor. I sometimes let a mundane object carry a larger thought. I'm comfortable wandering. But the finished work doesn't show all the jokes I abandoned, the metaphors I thought better of, or the occasions when I resisted the temptation to give a sentence its own paragraph.
 
-That’s why voice imitation is such a strange use case for AI. Suppose I show a model twenty essays I’ve written that I’m proud of. It notices things. I like humor. I sometimes let a mundane object carry a larger thought. I’m comfortable wandering. Maybe I tend to speak from personal experience.
+A revision history offers some of that missing evidence.
 
-None of those observations is wrong. But they can become instructions very easily. Now the model has a collection of reliable moves waiting to be deployed. It goes looking for somewhere to put the joke. A metaphor appears because this feels like the kind of paragraph where I might usually have one. The writing begins reproducing the evidence of judgment rather than exercising judgment itself.
+The trouble is that rejection can become another recipe.
 
-Humor makes the problem easy to see because a good joke can start exerting pressure on everything around it. A distinction gets sharpened beyond what you quite believe because the exaggerated version is funnier. A paragraph starts serving the line instead of the thought. At that point the joke may still work; it’s just working for the wrong thing.
+Instead of automatically inserting the joke, the model can automatically remove it. Instead of giving every moderately interesting thought its own paragraph, it can stop doing that altogether. It has learned something about what I disliked in a particular passage. Whether that helps it recognize what belongs in the next one is another question.
 
-Metaphors do the same thing. So do deep-cut references. So do those little one-sentence paragraphs that acquire more importance from their isolation than from the thought inside them.
+There's a further complication. The reasons we give for rejecting things aren't always especially accurate. I might call a joke too cute when the real problem is that it interrupts a transition. I might say a metaphor is unnecessary when I mean that it draws attention away from something more interesting. The instruction records my explanation, which isn't necessarily the whole of my judgment.
 
-A good style guide should probably make those choices *less* automatic, not more. If humor is useful because it preserves human scale, sometimes preserving human scale means not making the joke. If metaphor is useful because it increases perception, a metaphor that merely decorates the thought has failed. If an associative leap belongs because it reveals an underlying relationship, surprise alone doesn’t justify it.
+This became apparent when we started revising the essay itself.
 
-The technique isn’t the value. Whatever made the technique appropriate is the value.
+An earlier version contained this sentence:
 
-That gives us a practical test, and the revision of this essay ended up becoming the test case. Alright then: take out the joke. Flatten the metaphor. Put the dramatic sentence back into its paragraph. Remove the offbeat reference. Make the ending boring. Then look at what you have left.
+“The technique isn't the value. Whatever made the technique appropriate is the value.”
 
-Sometimes the passage implodes, which tells you the technique was carrying real meaning. OK, put it back. Sometimes almost nothing changes except that the writing becomes less recognizably “good.” That’s useful information too.
+I liked it. It sounded like something I'd write. A neat distinction, stated with enough confidence to make the reader feel we'd arrived somewhere.
 
-I don’t want to turn this into an argument against recurring techniques. Writers obviously have them. A voice accumulates habits, even gimmicks, because the same person keeps encountering the world with some continuity. Someone who’s genuinely funny is probably going to keep being funny. Someone who thinks associatively will keep making associations.
+Except it wasn't quite true.
 
-The problem is reversing the causality. A living voice goes: *I saw the thing like this, so the sentence came out like this.* Technique Without Taste goes: *My sentences tend to come out like this, so I need to find a thing for this sentence to do.* That reversal is subtle enough that AI can make it look completely natural.
+Technique can produce meaning rather than merely express it. A poet can follow a rhyme into an unexpected thought. A metaphor can reveal a relationship the writer hadn't noticed before finding the metaphor. The sentence made the relationship between technique and judgment seem cleaner than it was.
 
-Which may be why the best intervention isn’t telling the model to stop using your favorite techniques. That just creates another rule for it to follow. Better to temporarily remove the move and force the passage to earn it back.
+The problem wasn't that I'd used an aphorism. It was that the aphoristic form helped me overlook an overstatement. The sentence sounded settled, and I was inclined to believe it.
 
-What does the joke reveal? What does the metaphor let me see? What does this strange reference change? Why is this sentence standing by itself?
+So we took it out.
 
-If there’s a good answer, fine. If the answer is basically *because this is how I write*, that’s probably the moment to worry.
+Then I asked my writing partner to revise the essay with that criticism in mind. I asked for greater intellectual precision and less categorical reasoning. The instruction was mine, and I was hardly surprised when the resulting draft became very careful. Very careful. It produced, among other things:
+
+“I don't know that the model has failed to learn anything about judgment. I also can't infer from one successful revision that it has learned why a particular decision was right.”
+
+Both statements are reasonable. Together they manage to make a fairly simple observation sound like a legal disclaimer.
+
+What I wanted to say was that the revisions had improved, but I didn't know whether the lesson would carry over to another essay.
+
+My instruction had been sensible in one context. The response made it conspicuous everywhere. The revision was more defensible. It was also less interesting.
+
+And here's the annoying part: the next sentence might genuinely need that qualification. The problem wasn't caution any more than the original problem had been humor or metaphor. It was the indiscriminate application of something that had recently proved useful.
+
+Consider the little joke earlier about the dramatic one-sentence paragraph. It catches me doing exactly what I'm criticizing and punctures my authority a bit. The rejected aphorism did the opposite: it borrowed authority from its own neatness. I still like how it sounds.
+
+Neither choice follows from a rule about jokes, isolated sentences, or aphorisms. Writing can do more than advance an argument.
+
+A useful experiment is to remove the move temporarily. Take out the joke. Flatten the metaphor. Put the dramatic sentence back into its paragraph. Then compare the versions.
+
+Perhaps the passage becomes clearer. Perhaps it loses something: rhythm, surprise, a little pleasure. Perhaps neither version quite works.
+
+The experiment doesn't decide anything for you. It makes the choice easier to see.
+
+That's a useful role for an AI writing partner. Not to reproduce every habit it identifies as mine, or obediently avoid every habit I've criticized, but to expose alternatives. What changes if the joke stays? What happens if it goes? Is the metaphor revealing something, or am I keeping it because I enjoyed inventing it?
+
+Of course, human writers have this problem too. We develop familiar moves because they work, and eventually we can mistake familiarity for evidence that they're working again. A recognizable voice probably requires some of that repetition. I wouldn't want to eliminate it.
+
+Nor would I want to examine every sentence as though it were a suspicious package. Sometimes you follow an impulse because it amuses you, or because you have a hunch that something interesting might come of it. Judgment can arrive later.
+
+What the AI collaboration made unusually visible was the distance between learning a preference and understanding a decision. The rejected joke becomes evidence against jokes. My criticism of an overconfident claim becomes an invitation to qualify everything. Each correction was reasonable in its original context. Applied broadly, it created another problem.
+
+We'd started with an essay that was too pleased with its own technique. We revised it into an essay that was too pleased with its own restraint.

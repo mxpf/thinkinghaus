@@ -8,10 +8,10 @@ slug: the-wrong-right-move
 date: 2026-10-05
 status: published
 publishedAt: 2026-10-05T22:56:02.464Z
-updatedAt: 2026-11-04T22:35:55.689Z
+updatedAt: 2026-11-04T22:55:54.826Z
 ---
 
-I was writing an essay about technique and taste with ChatGPT, trying to understand why technically accomplished writing can sometimes feel so empty, and we were producing quite a lot of technically accomplished writing in the process.
+So there I was, writing an essay about technique and taste with ChatGPT, trying to understand why technically accomplished writing can sometimes feel so empty, and we were producing quite a lot of technically accomplished writing in the process.
 
 The argument was fairly simple. Writers develop recognizable techniques. They learn how to structure an argument, when to introduce a joke, how to make a metaphor do some work, when to give a sentence its own paragraph. Eventually these things become part of what we call their voice.
 

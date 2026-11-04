@@ -8,26 +8,20 @@ slug: the-wrong-right-move
 date: 2026-10-05
 status: published
 publishedAt: 2026-10-05T22:56:02.464Z
-updatedAt: 2026-11-04T22:55:54.826Z
+updatedAt: 2026-11-04T23:10:54.346Z
 ---
 
-So there I was, writing an essay about technique and taste with ChatGPT, trying to understand why technically accomplished writing can sometimes feel so empty, and we were producing quite a lot of technically accomplished writing in the process.
+So there I was, writing an essay about technique and taste with my super-intelligent writing partner, trying to work through why technically accomplished writing can sometimes feel so empty…and we were producing quite a lot of technically accomplished writing in the process.
 
 The argument was fairly simple. Writers develop recognizable techniques. They learn how to structure an argument, when to introduce a joke, how to make a metaphor do some work, when to give a sentence its own paragraph. Eventually these things become part of what we call their voice.
 
-But knowing how to do something isn’t the same as knowing when to do it. A joke can be funny and still undermine the point. A metaphor can be clever without making anything clearer. A sentence can sound important because you’ve surrounded it with white space.
+But knowing *how* to do something isn’t the same as knowing *when* to do it.
 
-I was calling this *Technique Without Taste*: using a familiar creative move because you know it works, rather than because the material needs it.
-
-There’s a relationship here to [kitsch](https://ia.net/topics/the-beauty-of-kitsch). Something can have all the recognizable features of good design and still fail at what it’s supposed to do. In writing, the failure is less obvious because a well-executed technique can be genuinely pleasurable. You may enjoy the sentence without noticing that it has taken you somewhere you didn’t mean to go.
+There’s a relationship here to [kitsch](https://ia.net/topics/the-beauty-of-kitsch). Something can have all the recognizable features of good design and still fail at what it’s supposed to do.
 
 ![A four-quadrant diagram contrasting form and function: Boldness, Beauty, Trash, and Kitsch.](/images/the-wrong-right-move-21d92ac4.png "*After the four-quadrant diagram discussed in* [*iA’s “Learning to See”*](https://ia.net/topics/learning-to-see)*.*")
 
-At some point we decided to go back through our draft and look for examples of exactly this problem. We found plenty. There were jokes that seemed to exist because the essay needed a joke about now. There were metaphors that made already clear ideas more complicated. There were far too many short paragraphs, each one apparently hoping to be remembered.
-
-So we started taking things out.
-
-What interested me wasn’t so much that the AI had made these choices. That was predictable. What interested me was what happened after I rejected them.
+At some point we decided to go back through our draft and look for examples of exactly this problem. We found plenty. There were jokes that existed simply  because the essay hadn’t had onein a while. There were metaphors that made already clear ideas more complicated and far too many one sentence paragraphs.So we started taking things out. What interested me wasn’t so much that the AI had made these choices. That was predictable. What interested me was what happened after I rejected them.
 
 I’d originally given ChatGPT examples of my finished writing, hoping it could learn something about my voice. But finished work leaves out an enormous amount of information. It doesn’t show the jokes you deleted, the metaphors you abandoned, or the sentences you spent twenty minutes rearranging before deciding they weren’t worth keeping.
 

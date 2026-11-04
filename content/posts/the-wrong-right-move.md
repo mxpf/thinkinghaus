@@ -8,7 +8,7 @@ slug: the-wrong-right-move
 date: 2026-10-05
 status: published
 publishedAt: 2026-10-05T22:56:02.464Z
-updatedAt: 2026-11-04T23:20:55.376Z
+updatedAt: 2026-11-04T23:26:54.929Z
 ---
 
 So there I was, writing an essay about technique and taste with my super-intelligent writing partner, trying to work through why technically accomplished writing can sometimes feel so empty…and we were producing quite a lot of technically accomplished writing in the process.
@@ -17,7 +17,7 @@ The argument was fairly simple. Writers develop recognizable techniques. They le
 
 But knowing *how* to do something isn’t the same as knowing *when* to do it.
 
-There’s a relationship here to [kitsch](https://ia.net/topics/the-beauty-of-kitsch). Something can have all the recognizable features of good design and still fail at what it’s supposed to do.
+In my mind there’s a relationship here to [kitsch](https://ia.net/topics/the-beauty-of-kitsch). Something can have all the recognizable features of good design and still fail at what it’s supposed to do.
 
 ![A four-quadrant diagram contrasting form and function: Boldness, Beauty, Trash, and Kitsch.](/images/the-wrong-right-move-21d92ac4.png "*After the four-quadrant diagram discussed in* [*iA’s “Learning to See”*](https://ia.net/topics/learning-to-see)*.*")
 

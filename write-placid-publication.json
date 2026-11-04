@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "documents": [
+    {
+      "id": "1122095f-8746-49fe-8411-2585248779c3",
+      "path": "content/now/now-20260813154755.md",
+      "url": "/now.html",
+      "revision": "9ddb647d543c4dc3d28c4b9e082bcf05be85189d095b018cdb9b439c46cf2d30"
+    },
+    {
+      "id": "fefc379b-c787-4eaf-b01a-fc7ecc8facb4",
+      "path": "content/pages/about.md",
+      "url": "/about.html",
+      "revision": "327c4489986d91ffa7a6a7e8b3183ca67f1b5ff097c70cc77204b98781328090"
+    },
+    {
+      "id": "b5249606-953e-44d1-9d5c-368727cb5687",
+      "path": "content/pages/ai.md",
+      "url": "/ai.html",
+      "revision": "c2ee7656b110571d6ff717a459349bbdef5f36140a8a7ecf49ee2683e6f928dd"
+    },
+    {
+      "id": "2a940d94-4ab8-4192-82fe-b4f074d42f95",
+      "path": "content/pages/links.md",
+      "url": "/links.html",
+      "revision": "8039efc6e9c05f79f0ea9b6c247f2c2d4fbcc55272bded25826f3c008f2a2401"
+    },
+    {
+      "id": "dc2939e1-4a4e-4f55-a806-18a0b246253c",
+      "path": "content/posts/a-system-for-looking.md",
+      "url": "/a-system-for-looking.html",
+      "revision": "447cd704765a9718ba09df4d09bb058d46cf7563a2a03dc964f650b6d757c37e"
+    },
+    {
+      "id": "0c4234d3-f726-4915-a854-0cfc83d96b55",
+      "path": "content/posts/caught-in-a-web.md",
+      "url": "/caught-in-a-web.html",
+      "revision": "55e0970b52ff4b057afc0db0206537a49e191ee15a7a2304ca8fc75e71b371f4"
+    },
+    {
+      "id": "dd0b4d4e-97c0-4a74-93e3-dd01cbfd3c76",
+      "path": "content/posts/deep-minimal.md",
+      "url": "/deep-minimal.html",
+      "revision": "78c97cdfec2a3bfb33a929c00c6ee17c01dc861252d903b54d1120703e3dd647"
+    },
+    {
+      "id": "46940085-c1e7-4be0-bd56-5e2d4ccfa60e",
+      "path": "content/posts/its-dangerous-to-go-alone-take-this.md",
+      "url": "/its-dangerous-to-go-alone-take-this.html",
+      "revision": "3f7d95b2d3bb9466932ef5f6ea0620140e16c7999335ca33150e08e950983e19"
+    },
+    {
+      "id": "44180f64-b72b-4bfe-b721-e47acf9d7328",
+      "path": "content/posts/look-at-this.md",
+      "url": "/look-at-this.html",
+      "revision": "e889afd9ce0aa7ce9c87a1a126934ea0ffac3a6be97b15d4a90e07c0617ae953"
+    },
+    {
+      "id": "74bf8489-c7fd-485a-9104-3e41c244a486",
+      "path": "content/posts/over-the-loop.md",
+      "url": "/over-the-loop.html",
+      "revision": "b3f4f1631ea8bd10d0ab4a6216f2c75d9a3fb68d017c51504cd599553490bf20"
+    },
+    {
+      "id": "4b9dc1b6-d6c2-41b3-aa5e-583acdffc1bc",
+      "path": "content/posts/personal-folklore.md",
+      "url": "/personal-folklore.html",
+      "revision": "2d1f3b963c314c3e0d8278182ee34db74dae2d50be02d4ea8bd49dee42039a53"
+    },
+    {
+      "id": "8d9b0306-482a-4d6d-8bb5-6d13cf70d47a",
+      "path": "content/posts/the-gift-of-an-empty-mind.md",
+      "url": "/the-gift-of-an-empty-mind.html",
+      "revision": "252b65f16ecd6d303ca8b1d8404c55e340127139965a7f6d1a9d64c1de333b1a"
+    },
+    {
+      "id": "21d33773-816f-4358-abd9-330872fe84ed",
+      "path": "content/posts/the-silent-type.md",
+      "url": "/the-silent-type.html",
+      "revision": "f44078aad08ca7ff18037c9388c5e3efaf7401b6e9ff45b2b4db279e66acd641"
+    },
+    {
+      "id": "fdb64d1d-1875-4038-8197-5ed27c7bd732",
+      "path": "content/posts/the-unbearable-rightness-of-being.md",
+      "url": "/the-unbearable-rightness-of-being.html",
+      "revision": "225b9a4ffacac94d13eb5e3b3f7b8c2311487724f6253d6d5bb2615e50fac9fa"
+    },
+    {
+      "id": "8db0136a-fbdc-4972-bc96-f139d8ee2c54",
+      "path": "content/posts/the-wrong-right-move.md",
+      "url": "/the-wrong-right-move.html",
+      "revision": "cd5209795df8b8262c35a0a3b738f292379612d926d0a2b0ccb747659bfc380a"
+    },
+    {
+      "id": "9d4bb605-9cbd-4c62-a9bd-36b3452f8210",
+      "path": "content/posts/what-happens-next.md",
+      "url": "/what-happens-next.html",
+      "revision": "17cb9e2db15e231fa72bcaa88c4c2c14aba23ff0873fe0ac34ea8f0807bc1bef"
+    },
+    {
+      "id": "e43e4733-1e15-42af-8550-5fc4eade6fb7",
+      "path": "content/posts/work-between-the-work.md",
+      "url": "/work-between-the-work.html",
+      "revision": "df7f90f35541fc1d486ed2e6b36874a17708bc0c7876bba1fa3db6164fe3c798"
+    }
+  ]
+}

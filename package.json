@@ -37,7 +37,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.26",
-    "eslint": "9.39.4",
+    "eslint": "10.14.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
@@ -48,7 +48,16 @@
     "typescript-eslint": "8.67.0",
     "vinext": "1.0.0-beta.5",
     "vite": "^8.3.6",
-    "wrangler": "^4.156.1"
+    "wrangler": "^4.156.1",
+    "@eslint/compat": "2.1.1"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-jsx-a11y": {
+      "eslint": "$eslint"
+    }
+  }
 }

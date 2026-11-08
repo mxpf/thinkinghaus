@@ -1,3 +1,4 @@
+import { fixupConfigRules } from "@eslint/compat";
 import { defineConfig, globalIgnores } from "eslint/config";
 import eslint from "@eslint/js";
 import next from "@next/eslint-plugin-next";
@@ -18,10 +19,9 @@ const eslintConfig = defineConfig([
   ]),
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  react.configs.flat.recommended,
-  react.configs.flat["jsx-runtime"],
+  ...fixupConfigRules([react.configs.flat.recommended, react.configs.flat["jsx-runtime"]]),
   reactHooks.configs.flat["recommended-latest"],
-  jsxA11y.flatConfigs.recommended,
+  ...fixupConfigRules(jsxA11y.flatConfigs.recommended),
   next.configs["core-web-vitals"],
   {
     languageOptions: {

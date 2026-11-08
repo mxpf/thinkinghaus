@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
-import { readFile, stat } from "node:fs/promises";
-import test from "node:test";
+import { readFile, readdir, stat } from "node:fs/promises";
+import test, { before, after } from "node:test";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
+import { Miniflare } from "miniflare";
 import vm from "node:vm";
 import sharp from "sharp";
 import { publicSnapshotContractVersion, version as coreVersion } from "@mxpf/write-placid-core";
@@ -10,25 +13,42 @@ import { calculateReadingTime, comparePostsByDate, parsePost, readIdentityManife
 import { redirectDocument } from "../scripts/generate-redirects.mjs";
 import { generateRssFeed } from "../scripts/rss.mjs";
 
-async function render(pathname = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
+let worker;
 
-  return worker.fetch(
-    new Request(`http://localhost${pathname}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
+before(async () => {
+  const root = fileURLToPath(new URL("../dist/server/", import.meta.url));
+  const files = (await readdir(root, { recursive: true })).filter((file) => file.endsWith(".js"));
+  const modules = Object.fromEntries(await Promise.all(files.map(async (file) => [
+    file,
+    { type: "esm", contents: await readFile(path.join(root, file), "utf8") },
+  ])));
+  worker = new Miniflare({
+    telemetry: { enabled: false },
+    workers: [{
+      config: {
+        name: "rendered-html-tests",
+        compatibilityDate: "2026-11-01",
+        compatibilityFlags: ["nodejs_compat"],
+        manifest: { mainModule: "index.js", modulesRoot: root, modules },
+        env: {
+          ASSETS: {
+            type: "fetcher",
+            handler: () => new Response("Not found", { status: 404 }),
+          },
+        },
       },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+    }],
+  });
+});
+
+after(async () => {
+  await worker?.dispose();
+});
+
+async function render(pathname = "/") {
+  return worker.dispatchFetch(`http://localhost${pathname}`, {
+    headers: { accept: "text/html" },
+  });
 }
 
 test("pins the compatible Write Placid core contract", () => {
@@ -341,7 +361,8 @@ test("renders only the newest published Now entry on its stable route", async ()
   if (entries[0]) {
     assert.ok(html.includes(entries[0].paragraphs[0]));
     assert.match(html, /<ul class="article-list"><li>Reading <a href="https:\/\/pushkinpress\.com\/book\/strange-houses\/"/);
-    assert.equal((html.match(/<li>/g) ?? []).length, 4);
+    const expectedItems = (entries[0].body.match(/^-\s+/gm) ?? []).length;
+    assert.equal((html.match(/<li>/g) ?? []).length, expectedItems);
     assert.doesNotMatch(html, /<p>- Reading/);
     assert.match(html, /href="https:\/\/sive\.rs\/nowff"[^>]*>Derek Sivers(?:&apos;|&#x27;|') \/now idea<\/a>/);
     assert.match(html, /a simple page for what (?:you(?:&apos;|&#x27;|')re|you’re) actually paying attention to right now\./);

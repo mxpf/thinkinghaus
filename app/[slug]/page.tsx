@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   } : undefined;
 
   return {
-    title: content?.title,
+    title: content?.title ?? "Page not found",
     description: socialMetadata?.openGraph.description,
     alternates: content ? {
       canonical: `/${slug}`,

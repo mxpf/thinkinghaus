@@ -1,3 +1,41 @@
 {
-  "appBrowserEntry": "_next/static/chunks/index-BgNoFY9S.js"
+  "appBrowserRuntime": "_next/static/chunks/D8cpnY6m.js",
+  "appBrowserEntry": "_next/static/chunks/D8cpnY6m.js",
+  "appRouteManifest": "_next/static/chunks/B2W2xPUR.js",
+  "appClientReferenceChunks": {
+    "references": {
+      "0ee342e78f0a": 0,
+      "fd1c77b3e26d": 1,
+      "0852856a0d0c": 1,
+      "15c18cfaeeff": 2,
+      "c2747888630f": 3,
+      "8477395750f3": 3
+    },
+    "modules": [
+      {
+        "file": "_next/static/chunks/BzCGzZOO.js",
+        "imports": [],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/C7CPf9Bi.js",
+        "imports": [
+          "_next/static/chunks/CtI95EFj.js"
+        ],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/DGF_BV1W.js",
+        "imports": [],
+        "css": []
+      },
+      {
+        "file": "_next/static/chunks/DJI3spSD.js",
+        "imports": [
+          "_next/static/chunks/CtI95EFj.js"
+        ],
+        "css": []
+      }
+    ]
+  }
 }

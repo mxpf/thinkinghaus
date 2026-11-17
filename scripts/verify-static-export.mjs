@@ -27,7 +27,7 @@ async function visit(directory) {
     }
 
     for (const match of html.matchAll(
-      /href="(\/_next\/static\/css\/[\w-]+\.[\w-]+\.css)(?:[?#][^"]*)?"/g,
+      /href="(\/_next\/static\/css\/[\w-]+(?:\.[\w-]+)?\.css)(?:[?#][^"]*)?"/g,
     )) {
       globalStylesheets.add(match[1]);
     }

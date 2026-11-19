@@ -19,7 +19,7 @@ before(async () => {
   const root = fileURLToPath(new URL("../dist/server/", import.meta.url));
   const files = (await readdir(root, { recursive: true })).filter((file) => file.endsWith(".js"));
   const modules = Object.fromEntries(await Promise.all(files.map(async (file) => [
-    file,
+    file.replaceAll(path.sep, "/"),
     { type: "esm", contents: await readFile(path.join(root, file), "utf8") },
   ])));
   worker = new Miniflare({

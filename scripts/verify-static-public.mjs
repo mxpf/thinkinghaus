@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { readFile, readdir, stat } from "node:fs/promises";
-import { join, relative, resolve } from "node:path";
+import { join, relative, resolve, sep } from "node:path";
 
 const source = resolve("dist/client");
 const output = resolve("dist/public");
@@ -16,6 +16,7 @@ async function walk(directory) {
 }
 
 const hash = (buffer) => createHash("sha256").update(buffer).digest("hex");
+const relativePath = (root, file) => relative(root, file).replaceAll(sep, "/");
 const normalizeMarkup = (html) => html
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
   .replace(/<link\b[^>]*rel="modulepreload"[^>]*\/?>(?:\s*)/gi, "")
@@ -27,7 +28,7 @@ const failures = [];
 const htmlResults = [];
 
 for (const sourceFile of sourceFiles.filter((file) => file.endsWith(".html"))) {
-  const path = relative(source, sourceFile);
+  const path = relativePath(source, sourceFile);
   const outputFile = join(output, path);
   const [before, after] = await Promise.all([readFile(sourceFile, "utf8"), readFile(outputFile, "utf8")]);
   if (normalizeMarkup(before) !== normalizeMarkup(after)) failures.push(`${path}: non-script markup changed`);
@@ -58,8 +59,8 @@ for (const sourceFile of sourceFiles.filter((file) => file.endsWith(".html"))) {
   htmlResults.push(path);
 }
 
-const sourceByPath = new Map(sourceFiles.map((file) => [relative(source, file), file]));
-const outputByPath = new Map(outputFiles.map((file) => [relative(output, file), file]));
+const sourceByPath = new Map(sourceFiles.map((file) => [relativePath(source, file), file]));
+const outputByPath = new Map(outputFiles.map((file) => [relativePath(output, file), file]));
 for (const [path, sourceFile] of sourceByPath) {
   if (path.endsWith(".html") || path.endsWith(".rsc") || path.includes("_next/static/chunks")) continue;
   const outputFile = outputByPath.get(path);

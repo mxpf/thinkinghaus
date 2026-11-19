@@ -64,10 +64,6 @@ A stream of writing from independent sites around the web. Addictive.
 
 An annual celebration of small, handmade, independent websites. This can mean an extraordinarily thoughtful political visualization. It can also mean rotating sandwiches.
 
-[sacha.house](https://sacha.house/)
-
-Sacha’s personal site, with software projects and a blog.
-
 -----
 
 This page owes its basic idea to [47nil’s links page](https://47nil.com/links).

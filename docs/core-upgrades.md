@@ -1,13 +1,15 @@
 # Write Placid core updates
 
-thinking.haus consumes the reusable publishing foundation from `@mxpf/write-placid-core`. The dependency is pinned to a full, immutable Write Placid commit in both `package.json` and `package-lock.json`; production must never follow a branch, a moving tag, or a sibling checkout.
+thinking.haus consumes the reusable publishing foundation from `@mxpf/write-placid-core`. Version 1.7.1 is pinned to the complete [release-package URL](https://github.com/mxpf/write-placid/releases/download/v1.7.1/mxpf-write-placid-core-1.7.1.tgz) in `package.json` and `package-lock.json`. The lockfile records its integrity. The release includes [SHA256SUMS.txt](https://github.com/mxpf/write-placid/releases/download/v1.7.1/SHA256SUMS.txt) to verify the download. Production must never follow a branch, a moving tag, or a sibling checkout.
+
+The package is prebuilt and needs no core build. Public snapshot contract `1` is unchanged, and 1.7.1 needs no writing migration. Installing it does not deploy the site or publish writing.
 
 The package owns Markdown parsing, content identity and validation, repository readers, RSS and sitemap generation, and compatibility redirect markup. This repository owns all published content, site identity, typography and assets, navigation, Trackinghaus settings, routes, and deployment configuration.
 
 ## Upgrade
 
-1. Obtain the tested full commit SHA, package version, snapshot-contract version, and release notes from Write Placid.
-2. Change the dependency to `github:mxpf/write-placid#<full-sha>` and regenerate the lockfile.
+1. Obtain the verified release package, its checksum, source commit, package version, snapshot-contract version, and release notes from Write Placid.
+2. Pin the complete release-asset URL and regenerate the lockfile. Check the download against the release checksum. A full source commit remains a fallback when a release package is unavailable.
 3. Confirm the package version and public snapshot contract in the contract test.
 4. Run linting, type checking, the complete test suite, the production dependency audit, and static-export verification.
 5. From a fresh checkout, run `npm ci` and repeat the complete checks. Confirm that content, public URLs, metadata, Trackinghaus attributes, RSS, sitemap, and redirects have not changed unexpectedly.

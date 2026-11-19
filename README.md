@@ -27,7 +27,7 @@ site-config.mjs  public identity and service endpoints
 
 Generated TypeScript modules, RSS, and the sitemap are not tracked. Development and production builds recreate them from the Markdown source.
 
-Reusable Markdown, content identity, social metadata, feed, sitemap, and redirect behavior comes from the immutable [`@mxpf/write-placid-core`](https://github.com/mxpf/write-placid/commit/4545446142157f32906bb47c1511879f1231b749) v1.6.0 candidate commit. This repository keeps the writing, visual system, public routes, navigation, analytics settings, and deployment configuration. See [`docs/core-upgrades.md`](docs/core-upgrades.md) for the update and rollback procedure.
+Reusable Markdown, content identity, social metadata, feed, sitemap, and redirect behavior comes from the verified [`@mxpf/write-placid-core` 1.7.1 package](https://github.com/mxpf/write-placid/releases/tag/v1.7.1). Public snapshot contract `1` is unchanged, and the upgrade needs no writing migration. This repository keeps the writing, visual system, public routes, navigation, analytics settings, and deployment configuration. Deployment is a separate step. See [`docs/core-upgrades.md`](docs/core-upgrades.md) for the update and rollback procedure.
 
 The site and its posts share the social card at [`public/og.png`](public/og.png).
 

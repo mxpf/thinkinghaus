@@ -6,6 +6,8 @@ title: "The space before the answer"
 slug: the-space-before-the-answer
 date: 2026-11-23
 status: published
+publishedAt: 2026-11-23T18:10:56.607Z
+updatedAt: 2026-11-23T18:10:56.607Z
 ---
 
 Good advice can sometimes change the question I’m asking. The *I Ching* has a gift for that. It pays close attention to timing: a course of action can make sense when you begin it and become unwise as the situation changes. [About the *I Ching*](https://cup.columbia.edu/book/the-original-meaning-of-the-yijing/9780231216609/)
@@ -18,7 +20,7 @@ An admission might repair quite a lot. It might establish something that needs t
 
 What am I actually trying to recover? Trust? Some practical arrangement? The feeling that my judgment can be relied upon? Each would require something different.
 
-The *I Ching* allows me to spend time with these distinctions. Its hexagrams are figures of six broken or solid lines, accompanied by texts that describe situations, tendencies, difficulties, and possible responses. A reading brings some of those passages into relation with a question. Lines designated as changing produce a second hexagram, giving the reading a sense of movement. [Joseph A. Adler, “Zhu Xi’s Conception of Yijing Divination as Spiritual Practice”](https://www2.kenyon.edu/Depts/Religion/Fac/Adler/Writings/Zhu%20Xi%27s%20Conception%20of%20Divination.pdf)
+The *I Ching* allows me to spend time with these distinctions. Its hexagrams are figures of six broken or solid lines, accompanied by texts that describe situations, tendencies, difficulties, and possible responses. A reading brings some of those passages into relation with a question. Lines designated as changing produce a second hexagram, giving the reading a sense of movement. [Joseph A. Adler, “Zhu Xi’s Conception of Yijing Divination as Spiritual Practice”](https://www2.kenyon.edu/Depts/Religion/Fac/Adler/Writings/Zhu%20Xi%27s%20Conception%20of%20Divination.pdf) · [My I Ching notes on Keepinghaus](https://keeping.haus/#i-ching)
 
 I read these images against my own circumstances. What counts as “advancing” here? What would waiting involve? Who else is affected? Sometimes a passage fits readily. Sometimes I have to sit with the possibility that I’ve described my situation badly.
 
